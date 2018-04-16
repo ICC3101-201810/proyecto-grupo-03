@@ -10,6 +10,10 @@ namespace SimuladorHorario
     {
         static void Main(string[] args)
         {
+            Aplicacion app = new Aplicacion(new List<string>() { "a", "b", "c" });
+            Console.WriteLine($"{app.listaPrueba[0]}");
+            Console.ReadKey();
+            
         }
     }
 }
