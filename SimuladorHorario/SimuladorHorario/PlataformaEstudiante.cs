@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Program
+    class PlataformaEstudiante
     {
-        static void Main(string[] args)
+        Usuario estudiante;
+
+        public PlataformaEstudiante(Usuario estudiante)
         {
-            
+            this.estudiante = estudiante;
         }
     }
 }

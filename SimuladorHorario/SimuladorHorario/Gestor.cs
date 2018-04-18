@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Program
+    class Gestor
     {
-        static void Main(string[] args)
+        Administrador administrador;
+
+        public Gestor(Administrador administrador)
         {
-            
+            this.administrador = administrador;
         }
     }
 }

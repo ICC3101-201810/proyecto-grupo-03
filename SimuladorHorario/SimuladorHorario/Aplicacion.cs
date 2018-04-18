@@ -8,14 +8,14 @@ namespace SimuladorHorario
 {
     class Aplicacion
     {
-        public List<string> listaPrueba { get; private set; }
+        List<Usuario> usuarios;
+        List<Curso> cursos;
+        enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
-        public Aplicacion(List<string> listaPrueba)
+        public Aplicacion(List<Usuario> usuarios, List<Curso> cursos)
         {
-            this.listaPrueba = listaPrueba;
+            this.usuarios = usuarios;
+            this.cursos = cursos;
         }
-
-        
-
     }
 }

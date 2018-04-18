@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Program
+    class Administrador:Usuario
     {
-        static void Main(string[] args)
+        public Administrador(string nombreUsuario, string contraseña) :
+            base(nombreUsuario, contraseña)
         {
-            
+
         }
     }
 }

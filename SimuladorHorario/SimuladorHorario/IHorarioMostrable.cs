@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Program
+    interface IHorarioMostrable
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        void Mostrar(List<Curso> listaInformacion);
+        void GuardarImagen();
     }
 }
