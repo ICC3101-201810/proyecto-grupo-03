@@ -10,7 +10,7 @@ namespace SimuladorHorario
     {
         static bool Guardar() { return false; }
         static bool ChequearCompatibilidad(Curso curso, Estudiante estudiante) { return false; }
-        static void Inscribir(Curso curso) { return; }
+        static void InscribirCurso(Curso curso) { return; }
         static void EliminarCursoInscrito(Curso curso) { return; }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
 
