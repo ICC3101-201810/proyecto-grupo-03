@@ -11,7 +11,17 @@ namespace SimuladorHorario
     {
         static void Main(string[] args)
         {
-            
+
+
+            Console.WriteLine("super Usuario?\n(1) Si\n(2) No");
+            string op = Console.ReadLine();
+            if (op == "1")
+            {
+                Aplicacion.app();
+            }
+
+
+
             Console.ForegroundColor = ConsoleColor.White;
             int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
             {
@@ -48,6 +58,8 @@ namespace SimuladorHorario
                 if (opcion == 2) Aplicacion.Registrarse();
 
                 if (opcion == 3) return;
+
+                
                 
             }
             MenuPrincipal();
