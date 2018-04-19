@@ -11,12 +11,12 @@ namespace SimuladorHorario
         List<CursoCurricular> avanceMalla;
         string carrera, especialidad, añoIngreso, concentracion;
         List<Curso> listaInscripcion;
-        List<Curso> listaCursoDisponible;
+        List<Curso> cursosInscritos;
 
         public Estudiante(List<CursoCurricular> avanceMalla,
             string carrera, string especialidad, string añoIngreso,
             string concentracion, List<Curso> listaInscripcion,
-            List<Curso> listaCursoDisponible,
+            List<Curso> cursosInscritos,
             string nombreUsuario, string contraseña):base(nombreUsuario, contraseña)
         {
             this.avanceMalla = avanceMalla;
@@ -25,7 +25,7 @@ namespace SimuladorHorario
             this.añoIngreso = añoIngreso;
             this.concentracion = concentracion;
             this.listaInscripcion = listaInscripcion;
-            this.listaCursoDisponible = listaCursoDisponible;
+            this.cursosInscritos = cursosInscritos;
         }
         
     }

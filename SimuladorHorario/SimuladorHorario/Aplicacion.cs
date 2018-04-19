@@ -17,5 +17,11 @@ namespace SimuladorHorario
             this.usuarios = usuarios;
             this.cursos = cursos;
         }
+
+        public bool IniciarSesion()
+        {
+            return true;
+        }
+
     }
 }

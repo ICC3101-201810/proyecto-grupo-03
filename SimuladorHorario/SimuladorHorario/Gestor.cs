@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Gestor
+    static class Gestor
     {
-        Administrador administrador;
-
-        public Gestor(Administrador administrador)
+        static void CrearCurso()
         {
-            this.administrador = administrador;
+            return;
+        }   
+        static void LeerCurso(Curso curso)
+        {
+            return;
+        }
+        static void ActualizarCurso(Curso curso)
+        {
+            return;
+        }
+        static void EliminarCurso()
+        {
+            return;
         }
     }
 }

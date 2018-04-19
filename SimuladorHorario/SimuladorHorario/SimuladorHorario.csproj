@@ -52,7 +52,6 @@
     <Compile Include="Gestor.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="IHorarioMostrable.cs" />
-    <Compile Include="ListaInscripcion.cs" />
     <Compile Include="PlataformaEstudiante.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
