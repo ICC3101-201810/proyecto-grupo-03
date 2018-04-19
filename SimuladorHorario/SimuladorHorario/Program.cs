@@ -9,9 +9,37 @@ namespace SimuladorHorario
 {
     class Program
     {
+        public int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
+        {
+            int opcion = Convert.ToInt32(Console.ReadLine());
+            if (opcion > fin || opcion < inicio)
+            {
+                do
+                {
+                    Console.Write("Ingrese una opcion valida:");
+                    opcion = Convert.ToInt32(Console.ReadLine());
+                } while (opcion > 3 || opcion < 1);
+            }
+            return opcion;
+        }
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.White;
             
+            void MenuPrincipal()
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine("Bienvenido al Simulador de Horario");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine("Que desea hacer: ");
+                Console.Write("1. Iniciar sesion\n" +
+                              "2. Registrarse\n" + 
+                              "3. Salir del Programa\n");
+                int opcion = ChequearOpcion(1, 3); //Ejemplo de uso de Chequear opcion
+                
+                
+            }
+            MenuPrincipal();
         }
     }
 }

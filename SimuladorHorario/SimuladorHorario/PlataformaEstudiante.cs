@@ -13,6 +13,6 @@ namespace SimuladorHorario
         static void InscribirCurso(Curso curso) { return; }
         static void EliminarCursoInscrito(Curso curso) { return; }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
-
+        
     }
 }

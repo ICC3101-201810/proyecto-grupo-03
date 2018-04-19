@@ -11,7 +11,7 @@ namespace SimuladorHorario
     {
         static List<Usuario> usuarios;
         static List<Curso> cursos;
-        enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
+        public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
 
 
