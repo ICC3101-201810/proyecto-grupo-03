@@ -8,19 +8,23 @@ namespace SimuladorHorario
 {
     static class Gestor
     {
-        static void CrearCurso()
+        public static void MenuGestor()
+        {
+
+        }
+        public static void CrearCurso()
         {
             return;
         }   
-        static void LeerCurso(Curso curso)
+        public static void LeerCurso(Curso curso)
         {
             return;
         }
-        static void ActualizarCurso(Curso curso)
+        public static void ActualizarCurso(Curso curso)
         {
             return;
         }
-        static void EliminarCurso()
+        public static void EliminarCurso()
         {
             return;
         }

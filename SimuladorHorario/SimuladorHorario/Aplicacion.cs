@@ -14,27 +14,20 @@ namespace SimuladorHorario
         public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
        
-        static public void app()
-        {
-
-            AbrirInformacion();
-
-            while (true)
-            {
-                Console.WriteLine("--Aplicacion--");
-               
-
-
-                Console.ReadKey();
-
-            }
-
-        }
-
 
         public static bool IniciarSesion()
         {
-            
+            Console.Write("Ingrese su nombre: ");
+            string nombreUsuario = Console.ReadLine();
+            Console.Write("Ingrese su contraseña: ");
+            string contraseña = Console.ReadLine();
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.nombre==nombreUsuario && usuario.contraseña == contraseña)
+                {
+                    
+                }
+            }
             return false;
         }
 
@@ -60,6 +53,7 @@ namespace SimuladorHorario
             }
 
             
+
 
             Console.ReadKey();
         }
