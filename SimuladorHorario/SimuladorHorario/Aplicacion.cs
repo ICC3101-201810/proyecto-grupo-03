@@ -14,6 +14,23 @@ namespace SimuladorHorario
         public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
        
+        static public void app()
+        {
+
+            AbrirInformacion();
+
+            while (true)
+            {
+                Console.WriteLine("--Aplicacion--");
+               
+
+
+                Console.ReadKey();
+
+            }
+
+        }
+
 
         public static bool IniciarSesion()
         {
@@ -39,8 +56,7 @@ namespace SimuladorHorario
 
             }
 
-            //CHUPALA
-
+            
 
             Console.ReadKey();
         }
