@@ -15,6 +15,7 @@ namespace SimuladorHorario
             base(nombre, profesor, horario)
         {
             this.eventosExtraP = eventosExtraP;
+
         }
     }
 }
