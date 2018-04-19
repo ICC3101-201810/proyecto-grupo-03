@@ -8,12 +8,13 @@ namespace SimuladorHorario
 {
     abstract class Usuario
     {
-        string nombreUsuario;
-        string contraseña;
+        public string nombre { get; private set; }
+        public string contraseña { get; private set; }
+        public bool esAdmin { get; private set; }
 
-        public Usuario(string nombreUsuario, string contraseña)
+        public Usuario(string nombre, string contraseña)
         {
-            this.nombreUsuario = nombreUsuario;
+            this.nombre = nombreUsuario;
             this.contraseña = contraseña;
         }
 

@@ -8,7 +8,11 @@ namespace SimuladorHorario
 {
     static class PlataformaEstudiante
     {
-        static bool Guardar() { return false; }
+        public static void MenuPlataformaEstudiante()
+        {
+
+        }
+        public static bool Guardar() { return false; }
         static bool ChequearCompatibilidad(Curso curso, Estudiante estudiante) { return false; }
         static void InscribirCurso(Curso curso) { return; }
         static void EliminarCursoInscrito(Curso curso) { return; }
