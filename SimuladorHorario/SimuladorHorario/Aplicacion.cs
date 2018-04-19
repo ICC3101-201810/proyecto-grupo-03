@@ -13,11 +13,16 @@ namespace SimuladorHorario
         static List<Curso> cursos;
         public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
+       
 
-
-        static bool IniciarSesion()
+        public static bool IniciarSesion()
         {
             
+            return false;
+        }
+
+        public static bool Registrarse()
+        {
             return false;
         }
 
