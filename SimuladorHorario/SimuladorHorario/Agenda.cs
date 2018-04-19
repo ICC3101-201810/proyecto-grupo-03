@@ -8,11 +8,11 @@ namespace SimuladorHorario
 {
     class Agenda:IHorarioMostrable
     {
-        List<Evento> listaEventos;
+        List<Evento> listaEventosAgenda;
 
-        public Agenda(List<Evento> listaEventos)
+        public Agenda(List<Evento> listaEventosAgenda)
         {
-            this.listaEventos = listaEventos;
+            this.listaEventosAgenda = listaEventosAgenda;
         }
 
         public void GuardarImagen()

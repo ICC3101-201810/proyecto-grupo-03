@@ -8,11 +8,11 @@ namespace SimuladorHorario
 {
     class Horario:IHorarioMostrable
     {
-        List<Evento> listaEventos;
+        List<Evento> listaEventosHorario;
 
-        public Horario(List<Evento> listaEventos)
+        public Horario(List<Evento> listaEventosHorario)
         {
-            this.listaEventos = listaEventos;
+            this.listaEventosHorario = listaEventosHorario;
         }
 
         public void GuardarImagen()
