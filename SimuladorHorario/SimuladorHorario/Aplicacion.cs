@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +7,36 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Aplicacion
+    static class Aplicacion
     {
-        List<Usuario> usuarios;
-        List<Curso> cursos;
+        static List<Usuario> usuarios;
+        static List<Curso> cursos;
         enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
 
-        public Aplicacion(List<Usuario> usuarios, List<Curso> cursos)
+
+
+        static bool IniciarSesion()
         {
-            this.usuarios = usuarios;
-            this.cursos = cursos;
+            
+            return false;
         }
 
-        public bool IniciarSesion()
+        static void AbrirInformacion(string fileName = "data.csv")
         {
-            return true;
+            StreamReader file = new StreamReader(fileName);
+
+            string line;
+
+            while ((line = file.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+                
+
+            }
+
+            Console.ReadKey();
         }
+
 
     }
 }
