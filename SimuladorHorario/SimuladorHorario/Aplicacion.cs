@@ -39,7 +39,6 @@ namespace SimuladorHorario
                     "2. Registrarse" +                                                                   
                     "3. Salir al menu principal");
                 int opcion =Program.ChequearOpcion(1,3);
-               
                 if (opcion == 1) goto InicioSesion;
                 if (opcion == 2) Registrarse();
                 if (opcion == 3) return;
@@ -53,14 +52,43 @@ namespace SimuladorHorario
         {
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
+
+            if (NombresUsuarios().Contains(nombreUsuario))
+            {
+                do
+                {
+                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro");
+
+                } while (NombresUsuarios().Contains(nombreUsuario));
+            }
+            
+
             Console.Write("Ingrese su contraseña: ");
             string contraseña = Console.ReadLine();
             Console.WriteLine("Ingrese su especialidad");
-
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));
+            }
+            int opcion2 = Program.ChequearOpcion(1, 7);
+            Especialidad especialidad = (Especialidad)opcion2;
+            Console.WriteLine("Ingrese los cursos de su avance de malla");
+            List<string> nombresCursos = NombresCursos();
+            bool flag = true;
+            do
+            {
+                for (int i = 1; i < nombresCursos.Count; i++)
+                {
+                    Console.WriteLine(i + ". " + nombresCursos[i - 1]);
+                }
+                Console.WriteLine("Ingrese su curso:");
+                int opcion3 = Program.ChequearOpcion(1, nombresCursos.Count());
+                Program.ImprimirPositivo("Curso agregado a su avance de malla")
+            }
             return false;
         }
 
-        static void AbrirInformacion(string fileName = "data.csv")
+        public static void AbrirInformacion(string fileName = "data.csv")
         {
 
 
@@ -77,7 +105,25 @@ namespace SimuladorHorario
             }
             Console.ReadKey();
         }
+        public static List<string> NombresUsuarios()
+        {
+            List<string> retorno = new List<string>();
+            foreach (Usuario u in usuarios)
+            {
+                retorno.Add(u.nombre);
+            }
+            return retorno;
+        }
 
+        public static List<string> NombresCursos()
+        {
+            List<string> retorno = new List<string>();
+            foreach (Curso c in cursos)
+            {
+                retorno.Add(c.nombre);
+            }
+            return retorno;
+        }
 
     }
 }

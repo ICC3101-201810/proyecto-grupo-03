@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Curso
+    abstract class Curso
     {
-        string nombre;
+        public string nombre { get; private set; }
         string profesor;
         List<Evento> horarios;
 
