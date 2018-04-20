@@ -82,9 +82,12 @@ namespace SimuladorHorario
                     Console.WriteLine(i + ". " + nombresCursos[i - 1]);
                 }
                 Console.WriteLine("Ingrese su curso:");
-                int opcion3 = Program.ChequearOpcion(1, nombresCursos.Count());
-                Program.ImprimirPositivo("Curso agregado a su avance de malla")
-            }
+                opcion2 = Program.ChequearOpcion(1, nombresCursos.Count());
+                Program.ImprimirPositivo("Curso agregado a su avance de malla");
+                Console.WriteLine("¿Desea agregar otro curso?\n1. Si\n2. No");
+                opcion2 = Program.ChequearOpcion(1, 2);
+                if (opcion2 == 2) flag = false;
+            } while (flag);
             return false;
         }
 
