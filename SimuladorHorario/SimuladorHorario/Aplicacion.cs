@@ -191,7 +191,7 @@ namespace SimuladorHorario
                     int creditos = Convert.ToInt32(LI[5]);
 
                     List<Evento> listaEventos = new List<Evento>();
-                    Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DateTime.Now, "B-23", 0);
+                    Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DayOfWeek.Monday, "B-23", 0);
                     listaEventos.Add(evento);
 
                     if (nrc != previoNRC)

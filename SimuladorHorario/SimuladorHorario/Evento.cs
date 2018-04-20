@@ -11,11 +11,11 @@ namespace SimuladorHorario
         string nombre;
         DateTime horaInicio;
         DateTime horaFin;
-        DateTime dia;
+        DayOfWeek dia;
         string sala;
         int tipoEvento;
         public Evento(string nombre,DateTime horaInicio, DateTime horaFin,
-            DateTime dia, string sala,int tipoEvento)
+            DayOfWeek dia, string sala,int tipoEvento)
         {
             this.nombre = nombre;
             this.horaInicio = horaInicio;
