@@ -8,7 +8,7 @@ namespace SimuladorHorario
 {
     static class Gestor
     {
-        public static void MenuGestor()
+        public static void MenuGestor(Administrador administrador)
         {
             MenuGestor:
             Console.Clear();

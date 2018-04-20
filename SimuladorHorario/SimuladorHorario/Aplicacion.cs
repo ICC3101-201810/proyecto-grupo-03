@@ -30,20 +30,19 @@ namespace SimuladorHorario
             string nombreUsuario = Console.ReadLine();
             Console.Write("Ingrese su contraseña: ");
             string contraseña = Console.ReadLine();
-            foreach (Usuario usuario in usuarios)
+            foreach (Estudiante estudiante in usuarios)
             {
-                Console.WriteLine(usuario.nombre + " " + usuario.contraseña);
 
-                if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
+                if (estudiante.nombre == nombreUsuario && estudiante.contraseña == contraseña)
                 {
-                    currentUser = usuario;
-                    if (usuario.esAdmin)
-                    {
-                        Gestor.MenuGestor();
-                        return;
-                    }
-                    else { PlataformaEstudiante.MenuPlataformaEstudiante(); return; }
-
+                    PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return; 
+                }
+            }
+            foreach (Administrador administrador in usuarios)
+            {
+                if (administrador.nombre == nombreUsuario && administrador.contraseña == contraseña)
+                {
+                    Gestor.MenuGestor(administrador); return;
                 }
             }
             Console.WriteLine("Usuario o contraseña invalidos\n" +
