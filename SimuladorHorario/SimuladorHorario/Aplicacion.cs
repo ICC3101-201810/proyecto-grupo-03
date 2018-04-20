@@ -17,7 +17,7 @@ namespace SimuladorHorario
     {
         static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
-        public static Usuario currentUser;
+        public static Usuario usuarioActual;
 
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
@@ -39,6 +39,7 @@ namespace SimuladorHorario
                     Estudiante estudiante = (Estudiante)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
+                        usuarioActual = usuario;
                         PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
                     }
                 }
@@ -47,6 +48,7 @@ namespace SimuladorHorario
                     Administrador administrador = (Administrador)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
+                        usuarioActual = usuario;
                         Gestor.MenuGestor(administrador); return;
                     }
                 }
