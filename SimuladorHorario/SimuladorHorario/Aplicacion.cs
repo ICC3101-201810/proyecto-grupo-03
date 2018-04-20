@@ -222,11 +222,11 @@ namespace SimuladorHorario
                         }
                         for (int i = 0; i < listaHorario.Count; i++)
                         {
-                            Console.WriteLine(listaHorario[i]);
+                            //Console.WriteLine(listaHorario[i]);
                             string horario = listaHorario[i];
                             var papa = (horario.ToString().Split(':'));
 
-                            Console.WriteLine(papa[0]);
+                            //Console.WriteLine(papa[0]);
 
                         }
 
@@ -258,7 +258,7 @@ namespace SimuladorHorario
                         returnString.Add(stringHorario.Split(',')[i]);
                         //Console.WriteLine(stringHorario.Split(',')[i]);
                     }
-                    Console.WriteLine();
+                    //Console.WriteLine();
                     return returnString;
                 }
                 
