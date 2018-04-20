@@ -91,9 +91,8 @@ namespace SimuladorHorario
                 Console.WriteLine("1. Iniciar sesion\n" +
                               "2. Registrarse\n" +
                               "3. Salir del Programa\n" +
-                              "4. Cerrar sesion\n" +
-                              "5. Mostrar Usuarios");
-                int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
+                              "4. Mostrar Usuarios");
+                int opcion = ChequearOpcion(1, 4); //Ejemplo de uso de Chequear opcion
 
                 if (opcion == 1)
                 {
@@ -101,13 +100,11 @@ namespace SimuladorHorario
                     goto InicioMenuPrincipal;
                 }
 
-                if (opcion == 3) Environment.Exit(0);
-
                 if (opcion == 2) Aplicacion.Registrarse();
 
-                if (opcion == 4) return;
+                if (opcion == 3) Environment.Exit(0);
 
-                if (opcion == 5) Aplicacion.MostrarUsuarios();
+                if (opcion == 4) Aplicacion.MostrarUsuarios();
 
                 goto InicioMenuPrincipal;
 

@@ -40,6 +40,7 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
+                        Console.Clear();
                         PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
                     }
                 }
@@ -49,6 +50,7 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
+                        Console.Clear();
                         Gestor.MenuGestor(administrador); return;
                     }
                 }
