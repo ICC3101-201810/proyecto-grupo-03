@@ -34,7 +34,7 @@ namespace SimuladorHorario
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine(str);
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
         }
         public static void ImprimirBanner(string str)
         {
