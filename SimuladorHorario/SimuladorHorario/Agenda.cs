@@ -22,7 +22,11 @@ namespace SimuladorHorario
 
         public void Mostrar(List<Curso> listaInformacion)
         {
-            throw new NotImplementedException();
+
+
+
+
+            return;
         }
     }
 }

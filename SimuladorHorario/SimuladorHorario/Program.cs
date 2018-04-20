@@ -9,6 +9,9 @@ namespace SimuladorHorario
 {
     static class Program
     {
+
+
+
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
         {
             int opcion = Convert.ToInt32(Console.ReadLine());
@@ -18,7 +21,7 @@ namespace SimuladorHorario
                 {
                     Console.Write("Ingrese una opcion valida:");
                     opcion = Convert.ToInt32(Console.ReadLine());
-                } while (opcion > 3 || opcion < 1);
+                } while (opcion > fin || opcion < inicio);
             }
             return opcion;
         }
@@ -38,17 +41,19 @@ namespace SimuladorHorario
         static void Main(string[] args)
         {
 
+
             Aplicacion.CargarCursos();
             Aplicacion.CargarUsuarios();
             Aplicacion.print();
 
+            /*
             Console.WriteLine("super Usuario?\n(1) Si\n(2) No");
             string op = Console.ReadLine();
             if (op == "1")
             {
                 AplicacionMati.app();
             }
-
+            */
 
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -63,7 +68,8 @@ namespace SimuladorHorario
                 Console.WriteLine("1. Iniciar sesion\n" +
                               "2. Registrarse\n" +
                               "3. Salir del Programa\n" +
-                              "4. Cerrar sesion");
+                              "4. Cerrar sesion\n" +
+                              "5. Mostrar Usuarios");
                 int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
 
                 if (opcion == 1)
@@ -77,10 +83,13 @@ namespace SimuladorHorario
                 if (opcion == 2) Aplicacion.Registrarse();
 
                 if (opcion == 4)return ;
+
+                if (opcion == 5) Aplicacion.MostrarUsuarios();
+
                 goto InicioMenuPrincipal;
 
-                
-                
+
+
             }
             MenuPrincipal();
         }

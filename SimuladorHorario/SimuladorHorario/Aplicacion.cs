@@ -15,7 +15,7 @@ namespace SimuladorHorario
     static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
-        static List<CursoCurricular> cursos = new List<CursoCurricular>();
+        public static List<CursoCurricular> cursos = new List<CursoCurricular>();
 
 
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
@@ -23,9 +23,7 @@ namespace SimuladorHorario
 
         public static void IniciarSesion()
         {
-            CargarCursos();
-            CargarUsuarios();
-
+            
             InicioSesion:
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
@@ -101,7 +99,7 @@ namespace SimuladorHorario
                     }
                 }
                 Console.WriteLine("Ingrese su curso:");
-                int opcion2 = Program.ChequearOpcion(1, cursos.Count()-cont);
+                int opcion2 = Program.ChequearOpcion(1, cont);
                 avanceMalla.Add(cursosCurriculares[opcion2-1]);
                 Program.ImprimirPositivo("Curso agregado a su avance de malla");
                 Console.WriteLine("¿Desea agregar otro curso?\n1. Si\n2. No");
@@ -111,7 +109,7 @@ namespace SimuladorHorario
             Console.WriteLine("Ingrese su concentracion:");
             for (int i= 0; i <= 5; i++)
             {
-                Console.Write(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
             }
 
             Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 5);
@@ -212,6 +210,18 @@ namespace SimuladorHorario
             file.Close();
 
 
+        }
+
+        public static void MostrarUsuarios()
+        {
+            Console.Clear();
+            Program.ImprimirNegativo("--Imprimir Usuarios--\n");
+            foreach(Usuario usuario in usuarios)
+            {
+                Console.WriteLine($"Nombre:{usuario.nombre} Admin:{usuario.esAdmin}");
+            }
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey();
         }
 
         public static void print()
