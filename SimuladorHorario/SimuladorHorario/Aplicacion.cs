@@ -31,7 +31,26 @@ namespace SimuladorHorario
             string nombreUsuario = Console.ReadLine();
             Console.Write("Ingrese su contraseña: ");
             string contraseña = Console.ReadLine();
-            foreach (Estudiante estudiante in usuarios)
+
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario is Estudiante)
+                {
+                    if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
+                    {
+                        PlataformaEstudiante.MenuPlataformaEstudiante(usuario); return;
+                    }
+                }
+                if (usuario is Administrador)
+                {
+                    if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
+                    {
+                        Gestor.MenuGestor(usuario); return;
+                    }
+                }
+            }
+
+            /*foreach (Estudiante estudiante in usuarios)
             {
 
                 if (estudiante.nombre == nombreUsuario && estudiante.contraseña == contraseña)
@@ -45,7 +64,8 @@ namespace SimuladorHorario
                 {
                     Gestor.MenuGestor(administrador); return;
                 }
-            }
+            }*/
+
             Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
             Console.WriteLine("Que desea hacer: \n" +
                             "1. Volver a iniciar sesion\n" +                                                                               
@@ -243,7 +263,7 @@ namespace SimuladorHorario
             Program.ImprimirNegativo("--Imprimir Usuarios--\n");
             foreach(Usuario usuario in usuarios)
             {
-                Console.WriteLine($"Nombre:{usuario.nombre} Admin:{usuario.esAdmin}");
+                Console.WriteLine($"Nombre: {usuario.nombre}, Admin: {usuario.esAdmin}");
             }
             Console.WriteLine("\nPresione cualquier tecla para continuar...");
             Console.ReadKey();
