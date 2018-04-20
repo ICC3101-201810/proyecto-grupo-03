@@ -112,12 +112,16 @@ namespace SimuladorHorario
             {
                 Console.WriteLine(i+1 + ". " + estudiante.listaInscripcion[i].nombre);
             }
+            Console.WriteLine(estudiante.listaInscripcion.Count()+1 + ". Salir");
 
-            Console.WriteLine(estudiante.listaInscripcion.Count() + ". Salir");
-            int opcion = Program.ChequearOpcion(1, estudiante.listaInscripcion.Count());
-            if (opcion == estudiante.listaInscripcion.Count()) return;
-            estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion-1]);
-            Console.Clear();
+            int opcion = Program.ChequearOpcion(1, estudiante.listaInscripcion.Count()+1);
+            //if (opcion == estudiante.listaInscripcion.Count()-1) return;
+            //estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion]);
+            if (opcion != estudiante.listaInscripcion.Count() + 1) 
+            {
+                estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion]);
+            }
+                Console.Clear();
             Program.ImprimirPositivo("Curso eliminado");
             return;
         }
