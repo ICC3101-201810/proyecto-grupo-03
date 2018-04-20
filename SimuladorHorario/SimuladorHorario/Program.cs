@@ -9,16 +9,7 @@ namespace SimuladorHorario
 {
     static class Program
     {
-        /*public static bool ChequearTipoOpcion(string op) // hecho por Vicente
-        {
-            int cero = 0;
-            if (Char.IsNumber(op,cero))
-                {
-                Console.WriteLine("Es int!!");
-                return true;
-                }
-            else { return false; }
-        }*/
+
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
         {
             int NumerodeComparacion = 0;

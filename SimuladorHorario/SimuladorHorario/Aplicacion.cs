@@ -53,7 +53,7 @@ namespace SimuladorHorario
                     }
                 }
             }
-
+            #region
             /*foreach (Estudiante estudiante in usuarios)
             {
 
@@ -69,7 +69,7 @@ namespace SimuladorHorario
                     Gestor.MenuGestor(administrador); return;
                 }
             }*/
-
+            #endregion
             Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
             Console.WriteLine("Que desea hacer: \n" +
                             "1. Volver a iniciar sesion\n" +                                                                               

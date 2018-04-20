@@ -25,11 +25,12 @@ namespace SimuladorHorario
         public static bool ChequearCompatibilidad(Estudiante estudiante)
         {
             List<DayOfWeek> diasSemana = new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Tuesday,
-                DayOfWeek.Wednesday,DayOfWeek.Thursday, DayOfWeek.Friday};
+                DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday};
+
             
             foreach (DayOfWeek dia in diasSemana)
             {
-                for (int i = 0; i<estudiante.listaInscripcion.Count(); i++)
+                for (int i = 0; i < estudiante.listaInscripcion.Count(); i++) 
                 {
 
                     for (int j = 0;j<estudiante.listaInscripcion.Count(); i++)
