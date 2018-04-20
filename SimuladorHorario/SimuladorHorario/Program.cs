@@ -94,7 +94,7 @@ namespace SimuladorHorario
 
                 if (opcion == 2) Aplicacion.Registrarse();
 
-                if (opcion == 4)return ;
+                if (opcion == 4) return;
 
                 if (opcion == 5) Aplicacion.MostrarUsuarios();
 
