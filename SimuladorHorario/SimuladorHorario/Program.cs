@@ -61,6 +61,7 @@ namespace SimuladorHorario
 
         static void Main(string[] args)
         {
+       
 
 
             Aplicacion.CargarCursos();

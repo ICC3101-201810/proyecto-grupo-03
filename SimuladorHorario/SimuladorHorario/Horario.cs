@@ -12,6 +12,7 @@ namespace SimuladorHorario
 
         public Horario(List<Evento> listaEventosHorario)
         {
+            
             this.listaEventosHorario = listaEventosHorario;
         }
 

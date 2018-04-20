@@ -13,6 +13,7 @@ namespace SimuladorHorario
     public enum TipoCurso { Curricular, Extra}
     public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
     public enum FormatoImpresion { Negativo,Positivo,Normal}
+    public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
     static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
@@ -24,7 +25,7 @@ namespace SimuladorHorario
 
         public static void IniciarSesion()
         {
-
+            
             InicioSesion:
             Console.Clear();
             Console.Write("Ingrese su nombre: ");
