@@ -24,8 +24,9 @@ namespace SimuladorHorario
 
         public static void IniciarSesion()
         {
-            
+
             InicioSesion:
+            Console.Clear();
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
             Console.Write("Ingrese su contraseña: ");
@@ -45,11 +46,11 @@ namespace SimuladorHorario
                     Gestor.MenuGestor(administrador); return;
                 }
             }
-            Console.WriteLine("Usuario o contraseña invalidos\n" +
-                "Que desea hacer: \n" +
-                "1. Volver a iniciar sesion\n" +                                                                               
-                "2. Registrarse\n" +                                                                   
-                "3. Salir al menu principal\n");
+            Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
+            Console.WriteLine("Que desea hacer: \n" +
+                            "1. Volver a iniciar sesion\n" +                                                                               
+                            "2. Registrarse\n" +                                                                   
+                            "3. Salir al menu principal\n");
             int opcion =Program.ChequearOpcion(1,3);
             if (opcion == 1) goto InicioSesion;
             if (opcion == 2) Registrarse();
@@ -62,6 +63,7 @@ namespace SimuladorHorario
 
         public static void Registrarse()
         {
+            
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
 
@@ -115,13 +117,16 @@ namespace SimuladorHorario
             Console.WriteLine("Ingrese su concentracion:");
             for (int i= 0; i <= 5; i++)
             {
-                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Concentracion), i));
             }
 
-            Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 5);
+            Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 6);
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
+            Console.Clear();
+            Program.ImprimirPositivo("Usuario Creado");
             return;
         }
+
         public static List<string> NombresUsuarios()
         {
             List<string> retorno = new List<string>();

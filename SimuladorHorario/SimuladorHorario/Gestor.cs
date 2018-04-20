@@ -12,7 +12,7 @@ namespace SimuladorHorario
         {
             MenuGestor:
             Console.Clear();
-            Console.WriteLine("--Menu Gestor--");
+            Program.ImpribirBanner("Bienvenido" + administrador.nombre + " al gestor");
             Console.WriteLine("Que desea hacer: ");
             Console.WriteLine("1. Crear Curso\n" +
                           "2. Leer Curso\n" +

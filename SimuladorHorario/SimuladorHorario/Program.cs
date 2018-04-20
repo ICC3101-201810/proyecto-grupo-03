@@ -26,15 +26,15 @@ namespace SimuladorHorario
         public static void ImprimirPositivo(string str) //Imprime lo que recibe en fondo verde
 
         {
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(str);
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void ImprimirNegativo(string str)//Imprime lo que recibe en fondo rojo
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine(str);
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
         }
         public static void ImpribirBanner(string str)
         {
@@ -75,7 +75,6 @@ namespace SimuladorHorario
             void MenuPrincipal()
             {
                 InicioMenuPrincipal:
-                Console.Clear();
                 Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
