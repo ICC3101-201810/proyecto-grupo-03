@@ -11,7 +11,7 @@ namespace SimuladorHorario
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
             InicioPlataforma:
-            Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ " a la plataforma de estudiante");
+            Program.ImprimirBanner("Bienvenido " + estudiante.nombre + " a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
                              "1. Inscribir Curso\n" +
                              "2. Eliminar curso\n" +
@@ -38,7 +38,7 @@ namespace SimuladorHorario
                 for (int i = 0; i < estudiante.listaInscripcion.Count(); i++) 
                 {
 
-                    for (int j = 0;j<estudiante.listaInscripcion.Count(); i++)
+                    for (int j = 0; j < estudiante.listaInscripcion.Count(); i++)
                     {
                         if (estudiante.listaInscripcion[i] == estudiante.listaInscripcion[j])
                         {
@@ -61,7 +61,7 @@ namespace SimuladorHorario
             Console.WriteLine("Seleccione un curso para inscribir");
             foreach(CursoCurricular curs in Aplicacion.GetCursoCurricular())
             {
-                Console.WriteLine("NRC:{curs.nrc}\nNombre: {curs.nombre}\nProfesor: {curs.profesor}\n");
+                Console.WriteLine("NRC:{0}\nNombre: {1}\nProfesor: {2}\n",curs.nrc,curs.nombre,curs.profesor);
             }
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
@@ -107,16 +107,7 @@ namespace SimuladorHorario
             Program.ImprimirPositivo("Curso eliminado");
             return;
         }
-        static int ContarCreditos(Estudiante estudiante)
-        {
-            int suma = 0;
-            foreach(CursoCurricular c in estudiante.listaInscripcion)
-            {
-                suma += c.creditos;
-
-            }
-            return suma;
-        }
+        static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
         
     }
 }

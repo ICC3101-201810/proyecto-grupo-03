@@ -77,8 +77,6 @@ namespace SimuladorHorario
                             "1. Volver a iniciar sesion\n" +                                                                               
                             "2. Registrarse\n" +                                                                   
                             "3. Salir al menu principal");
-            //var opcion2 = Console.ReadLine(); // hecho por Vicente
-            //Program.ChequearTipoOpcion(opcion2);
             int opcion = Program.ChequearOpcion(1, 3);
             if (opcion == 1) goto InicioSesion;
             if (opcion == 2) Registrarse();

@@ -65,17 +65,12 @@ namespace SimuladorHorario
             }
 
 
-
-
         }   
         public static void LeerCurso()
         {
             LeerCurso:
             Console.WriteLine("Seleccione El NRC del curso que desea leer:");
             ImprimirCursos();
-
-
-
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
             string option = "";
