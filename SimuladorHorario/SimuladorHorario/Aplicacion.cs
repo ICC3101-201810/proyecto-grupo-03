@@ -140,75 +140,89 @@ namespace SimuladorHorario
 
         public static void CargarCursos(string fileName = "dataCursosDisponibles.csv")
         {
-            StreamReader file = new StreamReader(fileName);
-            string line;
-            string previoNRC = string.Empty;
-            while ((line = file.ReadLine()) != null)
+            try
             {
-                string[] LI = line.Split(';');
-
-                string nombre, profesor, nrc, carrera;
-                nombre = LI[4];
-                profesor = LI[15];
-                nrc = LI[0];
-                carrera = LI[1];
-                int creditos = Convert.ToInt32(LI[5]);
-
-                List<Evento> listaEventos = new List<Evento>();
-                Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DateTime.Now, "B-23", 0);
-                listaEventos.Add(evento);
-
-                if (nrc != previoNRC)
+                StreamReader file = new StreamReader(fileName);
+                string line;
+                string previoNRC = string.Empty;
+                while ((line = file.ReadLine()) != null)
                 {
-                    CursoCurricular curso = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), Especialidad.ICA, listaEventos, nombre, profesor, listaEventos, TipoCurso.Curricular);
-                    cursos.Add(curso);
-                    previoNRC = nrc;
-                }
-                else { continue; }
+                    string[] LI = line.Split(';');
 
+                    string nombre, profesor, nrc, carrera;
+                    nombre = LI[4];
+                    profesor = LI[15];
+                    nrc = LI[0];
+                    carrera = LI[1];
+                    int creditos = Convert.ToInt32(LI[5]);
+
+                    List<Evento> listaEventos = new List<Evento>();
+                    Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DateTime.Now, "B-23", 0);
+                    listaEventos.Add(evento);
+
+                    if (nrc != previoNRC)
+                    {
+                        CursoCurricular curso = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), Especialidad.ICA, listaEventos, nombre, profesor, listaEventos, TipoCurso.Curricular);
+                        cursos.Add(curso);
+                        previoNRC = nrc;
+                    }
+                    else { continue; }
+
+                }
+                file.Close();
             }
-            file.Close();
+            catch (FileNotFoundException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
 
 
         }
 
         public static void CargarUsuarios(string fileName = "dataUsuarios.csv")
         {
-            StreamReader file = new StreamReader(fileName);
-            string line;
-            while ((line = file.ReadLine()) != null)
+            try
             {
-                string[] LI = line.Split(';');
-                string nombre = LI[0];
-                string contraseña = LI[1];
-                bool admin;
-
-                if (LI[2] == "true")
+                StreamReader file = new StreamReader(fileName);
+                string line;
+                while ((line = file.ReadLine()) != null)
                 {
-                    admin = true;
-                    Administrador administrador = new Administrador(nombre, contraseña, admin);
-                    usuarios.Add(administrador);
-                }
-                else
-                {
-                    string especialidad, añoIngreso, concentracion, avanceMalla;
-                    especialidad = LI[4];
-                    añoIngreso = LI[5];
-                    concentracion = LI[6];
-                    avanceMalla = LI[7];
-                    List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
+                    string[] LI = line.Split(';');
+                    string nombre = LI[0];
+                    string contraseña = LI[1];
+                    bool admin;
 
-                    foreach (string nrc in LI[7].Split(','))
+                    if (LI[2] == "true")
                     {
-                        CursoCurricular curso = cursos.Find(x => x.nrc == nrc);
-                        listaAvanceMalla.Add(curso);
+                        admin = true;
+                        Administrador administrador = new Administrador(nombre, contraseña, admin);
+                        usuarios.Add(administrador);
                     }
-                    Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICC, Concentracion.Hidraulica, nombre, contraseña, false);
-                    usuarios.Add(estudiante);
-                }
-            }
+                    else
+                    {
+                        string especialidad, añoIngreso, concentracion, avanceMalla;
+                        especialidad = LI[4];
+                        añoIngreso = LI[5];
+                        concentracion = LI[6];
+                        avanceMalla = LI[7];
+                        List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
 
-            file.Close();
+                        foreach (string nrc in LI[7].Split(','))
+                        {
+                            CursoCurricular curso = cursos.Find(x => x.nrc == nrc);
+                            listaAvanceMalla.Add(curso);
+                        }
+                        Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICC, Concentracion.Hidraulica, nombre, contraseña, false);
+                        usuarios.Add(estudiante);
+                    }
+                }
+
+                file.Close();
+            }
+            catch (FileNotFoundException e1)
+            {
+                System.Console.WriteLine(e1.Message);
+            }
 
 
         }
