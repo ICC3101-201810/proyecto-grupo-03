@@ -78,7 +78,15 @@ namespace SimuladorHorario
                 }
 
                 CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
-                estudiante.listaInscripcion.Add(curso);
+                if (estudiante.listaInscripcion.Contains(curso))
+                {
+                    Console.WriteLine("El curso {0} ya estaba agregado\n", curso.nombre);
+                }
+                else
+                {
+                    estudiante.listaInscripcion.Add(curso);
+                }
+                
                 Console.WriteLine("¿Quiere agregar otro curso?\n" +
                     "1. Si\n" +
                     "2. No");
@@ -115,8 +123,7 @@ namespace SimuladorHorario
             Console.WriteLine(estudiante.listaInscripcion.Count()+1 + ". Salir");
 
             int opcion = Program.ChequearOpcion(1, estudiante.listaInscripcion.Count()+1);
-            //if (opcion == estudiante.listaInscripcion.Count()-1) return;
-            //estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion]);
+
             if (opcion != estudiante.listaInscripcion.Count() + 1) 
             {
                 estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion]);
