@@ -15,7 +15,6 @@ namespace SimuladorHorario
                              "1. Inscribir Curso");
             int opcion = Program.ChequearOpcion(1, 1);
             if (opcion == 1) InscribirCurso();
-            
 
             Console.ReadKey();
         }
