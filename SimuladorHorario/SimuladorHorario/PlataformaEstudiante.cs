@@ -13,8 +13,9 @@ namespace SimuladorHorario
             Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ " a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
                              "1. Inscribir Curso");
-            int opcion = Program.ChequearOpcion(1, 3);
+            int opcion = Program.ChequearOpcion(1, 1);
             if (opcion == 1) InscribirCurso();
+            
 
             Console.ReadKey();
         }
