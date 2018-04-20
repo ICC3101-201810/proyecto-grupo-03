@@ -57,6 +57,14 @@ namespace SimuladorHorario
             Console.Write("Especialidad: ");
             string especialidad = Console.ReadLine();
 
+            List<Evento> listaEventos = new List<Evento>();
+            while (true)
+            {
+                CrearEvento();
+                Console.ReadKey();
+            }
+
+
 
 
         }   
@@ -133,6 +141,22 @@ namespace SimuladorHorario
                 Console.WriteLine($"NRC:{curso.nrc} Nombre:{curso.nombre}");
             }
             return;
+        }
+        public static void CrearEvento()
+        {
+            Console.WriteLine("--Crear Evento--");
+
+            Console.Write("Nombre:");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("Usando>HH:MM");
+            Console.Write("Hora Inicio:");
+            string horaInicio = Console.ReadLine();
+            Console.WriteLine(horaInicio);
+
+
+            return;
+            //Evento evento = new Evento()
         }
 
     }

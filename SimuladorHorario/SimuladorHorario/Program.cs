@@ -51,12 +51,12 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.BackgroundColor = ConsoleColor.Black;
         }
-        public static void Log(string userInput, string operation)
+        public static void Log(string userInput, string accion)
         {
-            StreamWriter logFile = new StreamWriter("Log.txt", true);
+            StreamWriter archivoLog = new StreamWriter("Log.txt", true);
             DateTime dateTime = DateTime.Now;
-            logFile.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {operation}\r\nUserInput: {userInput}\r\n");
-            logFile.Close();
+            archivoLog.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
+            archivoLog.Close();
 
             return;
         }
@@ -68,7 +68,7 @@ namespace SimuladorHorario
 
             Aplicacion.CargarCursos();
             Aplicacion.CargarUsuarios();
-            Aplicacion.print();
+            //Aplicacion.print();
 
             /*
             Console.WriteLine("super Usuario?\n(1) Si\n(2) No");
