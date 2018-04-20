@@ -56,10 +56,11 @@ namespace SimuladorHorario
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine("Que desea hacer: ");
-                Console.Write("1. Iniciar sesion\n" +
+                Console.WriteLine("1. Iniciar sesion\n" +
                               "2. Registrarse\n" +
-                              "3. Salir del Programa\n");
-                int opcion = ChequearOpcion(1, 3); //Ejemplo de uso de Chequear opcion
+                              "3. Salir del Programa\n" +
+                              "4. Cerrar sesion");
+                int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
 
                 if (opcion == 1)
                 {
@@ -70,7 +71,8 @@ namespace SimuladorHorario
 
                 if (opcion == 2) Aplicacion.Registrarse();
 
-                if (opcion == 3) return;
+                if (opcion == 4)return ;
+                goto InicioMenuPrincipal;
 
                 
                 

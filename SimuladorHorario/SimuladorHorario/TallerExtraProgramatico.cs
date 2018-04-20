@@ -9,7 +9,6 @@ namespace SimuladorHorario
     class TallerExtraProgramatico : Curso
     {
         List<Evento> eventosExtraP;
-        public TipoCurso tipo { get; private set; } 
 
         public TallerExtraProgramatico(List<Evento> eventosExtraP,
             string nombre, string profesor, List<Evento> horario, TipoCurso tipo):

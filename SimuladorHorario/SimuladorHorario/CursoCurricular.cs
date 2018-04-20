@@ -11,7 +11,8 @@ namespace SimuladorHorario
         public string nrc { get; private set; }
         int creditos;
         List<CursoCurricular> cursosPreRequisito;
-        Especialidad carrera;
+        Especialidad especialidad;
+        Concentracion concentracion;
         List<Evento> eventosCurso;
         
 
@@ -23,7 +24,7 @@ namespace SimuladorHorario
             this.nrc = nrc;
             this.creditos = creditos;
             this.cursosPreRequisito = cursosPreRequisito;
-            this.carrera = carrera;
+            this.especialidad = carrera;
             this.eventosCurso = eventosCurso;
             tipo = TipoCurso.Curricular;
         }

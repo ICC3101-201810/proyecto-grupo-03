@@ -24,7 +24,7 @@ namespace SimuladorHorario
             this.especialidad = especialidad;
             this.concentracion = concentracion;
             listaInscripcion = new List<Curso>();
-            this.cursosInscritos = new List<Curso>();
+            cursosInscritos = new List<Curso>();
             
         }
         
