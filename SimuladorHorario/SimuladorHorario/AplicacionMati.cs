@@ -139,7 +139,7 @@ namespace SimuladorHorario
 
                 if (nrc != previoNRC)
                 {
-                    CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),Especialidad.ICI, listaEventos, nombre, profesor, listaEventos);
+                    //CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),Especialidad.ICI, listaEventos, nombre, profesor, listaEventos);
                     listaCursoCurricular.Add(cursoCurricular);
                 }
                 else { continue; }
