@@ -11,25 +11,42 @@ namespace SimuladorHorario
     {
              
         static List<CursoCurricular> listaCursoCurricular = new List<CursoCurricular>();
-
+        static List<Estudiante> ListaEstudiante = new List<Estudiante>();
+        static List<Administrador> listaAdministrador = new List<Administrador>();
 
         public static void app()
         {
-            AbrirInformacionCursos();
-            AbrirInformacionUsuario();
+            GenerarCursos();
+            GenerarUsuarios();
             while (true)
             {
                 Console.WriteLine("--Aplicacion Mati--");
+
+                foreach(Estudiante estudiante in ListaEstudiante)
+                {
+                    Console.WriteLine($"{estudiante.nombre} {estudiante.contraseña}");
+
+                    foreach(CursoCurricular curso in estudiante.avanceMalla)
+                    {
+                        Console.WriteLine($"{curso.nrc} {curso.nombre}");
+                    }
+                    Console.WriteLine();
+                }
+
+
+
+
+
+
+
                 Console.ReadKey();
             }
         }
 
-
-        public static void AbrirInformacionUsuario(string fileName = "dataUsuarios.csv")
+  
+        public static void GenerarUsuarios(string fileName = "dataUsuarios.csv")
         {
 
-
-            List<Usuario> listaUsuarios = new List<Usuario>();
 
 
 
@@ -39,13 +56,11 @@ namespace SimuladorHorario
 
             while ((line = file.ReadLine()) != null)
             {
-                //Console.WriteLine(line);
 
 
                 string[] LI = line.Split(';');
 
 
-                //Console.WriteLine(line.Split(';')[0]);
                 string nombre = LI[0];
                 string contraseña = LI[1];
 
@@ -61,9 +76,6 @@ namespace SimuladorHorario
                     avanceMalla = LI[7];
 
 
-                    Console.WriteLine(nombre + especialidad + añoIngreso + concentracion + avanceMalla);
-
-
                     List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
 
                     foreach(string nrc in LI[7].Split(','))
@@ -71,21 +83,12 @@ namespace SimuladorHorario
 
                         CursoCurricular curso = listaCursoCurricular.Find(x => x.nrc == nrc);
                         listaAvanceMalla.Add(curso);
-                        Console.WriteLine(curso.nrc+" "+curso.nombre);
                     }
 
 
-                    //Estudiante estudiante= new Estudiante(listaAvanceMalla)
 
-
-
-                    Console.WriteLine();
-
-
-
-
-                    //Estudiante estudiante = new Estudiante(listaCursoCurricular)
-
+                    Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICC, Concentracion.Hidraulica, nombre, contraseña, false);
+                    ListaEstudiante.Add(estudiante);
 
 
                 }
@@ -95,12 +98,15 @@ namespace SimuladorHorario
 
             }
 
+
+
+
             file.Close();
 
 
         }
 
-        public static void AbrirInformacionCursos(string fileName = "dataCursosDisponibles.csv")
+        public static void GenerarCursos(string fileName = "dataCursosDisponibles.csv")
         {
 
 
@@ -139,8 +145,8 @@ namespace SimuladorHorario
 
                 if (nrc != previoNRC)
                 {
-                    //CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),Especialidad.ICI, listaEventos, nombre, profesor, listaEventos);
-                    //listaCursoCurricular.Add(cursoCurricular);
+                    CursoCurricular curso = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), Especialidad.ICA, listaEventos, nombre, profesor, listaEventos, TipoCurso.Curricular);
+                    listaCursoCurricular.Add(curso);
                 }
                 else { continue; }
 
