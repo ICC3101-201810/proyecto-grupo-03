@@ -38,6 +38,18 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.BackgroundColor = ConsoleColor.Black;
         }
+
+        public static void Log(string userInput, string operation)
+        {
+            StreamWriter logFile = new StreamWriter("Log.txt", true);
+            DateTime dateTime = DateTime.Now;
+            logFile.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.currentUser.nombre}\r\nOperation: {operation}\r\nUserInput: {userInput}\r\n");
+            logFile.Close();
+
+            return;
+        }
+
+
         static void Main(string[] args)
         {
 

@@ -21,8 +21,8 @@ namespace SimuladorHorario
                           "5. Cerrar Sesion");
 
             int opcion = Program.ChequearOpcion(1, 5);
-            if (opcion == 1) CrearCurso();
-            if (opcion == 2) LeerCurso();
+            if (opcion == 1) CrearCurso(); Program.Log(opcion.ToString(), "Crear Curso");
+            if (opcion == 2) LeerCurso();Program.Log(opcion.ToString(), "Leer Curso");
             if (opcion == 3) ActualizarCurso();
             if (opcion == 4) EliminarCurso();
             if (opcion == 5) return;

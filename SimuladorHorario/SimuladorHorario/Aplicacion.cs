@@ -12,11 +12,12 @@ namespace SimuladorHorario
     public enum Especialidad {ING, IOC, ICE, ICC, ICI, ICA }
     public enum TipoCurso { Curricular, Extra}
     public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
+    public enum FormatoImpresion { Negativo,Positivo,Normal}
     static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
-
+        public static Usuario currentUser;
 
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
@@ -35,6 +36,7 @@ namespace SimuladorHorario
 
                 if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                 {
+                    currentUser = usuario;
                     if (usuario.esAdmin)
                     {
                         Gestor.MenuGestor();
