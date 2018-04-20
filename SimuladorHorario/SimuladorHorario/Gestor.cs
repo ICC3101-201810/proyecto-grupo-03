@@ -63,7 +63,7 @@ namespace SimuladorHorario
         public static void LeerCurso()
         {
             LeerCurso:
-            Console.WriteLine("Seleccione El NRC del curso que desea leer");
+            Console.WriteLine("Seleccione El NRC del curso que desea leer:");
             ImprimirCursos();
 
 
@@ -102,7 +102,7 @@ namespace SimuladorHorario
         {
 
             Program.ImprimirNegativo("Eliminar Curso");
-            Console.WriteLine("Seleccione el NRC del curso a eliminar");
+            Console.WriteLine("Seleccione el NRC del curso a eliminar:");
             
             ImprimirCursos();
 
