@@ -14,11 +14,18 @@ namespace SimuladorHorario
     public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
     static class Aplicacion
     {
-        static List<Usuario> usuarios;
-        static List<Curso> cursos;
- 
+        static List<Usuario> usuarios = new List<Usuario>();
+        static List<CursoCurricular> cursos = new List<CursoCurricular>();
+
+
+        public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
+        public static List<Usuario> GetUsuarios() { return usuarios; }
+
         public static void IniciarSesion()
         {
+            CargarCursos();
+            CargarUsuarios();
+
             InicioSesion:
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
@@ -26,27 +33,31 @@ namespace SimuladorHorario
             string contraseña = Console.ReadLine();
             foreach (Usuario usuario in usuarios)
             {
-                if (usuario.nombre==nombreUsuario && usuario.contraseña == contraseña)
+                Console.WriteLine(usuario.nombre + " " + usuario.contraseña);
+
+                if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                 {
                     if (usuario.esAdmin)
                     {
                         Gestor.MenuGestor();
+                        return;
                     }
-                    else PlataformaEstudiante.MenuPlataformaEstudiante();
-                }
+                    else { PlataformaEstudiante.MenuPlataformaEstudiante(); return; }
 
-                Console.WriteLine("Usuario o contraseña invalidos\n " +
-                    "Que desea hacer: \n " +
-                    "1. Volver a iniciar sesion" +                                                                               
-                    "2. Registrarse" +                                                                   
-                    "3. Salir al menu principal");
-                int opcion =Program.ChequearOpcion(1,3);
-                if (opcion == 1) goto InicioSesion;
-                if (opcion == 2) Registrarse();
-                if (opcion == 3) return;
+                }
+            }
+            Console.WriteLine("Usuario o contraseña invalidos\n" +
+                "Que desea hacer: \n" +
+                "1. Volver a iniciar sesion\n" +                                                                               
+                "2. Registrarse\n" +                                                                   
+                "3. Salir al menu principal\n");
+            int opcion =Program.ChequearOpcion(1,3);
+            if (opcion == 1) goto InicioSesion;
+            if (opcion == 2) Registrarse();
+            if (opcion == 3) return;
             
 
-            }
+            
             return;
         }
 
@@ -107,24 +118,6 @@ namespace SimuladorHorario
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
             return;
         }
-
-        public static void AbrirInformacion(string fileName = "data.csv")
-        {
-
-
-            List<Usuario> listaUsuarios = new List<Usuario>();
-
-            StreamReader file = new StreamReader(fileName);
-
-            string line;
-
-            while ((line = file.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-
-            }
-            Console.ReadKey();
-        }
         public static List<string> NombresUsuarios()
         {
             List<string> retorno = new List<string>();
@@ -144,6 +137,94 @@ namespace SimuladorHorario
             }
             return retorno;
         }
+
+
+        public static void CargarCursos(string fileName = "dataCursosDisponibles.csv")
+        {
+            StreamReader file = new StreamReader(fileName);
+            string line;
+            string previoNRC = string.Empty;
+            while ((line = file.ReadLine()) != null)
+            {
+                string[] LI = line.Split(';');
+
+                string nombre, profesor, nrc, carrera;
+                nombre = LI[4];
+                profesor = LI[15];
+                nrc = LI[0];
+                carrera = LI[1];
+                int creditos = Convert.ToInt32(LI[5]);
+
+                List<Evento> listaEventos = new List<Evento>();
+                Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DateTime.Now, "B-23", 0);
+                listaEventos.Add(evento);
+
+                if (nrc != previoNRC)
+                {
+                    CursoCurricular curso = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), Especialidad.ICA, listaEventos, nombre, profesor, listaEventos, TipoCurso.Curricular);
+                    cursos.Add(curso);
+                    previoNRC = nrc;
+                }
+                else { continue; }
+
+            }
+            file.Close();
+
+
+        }
+
+        public static void CargarUsuarios(string fileName = "dataUsuarios.csv")
+        {
+            StreamReader file = new StreamReader(fileName);
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                string[] LI = line.Split(';');
+                string nombre = LI[0];
+                string contraseña = LI[1];
+                bool admin;
+
+                if (LI[2] == "true")
+                {
+                    admin = true;
+                    Administrador administrador = new Administrador(nombre, contraseña, admin);
+                    usuarios.Add(administrador);
+                }
+                else
+                {
+                    string especialidad, añoIngreso, concentracion, avanceMalla;
+                    especialidad = LI[4];
+                    añoIngreso = LI[5];
+                    concentracion = LI[6];
+                    avanceMalla = LI[7];
+                    List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
+
+                    foreach (string nrc in LI[7].Split(','))
+                    {
+                        CursoCurricular curso = cursos.Find(x => x.nrc == nrc);
+                        listaAvanceMalla.Add(curso);
+                    }
+                    Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICC, Concentracion.Hidraulica, nombre, contraseña, false);
+                    usuarios.Add(estudiante);
+                }
+            }
+
+            file.Close();
+
+
+        }
+
+        public static void print()
+        {
+            foreach(Usuario usuario in usuarios)
+            {
+                Console.WriteLine(usuario.nombre+" "+usuario.contraseña);
+            }
+        }
+
+
+
+
 
     }
 }

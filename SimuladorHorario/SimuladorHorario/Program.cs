@@ -38,6 +38,9 @@ namespace SimuladorHorario
         static void Main(string[] args)
         {
 
+            Aplicacion.CargarCursos();
+            Aplicacion.CargarUsuarios();
+            Aplicacion.print();
 
             Console.WriteLine("super Usuario?\n(1) Si\n(2) No");
             string op = Console.ReadLine();
@@ -52,6 +55,7 @@ namespace SimuladorHorario
             void MenuPrincipal()
             {
                 InicioMenuPrincipal:
+                Console.Clear();
                 Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -68,6 +72,7 @@ namespace SimuladorHorario
                     goto InicioMenuPrincipal;
                 }
 
+                if (opcion == 3) Environment.Exit(0);
 
                 if (opcion == 2) Aplicacion.Registrarse();
 

@@ -9,7 +9,7 @@ namespace SimuladorHorario
     class CursoCurricular:Curso
     {
         public string nrc { get; private set; }
-        int creditos;
+        public int creditos { get; private set; }
         List<CursoCurricular> cursosPreRequisito;
         Especialidad especialidad;
         Concentracion concentracion;
