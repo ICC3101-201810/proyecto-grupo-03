@@ -32,7 +32,7 @@ namespace SimuladorHorario
                     }
                     Console.WriteLine();
                 }
-
+                //
 
 
 
