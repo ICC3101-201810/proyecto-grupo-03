@@ -12,10 +12,11 @@ namespace SimuladorHorario
         public string contraseña { get; private set; }
         public bool esAdmin { get; private set; }
 
-        public Usuario(string nombre, string contraseña)
+        public Usuario(string nombre, string contraseña, bool esAdmin)
         {
             this.nombre = nombre;
             this.contraseña = contraseña;
+            this.esAdmin = esAdmin;
         }
 
     }

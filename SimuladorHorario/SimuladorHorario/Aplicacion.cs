@@ -25,8 +25,19 @@ namespace SimuladorHorario
             {
                 if (usuario.nombre==nombreUsuario && usuario.contraseña == contraseña)
                 {
-                    
+                    if (usuario.esAdmin)
+                    {
+                        Gestor.MenuGestor();
+                    }
+                    else PlataformaEstudiante.MenuPlataformaEstudiante();
                 }
+
+                Console.WriteLine("Usuario o contraseña invalidos\n " +
+                    "Que desea hacer: \n " +
+                    "1. Volver a iniciar sesion" +                                                                               
+                    "2. Registrarse" +                                                                   
+                    "3. Salir al menu principal");
+                
             }
             return false;
         }
@@ -51,10 +62,6 @@ namespace SimuladorHorario
                 Console.WriteLine(line);
 
             }
-
-            
-
-
             Console.ReadKey();
         }
 

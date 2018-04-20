@@ -17,7 +17,7 @@ namespace SimuladorHorario
             string carrera, string especialidad, string añoIngreso,
             string concentracion, List<Curso> listaInscripcion,
             List<Curso> cursosInscritos,
-            string nombreUsuario, string contraseña):base(nombreUsuario, contraseña)
+            string nombreUsuario, string contraseña, bool esAdmin):base(nombreUsuario, contraseña, esAdmin)
         {
             this.avanceMalla = avanceMalla;
             this.carrera = carrera;
@@ -26,6 +26,7 @@ namespace SimuladorHorario
             this.concentracion = concentracion;
             this.listaInscripcion = listaInscripcion;
             this.cursosInscritos = cursosInscritos;
+            esAdmin = false;
         }
         
     }
