@@ -75,7 +75,7 @@ namespace SimuladorHorario
             void MenuPrincipal()
             {
                 InicioMenuPrincipal:
-                Console.BackgroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine("Que desea hacer: ");

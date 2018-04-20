@@ -10,7 +10,7 @@ namespace SimuladorHorario
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
-            Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ "a la plataforma de estudiante");
+            Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ " a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
                              "1. Inscribir Curso\n");
             int opcion = Program.ChequearOpcion(1, 3);
