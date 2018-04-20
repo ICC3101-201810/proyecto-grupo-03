@@ -12,7 +12,7 @@ namespace SimuladorHorario
         {
             Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ " a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
-                             "1. Inscribir Curso\n");
+                             "1. Inscribir Curso");
             int opcion = Program.ChequearOpcion(1, 3);
             if (opcion == 1) InscribirCurso();
 
@@ -29,6 +29,11 @@ namespace SimuladorHorario
         }
         static void InscribirCurso()
         {
+            if (Aplicacion.GetCursoCurricular().Count == 0)
+            {
+                Console.WriteLine("No hay cursos disponibles para inscribir");
+                goto SinCursosDisponiblesParaInscribir;
+            }
 
             Console.WriteLine("Seleccione un curso para inscribir");
             foreach(CursoCurricular curs in Aplicacion.GetCursoCurricular())
@@ -46,6 +51,8 @@ namespace SimuladorHorario
             }
 
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
+
+            SinCursosDisponiblesParaInscribir:
 
             Console.WriteLine("Hasta aqui llegamos");
             Console.ReadKey();
