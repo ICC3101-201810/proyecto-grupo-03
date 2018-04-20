@@ -9,28 +9,25 @@ namespace SimuladorHorario
 {
     static class Program
     {
-        /*public static bool ChequearTipoOpcion(string op) // hecho por Vicente
-        {
-            int cero = 0;
-            if (Char.IsNumber(op,cero))
-                {
-                Console.WriteLine("Es int!!");
-                return true;
-                }
-            else { return false; }
-        }*/
+
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
-        {   
-            int opcion = Convert.ToInt32(Console.ReadLine());
+        {
+            int NumerodeComparacion = 0;
+            EmpiezaDeNuevo:
+            string strOpcion = Console.ReadLine();
+            while (!Char.IsNumber(strOpcion, NumerodeComparacion))
+            {
+                Console.Write("Ingrese una opcion valida: ");
+                strOpcion = Console.ReadLine();
+            }
+
+            int opcion = Convert.ToInt32(strOpcion);
             if (opcion > fin || opcion < inicio)
             {
-                do
-                {
-                    Console.Write("Ingrese una opcion valida:");
-                    opcion = Convert.ToInt32(Console.ReadLine()); 
-                } while ((opcion > fin || opcion < inicio));
+                Console.Write("Ingrese una opcion valida: ");
+                goto EmpiezaDeNuevo;
             }
-            return opcion;
+            else return opcion;
         }
         public static void ImprimirPositivo(string str) //Imprime lo que recibe en fondo verde
 
