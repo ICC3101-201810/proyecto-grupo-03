@@ -36,16 +36,18 @@ namespace SimuladorHorario
             {
                 if (usuario is Estudiante)
                 {
+                    Estudiante estudiante = (Estudiante)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
-                        PlataformaEstudiante.MenuPlataformaEstudiante(usuario); return;
+                        PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
                     }
                 }
                 if (usuario is Administrador)
                 {
+                    Administrador administrador = (Administrador)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
-                        Gestor.MenuGestor(usuario); return;
+                        Gestor.MenuGestor(administrador); return;
                     }
                 }
             }
