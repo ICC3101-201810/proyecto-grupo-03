@@ -17,7 +17,7 @@ namespace SimuladorHorario
             string op = Console.ReadLine();
             if (op == "1")
             {
-                Aplicacion.app();
+                AplicacionMati.app();
             }
 
 

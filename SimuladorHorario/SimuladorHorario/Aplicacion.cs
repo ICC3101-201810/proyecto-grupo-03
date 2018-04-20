@@ -38,6 +38,10 @@ namespace SimuladorHorario
 
         static void AbrirInformacion(string fileName = "data.csv")
         {
+
+
+            List<Usuario> listaUsuarios = new List<Usuario>();
+
             StreamReader file = new StreamReader(fileName);
 
             string line;
@@ -45,7 +49,6 @@ namespace SimuladorHorario
             while ((line = file.ReadLine()) != null)
             {
                 Console.WriteLine(line);
-                
 
             }
 
