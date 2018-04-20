@@ -179,30 +179,90 @@ namespace SimuladorHorario
                 StreamReader file = new StreamReader(fileName);
                 string line;
                 string previoNRC = string.Empty;
+                List<Evento> listaEventos = new List<Evento>();
+                string nombre, profesor, nrc, carrera;
+                int creditos;
+
+                List<List<string>> conjuntoCurso = new List<List<string>>();
+                conjuntoCurso.Add(new List<string>() { file.ReadLine() });
                 while ((line = file.ReadLine()) != null)
                 {
-                    string[] LI = line.Split(';');
-
-                    string nombre, profesor, nrc, carrera;
-                    nombre = LI[4];
-                    profesor = LI[15];
-                    nrc = LI[0];
-                    carrera = LI[1];
-                    int creditos = Convert.ToInt32(LI[5]);
-
-                    List<Evento> listaEventos = new List<Evento>();
-                    Evento evento = new Evento(nrc, DateTime.Now, DateTime.Now, DayOfWeek.Monday, "B-23", 0);
-                    listaEventos.Add(evento);
-
-                    if (nrc != previoNRC)
+                    string[] LA = line.Split(';');
+                    nrc = LA[0];
+                    if (previoNRC == nrc)
                     {
-                        CursoCurricular curso = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), Especialidad.ICA, listaEventos, nombre, profesor, listaEventos, TipoCurso.Curricular);
-                        cursos.Add(curso);
-                        previoNRC = nrc;
+                        conjuntoCurso[conjuntoCurso.Count()-1].Add(line);
                     }
-                    else { continue; }
+                    else
+                    {
+                        conjuntoCurso.Add(new List<string>());
+                    }
+
+                    previoNRC = nrc;
+                }
+
+
+
+                foreach(List<string> curso in conjuntoCurso)
+                {
+                    List<Evento> listaEvento = new List<Evento>();
+                    foreach(string linea in curso)
+                    {
+                        string[] dataLinea = linea.Split(';');
+                        List<string> listaHorario = new List<string>();
+                        for(int i = 6; i < 12; i++)
+                        {
+                            if(dataLinea[i] != "")
+                            {
+                                string dia = dataLinea[12].Replace('-',':');
+                                if(dataLinea[12] == "") { dia = "A"; }
+                                listaHorario.Add((dataLinea[i]+":"+dia).Replace(" -",":"));
+                            }
+                        }
+                        for (int i = 0; i < listaHorario.Count; i++)
+                        {
+                            Console.WriteLine(listaHorario[i]);
+                            string horario = listaHorario[i];
+                            var papa = (horario.ToString().Split(':'));
+
+                            Console.WriteLine(papa[0]);
+
+                        }
+
+                        if (linea == curso[curso.Count()-1])
+                        {
+                            string[] linea2 = linea.Split(';');
+                            nombre = linea2[4];
+                            profesor = linea2[15];
+                            nrc = linea2[0];
+                            carrera = linea2[1];
+                            creditos = Convert.ToInt32(linea2[5]);
+                            CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),
+                                Especialidad.ICA, listaEventos, nombre, profesor,listaEventos, TipoCurso.Curricular);
+                            cursos.Add(cursoCurricular);
+                        }
+
+
+
+                    }
 
                 }
+
+                List<string> formatoHorario(string stringHorario)
+                {
+
+                    List<string> returnString = new List<string>();
+                    for(int i = 0; i < stringHorario.Split(',').Count(); i++)
+                    {
+                        returnString.Add(stringHorario.Split(',')[i]);
+                        //Console.WriteLine(stringHorario.Split(',')[i]);
+                    }
+                    Console.WriteLine();
+                    return returnString;
+                }
+                
+
+
                 file.Close();
             }
             catch (FileNotFoundException e)
