@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class TallerExtraProgramatico:Curso
+    class TallerExtraProgramatico : Curso
     {
         List<Evento> eventosExtraP;
+        public TipoCurso tipo { get; private set; } 
 
         public TallerExtraProgramatico(List<Evento> eventosExtraP,
-            string nombre, string profesor, List<Evento> horario):
-            base(nombre, profesor, horario)
+            string nombre, string profesor, List<Evento> horario, TipoCurso tipo):
+            base(nombre, profesor, horario, tipo)
         {
             this.eventosExtraP = eventosExtraP;
+            tipo = TipoCurso.Extra;
 
         }
     }

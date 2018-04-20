@@ -10,7 +10,6 @@ namespace SimuladorHorario
     {
         public Administrador(string nombreUsuario, string contraseña, bool esAdmin) : base(nombreUsuario, contraseña, esAdmin)
         {
-            esAdmin = true;
         }
     }
 }

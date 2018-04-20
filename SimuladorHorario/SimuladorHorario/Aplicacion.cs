@@ -10,6 +10,8 @@ namespace SimuladorHorario
 
     public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS }
     public enum Especialidad {ING, IOC, ICE, ICC, ICI, ICA }
+    public enum TipoCurso { Curricular, Extra}
+    public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
     static class Aplicacion
     {
         static List<Usuario> usuarios;
@@ -72,8 +74,9 @@ namespace SimuladorHorario
             }
             int opcion2 = Program.ChequearOpcion(1, 7);
             Especialidad especialidad = (Especialidad)opcion2;
+            
             Console.WriteLine("Ingrese los cursos de su avance de malla");
-            List<string> nombresCursos = NombresCursos();
+            List<string> nombresCursos = NombresCursosCurriculares();
             bool flag = true;
             do
             {
@@ -83,11 +86,19 @@ namespace SimuladorHorario
                 }
                 Console.WriteLine("Ingrese su curso:");
                 opcion2 = Program.ChequearOpcion(1, nombresCursos.Count());
+                nombresCursos.Remove(nombresCursos[opcion2 - 1]);
                 Program.ImprimirPositivo("Curso agregado a su avance de malla");
                 Console.WriteLine("¿Desea agregar otro curso?\n1. Si\n2. No");
                 opcion2 = Program.ChequearOpcion(1, 2);
                 if (opcion2 == 2) flag = false;
             } while (flag);
+            Console.WriteLine("Ingrese su concentracion:");
+            for (int i= 0; i <= 5; i++)
+            {
+                Console.Write(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
+            }
+            opcion2 = Program.ChequearOpcion(1, 5);
+            Concentracion concentracion = (Concentracion)opcion2;
             return false;
         }
 
@@ -118,12 +129,12 @@ namespace SimuladorHorario
             return retorno;
         }
 
-        public static List<string> NombresCursos()
+        public static List<string> NombresCursosCurriculares()
         {
             List<string> retorno = new List<string>();
             foreach (Curso c in cursos)
             {
-                retorno.Add(c.nombre);
+                if (c.tipo==TipoCurso.Curricular) retorno.Add(c.nombre);
             }
             return retorno;
         }

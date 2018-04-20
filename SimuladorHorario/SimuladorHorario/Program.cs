@@ -22,11 +22,18 @@ namespace SimuladorHorario
             }
             return opcion;
         }
-        public static void ImprimirPositivo(string str)
+        public static void ImprimirPositivo(string str) //Imprime lo que recibe en fondo verde
+
         {
             Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine(str);
             Console.BackgroundColor = ConsoleColor.Black;
+        }
+        public static void ImprimirNegativo(string str)//Imprime lo que recibe en fondo rojo
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine(str);
+            Console.BackgroundColor = ConsoleColor.Black
         }
         static void Main(string[] args)
         {
