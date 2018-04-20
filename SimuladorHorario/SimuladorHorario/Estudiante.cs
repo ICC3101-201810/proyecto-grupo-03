@@ -16,15 +16,15 @@ namespace SimuladorHorario
 
         public Estudiante(List<CursoCurricular> avanceMalla,
             Especialidad especialidad,
-            Concentracion concentracion, List<Curso> cursosInscritos,
-            string nombreUsuario, string contraseña, bool esAdmin)
+            Concentracion concentracion,string nombreUsuario, 
+            string contraseña, bool esAdmin)
             :base(nombreUsuario, contraseña, esAdmin)
         {
             this.avanceMalla = avanceMalla;
             this.especialidad = especialidad;
             this.concentracion = concentracion;
             listaInscripcion = new List<Curso>();
-            this.cursosInscritos = cursosInscritos;
+            this.cursosInscritos = new List<Curso>();
             
         }
         

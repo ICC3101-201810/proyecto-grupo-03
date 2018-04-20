@@ -74,7 +74,7 @@ namespace SimuladorHorario
             }
             int opcion2 = Program.ChequearOpcion(1, 7);
             Especialidad especialidad = (Especialidad)opcion2;
-            
+            List < CursoCurricular >avanceMalla = new List<CursoCurricular>();
             Console.WriteLine("Ingrese los cursos de su avance de malla");
             List<string> nombresCursos = NombresCursosCurriculares();
             bool flag = true;
@@ -99,6 +99,7 @@ namespace SimuladorHorario
             }
             opcion2 = Program.ChequearOpcion(1, 5);
             Concentracion concentracion = (Concentracion)opcion2;
+            usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
             return false;
         }
 

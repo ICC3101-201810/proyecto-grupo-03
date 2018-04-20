@@ -33,7 +33,7 @@ namespace SimuladorHorario
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine(str);
-            Console.BackgroundColor = ConsoleColor.Black
+            Console.BackgroundColor = ConsoleColor.Black;
         }
         static void Main(string[] args)
         {
