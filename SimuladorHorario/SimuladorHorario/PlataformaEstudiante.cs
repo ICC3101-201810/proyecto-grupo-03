@@ -107,7 +107,16 @@ namespace SimuladorHorario
             Program.ImprimirPositivo("Curso eliminado");
             return;
         }
-        static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
+        static int ContarCreditos(Estudiante estudiante)
+        {
+            int suma = 0;
+            foreach(CursoCurricular c in estudiante.listaInscripcion)
+            {
+                suma += c.creditos;
+
+            }
+            return suma;
+        }
         
     }
 }
