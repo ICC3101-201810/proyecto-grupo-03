@@ -286,7 +286,7 @@ namespace SimuladorHorario
                     string nombre = LI[0];
                     string contraseña = LI[1];
                     bool admin;
-
+                    //
                     if (LI[2] == "true")
                     {
                         admin = true;
