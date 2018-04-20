@@ -16,12 +16,12 @@ namespace SimuladorHorario
                              "1. Inscribir Curso\n" +
                              "2. Eliminar curso\n" +
                              "3. Cerrar Sesion");
-            int opcion = Program.ChequearOpcion(1, 2);
+            int opcion = Program.ChequearOpcion(1, 3);
             if (opcion == 1) { InscribirCurso(); goto InicioPlataforma; }
 
             if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
 
-            if (opcion == 3) { return; }
+            if (opcion == 3) { Environment.Exit(0); }
         }
         public static bool Guardar()
         {
