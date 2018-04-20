@@ -50,7 +50,7 @@ namespace SimuladorHorario
             return;
         }
 
-        public static bool Registrarse()
+        public static void Registrarse()
         {
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
@@ -72,21 +72,26 @@ namespace SimuladorHorario
             {
                 Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));
             }
-            int opcion2 = Program.ChequearOpcion(1, 7);
-            Especialidad especialidad = (Especialidad)opcion2;
-            List < CursoCurricular >avanceMalla = new List<CursoCurricular>();
+            Especialidad especialidad = (Especialidad)Program.ChequearOpcion(1, 7);
+            List <CursoCurricular>avanceMalla = new List<CursoCurricular>();
             Console.WriteLine("Ingrese los cursos de su avance de malla");
-            List<string> nombresCursos = NombresCursosCurriculares();
+            List<CursoCurricular> cursosCurriculares = GetCursosCurriculares();
             bool flag = true;
+            int cont = 0;
             do
             {
-                for (int i = 1; i < nombresCursos.Count; i++)
+                for (int i = 1; i < cursosCurriculares.Count(); i++)
                 {
-                    Console.WriteLine(i + ". " + nombresCursos[i - 1]);
+
+                    if (cursos[i].tipo.Equals(TipoCurso.Curricular))
+                    {
+                        Console.WriteLine(i + ". " + cursosCurriculares[i-1].nombre);
+                        cont++;
+                    }
                 }
                 Console.WriteLine("Ingrese su curso:");
-                opcion2 = Program.ChequearOpcion(1, nombresCursos.Count());
-                nombresCursos.Remove(nombresCursos[opcion2 - 1]);
+                int opcion2 = Program.ChequearOpcion(1, cursos.Count()-cont);
+                avanceMalla.Add(cursosCurriculares[opcion2-1]);
                 Program.ImprimirPositivo("Curso agregado a su avance de malla");
                 Console.WriteLine("¿Desea agregar otro curso?\n1. Si\n2. No");
                 opcion2 = Program.ChequearOpcion(1, 2);
@@ -97,10 +102,10 @@ namespace SimuladorHorario
             {
                 Console.Write(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
             }
-            opcion2 = Program.ChequearOpcion(1, 5);
-            Concentracion concentracion = (Concentracion)opcion2;
+
+            Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 5);
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
-            return false;
+            return;
         }
 
         public static void AbrirInformacion(string fileName = "data.csv")
@@ -130,12 +135,12 @@ namespace SimuladorHorario
             return retorno;
         }
 
-        public static List<string> NombresCursosCurriculares()
+        public static List<CursoCurricular> GetCursosCurriculares()
         {
-            List<string> retorno = new List<string>();
-            foreach (Curso c in cursos)
+            List<CursoCurricular> retorno = new List<CursoCurricular>();
+            foreach(CursoCurricular c in cursos)
             {
-                if (c.tipo==TipoCurso.Curricular) retorno.Add(c.nombre);
+                retorno.Add(c);
             }
             return retorno;
         }
