@@ -9,7 +9,7 @@ namespace SimuladorHorario
     abstract class Curso
     {
         public string nombre { get; private set; }
-        string profesor;
+        public string profesor { get; private set; }
         List<Evento> horarios;
         public TipoCurso tipo { get; private set; }
 
