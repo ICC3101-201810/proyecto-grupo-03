@@ -122,7 +122,7 @@ namespace SimuladorHorario
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
 
             Aplicacion.cursos.Remove(curso);
-            Program.ImprimirPositivo($"Curso: {curso.nrc} Removido exitosamente!");
+            Program.ImprimirPositivo($"Curso {curso.nombre} removido exitosamente!");
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
 
