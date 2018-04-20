@@ -36,7 +36,7 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        public static void ImprimirNegativo(string str)//Imprime lo que recibe en fondo rojo
+        public static void ImprimirNegativo(string str) //Imprime lo que recibe en fondo rojo
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine(str);

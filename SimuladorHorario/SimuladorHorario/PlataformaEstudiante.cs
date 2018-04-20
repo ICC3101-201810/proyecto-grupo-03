@@ -89,7 +89,7 @@ namespace SimuladorHorario
                 
                 Console.WriteLine("¿Quiere agregar otro curso?\n" +
                     "1. Si\n" +
-                    "2. No");
+                    "2. No\n:> ");
                 int opcion = Program.ChequearOpcion(1, 2);
                 if (opcion == 2)
                 {
