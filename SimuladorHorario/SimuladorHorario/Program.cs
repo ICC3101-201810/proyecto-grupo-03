@@ -7,8 +7,21 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    class Program
+    static class Program
     {
+        public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
+        {
+            int opcion = Convert.ToInt32(Console.ReadLine());
+            if (opcion > fin || opcion < inicio)
+            {
+                do
+                {
+                    Console.Write("Ingrese una opcion valida:");
+                    opcion = Convert.ToInt32(Console.ReadLine());
+                } while (opcion > 3 || opcion < 1);
+            }
+            return opcion;
+        }
         static void Main(string[] args)
         {
 
@@ -23,19 +36,6 @@ namespace SimuladorHorario
 
 
             Console.ForegroundColor = ConsoleColor.White;
-            int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
-            {
-                int opcion = Convert.ToInt32(Console.ReadLine());
-                if (opcion > fin || opcion < inicio)
-                {
-                    do
-                    {
-                        Console.Write("Ingrese una opcion valida:");
-                        opcion = Convert.ToInt32(Console.ReadLine());
-                    } while (opcion > 3 || opcion < 1);
-                }
-                return opcion;
-            }
             void MenuPrincipal()
             {
                 InicioMenuPrincipal:

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+
+    public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS }
+    public enum Especialidad {ING, IOC, ICE, ICC, ICI, ICA }
     static class Aplicacion
     {
         static List<Usuario> usuarios;
         static List<Curso> cursos;
-        public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS}
-
-       
-
+ 
         public static void IniciarSesion()
         {
             InicioSesion:
@@ -38,17 +38,8 @@ namespace SimuladorHorario
                     "1. Volver a iniciar sesion" +                                                                               
                     "2. Registrarse" +                                                                   
                     "3. Salir al menu principal");
-                int opcion = Convert.ToInt32(Console.ReadLine());
-                #region
-                if (opcion > 3 || opcion < 1)
-                {
-                    do
-                    {
-                        Console.Write("Ingrese una opcion valida:");
-                        opcion = Convert.ToInt32(Console.ReadLine());
-                    } while (opcion > 3 || opcion < 1);
-                }
-                #endregion
+                int opcion =Program.ChequearOpcion(1,3);
+               
                 if (opcion == 1) goto InicioSesion;
                 if (opcion == 2) Registrarse();
                 if (opcion == 3) return;
@@ -60,6 +51,12 @@ namespace SimuladorHorario
 
         public static bool Registrarse()
         {
+            Console.Write("Ingrese su nombre: ");
+            string nombreUsuario = Console.ReadLine();
+            Console.Write("Ingrese su contraseña: ");
+            string contraseña = Console.ReadLine();
+            Console.WriteLine("Ingrese su especialidad");
+
             return false;
         }
 

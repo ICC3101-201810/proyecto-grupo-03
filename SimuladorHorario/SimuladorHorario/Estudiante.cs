@@ -9,12 +9,13 @@ namespace SimuladorHorario
     class Estudiante:Usuario
     {
         List<CursoCurricular> avanceMalla;
-        string carrera, especialidad, añoIngreso, concentracion;
+        string carrera, añoIngreso, concentracion;
+        Especialidad especialidad;
         List<Curso> listaInscripcion;
         List<Curso> cursosInscritos;
 
         public Estudiante(List<CursoCurricular> avanceMalla,
-            string carrera, string especialidad, string añoIngreso,
+            string carrera, Especialidad especialidad, string añoIngreso,
             string concentracion, List<Curso> listaInscripcion,
             List<Curso> cursosInscritos,
             string nombreUsuario, string contraseña, bool esAdmin):base(nombreUsuario, contraseña, esAdmin)
