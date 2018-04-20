@@ -70,6 +70,7 @@ namespace SimuladorHorario
                 do
                 {
                     Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro");
+                    nombreUsuario = Console.ReadLine();
 
                 } while (NombresUsuarios().Contains(nombreUsuario));
             }
@@ -84,8 +85,11 @@ namespace SimuladorHorario
             }
             Especialidad especialidad = (Especialidad)Program.ChequearOpcion(1, 7);
             List <CursoCurricular>avanceMalla = new List<CursoCurricular>();
+            #region
+            /*
             Console.WriteLine("Ingrese los cursos de su avance de malla");
             List<CursoCurricular> cursosCurriculares = GetCursosCurriculares();
+            
             bool flag = true;
             int cont = 0;
             do
@@ -106,7 +110,8 @@ namespace SimuladorHorario
                 Console.WriteLine("¿Desea agregar otro curso?\n1. Si\n2. No");
                 opcion2 = Program.ChequearOpcion(1, 2);
                 if (opcion2 == 2) flag = false;
-            } while (flag);
+            } while (flag); */
+            #endregion
             Console.WriteLine("Ingrese su concentracion:");
             for (int i= 0; i <= 5; i++)
             {

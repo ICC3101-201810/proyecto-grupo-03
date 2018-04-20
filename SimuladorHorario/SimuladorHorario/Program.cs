@@ -10,8 +10,6 @@ namespace SimuladorHorario
     static class Program
     {
 
-
-
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
         {
             int opcion = Convert.ToInt32(Console.ReadLine());
@@ -38,7 +36,12 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.BackgroundColor = ConsoleColor.Black;
         }
-
+        public static void ImpribirBanner(string str)
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine(str);
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
         public static void Log(string userInput, string operation)
         {
             StreamWriter logFile = new StreamWriter("Log.txt", true);
@@ -73,7 +76,7 @@ namespace SimuladorHorario
             {
                 InicioMenuPrincipal:
                 Console.Clear();
-                Console.BackgroundColor = ConsoleColor.Red;
+                Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine("Que desea hacer: ");
