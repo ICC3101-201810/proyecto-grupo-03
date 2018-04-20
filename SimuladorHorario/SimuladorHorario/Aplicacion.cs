@@ -95,7 +95,7 @@ namespace SimuladorHorario
             {
                 do
                 {
-                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro");
+                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro: ");
                     nombreUsuario = Console.ReadLine();
 
                 } while (NombresUsuarios().Contains(nombreUsuario));
@@ -104,7 +104,7 @@ namespace SimuladorHorario
 
             Console.Write("Ingrese su contraseña: ");
             string contraseña = Console.ReadLine();
-            Console.WriteLine("Ingrese su especialidad");
+            Console.WriteLine("Ingrese su especialidad: ");
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));

@@ -17,7 +17,7 @@ namespace SimuladorHorario
                              "2. Eliminar curso\n" +
                              "3. Cerrar Sesion");
             int opcion = Program.ChequearOpcion(1, 3);
-            if (opcion == 1) { InscribirCurso(); goto InicioPlataforma; }
+            if (opcion == 1) { InscribirCurso(estudiante); goto InicioPlataforma; }
 
             if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
 
@@ -50,30 +50,44 @@ namespace SimuladorHorario
             }
             return false;
         }
-        static void InscribirCurso()
+        static void InscribirCurso(Estudiante estudiante)
         {
-            if (Aplicacion.GetCursoCurricular().Count == 0)
+            int quiereAgregar = 1;
+            while (quiereAgregar == 1)
             {
-                Console.WriteLine("No hay cursos disponibles para inscribir");
-                goto SinCursosDisponiblesParaInscribir;
+
+                if (Aplicacion.GetCursoCurricular().Count == 0)
+                {
+                    Console.WriteLine("No hay cursos disponibles para inscribir");
+                    goto SinCursosDisponiblesParaInscribir;
+                }
+
+                Console.WriteLine("Seleccione un curso para inscribir: ");
+                foreach (CursoCurricular curs in Aplicacion.GetCursoCurricular())
+                {
+                    Console.WriteLine("NRC:{0}\nNombre: {1}\nProfesor: {2}\n", curs.nrc, curs.nombre, curs.profesor);
+                }
+
+                List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
+
+                string option = "";
+                while (!listadoNRC.Contains(option))
+                {
+                    Console.Write("NRC: ");
+                    option = Console.ReadLine();
+                }
+
+                CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
+                estudiante.listaInscripcion.Add(curso);
+                Console.WriteLine("¿Quiere agregar otro curso?\n" +
+                    "1. Si\n" +
+                    "2. No");
+                int opcion = Program.ChequearOpcion(1, 2);
+                if (opcion == 2)
+                {
+                    quiereAgregar = 2;
+                }
             }
-
-            Console.WriteLine("Seleccione un curso para inscribir");
-            foreach(CursoCurricular curs in Aplicacion.GetCursoCurricular())
-            {
-                Console.WriteLine("NRC:{0}\nNombre: {1}\nProfesor: {2}\n",curs.nrc,curs.nombre,curs.profesor);
-            }
-
-            List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
-
-            string option="";
-            while (!listadoNRC.Contains(option))
-            {
-                Console.Write("NRC: ");
-                option = Console.ReadLine();
-            }
-
-            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
 
             SinCursosDisponiblesParaInscribir:
 
@@ -85,16 +99,16 @@ namespace SimuladorHorario
         static void EliminarCursoInscrito(Estudiante estudiante)
         {
             Console.Clear();
-            if (estudiante.listaInscripcion.Count == 0)
+            if (estudiante.listaInscripcion.Count() == 0)
             {
                 Program.ImprimirNegativo("No hay cursos para eliminar");
                 Console.WriteLine("Presione una tecla para volver al menu");
                 Console.ReadKey();
                 return;
             }
-            Console.WriteLine("Que curso desea eliminar: ");
+            Console.WriteLine("¿Que curso desea eliminar? ");
 
-            for (int i = 0; i<estudiante.listaInscripcion.Count(); i++)
+            for (int i = 0; i < estudiante.listaInscripcion.Count(); i++)
             {
                 Console.WriteLine(i+1 + ". " + estudiante.listaInscripcion[i].nombre);
             }
