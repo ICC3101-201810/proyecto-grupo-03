@@ -15,8 +15,9 @@ namespace SimuladorHorario
 
        
 
-        public static bool IniciarSesion()
+        public static void IniciarSesion()
         {
+            InicioSesion:
             Console.Write("Ingrese su nombre: ");
             string nombreUsuario = Console.ReadLine();
             Console.Write("Ingrese su contraseña: ");
@@ -37,9 +38,24 @@ namespace SimuladorHorario
                     "1. Volver a iniciar sesion" +                                                                               
                     "2. Registrarse" +                                                                   
                     "3. Salir al menu principal");
-                
+                int opcion = Convert.ToInt32(Console.ReadLine());
+                #region
+                if (opcion > 3 || opcion < 1)
+                {
+                    do
+                    {
+                        Console.Write("Ingrese una opcion valida:");
+                        opcion = Convert.ToInt32(Console.ReadLine());
+                    } while (opcion > 3 || opcion < 1);
+                }
+                #endregion
+                if (opcion == 1) goto InicioSesion;
+                if (opcion == 2) Registrarse();
+                if (opcion == 3) return;
+            
+
             }
-            return false;
+            return;
         }
 
         public static bool Registrarse()
