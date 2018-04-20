@@ -22,7 +22,7 @@ namespace SimuladorHorario
         {
             return false;
         }
-        static bool ChequearCompatibilidad(Estudiante estudiante)
+        public static bool ChequearCompatibilidad(Estudiante estudiante)
         {
             List<DayOfWeek> diasSemana = new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Tuesday,
                 DayOfWeek.Wednesday,DayOfWeek.Thursday, DayOfWeek.Friday};
@@ -76,8 +76,29 @@ namespace SimuladorHorario
             Console.ReadKey();
             return;
         }
-        static void EliminarCursoInscrito(Curso curso)
+        static void EliminarCursoInscrito(Estudiante estudiante)
         {
+            Console.Clear();
+            if (estudiante.listaInscripcion.Count == 0)
+            {
+                Program.ImprimirNegativo("No hay cursos para eliminar");
+                Console.WriteLine("Presione una tecla para volver al menu");
+                Console.ReadKey();
+                return;
+            }
+            Console.WriteLine("Que curso desea eliminar: ");
+
+            for (int i = 0; i<estudiante.listaInscripcion.Count(); i++)
+            {
+                Console.WriteLine(i+1 + ". " + estudiante.listaInscripcion[i].nombre);
+            }
+
+            Console.WriteLine(estudiante.listaInscripcion.Count() + ". Salir");
+            int opcion = Program.ChequearOpcion(1, estudiante.listaInscripcion.Count());
+            if (opcion == estudiante.listaInscripcion.Count()) return;
+            estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion-1]);
+            Console.Clear();
+            Program.ImprimirPositivo("Curso eliminado");
             return;
         }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
