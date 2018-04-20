@@ -10,7 +10,7 @@ namespace SimuladorHorario
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
-            Program.ImpribirBanner("Bienvenido " + estudiante.nombre+ "a la plataforma de estudiante");
+            Program.ImprimirBanner("Bienvenido " + estudiante.nombre+ "a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
                              "1. Inscribir Curso\n");
             int opcion = Program.ChequearOpcion(1, 3);
@@ -22,11 +22,13 @@ namespace SimuladorHorario
         {
             return false;
         }
-        static bool ChequearCompatibilidad(Curso curso, Estudiante estudiante)
+        static bool ChequearCompatibilidad(Estudiante estudiante)
         {
+
             return false;
         }
-        static void InscribirCurso() {
+        static void InscribirCurso()
+        {
 
             Console.WriteLine("Seleccione un curso para inscribir");
             foreach(CursoCurricular curs in Aplicacion.GetCursoCurricular())
@@ -49,7 +51,10 @@ namespace SimuladorHorario
             Console.ReadKey();
             return;
         }
-        static void EliminarCursoInscrito(Curso curso) { return; }
+        static void EliminarCursoInscrito(Curso curso)
+        {
+            return;
+        }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
         
     }

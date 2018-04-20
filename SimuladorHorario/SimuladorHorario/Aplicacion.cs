@@ -115,7 +115,7 @@ namespace SimuladorHorario
             } while (flag); */
             #endregion
             Console.WriteLine("Ingrese su concentracion:");
-            for (int i= 0; i <= 5; i++)
+            for (int i= 0; i <= 6; i++)
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Concentracion), i));
             }
