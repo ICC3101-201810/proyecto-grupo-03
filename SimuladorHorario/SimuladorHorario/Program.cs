@@ -9,28 +9,25 @@ namespace SimuladorHorario
 {
     static class Program
     {
-        /*public static bool ChequearTipoOpcion(string op) // hecho por Vicente
-        {
-            int cero = 0;
-            if (Char.IsNumber(op,cero))
-                {
-                Console.WriteLine("Es int!!");
-                return true;
-                }
-            else { return false; }
-        }*/
+
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
-        {   
-            int opcion = Convert.ToInt32(Console.ReadLine());
+        {
+            int NumerodeComparacion = 0;
+            EmpiezaDeNuevo:
+            string strOpcion = Console.ReadLine();
+            while (!Char.IsNumber(strOpcion, NumerodeComparacion))
+            {
+                Console.Write("Ingrese una opcion valida: ");
+                strOpcion = Console.ReadLine();
+            }
+
+            int opcion = Convert.ToInt32(strOpcion);
             if (opcion > fin || opcion < inicio)
             {
-                do
-                {
-                    Console.Write("Ingrese una opcion valida:");
-                    opcion = Convert.ToInt32(Console.ReadLine()); 
-                } while ((opcion > fin || opcion < inicio));
+                Console.Write("Ingrese una opcion valida: ");
+                goto EmpiezaDeNuevo;
             }
-            return opcion;
+            else return opcion;
         }
         public static void ImprimirPositivo(string str) //Imprime lo que recibe en fondo verde
 
@@ -39,7 +36,7 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        public static void ImprimirNegativo(string str)//Imprime lo que recibe en fondo rojo
+        public static void ImprimirNegativo(string str) //Imprime lo que recibe en fondo rojo
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine(str);
@@ -64,6 +61,7 @@ namespace SimuladorHorario
 
         static void Main(string[] args)
         {
+       
 
 
             Aplicacion.CargarCursos();
@@ -90,10 +88,9 @@ namespace SimuladorHorario
                 Console.WriteLine("Que desea hacer: ");
                 Console.WriteLine("1. Iniciar sesion\n" +
                               "2. Registrarse\n" +
-                              "3. Salir del Programa\n" +
-                              "4. Cerrar sesion\n" +
-                              "5. Mostrar Usuarios");
-                int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
+                              "3. Mostrar usuarios\n" +
+                              "4. Salir del Programa");
+                int opcion = ChequearOpcion(1, 4); //Ejemplo de uso de Chequear opcion
 
                 if (opcion == 1)
                 {
@@ -101,13 +98,11 @@ namespace SimuladorHorario
                     goto InicioMenuPrincipal;
                 }
 
-                if (opcion == 3) Environment.Exit(0);
-
                 if (opcion == 2) Aplicacion.Registrarse();
 
-                if (opcion == 4) return;
+                if (opcion == 4) Environment.Exit(0);
 
-                if (opcion == 5) Aplicacion.MostrarUsuarios();
+                if (opcion == 3) Aplicacion.MostrarUsuarios();
 
                 goto InicioMenuPrincipal;
 

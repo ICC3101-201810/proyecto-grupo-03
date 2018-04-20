@@ -65,17 +65,12 @@ namespace SimuladorHorario
             }
 
 
-
-
         }   
         public static void LeerCurso()
         {
             LeerCurso:
-            Console.WriteLine("Seleccione El NRC del curso que desea leer:");
+            Console.WriteLine("Seleccione El NRC del curso que desea leer: ");
             ImprimirCursos();
-
-
-
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
             string option = "";
@@ -87,8 +82,8 @@ namespace SimuladorHorario
 
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
             Console.Clear();
-            Console.WriteLine($"NRC:{curso.nrc}\nNombre:{curso.nombre}\n" +
-                $"Creditos:{curso.creditos}\nProfesor{curso.profesor}\n\n");
+            Console.WriteLine($"NRC: {curso.nrc}\nNombre: {curso.nombre}\n" +
+                $"Creditos: {curso.creditos}\nProfesor: {curso.profesor}\n\n");
 
             Console.Write("Leer Otro Curso?\n" +
                 "1. Si\n" +
@@ -127,7 +122,7 @@ namespace SimuladorHorario
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
 
             Aplicacion.cursos.Remove(curso);
-            Program.ImprimirPositivo($"Curso: {curso.nrc} Removido exitosamente!");
+            Program.ImprimirPositivo($"Curso {curso.nombre} removido exitosamente!");
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
 

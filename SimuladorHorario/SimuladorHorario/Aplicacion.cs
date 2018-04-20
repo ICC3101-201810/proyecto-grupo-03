@@ -13,6 +13,7 @@ namespace SimuladorHorario
     public enum TipoCurso { Curricular, Extra}
     public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
     public enum FormatoImpresion { Negativo,Positivo,Normal}
+    public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
     static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
@@ -24,7 +25,7 @@ namespace SimuladorHorario
 
         public static void IniciarSesion()
         {
-
+            
             InicioSesion:
             Console.Clear();
             Console.Write("Ingrese su nombre: ");
@@ -40,6 +41,7 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
+                        Console.Clear();
                         PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
                     }
                 }
@@ -49,11 +51,12 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
+                        Console.Clear();
                         Gestor.MenuGestor(administrador); return;
                     }
                 }
             }
-
+            #region
             /*foreach (Estudiante estudiante in usuarios)
             {
 
@@ -69,14 +72,12 @@ namespace SimuladorHorario
                     Gestor.MenuGestor(administrador); return;
                 }
             }*/
-
+            #endregion
             Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
             Console.WriteLine("Que desea hacer: \n" +
                             "1. Volver a iniciar sesion\n" +                                                                               
                             "2. Registrarse\n" +                                                                   
                             "3. Salir al menu principal");
-            //var opcion2 = Console.ReadLine(); // hecho por Vicente
-            //Program.ChequearTipoOpcion(opcion2);
             int opcion = Program.ChequearOpcion(1, 3);
             if (opcion == 1) goto InicioSesion;
             if (opcion == 2) Registrarse();
@@ -95,7 +96,7 @@ namespace SimuladorHorario
             {
                 do
                 {
-                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro");
+                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro: ");
                     nombreUsuario = Console.ReadLine();
 
                 } while (NombresUsuarios().Contains(nombreUsuario));
@@ -104,7 +105,7 @@ namespace SimuladorHorario
 
             Console.Write("Ingrese su contraseña: ");
             string contraseña = Console.ReadLine();
-            Console.WriteLine("Ingrese su especialidad");
+            Console.WriteLine("Ingrese su especialidad: ");
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));
