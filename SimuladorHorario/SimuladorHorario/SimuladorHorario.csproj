@@ -45,6 +45,7 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Agenda.cs" />
     <Compile Include="Aplicacion.cs" />
+    <Compile Include="AplicacionMati.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="CursoCurricular.cs" />
     <Compile Include="Estudiante.cs" />

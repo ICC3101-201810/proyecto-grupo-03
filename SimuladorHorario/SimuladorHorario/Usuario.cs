@@ -14,7 +14,7 @@ namespace SimuladorHorario
 
         public Usuario(string nombre, string contraseña)
         {
-            this.nombre = nombreUsuario;
+            this.nombre = nombre;
             this.contraseña = contraseña;
         }
 
