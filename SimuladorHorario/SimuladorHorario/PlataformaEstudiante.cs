@@ -86,7 +86,7 @@ namespace SimuladorHorario
                 {
                     estudiante.listaInscripcion.Add(curso);
                     Program.ImprimirPositivo("Curso agregado");
-                    Program.Log(quiereAgregar.ToString(), "Agregar curso",curso.nombre);
+                    Program.Log(quiereAgregar.ToString(), "Agregar curso");
                 }
                 
                 Console.WriteLine("¿Quiere agregar otro curso?\n" +
@@ -128,11 +128,11 @@ namespace SimuladorHorario
 
             if (opcion != estudiante.listaInscripcion.Count() + 1) 
             {
-                estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion]);
+                estudiante.listaInscripcion.Remove(estudiante.listaInscripcion[opcion-1]);
             }
                 Console.Clear();
             Program.ImprimirPositivo("Curso eliminado");
-            Program.Log(opcion.ToString(), "Eliminar curso",estudiante.listaInscripcion[opcion].nombre);
+            Program.Log(opcion.ToString(), "Eliminar curso");
             return;
         }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
