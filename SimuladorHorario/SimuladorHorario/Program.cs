@@ -52,7 +52,7 @@ namespace SimuladorHorario
         {
             StreamWriter archivoLog = new StreamWriter("Log.txt", true);
             DateTime dateTime = DateTime.Now;
-            archivoLog.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
+            archivoLog.WriteLine($"Date Time: {dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
             archivoLog.Close();
 
             return;
