@@ -355,17 +355,16 @@ namespace SimuladorHorario
             StreamWriter saveFile = new StreamWriter(path);
             foreach(Usuario usuario in usuarios)
             {
-                saveFile.Write($"{usuario.nombre};{usuario.contraseña};" +
-                    $"{usuario.esAdmin};");
+                saveFile.Write($"{usuario.nombre};{usuario.contraseña};");
 
                 if (usuario is Estudiante)
                 {
                     Estudiante estudiante = (Estudiante)usuario;
-                    saveFile.Write($"ING;{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
+                    saveFile.Write($";false;ING;{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
                 }
                 else
                 {
-                    saveFile.Write("\n");
+                    saveFile.Write("true\n");
                 }
 
 
