@@ -156,7 +156,6 @@ namespace SimuladorHorario
             return retorno;
         }
 
-
         public static void CargarCursos(string fileName = "dataCursosDisponibles.csv")
         {
             try

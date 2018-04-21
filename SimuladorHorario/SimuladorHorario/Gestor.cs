@@ -61,7 +61,18 @@ namespace SimuladorHorario
 
             List<Evento> listaEventos = new List<Evento>();
             int quiereAgregarEv = 1;
-            
+            while (quiereAgregarEv == 1)
+            {
+                listaEventos=CrearEvento(listaEventos);
+                Console.WriteLine("¿Quiere agregar otro evento?\n" +
+                                  "1. Si\n" +
+                                  "2. No ");
+                int opcion = Program.ChequearOpcion(1, 2);
+                if (opcion == 2)
+                {
+                    quiereAgregarEv = 2;
+                }
+            }
 
 
         }   
@@ -136,17 +147,42 @@ namespace SimuladorHorario
             }
             return;
         }
-        public static void CrearEvento()
+        public static List<Evento> CrearEvento(List<Evento> listaEventos)
         {
+            Console.WriteLine("Ingrese el dia");
+            for (int i = 0; i <= 6; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(DayOfWeek), i));
+            }
 
-            Console.Write("Nombre: ");
-            string nombre = Console.ReadLine();
+            int opcion = Program.ChequearOpcion(1, 7);
+            DayOfWeek dia = (DayOfWeek)opcion;
+            Console.WriteLine("Ingrese el tipo de evento");
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(TipoEvento), i));
+            }
 
-            Console.WriteLine("Usando>HH:MM");
-            Console.Write("Hora Inicio: ");
-            string horaInicio = Console.ReadLine();
+            opcion = Program.ChequearOpcion(1, 6);
+            TipoEvento tipoEvento = (TipoEvento)opcion;
 
-            return;
+            Console.Write("Ingrese la sala");
+            string sala = Console.ReadLine();
+            int deseo = 1;
+            do
+            {
+                Console.WriteLine("Ingrese bloque de horario");
+                for (int i = 0; i <= 13; i++)
+                {
+                    Console.WriteLine(i + 1 + ". " + Program.ConvertirFormato(Enum.GetName(typeof(BloquesHorarios), i)));
+                }
+                opcion = Program.ChequearOpcion(1, 14);
+                listaEventos.Add(new Evento((BloquesHorarios)opcion, dia, sala, tipoEvento));
+                Console.WriteLine("¿Desea agregar otro bloque?\n1. Si\n2. No");
+                deseo = Program.ChequearOpcion(1, 2);
+            } while (deseo == 1);
+            Program.ImprimirPositivo("Evento Agregado");
+            return listaEventos;
 
         }
 
