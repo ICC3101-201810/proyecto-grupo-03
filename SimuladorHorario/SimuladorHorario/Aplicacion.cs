@@ -332,7 +332,20 @@ namespace SimuladorHorario
             //
             foreach(Usuario usuario in usuarios)
             {
-                saveFile.WriteLine($"{usuario.nombre};{usuario.contraseña}");
+                saveFile.Write($"{usuario.nombre};{usuario.contraseña};" +
+                    $"{usuario.esAdmin};");
+
+                if (usuario is Estudiante)
+                {
+                    Estudiante estudiante = (Estudiante)usuario;
+                    saveFile.Write($"{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
+                }
+                else
+                {
+                    saveFile.Write("\n");
+                }
+
+
             }
             saveFile.Close();
             Program.ImprimirPositivo("Guardado Exitoso.");

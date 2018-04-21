@@ -9,8 +9,8 @@ namespace SimuladorHorario
     class Estudiante:Usuario
     {
         public List<CursoCurricular> avanceMalla { get; private set; }
-        Concentracion concentracion;
-        Especialidad especialidad;
+        public Concentracion concentracion { get; private set; }
+        public Especialidad especialidad { get; private set; }
         public List<Curso> listaInscripcion { get; protected set; }
         List<Curso> cursosInscritos;
 
