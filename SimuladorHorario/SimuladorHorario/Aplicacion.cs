@@ -230,7 +230,7 @@ namespace SimuladorHorario
                             carrera = linea2[1];
                             creditos = Convert.ToInt32(linea2[5]);
                             CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),
-                                Especialidad.ICA, listaEventos, nombre, profesor,listaEventos, TipoCurso.Curricular);
+                                Especialidad.ICA, listaEventos, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
 
@@ -375,6 +375,11 @@ namespace SimuladorHorario
             Program.ImprimirPositivo("Guardado Exitoso.\n");
             
             return;
+        }
+
+        public static void AñadirCurso(CursoCurricular curso)
+        {
+            cursos.Add(curso);
         }
 
 

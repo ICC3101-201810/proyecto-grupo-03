@@ -49,6 +49,9 @@ namespace SimuladorHorario
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
 
+            Console.Write("Profesor: ");
+            string profesor = Console.ReadLine();
+
             Console.Write("Creditos: ");
             int creditos = Convert.ToInt32(Console.ReadLine());
 
@@ -73,8 +76,10 @@ namespace SimuladorHorario
                     quiereAgregarEv = 2;
                 }
             }
-
-
+            Program.ImprimirPositivo("Curso agregado");
+            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), especialidad, listaEventos, nombre, profesor, TipoCurso.Curricular));
+            Console.Write("Presione una tecla para continuar");
+            Console.ReadKey();
         }   
         public static void LeerCurso()
         {

@@ -12,7 +12,7 @@ namespace SimuladorHorario
 
         public TallerExtraProgramatico(List<Evento> eventosExtraP,
             string nombre, string profesor, List<Evento> horario, TipoCurso tipo):
-            base(nombre, profesor, horario, tipo)
+            base(nombre, profesor, tipo)
         {
             this.eventosExtraP = eventosExtraP;
             tipo = TipoCurso.Extra;

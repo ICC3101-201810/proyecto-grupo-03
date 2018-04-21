@@ -16,14 +16,14 @@ namespace SimuladorHorario
         
 
         public CursoCurricular(string nrc, int creditos,
-            List<CursoCurricular> cursosPreRequisito, Especialidad carrera,
+            List<CursoCurricular> cursosPreRequisito, Especialidad especialidad,
             List<Evento> eventosCurso, string nombre, string profesor,
-            List<Evento> horarios, TipoCurso tipo):base(nombre,profesor,horarios, tipo)
+            TipoCurso tipo):base(nombre,profesor, tipo)
         {
             this.nrc = nrc;
             this.creditos = creditos;
             this.cursosPreRequisito = cursosPreRequisito;
-            this.especialidad = carrera;
+            this.especialidad = especialidad;
             this.eventosCurso = eventosCurso;
             tipo = TipoCurso.Curricular;
         }
