@@ -48,11 +48,11 @@ namespace SimuladorHorario
             Console.WriteLine(str);
             Console.BackgroundColor = ConsoleColor.Black;
         }
-        public static void Log(string userInput, string accion)
+        public static void Log(string userInput, string accion, string nombreElemento)
         {
             StreamWriter archivoLog = new StreamWriter("Log.txt", true);
             DateTime dateTime = DateTime.Now;
-            archivoLog.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
+            archivoLog.WriteLine($"Date Time:{dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\nObject: {nombreElemento}\r\n");
             archivoLog.Close();
 
             return;
