@@ -21,7 +21,7 @@ namespace SimuladorHorario
                           "5. Cerrar Sesion");
 
             int opcion = Program.ChequearOpcion(1, 5);
-            if (opcion == 1) CrearCurso(); Program.Log(opcion.ToString(), "Crear Curso");
+            if (opcion == 1) CrearCursoCurricular(); Program.Log(opcion.ToString(), "Crear Curso");
             if (opcion == 2) LeerCurso();Program.Log(opcion.ToString(), "Leer Curso");
             if (opcion == 3) ActualizarCurso();
             if (opcion == 4) EliminarCurso();
@@ -29,24 +29,23 @@ namespace SimuladorHorario
 
             goto MenuGestor;
         }
-        public static void CrearCurso()
+        public static void CrearCursoCurricular()
         {
             Console.Clear();
-            Console.WriteLine("--Crear Curso--");
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
-            string nrc = string.Empty;
-            while (true)
+            Console.Write("NRC: ");
+            string nrc = Console.ReadLine();
+            if (listadoNRC.Contains(nrc))
             {
-                Console.Write("NRC: ");
-                nrc = Console.ReadLine();
-
-                if (!listadoNRC.Contains(nrc)) { break; }
-                else { Program.ImprimirNegativo("Ese NRC ya existe"); }
-
+                do
+                {
+                    Program.ImprimirNegativo("Ese NRC ya existe");
+                    Console.Write("Ingrese otro NRC: ");
+                    nrc = Console.ReadLine();
+                } while (listadoNRC.Contains(nrc));
             }
-
-
+          
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
 
@@ -54,7 +53,11 @@ namespace SimuladorHorario
             int creditos = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Especialidad: ");
-            string especialidad = Console.ReadLine();
+            for(int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
+            }
+            Especialidad especialidad =(Especialidad) Program.ChequearOpcion(1,6);
 
             List<Evento> listaEventos = new List<Evento>();
             int quiereAgregarEv = 1;
@@ -63,7 +66,7 @@ namespace SimuladorHorario
                 CrearEvento();
                 Console.WriteLine("¿Quiere agregar otro evento?\n" +
                                   "1. Si\n" +
-                                  "2. No\n:> ");
+                                  "2. No ");
                 int opcion = Program.ChequearOpcion(1, 2);
                 if (opcion == 2)
                 {
@@ -146,7 +149,6 @@ namespace SimuladorHorario
         }
         public static void CrearEvento()
         {
-            Console.WriteLine("--Crear Evento--");
 
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
