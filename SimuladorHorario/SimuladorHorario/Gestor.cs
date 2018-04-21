@@ -36,7 +36,6 @@ namespace SimuladorHorario
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
             string nrc = string.Empty;
-            Console.Write("NRC: ");
             while (true)
             {
                 Console.Write("NRC: ");
@@ -58,10 +57,18 @@ namespace SimuladorHorario
             string especialidad = Console.ReadLine();
 
             List<Evento> listaEventos = new List<Evento>();
-            while (true)
+            int quiereAgregarEv = 1;
+            while (quiereAgregarEv == 1)
             {
                 CrearEvento();
-                Console.ReadKey();
+                Console.WriteLine("¿Quiere agregar otro evento?\n" +
+                                  "1. Si\n" +
+                                  "2. No\n:> ");
+                int opcion = Program.ChequearOpcion(1, 2);
+                if (opcion == 2)
+                {
+                    quiereAgregarEv = 2;
+                }
             }
 
 
@@ -85,7 +92,7 @@ namespace SimuladorHorario
             Console.WriteLine($"NRC: {curso.nrc}\nNombre: {curso.nombre}\n" +
                 $"Creditos: {curso.creditos}\nProfesor: {curso.profesor}\n\n");
 
-            Console.Write("Leer Otro Curso?\n" +
+            Console.Write("¿Leer Otro Curso?\n" +
                 "1. Si\n" +
                 "2. No\n:> ");
             int opcion = Program.ChequearOpcion(1, 2);
@@ -126,7 +133,6 @@ namespace SimuladorHorario
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
 
-
             return;
         }
         public static void ImprimirCursos()
@@ -142,17 +148,15 @@ namespace SimuladorHorario
         {
             Console.WriteLine("--Crear Evento--");
 
-            Console.Write("Nombre:");
+            Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
 
             Console.WriteLine("Usando>HH:MM");
-            Console.Write("Hora Inicio:");
+            Console.Write("Hora Inicio: ");
             string horaInicio = Console.ReadLine();
-            Console.WriteLine(horaInicio);
-
 
             return;
-            //Evento evento = new Evento()
+
         }
 
     }
