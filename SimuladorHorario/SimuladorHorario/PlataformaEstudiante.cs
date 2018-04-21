@@ -101,7 +101,6 @@ namespace SimuladorHorario
 
             SinCursosDisponiblesParaInscribir:
 
-            Console.WriteLine("Hasta aqui llegamos");
             Console.WriteLine("\nPresione cualquier tecla para continuar...");
             Console.ReadKey();
             return;
