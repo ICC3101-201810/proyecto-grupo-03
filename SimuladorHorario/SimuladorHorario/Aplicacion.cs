@@ -249,7 +249,6 @@ namespace SimuladorHorario
                         returnString.Add(stringHorario.Split(',')[i]);
                         //Console.WriteLine(stringHorario.Split(',')[i]);
                     }
-                    //Console.WriteLine();
                     return returnString;
                 }
                 
