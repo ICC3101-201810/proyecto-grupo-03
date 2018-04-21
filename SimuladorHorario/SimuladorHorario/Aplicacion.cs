@@ -273,7 +273,7 @@ namespace SimuladorHorario
 
                 string path = Path.GetFullPath(@"..\..");
 
-                //Console.WriteLine("Dir: "+path);
+                
                 Program.ImprimirPositivo("Dir: " + path);
                 path = Path.Combine(path, @"saveData.csv");
 
