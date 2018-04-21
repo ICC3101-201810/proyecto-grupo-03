@@ -133,7 +133,8 @@ namespace SimuladorHorario
         {
             foreach(CursoCurricular curso in Aplicacion.GetCursoCurricular())
             {
-                Console.WriteLine($"NRC:{curso.nrc} Nombre:{curso.nombre}");
+                Console.WriteLine($"NRC:{curso.nrc} Nombre:{curso.nombre}\n" +
+                    $"Evento {curso.horarios}\n");
             }
             return;
         }

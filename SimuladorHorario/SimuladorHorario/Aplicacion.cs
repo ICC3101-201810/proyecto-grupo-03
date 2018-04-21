@@ -342,7 +342,19 @@ namespace SimuladorHorario
             }
         }
 
+        public static void GuardarData()
+        {
+            StreamWriter saveFile = new StreamWriter("saveData.csv");
 
+            foreach(Usuario usuario in usuarios)
+            {
+                saveFile.WriteLine($"{usuario.nombre};{usuario.contraseña}");
+            }
+            saveFile.Close();
+            Program.ImprimirPositivo("Guardado Exitoso.");
+            
+            return;
+        }
 
 
 
