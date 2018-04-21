@@ -9,19 +9,17 @@ namespace SimuladorHorario
     class Evento
     {
         string nombre;
-        public DateTime horaInicio;
-        public DateTime horaFin;
+        BloquesHorarios bloque;
         DayOfWeek dia;
-        string sala;
+        string salaOLugar;
         TipoEvento tipoEvento;
-        public Evento(string nombre,DateTime horaInicio, DateTime horaFin,
-            DayOfWeek dia, string sala,TipoEvento tipoEvento)
+
+        public Evento(string nombre,BloquesHorarios bloque, DayOfWeek dia, string salaOLugar,TipoEvento tipoEvento)
         {
             this.nombre = nombre;
-            this.horaInicio = horaInicio;
-            this.horaFin = horaFin;
+            this.bloque = bloque;
             this.dia = dia;
-            this.sala = sala;
+            this.salaOLugar = salaOLugar;
             this.tipoEvento = tipoEvento;
 
         }

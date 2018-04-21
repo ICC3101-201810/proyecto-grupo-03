@@ -56,23 +56,7 @@ namespace SimuladorHorario
                     }
                 }
             }
-            #region
-            /*foreach (Estudiante estudiante in usuarios)
-            {
 
-                if (estudiante.nombre == nombreUsuario && estudiante.contraseña == contraseña)
-                {
-                    PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return; 
-                }
-            }
-            foreach (Administrador administrador in usuarios)
-            {
-                if (administrador.nombre == nombreUsuario && administrador.contraseña == contraseña)
-                {
-                    Gestor.MenuGestor(administrador); return;
-                }
-            }*/
-            #endregion
             Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
             Console.WriteLine("Que desea hacer: \n" +
                             "1. Volver a iniciar sesion\n" +                                                                               

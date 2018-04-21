@@ -8,6 +8,7 @@ namespace SimuladorHorario
 {
     static class PlataformaEstudiante
     {
+        
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
             InicioPlataforma:
@@ -21,7 +22,7 @@ namespace SimuladorHorario
 
             if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
 
-            if (opcion == 3) { Environment.Exit(0); }
+            if (opcion == 3) { return ; }
         }
         public static bool Guardar()
         {
@@ -132,7 +133,14 @@ namespace SimuladorHorario
             Program.ImprimirPositivo("Curso eliminado");
             return;
         }
-        static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
+        static int ContarCreditos(List<Curso> listaCursosInscritos)
+        {
+            return 1;
+        }
+        static void AgregarEventoPersonal(Estudiante estudiante)
+        {
+
+        }
         
     }
 }
