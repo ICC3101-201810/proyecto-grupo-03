@@ -18,11 +18,11 @@ namespace SimuladorHorario
                              "2. Eliminar curso\n" +
                              "3. Cerrar Sesion");
             int opcion = Program.ChequearOpcion(1, 3);
-            if (opcion == 1) { InscribirCurso(estudiante); goto InicioPlataforma; }
+            if (opcion == 1) { InscribirCurso(estudiante); Program.Log(opcion.ToString(),"Inscribir Curso"); goto InicioPlataforma; }
 
-            if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
+            if (opcion == 2) { EliminarCursoInscrito(estudiante); Program.Log(opcion.ToString(), "Eliminar Curso"); goto InicioPlataforma; }
 
-            if (opcion == 3) { return ; }
+            if (opcion == 3) { Program.Log(opcion.ToString(), "Cerrar Sesion"); return ; }
         }
         public static bool Guardar()
         {
@@ -76,6 +76,7 @@ namespace SimuladorHorario
                 {
                     Console.Write("NRC: ");
                     option = Console.ReadLine();
+                    Program.Log(option, "NRC introducido");
                 }
 
                 CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
@@ -94,6 +95,7 @@ namespace SimuladorHorario
                 int opcion = Program.ChequearOpcion(1, 2);
                 if (opcion == 2)
                 {
+                    Program.Log(opcion.ToString(), "Agregar Otro Curso");
                     quiereAgregar = 2;
                 }
             }
