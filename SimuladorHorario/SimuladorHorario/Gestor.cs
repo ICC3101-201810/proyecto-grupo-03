@@ -43,7 +43,7 @@ namespace SimuladorHorario
                 nrc = Console.ReadLine();
 
                 if (!listadoNRC.Contains(nrc)) { break; }
-                else { Console.WriteLine("Ese NRC ya existe!"); }
+                else { Program.ImprimirNegativo("Ese NRC ya existe"); }
 
             }
 

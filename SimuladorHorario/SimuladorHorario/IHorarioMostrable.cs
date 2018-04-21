@@ -8,7 +8,7 @@ namespace SimuladorHorario
 {
     interface IHorarioMostrable
     {
-        void Mostrar(List<Curso> listaInformacion);
+        void Mostrar(List<Evento> listaInformacion);
         void GuardarImagen();
     }
 }

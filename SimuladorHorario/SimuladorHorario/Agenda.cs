@@ -20,12 +20,8 @@ namespace SimuladorHorario
             throw new NotImplementedException();
         }
 
-        public void Mostrar(List<Curso> listaInformacion)
+        public void Mostrar(List<Evento> listaInformacion)
         {
-
-
-
-
             return;
         }
     }

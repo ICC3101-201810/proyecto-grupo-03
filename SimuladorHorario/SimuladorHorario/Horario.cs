@@ -8,12 +8,12 @@ namespace SimuladorHorario
 {
     class Horario:IHorarioMostrable
     {
-        List<Evento> listaEventosHorario;
+        List<Evento> eventosHorario;
 
         public Horario(List<Evento> listaEventosHorario)
         {
             
-            this.listaEventosHorario = listaEventosHorario;
+            this.eventosHorario = listaEventosHorario;
         }
 
         public void GuardarImagen()
@@ -21,7 +21,7 @@ namespace SimuladorHorario
             throw new NotImplementedException();
         }
 
-        public void Mostrar(List<Curso> listaInformacion)
+        public void Mostrar(List<Evento> listaInformacion)
         {
             throw new NotImplementedException();
         }
