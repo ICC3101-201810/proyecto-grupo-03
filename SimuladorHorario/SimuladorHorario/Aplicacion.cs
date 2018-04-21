@@ -360,7 +360,7 @@ namespace SimuladorHorario
                 if (usuario is Estudiante)
                 {
                     Estudiante estudiante = (Estudiante)usuario;
-                    saveFile.Write($";false;ING;{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
+                    saveFile.Write($"false;ING;{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
                 }
                 else
                 {
