@@ -22,9 +22,9 @@ namespace SimuladorHorario
 
             int opcion = Program.ChequearOpcion(1, 5);
             if (opcion == 1) CrearCursoCurricular(); Program.Log(opcion.ToString(), "Crear Curso");
-            if (opcion == 2) LeerCurso();Program.Log(opcion.ToString(), "Leer Curso");
+            if (opcion == 2) LeerCurso(); Program.Log(opcion.ToString(), "Leer Curso");
             if (opcion == 3) ActualizarCurso();
-            if (opcion == 4) EliminarCurso();
+            if (opcion == 4) EliminarCurso(); Program.Log(opcion.ToString(), "Eliminar Curso");
             if (opcion == 5) return;
 
             goto MenuGestor;
@@ -142,8 +142,7 @@ namespace SimuladorHorario
         {
             foreach(CursoCurricular curso in Aplicacion.GetCursoCurricular())
             {
-                Console.WriteLine($"NRC:{curso.nrc} Nombre:{curso.nombre}\n" +
-                    $"Evento {curso.horarios}\n");
+                Console.WriteLine($"NRC: {curso.nrc}, Nombre: {curso.nombre}\n");
             }
             return;
         }

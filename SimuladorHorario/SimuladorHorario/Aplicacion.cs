@@ -160,7 +160,15 @@ namespace SimuladorHorario
         {
             try
             {
-                StreamReader file = new StreamReader(fileName);
+
+                string path = Path.GetFullPath(@"..\..");
+
+                //Console.WriteLine("Dir: "+path);
+                Program.ImprimirPositivo("Data_Cursos:\tDir: " + path);
+                path = Path.Combine(path, @"dataCursosDisponibles.csv");
+
+
+                StreamReader file = new StreamReader(path);
                 string line;
                 string previoNRC = string.Empty;
                 List<Evento> listaEventos = new List<Evento>();
@@ -261,7 +269,15 @@ namespace SimuladorHorario
         {
             try
             {
-                StreamReader file = new StreamReader(fileName);
+
+                string path = Path.GetFullPath(@"..\..");
+
+                
+                Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
+                path = Path.Combine(path, @"saveData.csv");
+
+
+                StreamReader file = new StreamReader(path);
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
@@ -327,8 +343,17 @@ namespace SimuladorHorario
 
         public static void GuardarData()
         {
-            StreamWriter saveFile = new StreamWriter("saveData.csv");
-            //
+
+            //string path = Directory.GetCurrentDirectory();
+
+            string path = Path.GetFullPath(@"..\..");
+
+            //Console.WriteLine("Dir: "+path);
+            Program.ImprimirPositivo("Dir: " + path);
+            path = Path.Combine(path, @"saveData.csv");
+
+
+            StreamWriter saveFile = new StreamWriter(path);
             foreach(Usuario usuario in usuarios)
             {
                 saveFile.Write($"{usuario.nombre};{usuario.contraseña};" +
@@ -337,7 +362,7 @@ namespace SimuladorHorario
                 if (usuario is Estudiante)
                 {
                     Estudiante estudiante = (Estudiante)usuario;
-                    saveFile.Write($"{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
+                    saveFile.Write($"ING;{estudiante.especialidad};0000;{estudiante.concentracion};1,2,3,4,5,6\n");
                 }
                 else
                 {
@@ -347,7 +372,7 @@ namespace SimuladorHorario
 
             }
             saveFile.Close();
-            Program.ImprimirPositivo("Guardado Exitoso.");
+            Program.ImprimirPositivo("Guardado Exitoso.\n");
             
             return;
         }
