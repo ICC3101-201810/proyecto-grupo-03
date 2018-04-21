@@ -50,7 +50,15 @@ namespace SimuladorHorario
         }
         public static void Log(string userInput, string accion)
         {
-            StreamWriter archivoLog = new StreamWriter("Log.txt", true);
+
+
+            string path = Path.GetFullPath(@"..\..");
+
+            Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
+            path = Path.Combine(path, @"Log.txt");
+
+
+            StreamWriter archivoLog = new StreamWriter(path, true);
             DateTime dateTime = DateTime.Now;
             archivoLog.WriteLine($"Date Time: {dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
             archivoLog.Close();
