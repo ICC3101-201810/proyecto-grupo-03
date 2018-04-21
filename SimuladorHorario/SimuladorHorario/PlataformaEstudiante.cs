@@ -135,6 +135,6 @@ namespace SimuladorHorario
             return;
         }
         static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
-        
+        static void AgregarEventoPersonal(Estudiante estudiante) { return; }
     }
 }

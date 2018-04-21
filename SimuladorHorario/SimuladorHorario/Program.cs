@@ -110,7 +110,7 @@ namespace SimuladorHorario
                     goto InicioMenuPrincipal;
                 }
 
-                if (opcion == 2) Aplicacion.Registrarse();
+                if (opcion == 2) Aplicacion.RegistrarUsuario();
 
                 if (opcion == 5) Environment.Exit(0);
 

@@ -64,13 +64,13 @@ namespace SimuladorHorario
                             "3. Salir al menu principal");
             int opcion = Program.ChequearOpcion(1, 3);
             if (opcion == 1) goto InicioSesion;
-            if (opcion == 2) Registrarse();
+            if (opcion == 2) RegistrarUsuario();
             if (opcion == 3) return;
             //
             return;
         }
 
-        public static void Registrarse()
+        public static void RegistrarUsuario()
         {
             
             Console.Write("Ingrese su nombre: ");
