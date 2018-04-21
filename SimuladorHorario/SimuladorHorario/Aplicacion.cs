@@ -165,7 +165,7 @@ namespace SimuladorHorario
                 string path = Path.GetFullPath(@"..\..");
 
                 //Console.WriteLine("Dir: "+path);
-                Program.ImprimirPositivo("Dir: " + path);
+                Program.ImprimirPositivo("Data_Cursos:\tDir: " + path);
                 path = Path.Combine(path, @"dataCursosDisponibles.csv");
 
 
@@ -274,7 +274,7 @@ namespace SimuladorHorario
                 string path = Path.GetFullPath(@"..\..");
 
                 
-                Program.ImprimirPositivo("Dir: " + path);
+                Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
                 path = Path.Combine(path, @"saveData.csv");
 
 
