@@ -66,7 +66,7 @@ namespace SimuladorHorario
             if (opcion == 1) goto InicioSesion;
             if (opcion == 2) Registrarse();
             if (opcion == 3) return;
-            
+            //
             return;
         }
 
