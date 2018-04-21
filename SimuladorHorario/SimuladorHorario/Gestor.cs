@@ -61,18 +61,7 @@ namespace SimuladorHorario
 
             List<Evento> listaEventos = new List<Evento>();
             int quiereAgregarEv = 1;
-            while (quiereAgregarEv == 1)
-            {
-                CrearEvento();
-                Console.WriteLine("¿Quiere agregar otro evento?\n" +
-                                  "1. Si\n" +
-                                  "2. No ");
-                int opcion = Program.ChequearOpcion(1, 2);
-                if (opcion == 2)
-                {
-                    quiereAgregarEv = 2;
-                }
-            }
+            
 
 
         }   

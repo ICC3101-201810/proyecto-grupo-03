@@ -21,7 +21,7 @@ namespace SimuladorHorario
 
             if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
 
-            if (opcion == 3) { Environment.Exit(0); }
+            if (opcion == 3) { return; }
         }
         public static bool Guardar()
         {
