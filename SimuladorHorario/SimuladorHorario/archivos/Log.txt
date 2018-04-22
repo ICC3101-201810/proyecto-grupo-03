@@ -1,0 +1,615 @@
+Date Time: 21-04-2018 18:34:26
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 3:17:04
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:24:54
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:25:50
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:30:09
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:31:37
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:32:09
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:32:35
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:33:25
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:33:42
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:34:15
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:36:10
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:37:26
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:38:25
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:38:37
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:38:37
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:39:30
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:39:56
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:40:41
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:40:55
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:41:14
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:41:14
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 12:42:26
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 12:42:26
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 12:42:26
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 12:42:29
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 13:20:50
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:20:50
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:20:50
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:20:55
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:20:55
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:20:55
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:20:57
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 13:22:32
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:22:32
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:22:32
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:22:34
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 13:26:35
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:26:35
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:26:35
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 13:26:39
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:26:39
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:26:39
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 22-04-2018 13:26:40
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 14:08:51
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:08:51
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:08:51
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:08:53
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 14:12:08
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:12:08
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:12:08
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 22-04-2018 14:12:09
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:25:31
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:28:01
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:29:44
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:29:58
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:30:03
+User: macanepa
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:30:11
+User: macanepa
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:30:45
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:30:50
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:30:50
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:30:53
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:30:53
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:30:53
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:33:08
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:33:23
+User: macanepa
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:37:09
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:37:12
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:37:12
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:37:15
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:37:15
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:37:15
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 22-04-2018 16:37:52
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:39:24
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:41:08
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:42:01
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:42:13
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:49:14
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:50:30
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:50:46
+User: m
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:50:52
+User: m
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:50:56
+User: m
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 22-04-2018 16:51:29
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 16:55:16
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 17:01:31
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 17:01:45
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 17:01:45
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 17:01:55
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 22-04-2018 17:01:55
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 22-04-2018 17:01:55
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 22-04-2018 17:01:56
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 22-04-2018 17:01:56
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 22-04-2018 17:01:56
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 22-04-2018 17:35:32
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:35:36
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:38:04
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:38:06
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:39:33
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:39:37
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:40:06
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:40:09
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:40:49
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:40:54
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:41:38
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 17:41:46
+User: m
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:02:46
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:03:00
+User: m
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 22-04-2018 18:04:53
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:05:11
+User: m
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:05:46
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:06:11
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:06:19
+User: m
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:06:32
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:07:03
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:07:19
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:07:56
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:08:06
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:08:44
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 22-04-2018 18:09:26
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 22-04-2018 18:09:30
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 22-04-2018 18:09:30
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 22-04-2018 18:09:33
+User: admin
+Operation: Crear Curso
+UserInput: 4
+
+Date Time: 22-04-2018 18:09:33
+User: admin
+Operation: Leer Curso
+UserInput: 4
+

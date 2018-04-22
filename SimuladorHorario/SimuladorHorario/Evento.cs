@@ -8,19 +8,30 @@ namespace SimuladorHorario
 {
     class Evento
     {
-        BloquesHorarios bloque;
-        DayOfWeek dia;
-        string salaOLugar;
-        TipoEvento tipoEvento;
+        public string nombre { get; private set; }
+        public string hora { get; private set; }
+        public string fecha { get; private set; }
+        public string sala { get; private set; }
+        public TipoEvento tipo { get; private set; }
 
-        public Evento(BloquesHorarios bloque, DayOfWeek dia, string salaOLugar,TipoEvento tipoEvento)
+        public Evento(string nombre, string hora, string sala, TipoEvento tipo)
         {
-            this.bloque = bloque;
-            this.dia = dia;
-            this.salaOLugar = salaOLugar;
-            this.tipoEvento = tipoEvento;
-
+            this.nombre = nombre;
+            this.hora = hora;
+            this.sala = sala;
+            this.tipo = tipo;
+            this.fecha = "NONE";
         }
 
+        public Evento(string nombre, string hora, string fecha, string sala, TipoEvento tipo)
+        {
+            this.nombre = nombre;
+            this.hora = hora;
+            this.fecha = fecha;
+            this.sala = sala;
+            this.tipo = tipo;
+        }
+
+       
     }
 }

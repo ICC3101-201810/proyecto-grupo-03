@@ -12,8 +12,7 @@ namespace SimuladorHorario
         public int creditos { get; private set; }
         List<CursoCurricular> cursosPreRequisito;
         Especialidad especialidad;
-        List<Evento> eventosCurso;
-        
+        public List<Evento> eventosCurso { get; private set; }        
 
         public CursoCurricular(string nrc, int creditos,
             List<CursoCurricular> cursosPreRequisito, Especialidad especialidad,
