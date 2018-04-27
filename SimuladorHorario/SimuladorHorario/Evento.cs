@@ -13,7 +13,7 @@ namespace SimuladorHorario
         public string fecha { get; private set; }
         public string sala { get; private set; }
         public TipoEvento tipo { get; private set; }
-
+        public string data { get; private set; }
         public Evento(string nombre, string hora, string sala, TipoEvento tipo)
         {
             this.nombre = nombre;
@@ -21,6 +21,7 @@ namespace SimuladorHorario
             this.sala = sala;
             this.tipo = tipo;
             this.fecha = "NONE";
+            //this.data = fecha hora
         }
 
         public Evento(string nombre, string hora, string fecha, string sala, TipoEvento tipo)

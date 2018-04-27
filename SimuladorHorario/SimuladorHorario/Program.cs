@@ -72,7 +72,7 @@ namespace SimuladorHorario
         }
         public static string ConvertirFormato(string str)
         {
-            return str.Replace("i", "").Replace('a', ':').Replace('_', '-');
+            return str.Replace("i", "").Replace('_', ':');
         }
 
         static void Main(string[] args)

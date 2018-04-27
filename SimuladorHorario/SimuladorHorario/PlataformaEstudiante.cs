@@ -29,33 +29,31 @@ namespace SimuladorHorario
             if (opcion == 4) { estudiante.MostrarAvance(); goto InicioPlataforma; }
 
             if (opcion == 5) { return; }
+
         }
         public static bool Guardar()
         {
             return false;
         }
-        public static bool ChequearCompatibilidad(Estudiante estudiante)
+        public static bool ChequearCompatibilidad(Estudiante estudiante, CursoCurricular cursoInscribir)
         {
-            List<DayOfWeek> diasSemana = new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Tuesday,
-                DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday};
-
-            
-            foreach (DayOfWeek dia in diasSemana)
+            List<string> listaBloquesUsados = new List<string>();
+            foreach(Curso curso in estudiante.listaInscripcion)
             {
-                for (int i = 0; i < estudiante.listaInscripcion.Count(); i++) 
+                CursoCurricular cursoCurricular = (CursoCurricular)curso;
+                foreach(Evento bloqueHorario in cursoCurricular.eventosCurso)
                 {
-
-                    for (int j = 0; j < estudiante.listaInscripcion.Count(); i++)
-                    {
-                        if (estudiante.listaInscripcion[i] == estudiante.listaInscripcion[j])
-                        {
-                            continue;
-                        }
-                       
-                    }
+                    listaBloquesUsados.Add(bloqueHorario.hora);
                 }
             }
-            return false;
+
+            foreach(Evento evento in cursoInscribir.eventosCurso)
+            {
+                if (listaBloquesUsados.Contains(evento.hora)){ return false; }
+            }
+
+
+            return true;
         }
         static void InscribirCurso(Estudiante estudiante)
         {
@@ -88,13 +86,17 @@ namespace SimuladorHorario
 
                 } while (!listadoNRC.Contains(option));
 
-
-
                 CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
+
+                bool compatibilidad = ChequearCompatibilidad(estudiante, curso);
                 if (estudiante.listaInscripcion.Contains(curso))
                 {
                     Program.ImprimirNegativo($"El curso {curso.nombre} ya esta agregado\n");
                     //Console.WriteLine("El curso {0} ya esta agregado\n", curso.nombre);
+                }
+                else if (compatibilidad == false)
+                {
+                    Program.ImprimirNegativo($"El curso {curso.nombre} posee un tope de horario\n");
                 }
                 else
                 {
