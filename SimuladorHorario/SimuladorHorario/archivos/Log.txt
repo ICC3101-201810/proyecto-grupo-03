@@ -708,3 +708,8 @@ User: m
 Operation: Agregar curso
 UserInput: 1
 
+Date Time: 26-04-2018 23:13:21
+User: admin
+Operation: Crear Curso
+UserInput: 2
+

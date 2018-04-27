@@ -159,13 +159,12 @@ namespace SimuladorHorario
         {
             try
             {
-
+                //Encuentra el directorio donde se encuentra el archivo csv de cursos
                 string path = Path.GetFullPath(@"..\..");
                 path = Path.Combine(path, "archivos");
                 Directory.CreateDirectory(path);
                 Program.ImprimirPositivo("Cursos:\tDir: " + path);
                 path = Path.Combine(path, fileName);
-
 
                 StreamReader file = new StreamReader(path);
                 string line;
@@ -173,12 +172,15 @@ namespace SimuladorHorario
                 string nombre, profesor, nrc, carrera;
                 int creditos;
 
+
+                //El csv posee varias lineas de un mismo curso. Esto genera conjuntos de la lineas
+                //del mismo curso.
                 List<List<string>> conjuntoCursosDistintos = new List<List<string>>();
                 conjuntoCursosDistintos.Add(new List<string>() { file.ReadLine() });
                 while ((line = file.ReadLine()) != null)
                 {
-                    string[] LA = line.Split(';');
-                    nrc = LA[0];
+                    string[] datosLine = line.Split(';');
+                    nrc = datosLine[0];
                     if (previoNRC == nrc || previoNRC == "")
                     {
                         conjuntoCursosDistintos[conjuntoCursosDistintos.Count()-1].Add(line);
@@ -188,7 +190,6 @@ namespace SimuladorHorario
                         conjuntoCursosDistintos.Add(new List<string>());
                         conjuntoCursosDistintos[conjuntoCursosDistintos.Count() - 1].Add(line);
                     }
-
                     previoNRC = nrc;
                 }
 
@@ -197,72 +198,50 @@ namespace SimuladorHorario
                 {
                     List<Evento> listaEvento = new List<Evento>();
                     List<string> listaHorariosBloques = new List<string>();
-                    int c = 1;
+                    int contadorLineaCurso = 1;
                     foreach (string linea in curso)
                     {
-
-
-                        string[] dataLinea = linea.Split(';');
-                        List<string> listaHorarioLinea = new List<string>();
+                        string[] datosLinea = linea.Split(';');
+                        List<string> listaHorarioLinea = new List<string>();    //listaHorarioLinea es el conjunto de horarios que se encuentra en una linea 
                         for(int i = 6; i < 12; i++)
                         {
-                            if(dataLinea[i] != "")
+                            if(datosLinea[i] != "") //Si en la casilla existe un horario entonces...
                             {
-                                string fecha = dataLinea[12].Replace('-',':');
-                                if(dataLinea[12] == "") { fecha = "A"; }
-                                listaHorarioLinea.Add(((i-6)+":"+dataLinea[i]+":"+fecha).Replace(" -",":"));
+                                string fecha = datosLinea[12].Replace('-',':');
+                                if(datosLinea[12] == "") { fecha = "A"; }
+                                listaHorarioLinea.Add(((i-6)+":"+datosLinea[i]+":"+fecha).Replace(" -",":"));
                             }
                         }
                         List<string> bloquesHorario = new List<string>();
 
                         for (int i = 0; i < listaHorarioLinea.Count; i++)
                         {
-                            //formato 2:15:30:17:20:A
-                            string horario = listaHorarioLinea[i];
-                            //Console.WriteLine(horario);
-                            string[] pipi = listaHorarioLinea[i].Split(':');
-                            //Console.WriteLine(listaHorarioLinea[i]);
-                            string stringHorario = "";
-                          
-                            stringHorario = pipi[0] + ":" + pipi[1] + ":" + pipi[2] + ":" + pipi[3] + ":" + pipi[4];
+                            string stringHorario = string.Empty;
                             stringHorario = listaHorarioLinea[i];
                             listaEvento.AddRange(generarEvento(stringHorario));
-
                         }
-
                         
-                        //Console.WriteLine();
-
-
-
-
-                        
-                        if (c == curso.Count)
+                        if (contadorLineaCurso == curso.Count)
                         {
-                            string[] linea2 = linea.Split(';');
-                            nombre = linea2[4];
-                            profesor = linea2[15];
-                            nrc = linea2[0];
-                            carrera = linea2[1];
-                            creditos = Convert.ToInt32(linea2[5]);
+                            string[] datosLinea2 = linea.Split(';');
+                            nombre = datosLinea2[4];
+                            profesor = datosLinea2[15];
+                            nrc = datosLinea2[0];
+                            carrera = datosLinea2[1];
+                            creditos = Convert.ToInt32(datosLinea2[5]);
                             CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),
                                 Especialidad.ICA,listaEvento, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
-                        c++;
-
-
-
+                        contadorLineaCurso++;
                     }
 
                 }
 
                 List<Evento> generarEvento(string stringHorario)
                 {
-                    //ingresa string del tipo           D:8:30:11:20:A      ||      D:8:30:11:20:20:03:2018
+                    //ingresa string del tipo           D:8:30:11:20:A  ||  D:8:30:11:20:20:03:2018
                     //retorna List<Evento>              
-                    //Falta incorporar ESTO!!!
-                    stringHorario = stringHorario.Replace(" -", ":");
                     int diaSemana = Convert.ToInt32(stringHorario.Split(':')[0]);
                     int horaInicio = Convert.ToInt32(stringHorario.Split(':')[1]);
                     int horaTermino = Convert.ToInt32(stringHorario.Split(':')[3]);
@@ -270,9 +249,8 @@ namespace SimuladorHorario
                     int cantBloques = horaTermino - horaInicio;
                     List<Evento> returnListaEventos = new List<Evento>();
 
-                    if (stringHorario.Split(':')[5] != "A")
+                    if (stringHorario.Split(':')[5] != "A") //Si posee una fecha entonces...
                     {
-                        //Console.WriteLine(stringHorario);
                         string fechaDia = (stringHorario.Split(':')[5]);
                         string fechaMes = (stringHorario.Split(':')[6]);
                         string fechaAño;
@@ -285,48 +263,43 @@ namespace SimuladorHorario
                             fechaAño = "2018";
                         }
 
-
-                        string fecha = fechaDia +"-"+ fechaMes +"-"+ fechaAño;
+                        string fecha = fechaDia + "-" + fechaMes + "-" + fechaAño;
 
                         for (int i = 0; i < cantBloques; i++)
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
-                            Evento evento = new Evento("Evento Name", inicioBloque,fecha, "B-23", TipoEvento.PRBA);
+                            Evento evento = new Evento("Evento Name", inicioBloque, fecha, "B-23", TipoEvento.PRBA);
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;
-
-
                     }
-
-
-                    for (int i = 0; i < cantBloques; i++)
+                    else
                     {
-                        string inicioBloque = $"{diaSemana}-{horaInicio+i}:30";
-                        Evento evento = new Evento("Evento Semanal",inicioBloque,"C-102",TipoEvento.CLAS);
-                        returnListaEventos.Add(evento);
+                        for (int i = 0; i < cantBloques; i++)
+                        {
+                            string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
+                            Evento evento = new Evento("Evento Semanal", inicioBloque, "C-102", TipoEvento.CLAS);
+                            returnListaEventos.Add(evento);
+                        }
+                        return returnListaEventos;
                     }
-                    return returnListaEventos;
-
                 }
-                
-
 
                 file.Close();
             }
             catch (FileNotFoundException e)
             {
                 System.Console.WriteLine(e.Message);
+                Program.ImprimirNegativo("Hubo un error al cargar los Cursos!");
+                Console.WriteLine("Presione cualquier tecla para continuar...");
+                Console.ReadKey();
             }
-
-
         }
 
         public static void CargarUsuarios(string fileName = "saveData.csv")
         {
             try
             {
-
                 string path = Path.GetFullPath(@"..\..");
                 path = Path.Combine(path, "archivos");
                 Directory.CreateDirectory(path);
@@ -366,15 +339,15 @@ namespace SimuladorHorario
                         usuarios.Add(estudiante);
                     }
                 }
-
                 file.Close();
             }
             catch (FileNotFoundException e1)
             {
                 System.Console.WriteLine(e1.Message);
+                Program.ImprimirNegativo("Hubo un error al cargar los Usuarios!");
+                Console.WriteLine("Presione cualquier tecla para continuar...");
+                Console.ReadKey();
             }
-
-
         }
 
         public static void MostrarUsuarios()

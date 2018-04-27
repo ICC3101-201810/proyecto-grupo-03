@@ -56,9 +56,8 @@ namespace SimuladorHorario
         public static void Log(string userInput, string accion)
         {
 
-
+            //Genera el directorio donde se guardara Log.txt
             string path = Path.GetFullPath(@"..\..");
-            //Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
             path = Path.Combine(path, "archivos");
             Directory.CreateDirectory(path);
             path = Path.Combine(path, @"Log.txt");
@@ -67,7 +66,6 @@ namespace SimuladorHorario
             DateTime dateTime = DateTime.Now;
             archivoLog.WriteLine($"Date Time: {dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
             archivoLog.Close();
-
             return;
         }
         public static string ConvertirFormato(string str)

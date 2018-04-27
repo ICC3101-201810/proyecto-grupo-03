@@ -92,7 +92,6 @@ namespace SimuladorHorario
                 if (estudiante.listaInscripcion.Contains(curso))
                 {
                     Program.ImprimirNegativo($"El curso {curso.nombre} ya esta agregado\n");
-                    //Console.WriteLine("El curso {0} ya esta agregado\n", curso.nombre);
                 }
                 else if (compatibilidad == false)
                 {
@@ -117,8 +116,6 @@ namespace SimuladorHorario
 
             SinCursosDisponiblesParaInscribir:
 
-            //Console.WriteLine("\nPresione cualquier tecla para continuar...");
-            //Console.ReadKey();
             return;
         }
         static void EliminarCursoInscrito(Estudiante estudiante)

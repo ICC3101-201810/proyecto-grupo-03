@@ -40,9 +40,7 @@ namespace SimuladorHorario
                     continue;
                 }
                 Console.WriteLine(curso.nombre);
-
             }
-
             Console.WriteLine("\npresione cualquier tecla para continuar...");
             Console.ReadKey();
         }
@@ -54,7 +52,6 @@ namespace SimuladorHorario
             {
                 Console.WriteLine($"NRC: {curso.nrc} Nombre: {curso.nombre}");
             }
-
             Console.WriteLine("\npresione cualquier tecla para continuar...");
             Console.ReadKey();
         }
