@@ -713,3 +713,48 @@ User: admin
 Operation: Crear Curso
 UserInput: 2
 
+Date Time: 06-05-2018 17:37:47
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 06-05-2018 17:37:57
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 06-05-2018 17:37:57
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 06-05-2018 17:37:59
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 06-05-2018 17:37:59
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 06-05-2018 17:37:59
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 06-05-2018 17:42:33
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 06-05-2018 17:42:38
+User: m
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 06-05-2018 17:42:43
+User: m
+Operation: Agregar curso
+UserInput: 1
+
