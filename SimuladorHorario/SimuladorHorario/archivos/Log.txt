@@ -713,3 +713,93 @@ User: admin
 Operation: Crear Curso
 UserInput: 2
 
+Date Time: 27-04-2018 19:33:10
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:34:28
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:36:42
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:37:35
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:38:14
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:38:14
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:39:13
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:39:13
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:39:13
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:39:14
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:40:46
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:40:46
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:40:46
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:40:47
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 27-04-2018 19:45:32
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:45:32
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:45:32
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 27-04-2018 19:45:34
+User: admin
+Operation: Crear Curso
+UserInput: 2
+

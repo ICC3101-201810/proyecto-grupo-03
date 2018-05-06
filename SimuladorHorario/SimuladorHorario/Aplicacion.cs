@@ -9,12 +9,14 @@ namespace SimuladorHorario
 {
 
     public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS }
-    public enum Especialidad {ING, IOC, ICE, ICC, ICI, ICA }
-    public enum TipoCurso { Curricular, Extra}
-    public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
-    public enum FormatoImpresion { Negativo,Positivo,Normal}
+    public enum Especialidad { ING, IOC, ICE, ICC, ICI, ICA }
+    public enum TipoCurso { Curricular, Extra }
+    public enum Concentracion { AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales }
+    public enum FormatoImpresion { Negativo, Positivo, Normal }
     //public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
-    public enum BloquesHorarios { i8_30, i9_30, i10_30, i11_30, i12_30, i13_30, i14_30, i15_30, i16_30, i17_30, i18_30, i19_30, i20_30}
+    public enum BloquesHorarios { i8_30, i9_30, i10_30, i11_30, i12_30, i13_30, i14_30, i15_30, i16_30, i17_30, i18_30, i19_30, i20_30 }
+
+
     static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
@@ -209,7 +211,7 @@ namespace SimuladorHorario
                             {
                                 string fecha = datosLinea[12].Replace('-',':');
                                 if(datosLinea[12] == "") { fecha = "A"; }
-                                listaHorarioLinea.Add(((i-6)+":"+datosLinea[i]+":"+fecha).Replace(" -",":"));
+                                listaHorarioLinea.Add((datosLinea[14] + ":" + (i - 6) + ":" + datosLinea[i] + ":" + fecha).Replace(" -", ":"));
                             }
                         }
                         List<string> bloquesHorario = new List<string>();
@@ -240,23 +242,28 @@ namespace SimuladorHorario
 
                 List<Evento> generarEvento(string stringHorario)
                 {
-                    //ingresa string del tipo           D:8:30:11:20:A  ||  D:8:30:11:20:20:03:2018
+                    //Console.WriteLine(stringHorario);Console.ReadKey();
+                    //ingresa string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
                     //retorna List<Evento>              
-                    int diaSemana = Convert.ToInt32(stringHorario.Split(':')[0]);
-                    int horaInicio = Convert.ToInt32(stringHorario.Split(':')[1]);
-                    int horaTermino = Convert.ToInt32(stringHorario.Split(':')[3]);
+                    string nombreEvento = string.Empty;
+                    int diaSemana = Convert.ToInt32(stringHorario.Split(':')[1]);
+                    int horaInicio = Convert.ToInt32(stringHorario.Split(':')[2]);
+                    int horaTermino = Convert.ToInt32(stringHorario.Split(':')[4]);
 
                     int cantBloques = horaTermino - horaInicio;
                     List<Evento> returnListaEventos = new List<Evento>();
 
-                    if (stringHorario.Split(':')[5] != "A") //Si posee una fecha entonces...
+                    string tipoEvento = (stringHorario.Split(':')[0]);
+                    TipoEvento tipo_Evento = (TipoEvento)System.Enum.Parse(typeof(TipoEvento), tipoEvento);
+
+                    if (stringHorario.Split(':')[6] != "A") //Si posee una fecha entonces...
                     {
-                        string fechaDia = (stringHorario.Split(':')[5]);
-                        string fechaMes = (stringHorario.Split(':')[6]);
+                        string fechaDia = (stringHorario.Split(':')[6]);
+                        string fechaMes = (stringHorario.Split(':')[7]);
                         string fechaAño;
                         try
                         {
-                            fechaAño = (stringHorario.Split(':')[7]);
+                            fechaAño = (stringHorario.Split(':')[8]);
                         }
                         catch
                         {
@@ -268,7 +275,7 @@ namespace SimuladorHorario
                         for (int i = 0; i < cantBloques; i++)
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
-                            Evento evento = new Evento("Evento Name", inicioBloque, fecha, "B-23", TipoEvento.PRBA);
+                            Evento evento = new Evento(nombreEvento, inicioBloque, fecha, "B-23", tipo_Evento);
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;
@@ -278,7 +285,7 @@ namespace SimuladorHorario
                         for (int i = 0; i < cantBloques; i++)
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
-                            Evento evento = new Evento("Evento Semanal", inicioBloque, "C-102", TipoEvento.CLAS);
+                            Evento evento = new Evento(nombreEvento, inicioBloque, "C-102", tipo_Evento);
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;

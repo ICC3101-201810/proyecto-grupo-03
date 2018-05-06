@@ -55,7 +55,7 @@ namespace SimuladorHorario
             Console.Write("Creditos: ");
             int creditos = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Especialidad: ");
+            Console.Write("Especialidad:\n");
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Especialidad), i));
@@ -111,7 +111,7 @@ namespace SimuladorHorario
 
             foreach (Evento evento in curso.eventosCurso)
             {
-                Console.WriteLine($"\t{evento.nombre}: {evento.hora} fecha:{evento.fecha}");
+                Console.WriteLine($"\t{evento.nombre} [{evento.tipo.ToString()}] hora:{evento.hora} fecha:{evento.fecha}");
             }
 
             Console.Write("\n¿Leer Otro Curso?\n" +
@@ -171,15 +171,14 @@ namespace SimuladorHorario
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(DayOfWeek), i));
             }
-
             int opcion = Program.ChequearOpcion(1, 7);
             DayOfWeek dia = (DayOfWeek)opcion;
-            Console.WriteLine("Ingrese el tipo de evento");
+
+            Console.WriteLine("Ingrese el tipo de evento!");
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(TipoEvento), i));
             }
-
             opcion = Program.ChequearOpcion(1, 6);
             TipoEvento tipoEvento = (TipoEvento)opcion;
 
@@ -188,7 +187,7 @@ namespace SimuladorHorario
             int deseo = 1;
             do
             {
-                Console.WriteLine("Ingrese bloque de horario");
+                Console.WriteLine("Ingrese bloque de horario!");
                 for (int i = 0; i <= 13; i++)
                 {
                     Console.WriteLine(i + 1 + ". " + Program.ConvertirFormato(Enum.GetName(typeof(BloquesHorarios), i)));
@@ -210,15 +209,14 @@ namespace SimuladorHorario
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(DayOfWeek), i));
             }
-
             int opcion = Program.ChequearOpcion(1, 7);
             DayOfWeek dia = (DayOfWeek)opcion;
+
             Console.WriteLine("Ingrese el tipo de evento");
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(TipoEvento), i));
             }
-
             opcion = Program.ChequearOpcion(1, 6);
             TipoEvento tipoEvento = (TipoEvento)opcion;
 
@@ -249,7 +247,8 @@ namespace SimuladorHorario
                 for(int i = 0; i < opcion; i++)
                 {
                     string hora = (a + i).ToString() + ":" + "30";
-                    Evento evento = new Evento("evento!", hora, sala, TipoEvento.AYUD);
+                    string nombreEvento = string.Empty;
+                    Evento evento = new Evento(nombreEvento, hora, sala, tipoEvento);
                     listaEvento.Add(evento);
                 }
                 break;
