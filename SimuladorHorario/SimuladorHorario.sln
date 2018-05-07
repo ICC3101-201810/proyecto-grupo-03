@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosSimuladorHorario", "SimuladorHorario\ModelosSimuladorHorario.csproj", "{450353FA-3219-433B-A7DB-AFB0345B5AA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimuladorHorario", "SimuladorHorario\SimuladorHorario.csproj", "{450353FA-3219-433B-A7DB-AFB0345B5AA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistasSimuladorHorario", "VistasSimuladorHorario\VistasSimuladorHorario.csproj", "{964DBC50-641F-44C1-A5A6-8C8D779CB9DB}"
 EndProject

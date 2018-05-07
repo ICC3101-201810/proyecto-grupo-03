@@ -97,7 +97,7 @@ namespace SimuladorHorario
                 int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
                 if (opcion == 1)
                 {
-                    Aplicacion.IniciarSesion("macanepa","123");
+                    Aplicacion.IniciarSesion();
                     goto InicioMenuPrincipal;
                 }
 

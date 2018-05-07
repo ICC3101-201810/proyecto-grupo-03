@@ -26,33 +26,50 @@ namespace SimuladorHorario
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
 
-        public static Usuario IniciarSesion(string nombreUsuario, string contraseña)
+        public static void IniciarSesion()
         {
             
+            InicioSesion:
+            Console.Clear();
+            Console.Write("Ingrese su nombre:> ");
+            string nombreUsuario = Console.ReadLine();
+            Console.Write("Ingrese su contraseña:> ");
+            string contraseña = Console.ReadLine();
+
             foreach (Usuario usuario in usuarios)
             {
-                
                 if (usuario is Estudiante)
                 {
                     Estudiante estudiante = (Estudiante)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        PlataformaEstudiante.MenuPlataformaEstudiante(estudiante);
+                        Console.Clear();
+                        PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
                     }
                 }
-                else if (usuario is Administrador)
+                if (usuario is Administrador)
                 {
                     Administrador administrador = (Administrador)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        Gestor.MenuGestor(administrador);
+                        Console.Clear();
+                        Gestor.MenuGestor(administrador); return;
                     }
                 }
             }
 
-            return usuarioActual;
+            Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
+            Console.WriteLine("Que desea hacer: \n" +
+                            "1. Volver a iniciar sesion\n" +                                                                               
+                            "2. Registrarse\n" +                                                                   
+                            "3. Salir al menu principal");
+            int opcion = Program.ChequearOpcion(1, 3);
+            if (opcion == 1) goto InicioSesion;
+            if (opcion == 2) RegistrarUsuario();
+            if (opcion == 3) return;
+            return;
         }
 
         public static void RegistrarUsuario()
@@ -279,7 +296,10 @@ namespace SimuladorHorario
             }
             catch (FileNotFoundException e)
             {
-                System.Windows.Forms.MessageBox.Show("Error de lectura cargar Cursos","ERROR");
+                System.Console.WriteLine(e.Message);
+                Program.ImprimirNegativo("Hubo un error al cargar los Cursos!");
+                Console.WriteLine("Presione cualquier tecla para continuar...");
+                Console.ReadKey();
             }
         }
 
@@ -330,7 +350,10 @@ namespace SimuladorHorario
             }
             catch (FileNotFoundException e1)
             {
-                System.Windows.Forms.MessageBox.Show("Error de lectura cargar Usuarios","ERROR");
+                System.Console.WriteLine(e1.Message);
+                Program.ImprimirNegativo("Hubo un error al cargar los Usuarios!");
+                Console.WriteLine("Presione cualquier tecla para continuar...");
+                Console.ReadKey();
             }
         }
 
