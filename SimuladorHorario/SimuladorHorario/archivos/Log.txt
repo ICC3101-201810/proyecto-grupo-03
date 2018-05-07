@@ -713,93 +713,48 @@ User: admin
 Operation: Crear Curso
 UserInput: 2
 
-Date Time: 27-04-2018 19:33:10
+Date Time: 06-05-2018 17:37:47
 User: admin
 Operation: Crear Curso
 UserInput: 2
 
-Date Time: 27-04-2018 19:34:28
-User: admin
-Operation: Crear Curso
-UserInput: 2
-
-Date Time: 27-04-2018 19:36:42
-User: admin
-Operation: Crear Curso
-UserInput: 2
-
-Date Time: 27-04-2018 19:37:35
-User: admin
-Operation: Crear Curso
-UserInput: 2
-
-Date Time: 27-04-2018 19:38:14
+Date Time: 06-05-2018 17:37:57
 User: admin
 Operation: Leer Curso
 UserInput: 2
 
-Date Time: 27-04-2018 19:38:14
+Date Time: 06-05-2018 17:37:57
 User: admin
 Operation: Eliminar Curso
 UserInput: 2
 
-Date Time: 27-04-2018 19:39:13
+Date Time: 06-05-2018 17:37:59
 User: admin
 Operation: Crear Curso
-UserInput: 1
+UserInput: 5
 
-Date Time: 27-04-2018 19:39:13
+Date Time: 06-05-2018 17:37:59
 User: admin
 Operation: Leer Curso
-UserInput: 1
+UserInput: 5
 
-Date Time: 27-04-2018 19:39:13
+Date Time: 06-05-2018 17:37:59
 User: admin
 Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 06-05-2018 17:42:33
+User: m
+Operation: Agregar curso
 UserInput: 1
 
-Date Time: 27-04-2018 19:39:14
-User: admin
-Operation: Crear Curso
-UserInput: 2
-
-Date Time: 27-04-2018 19:40:46
-User: admin
-Operation: Crear Curso
+Date Time: 06-05-2018 17:42:38
+User: m
+Operation: Agregar curso
 UserInput: 1
 
-Date Time: 27-04-2018 19:40:46
-User: admin
-Operation: Leer Curso
+Date Time: 06-05-2018 17:42:43
+User: m
+Operation: Agregar curso
 UserInput: 1
-
-Date Time: 27-04-2018 19:40:46
-User: admin
-Operation: Eliminar Curso
-UserInput: 1
-
-Date Time: 27-04-2018 19:40:47
-User: admin
-Operation: Crear Curso
-UserInput: 2
-
-Date Time: 27-04-2018 19:45:32
-User: admin
-Operation: Crear Curso
-UserInput: 1
-
-Date Time: 27-04-2018 19:45:32
-User: admin
-Operation: Leer Curso
-UserInput: 1
-
-Date Time: 27-04-2018 19:45:32
-User: admin
-Operation: Eliminar Curso
-UserInput: 1
-
-Date Time: 27-04-2018 19:45:34
-User: admin
-Operation: Crear Curso
-UserInput: 2
 

@@ -48,10 +48,16 @@ namespace SimuladorHorario
         {
             Console.Clear();
             Program.ImprimirBanner($"Avance Curricular {nombre}\n");
+            
+
             foreach (CursoCurricular curso in avanceMalla)
             {
-                Console.WriteLine($"NRC: {curso.nrc} Nombre: {curso.nombre}");
+                if (curso != null)
+                {
+                    Console.WriteLine($"NRC: {curso.nrc} Nombre: {curso.nombre}");
+                }
             }
+            
             Console.WriteLine("\npresione cualquier tecla para continuar...");
             Console.ReadKey();
         }
