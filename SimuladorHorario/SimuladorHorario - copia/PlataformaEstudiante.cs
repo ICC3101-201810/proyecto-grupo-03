@@ -10,8 +10,8 @@ namespace SimuladorHorario
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
-            /*
             InicioPlataforma:
+            Console.Clear();
             Program.ImprimirBanner("Bienvenido " + estudiante.nombre + " a la plataforma de estudiante");
             Console.WriteLine("Que desea hacer:\n" +
                              "1. Inscribir Curso\n" +
@@ -29,8 +29,6 @@ namespace SimuladorHorario
             if (opcion == 4) { estudiante.MostrarAvance(); goto InicioPlataforma; }
 
             if (opcion == 5) { return; }
-
-    */
 
         }
         public static bool Guardar()

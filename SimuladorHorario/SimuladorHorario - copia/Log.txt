@@ -1,0 +1,15 @@
+Date Time: 20-04-2018 23:12:38
+User: macanepa
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 20-04-2018 23:12:43
+User: macanepa
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 21-04-2018 18:22:15
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
