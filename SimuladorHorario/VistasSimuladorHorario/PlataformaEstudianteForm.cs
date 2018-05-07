@@ -21,5 +21,15 @@ namespace VistasSimuladorHorario
         {
 
         }
+
+        private void PlataformaEstudianteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlataformaEstudianteForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }

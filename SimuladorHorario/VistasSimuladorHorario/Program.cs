@@ -17,13 +17,10 @@ namespace VistasSimuladorHorario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
-            PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
             LoginForm loginForm = new LoginForm();
-        
-            Controller controller = new Controller(loginForm,plataformaEstudianteForm);
+            LoginController controller = new LoginController(loginForm);
 
-            Application.Run(new LoginForm());
+            Application.Run(loginForm);
         }
     }
 }

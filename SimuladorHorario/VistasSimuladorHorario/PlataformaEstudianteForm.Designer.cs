@@ -72,6 +72,8 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "PlataformaEstudianteForm";
             this.Text = "Plataforma Estudiante";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlataformaEstudianteForm_FormClosing);
+            this.Load += new System.EventHandler(this.PlataformaEstudianteForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

@@ -14,6 +14,9 @@ namespace VistasSimuladorHorario
 {
     public partial class LoginForm : Form
     {
+
+        public event EventHandler<IniciarSesionEventArgs> OnIniciarSesion;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -38,8 +41,10 @@ namespace VistasSimuladorHorario
             Usuario usuario = Aplicacion.IniciarSesion(nombreUsuario, passUsuario);
             if (usuario == null) { MessageBox.Show("Usuario o Contraseña incorrecto", "Login Error"); return; }
 
-                      
-                    
+            IniciarSesionEventArgs iniciarSesionArgs = new IniciarSesionEventArgs();
+            iniciarSesionArgs.usuario = usuario;
+            OnIniciarSesion(this, iniciarSesionArgs);
+            this.Hide();
 
         }
 

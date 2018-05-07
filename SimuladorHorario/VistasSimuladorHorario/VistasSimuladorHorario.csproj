@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
+    <Compile Include="IniciarSesionEventArgs.cs" />
+    <Compile Include="LoginController.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
