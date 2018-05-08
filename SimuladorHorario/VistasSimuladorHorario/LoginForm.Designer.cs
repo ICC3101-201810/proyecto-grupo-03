@@ -37,7 +37,9 @@
             // 
             // usuarioText
             // 
-            this.usuarioText.Location = new System.Drawing.Point(139, 96);
+            this.usuarioText.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.usuarioText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usuarioText.Location = new System.Drawing.Point(181, 137);
             this.usuarioText.Name = "usuarioText";
             this.usuarioText.Size = new System.Drawing.Size(214, 20);
             this.usuarioText.TabIndex = 0;
@@ -46,7 +48,7 @@
             // usuarioLabel
             // 
             this.usuarioLabel.AutoSize = true;
-            this.usuarioLabel.Location = new System.Drawing.Point(90, 99);
+            this.usuarioLabel.Location = new System.Drawing.Point(123, 137);
             this.usuarioLabel.Name = "usuarioLabel";
             this.usuarioLabel.Size = new System.Drawing.Size(43, 13);
             this.usuarioLabel.TabIndex = 1;
@@ -55,7 +57,7 @@
             // contraseñaLabel
             // 
             this.contraseñaLabel.AutoSize = true;
-            this.contraseñaLabel.Location = new System.Drawing.Point(73, 125);
+            this.contraseñaLabel.Location = new System.Drawing.Point(114, 175);
             this.contraseñaLabel.Name = "contraseñaLabel";
             this.contraseñaLabel.Size = new System.Drawing.Size(61, 13);
             this.contraseñaLabel.TabIndex = 3;
@@ -63,7 +65,7 @@
             // 
             // contraseñaText
             // 
-            this.contraseñaText.Location = new System.Drawing.Point(139, 122);
+            this.contraseñaText.Location = new System.Drawing.Point(181, 175);
             this.contraseñaText.Name = "contraseñaText";
             this.contraseñaText.Size = new System.Drawing.Size(214, 20);
             this.contraseñaText.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             // ingresarButton
             // 
-            this.ingresarButton.Location = new System.Drawing.Point(278, 148);
+            this.ingresarButton.Location = new System.Drawing.Point(250, 210);
             this.ingresarButton.Name = "ingresarButton";
             this.ingresarButton.Size = new System.Drawing.Size(75, 23);
             this.ingresarButton.TabIndex = 4;
@@ -80,18 +82,19 @@
             this.ingresarButton.UseVisualStyleBackColor = true;
             this.ingresarButton.Click += new System.EventHandler(this.ingresarButton_Click);
             // 
-            // loginForm
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 256);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(559, 358);
             this.Controls.Add(this.ingresarButton);
             this.Controls.Add(this.contraseñaLabel);
             this.Controls.Add(this.contraseñaText);
             this.Controls.Add(this.usuarioLabel);
             this.Controls.Add(this.usuarioText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "loginForm";
+            this.Name = "LoginForm";
             this.Text = "Inicio Sesion";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

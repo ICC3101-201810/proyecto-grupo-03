@@ -19,8 +19,10 @@ namespace VistasSimuladorHorario
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
+
+
 
         private void PlataformaEstudianteForm_Load(object sender, EventArgs e)
         {
@@ -30,6 +32,16 @@ namespace VistasSimuladorHorario
         private void PlataformaEstudianteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Environment.Exit(0);
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

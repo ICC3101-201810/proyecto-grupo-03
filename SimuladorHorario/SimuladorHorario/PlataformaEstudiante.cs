@@ -10,6 +10,7 @@ namespace SimuladorHorario
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
+            #region
             /*
             InicioPlataforma:
             Program.ImprimirBanner("Bienvenido " + estudiante.nombre + " a la plataforma de estudiante");
@@ -31,6 +32,7 @@ namespace SimuladorHorario
             if (opcion == 5) { return; }
 
     */
+            #endregion
 
         }
         public static bool Guardar()

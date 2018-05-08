@@ -75,8 +75,9 @@ namespace SimuladorHorario
 
         static void Main(string[] args)
         {
-
-            Aplicacion.CargarCursos();
+            
+            #region
+            /*Aplicacion.CargarCursos();
             Aplicacion.CargarUsuarios();
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -112,7 +113,8 @@ namespace SimuladorHorario
                 goto InicioMenuPrincipal;
 
             }
-            MenuPrincipal();
+            MenuPrincipal();*/
         }
+        #endregion
     }
 }
