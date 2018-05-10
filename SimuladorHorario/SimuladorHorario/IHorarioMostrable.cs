@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    
     interface IHorarioMostrable
     {
         void Mostrar(List<Evento> listaInformacion);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable()]
     public class CursoCurricular:Curso
     {
         public string nrc { get; private set; }

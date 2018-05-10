@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable()]
     static class PlataformaEstudiante
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
