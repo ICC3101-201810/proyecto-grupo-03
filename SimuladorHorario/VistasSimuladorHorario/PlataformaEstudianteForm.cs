@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
@@ -15,11 +16,12 @@ namespace VistasSimuladorHorario
         public PlataformaEstudianteForm()
         {
             InitializeComponent();
+            InicializarHorario();
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
 
@@ -43,5 +45,39 @@ namespace VistasSimuladorHorario
         {
 
         }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        public void InicializarHorario()
+        {
+            List<string> listaHorariosString =  Enum.GetNames(typeof(BloquesHorarios)).ToList();
+            int contadorHora = 8;
+            foreach (string horario in listaHorariosString)
+            {
+                dataGridView1.Rows.Add($"{contadorHora}:30 - {contadorHora+1}:20", "", "", "", "", "", "", "");
+                contadorHora++;
+            }
+
+        }
+
     }
 }
