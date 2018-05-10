@@ -188,7 +188,7 @@ namespace SimuladorHorario
                             string stringHorario = string.Empty;
                             stringHorario = listaHorarioLinea[i];
                             listaEvento.AddRange(generarEvento(stringHorario));
-                        }
+                        }   
                         
                         if (contadorLineaCurso == curso.Count)
                         {
@@ -211,9 +211,8 @@ namespace SimuladorHorario
                 {
 
                     //Console.WriteLine(stringHorario);Console.ReadKey();
-                    //INGRESA string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
+                    //ingresa string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
                     //retorna List<Evento>   
-                    // uuuuu
                     string nombreEvento = string.Empty;
                     int diaSemana = Convert.ToInt32(stringHorario.Split(':')[1]);
                     int horaInicio = Convert.ToInt32(stringHorario.Split(':')[2]);
@@ -229,17 +228,10 @@ namespace SimuladorHorario
                     {
                         string fechaDia = (stringHorario.Split(':')[6]);
                         string fechaMes = (stringHorario.Split(':')[7]);
-                        string fechaAño;
-                        try
-                        {
-                            fechaAño = (stringHorario.Split(':')[8]);
-                        }
-                        catch
-                        {
-                            fechaAño = "2018";
-                        }
+                        string fechaAño = (stringHorario.Split(':')[8]);
+                        
 
-                        string fecha = fechaDia + "-" + fechaMes + "-" + fechaAño;
+                        string fecha = fechaDia + "-";
 
                         for (int i = 0; i < cantBloques; i++)
                         {
