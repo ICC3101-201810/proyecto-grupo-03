@@ -12,24 +12,19 @@ namespace SimuladorHorario
 
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
         {
-
+            int NumerodeComparacion = 0;
             EmpiezaDeNuevo:
-            Console.Write(":> ");
             string strOpcion = Console.ReadLine();
-            int opcion;
-            try
+            while (!Char.IsNumber(strOpcion, NumerodeComparacion))
             {
-                opcion = Convert.ToInt32(strOpcion);
-            }
-            catch
-            {
-                Console.Write("Ingrese una opcion valida:> ");
-                goto EmpiezaDeNuevo;
+                Console.Write("Ingrese una opcion valida: ");
+                strOpcion = Console.ReadLine();
             }
 
+            int opcion = Convert.ToInt32(strOpcion);
             if (opcion > fin || opcion < inicio)
             {
-                Console.Write("Ingrese una opcion valida:> ");
+                Console.Write("Ingrese una opcion valida: ");
                 goto EmpiezaDeNuevo;
             }
             else return opcion;
@@ -56,34 +51,48 @@ namespace SimuladorHorario
         public static void Log(string userInput, string accion)
         {
 
-            //Genera el directorio donde se guardara Log.txt
+
             string path = Path.GetFullPath(@"..\..");
-            path = Path.Combine(path, "archivos");
-            Directory.CreateDirectory(path);
+
+            Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
             path = Path.Combine(path, @"Log.txt");
+
 
             StreamWriter archivoLog = new StreamWriter(path, true);
             DateTime dateTime = DateTime.Now;
             archivoLog.WriteLine($"Date Time: {dateTime}\r\nUser: {Aplicacion.usuarioActual.nombre}\r\nOperation: {accion}\r\nUserInput: {userInput}\r\n");
             archivoLog.Close();
+
             return;
         }
         public static string ConvertirFormato(string str)
         {
-            return str.Replace("i", "").Replace('_', ':');
+            return str.Replace('i', ' ').Replace('a', ':').Replace('_', '-');
         }
 
         static void Main(string[] args)
         {
+       
+
 
             Aplicacion.CargarCursos();
             Aplicacion.CargarUsuarios();
+            //Aplicacion.print();
+
+            /*
+            Console.WriteLine("super Usuario?\n(1) Si\n(2) No");
+            string op = Console.ReadLine();
+            if (op == "1")
+            {
+                AplicacionMati.app();
+            }
+            */
+
 
             Console.ForegroundColor = ConsoleColor.White;
             void MenuPrincipal()
             {
                 InicioMenuPrincipal:
-                Console.Clear();
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Bienvenido al Simulador de Horario");
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -93,11 +102,11 @@ namespace SimuladorHorario
                               "3. Mostrar usuarios\n" +
                               "4. Guardar Informacion\n" +
                               "5. Salir del Programa");
-
                 int opcion = ChequearOpcion(1, 5); //Ejemplo de uso de Chequear opcion
+
                 if (opcion == 1)
                 {
-                    Aplicacion.IniciarSesion("macanepa","123");
+                    Aplicacion.IniciarSesion();
                     goto InicioMenuPrincipal;
                 }
 
@@ -110,6 +119,8 @@ namespace SimuladorHorario
                 if (opcion == 4) Aplicacion.GuardarData();
 
                 goto InicioMenuPrincipal;
+
+
 
             }
             MenuPrincipal();

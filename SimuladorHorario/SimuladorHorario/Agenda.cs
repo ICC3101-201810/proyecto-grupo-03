@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    public class Agenda:IHorarioMostrable
+    class Agenda:IHorarioMostrable
     {
         List<Evento> listaEventosAgenda;
 

@@ -8,8 +8,328 @@ User: macanepa
 Operation: Eliminar curso
 UserInput: 1
 
-Date Time: 21-04-2018 18:22:15
+Date Time: 20/4/2018 23:34:18
+User: Yoni
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 7/5/2018 11:12:08
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 7/5/2018 11:12:08
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 7/5/2018 11:12:08
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 7/5/2018 11:12:10
 User: admin
 Operation: Crear Curso
 UserInput: 2
+
+Date Time: 7/5/2018 11:12:22
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 7/5/2018 11:12:22
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:13:19
+User: 1
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:13:26
+User: 1
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:13:42
+User: 1
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:13:47
+User: 1
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:13:59
+User: 1
+Operation: Eliminar curso
+UserInput: 5
+
+Date Time: 7/5/2018 16:16:48
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:16:48
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:16:48
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 7/5/2018 16:16:53
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:09
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:09
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:12
+User: admin
+Operation: Crear Curso
+UserInput: 4
+
+Date Time: 7/5/2018 16:17:12
+User: admin
+Operation: Leer Curso
+UserInput: 4
+
+Date Time: 7/5/2018 16:17:18
+User: admin
+Operation: Eliminar Curso
+UserInput: 4
+
+Date Time: 7/5/2018 16:17:19
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:26
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:26
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 7/5/2018 16:17:28
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:28
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:28
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:29
+User: admin
+Operation: Crear Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:29
+User: admin
+Operation: Leer Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:29
+User: admin
+Operation: Eliminar Curso
+UserInput: 3
+
+Date Time: 7/5/2018 16:17:30
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 7/5/2018 16:17:30
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 7/5/2018 16:17:30
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 7/5/2018 16:17:38
+User: 1
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:11:23
+User: 3
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:38:26
+User: 1
+Operation: Agregar curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:38:35
+User: 1
+Operation: Eliminar curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:38:37
+User: 1
+Operation: Eliminar curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:38:58
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:39:11
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:39:11
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:39:13
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:39:13
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:39:13
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:40:02
+User: admin
+Operation: Crear Curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:40:02
+User: admin
+Operation: Leer Curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:40:02
+User: admin
+Operation: Eliminar Curso
+UserInput: 1
+
+Date Time: 9/5/2018 11:40:05
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:40:11
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:40:11
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:40:12
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:40:12
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:40:12
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:42:22
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:42:51
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:42:51
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:42:52
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:42:52
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:42:52
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:43:31
+User: admin
+Operation: Crear Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:44:35
+User: admin
+Operation: Leer Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:44:35
+User: admin
+Operation: Eliminar Curso
+UserInput: 2
+
+Date Time: 9/5/2018 11:44:37
+User: admin
+Operation: Crear Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:44:37
+User: admin
+Operation: Leer Curso
+UserInput: 5
+
+Date Time: 9/5/2018 11:44:37
+User: admin
+Operation: Eliminar Curso
+UserInput: 5
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    public abstract class Curso
+    abstract class Curso
     {
         public string nombre { get; private set; }
         public string profesor { get; private set; }

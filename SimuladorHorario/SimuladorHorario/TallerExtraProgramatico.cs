@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    public class TallerExtraProgramatico : Curso
+    class TallerExtraProgramatico : Curso
     {
         List<Evento> eventosExtraP;
 

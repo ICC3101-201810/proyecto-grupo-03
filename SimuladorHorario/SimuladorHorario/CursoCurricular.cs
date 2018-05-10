@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    public class CursoCurricular:Curso
+    class CursoCurricular:Curso
     {
         public string nrc { get; private set; }
         public int creditos { get; private set; }
         List<CursoCurricular> cursosPreRequisito;
         Especialidad especialidad;
-        public List<Evento> eventosCurso { get; private set; }        
+        List<Evento> eventosCurso;
+        public int id { get; private set; }
+
 
         public CursoCurricular(string nrc, int creditos,
             List<CursoCurricular> cursosPreRequisito, Especialidad especialidad,
             List<Evento> eventosCurso, string nombre, string profesor,
-            TipoCurso tipo):base(nombre,profesor, tipo)
+            TipoCurso tipo, int id):base(nombre,profesor, tipo)
         {
             this.nrc = nrc;
             this.creditos = creditos;
@@ -25,6 +27,7 @@ namespace SimuladorHorario
             this.especialidad = especialidad;
             this.eventosCurso = eventosCurso;
             tipo = TipoCurso.Curricular;
+            this.id = id;
         }
 
     }

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
-    public class Horario:IHorarioMostrable
+    class Horario:IHorarioMostrable
     {
         List<Evento> eventosHorario;
 
         public Horario(List<Evento> listaEventosHorario)
         {
+            
             this.eventosHorario = listaEventosHorario;
         }
 
