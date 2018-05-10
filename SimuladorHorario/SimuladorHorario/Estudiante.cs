@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable()]
     public class Estudiante:Usuario
     {
         public List<CursoCurricular> avanceMalla { get; private set; }

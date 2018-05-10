@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SimuladorHorario
 {
-
+    
     public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS }
     public enum Especialidad { ING, IOC, ICE, ICC, ICI, ICA }
     public enum TipoCurso { Curricular, Extra }
@@ -16,13 +17,12 @@ namespace SimuladorHorario
     //public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
     public enum BloquesHorarios { i8_30, i9_30, i10_30, i11_30, i12_30, i13_30, i14_30, i15_30, i16_30, i17_30, i18_30, i19_30, i20_30 }
 
-
+    [Serializable()]
     public static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
         public static Usuario usuarioActual;
-
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
 
@@ -360,6 +360,62 @@ namespace SimuladorHorario
             cursos.Add(curso);
         }
 
+        public static void SerializeAll()
+        {
+            try
+            {
+                using (Stream stream = File.Open("usuariosData.bin", FileMode.Open))
+                {
+                    BinaryFormatter usuariosData = new BinaryFormatter();
+                    usuariosData.Serialize(stream, usuarios);
+                }
+            }
+            catch (IOException) { }
+                       
+            try
+            {
+                using (Stream stream = File.Open("cursosData.bin", FileMode.Open))
+                {
+                    BinaryFormatter cursosData = new BinaryFormatter();
+                    cursosData.Serialize(stream, cursos);
+                }
+            }
+            catch (IOException) { }
+
+        }
+
+        public static void DeSerializeAll()
+        {
+            try
+            {
+                using (Stream stream = File.Open("usuariosData", FileMode.Open))
+                {
+                    BinaryFormatter usuariosData = new BinaryFormatter();
+
+                    var usuariosSerializated = (List<Usuario>)usuariosData.Deserialize(stream);
+                    foreach(Usuario user in usuariosSerializated)
+                    {
+                        usuarios.Add(user);
+                    }
+                }
+            }
+            catch (IOException) { }
+
+            try
+            {
+                using (Stream stream = File.Open("cursosData", FileMode.Open))
+                {
+                    BinaryFormatter cursosData = new BinaryFormatter();
+
+                    var cursosSerializated = (List<CursoCurricular>)cursosData.Deserialize(stream);
+                    foreach (CursoCurricular curs in cursosSerializated)
+                    {
+                        cursos.Add(curs);
+                    }
+                }
+            }
+            catch (IOException) { }
+        }
 
 
     }

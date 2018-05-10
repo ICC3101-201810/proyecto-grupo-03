@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable()]
     static class Program
     {
 
