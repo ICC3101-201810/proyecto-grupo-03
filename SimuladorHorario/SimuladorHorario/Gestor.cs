@@ -10,7 +10,8 @@ namespace SimuladorHorario
     {
         public static void MenuGestor(Administrador administrador)
         {
-            MenuGestor:
+            #region
+            /*MenuGestor:
             Console.Clear();
             Program.ImprimirBanner("Bienvenido" + administrador.nombre + " al gestor");
             Console.WriteLine("Que desea hacer: ");
@@ -27,7 +28,8 @@ namespace SimuladorHorario
             if (opcion == 4) EliminarCurso(); Program.Log(opcion.ToString(), "Eliminar Curso");
             if (opcion == 5) return;
 
-            goto MenuGestor;
+            goto MenuGestor;*/
+            #endregion
         }
         public static void CrearCursoCurricular()
         {

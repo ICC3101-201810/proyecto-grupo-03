@@ -9,12 +9,15 @@ namespace SimuladorHorario
 {
 
     public enum TipoEvento { PRBA, CLAS, LABT, AYUD, EXTRAP, PERS }
-    public enum Especialidad {ING, IOC, ICE, ICC, ICI, ICA }
-    public enum TipoCurso { Curricular, Extra}
-    public enum Concentracion {AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales  }
-    public enum FormatoImpresion { Negativo,Positivo,Normal}
-    public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
-    static class Aplicacion
+    public enum Especialidad { ING, IOC, ICE, ICC, ICI, ICA }
+    public enum TipoCurso { Curricular, Extra }
+    public enum Concentracion { AplicacionesWeb, Algoritmos, Modelacion, Bioprocesos, Hidraulica, Señales }
+    public enum FormatoImpresion { Negativo, Positivo, Normal }
+    //public enum BloquesHorarios { i8_30a9_20, i9_30a10_20, i10_30a11_20, i11_30a12_20, i12_30a13_20, i13_30a14_20, i14_30a15_20, i15_30a16_20, i16_30a17_20, i17_30a18_20, i18_30a19_20, i19_30a20_20, i20_30a21_20, i21_30a22_20 }
+    public enum BloquesHorarios { i8_30, i9_30, i10_30, i11_30, i12_30, i13_30, i14_30, i15_30, i16_30, i17_30, i18_30, i19_30, i20_30 }
+
+
+    public static class Aplicacion
     {
         static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
@@ -23,78 +26,49 @@ namespace SimuladorHorario
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
 
-        public static void IniciarSesion()
+        public static Usuario IniciarSesion(string nombreUsuario, string contraseña)
         {
             
-            InicioSesion:
-            Console.Clear();
-            Console.Write("Ingrese su nombre: ");
-            string nombreUsuario = Console.ReadLine();
-            Console.Write("Ingrese su contraseña: ");
-            string contraseña = Console.ReadLine();
-
             foreach (Usuario usuario in usuarios)
             {
+                
                 if (usuario is Estudiante)
                 {
                     Estudiante estudiante = (Estudiante)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        Console.Clear();
-                        PlataformaEstudiante.MenuPlataformaEstudiante(estudiante); return;
+                        PlataformaEstudiante.MenuPlataformaEstudiante(estudiante);
                     }
                 }
-                if (usuario is Administrador)
+                else if (usuario is Administrador)
                 {
                     Administrador administrador = (Administrador)usuario;
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        Console.Clear();
-                        Gestor.MenuGestor(administrador); return;
+                        Gestor.MenuGestor(administrador);
                     }
                 }
             }
 
-            Program.ImprimirNegativo("Usuario o contraseña invalidos\n");
-            Console.WriteLine("Que desea hacer: \n" +
-                            "1. Volver a iniciar sesion\n" +                                                                               
-                            "2. Registrarse\n" +                                                                   
-                            "3. Salir al menu principal");
-            int opcion = Program.ChequearOpcion(1, 3);
-            if (opcion == 1) goto InicioSesion;
-            if (opcion == 2) RegistrarUsuario();
-            if (opcion == 3) return;
-            //
-            return;
+            return usuarioActual;
         }
 
-        public static void RegistrarUsuario()
+        public static bool RegistrarUsuario(string nombreUsuario, string contraseña, Concentracion concentracion ,Especialidad especialidad)
         {
             
-            Console.Write("Ingrese su nombre: ");
-            string nombreUsuario = Console.ReadLine();
-
             if (NombresUsuarios().Contains(nombreUsuario))
             {
                 do
                 {
-                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro: ");
-                    nombreUsuario = Console.ReadLine();
+                    return false;
 
                 } while (NombresUsuarios().Contains(nombreUsuario));
             }
-            
 
-            Console.Write("Ingrese su contraseña: ");
-            string contraseña = Console.ReadLine();
-            Console.WriteLine("Ingrese su especialidad: ");
-            for (int i = 0; i <= 5; i++)
-            {
-                Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));
-            }
-            Especialidad especialidad = (Especialidad)Program.ChequearOpcion(1, 7);
+            
+            
             List <CursoCurricular>avanceMalla = new List<CursoCurricular>();
             #region
             /*
@@ -123,25 +97,19 @@ namespace SimuladorHorario
                 if (opcion2 == 2) flag = false;
             } while (flag); */
             #endregion
-            Console.WriteLine("Ingrese su concentracion:");
-            for (int i= 0; i < 6; i++)
-            {
-                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Concentracion), i));
-            }
-
-            Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 6);
+            
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
             Console.Clear();
             Program.ImprimirPositivo("Usuario Creado");
-            return;
+            return true;
         }
 
         public static List<string> NombresUsuarios()
         {
             List<string> retorno = new List<string>();
-            foreach (Usuario u in usuarios)
+            foreach (Usuario usuario in usuarios)
             {
-                retorno.Add(u.nombre);
+                retorno.Add(usuario.nombre);
             }
             return retorno;
         }
@@ -149,9 +117,9 @@ namespace SimuladorHorario
         public static List<CursoCurricular> GetCursosCurriculares()
         {
             List<CursoCurricular> retorno = new List<CursoCurricular>();
-            foreach(CursoCurricular c in cursos)
+            foreach(CursoCurricular curso in cursos)
             {
-                retorno.Add(c);
+                retorno.Add(curso);
             }
             return retorno;
         }
@@ -160,133 +128,165 @@ namespace SimuladorHorario
         {
             try
             {
-
+                //Encuentra el directorio donde se encuentra el archivo csv de cursos
                 string path = Path.GetFullPath(@"..\..");
-
-                //Console.WriteLine("Dir: "+path);
-                Program.ImprimirPositivo("Data_Cursos:\tDir: " + path);
-                path = Path.Combine(path, @"dataCursosDisponibles.csv");
-
+                path = Path.Combine(path, "archivos");
+                Directory.CreateDirectory(path);
+                Program.ImprimirPositivo("Cursos:\tDir: " + path);
+                path = Path.Combine(path, fileName);
 
                 StreamReader file = new StreamReader(path);
                 string line;
                 string previoNRC = string.Empty;
-                List<Evento> listaEventos = new List<Evento>();
                 string nombre, profesor, nrc, carrera;
-                int creditos, id;
+                int creditos;
 
-                List<List<string>> conjuntoCurso = new List<List<string>>();
-                conjuntoCurso.Add(new List<string>() { file.ReadLine() });
+
+                //El csv posee varias lineas de un mismo curso. Esto genera conjuntos de la lineas
+                //del mismo curso.
+                List<List<string>> conjuntoCursosDistintos = new List<List<string>>();
+                conjuntoCursosDistintos.Add(new List<string>() { file.ReadLine() });
                 while ((line = file.ReadLine()) != null)
                 {
-                    string[] LA = line.Split(';');
-                    nrc = LA[0];
-                    if (previoNRC == nrc)
+                    string[] datosLine = line.Split(';');
+                    nrc = datosLine[0];
+                    if (previoNRC == nrc || previoNRC == "")
                     {
-                        conjuntoCurso[conjuntoCurso.Count()-1].Add(line);
+                        conjuntoCursosDistintos[conjuntoCursosDistintos.Count()-1].Add(line);
                     }
                     else
                     {
-                        conjuntoCurso.Add(new List<string>());
+                        conjuntoCursosDistintos.Add(new List<string>());
+                        conjuntoCursosDistintos[conjuntoCursosDistintos.Count() - 1].Add(line);
                     }
-
                     previoNRC = nrc;
                 }
 
 
-
-                foreach(List<string> curso in conjuntoCurso)
+                foreach(List<string> curso in conjuntoCursosDistintos)
                 {
                     List<Evento> listaEvento = new List<Evento>();
-                    foreach(string linea in curso)
+                    List<string> listaHorariosBloques = new List<string>();
+                    int contadorLineaCurso = 1;
+                    foreach (string linea in curso)
                     {
-                        string[] dataLinea = linea.Split(';');
-                        List<string> listaHorario = new List<string>();
+                        string[] datosLinea = linea.Split(';');
+                        List<string> listaHorarioLinea = new List<string>();    //listaHorarioLinea es el conjunto de horarios que se encuentra en una linea 
                         for(int i = 6; i < 12; i++)
                         {
-                            if(dataLinea[i] != "")
+                            if(datosLinea[i] != "") //Si en la casilla existe un horario entonces...
                             {
-                                string dia = dataLinea[12].Replace('-',':');
-                                if(dataLinea[12] == "") { dia = "A"; }
-                                listaHorario.Add((dataLinea[i]+":"+dia).Replace(" -",":"));
+                                string fecha = datosLinea[12].Replace('-',':');
+                                if(datosLinea[12] == "") { fecha = "A"; }
+                                listaHorarioLinea.Add((datosLinea[14] + ":" + (i - 6) + ":" + datosLinea[i] + ":" + fecha).Replace(" -", ":"));
                             }
                         }
-                        for (int i = 0; i < listaHorario.Count; i++)
+                        List<string> bloquesHorario = new List<string>();
+
+                        for (int i = 0; i < listaHorarioLinea.Count; i++)
                         {
-                            //Console.WriteLine(listaHorario[i]);
-                            string horario = listaHorario[i];
-                            var papa = (horario.ToString().Split(':'));
-
-                            //Console.WriteLine(papa[0]);
-
+                            string stringHorario = string.Empty;
+                            stringHorario = listaHorarioLinea[i];
+                            listaEvento.AddRange(generarEvento(stringHorario));
                         }
-
-                        if (linea == curso[curso.Count()-1])
+                        
+                        if (contadorLineaCurso == curso.Count)
                         {
-                            string[] linea2 = linea.Split(';');
-                            nombre = linea2[4];
-                            profesor = linea2[15];
-                            nrc = linea2[0];
-                            carrera = linea2[1];
-                            creditos = Convert.ToInt32(linea2[5]);
-                            id = Convert.ToInt32(linea2[2]);
+                            string[] datosLinea2 = linea.Split(';');
+                            nombre = datosLinea2[4];
+                            profesor = datosLinea2[15];
+                            nrc = datosLinea2[0];
+                            carrera = datosLinea2[1];
+                            creditos = Convert.ToInt32(datosLinea2[5]);
                             CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),
-                                Especialidad.ICA, listaEventos, nombre, profesor, TipoCurso.Curricular, id);
+                                Especialidad.ICA,listaEvento, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
-
-
-
+                        contadorLineaCurso++;
                     }
 
                 }
 
-                List<string> formatoHorario(string stringHorario)
+                List<Evento> generarEvento(string stringHorario)
                 {
+                    //Console.WriteLine(stringHorario);Console.ReadKey();
+                    //ingresa string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
+                    //retorna List<Evento>              
+                    string nombreEvento = string.Empty;
+                    int diaSemana = Convert.ToInt32(stringHorario.Split(':')[1]);
+                    int horaInicio = Convert.ToInt32(stringHorario.Split(':')[2]);
+                    int horaTermino = Convert.ToInt32(stringHorario.Split(':')[4]);
 
-                    List<string> returnString = new List<string>();
-                    for(int i = 0; i < stringHorario.Split(',').Count(); i++)
+                    int cantBloques = horaTermino - horaInicio;
+                    List<Evento> returnListaEventos = new List<Evento>();
+
+                    string tipoEvento = (stringHorario.Split(':')[0]);
+                    TipoEvento tipo_Evento = (TipoEvento)System.Enum.Parse(typeof(TipoEvento), tipoEvento);
+
+                    if (stringHorario.Split(':')[6] != "A") //Si posee una fecha entonces...
                     {
-                        returnString.Add(stringHorario.Split(',')[i]);
-                        //Console.WriteLine(stringHorario.Split(',')[i]);
-                    }
-                    return returnString;
-                }
-                
+                        string fechaDia = (stringHorario.Split(':')[6]);
+                        string fechaMes = (stringHorario.Split(':')[7]);
+                        string fechaAño;
+                        try
+                        {
+                            fechaAño = (stringHorario.Split(':')[8]);
+                        }
+                        catch
+                        {
+                            fechaAño = "2018";
+                        }
 
+                        string fecha = fechaDia + "-" + fechaMes + "-" + fechaAño;
+
+                        for (int i = 0; i < cantBloques; i++)
+                        {
+                            string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
+                            Evento evento = new Evento(nombreEvento, inicioBloque, fecha, "B-23", tipo_Evento);
+                            returnListaEventos.Add(evento);
+                        }
+                        return returnListaEventos;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < cantBloques; i++)
+                        {
+                            string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
+                            Evento evento = new Evento(nombreEvento, inicioBloque, "C-102", tipo_Evento);
+                            returnListaEventos.Add(evento);
+                        }
+                        return returnListaEventos;
+                    }
+                }
 
                 file.Close();
             }
             catch (FileNotFoundException e)
             {
-                System.Console.WriteLine(e.Message);
+                System.Windows.Forms.MessageBox.Show("Error de lectura cargar Cursos","ERROR");
             }
-
-
         }
 
-        public static void CargarUsuarios(string fileName = "dataUsuarios.csv")
+        public static void CargarUsuarios(string fileName = "saveData.csv")
         {
             try
             {
-
                 string path = Path.GetFullPath(@"..\..");
-
-                
-                Program.ImprimirPositivo("Data_Usuarios:\tDir: " + path);
-                path = Path.Combine(path, @"saveData.csv");
-
+                path = Path.Combine(path, "archivos");
+                Directory.CreateDirectory(path);
+                Program.ImprimirPositivo("Users:\tDir: " + path);
+                path = Path.Combine(path, fileName);
 
                 StreamReader file = new StreamReader(path);
-                string line;
-                while ((line = file.ReadLine()) != null)
+                string linea;
+                while ((linea = file.ReadLine()) != null)
                 {
-                    string[] LI = line.Split(';');
-                    string nombre = LI[0];
-                    string contraseña = LI[1];
+                    string[] lineaSeparada = linea.Split(';');
+                    string nombre = lineaSeparada[0];
+                    string contraseña = lineaSeparada[1];
                     bool admin;
-                    //
-                    if (LI[2] == "true")
+                    
+                    if (lineaSeparada[2] == "true")
                     {
                         admin = true;
                         Administrador administrador = new Administrador(nombre, contraseña, admin);
@@ -295,36 +295,33 @@ namespace SimuladorHorario
                     else
                     {
                         string especialidad, añoIngreso, concentracion, avanceMalla;
-                        especialidad = LI[4];
-                        añoIngreso = LI[5];
-                        concentracion = LI[6];
-                        avanceMalla = LI[7];
+                        especialidad = lineaSeparada[4];
+                        añoIngreso = lineaSeparada[5];
+                        concentracion = lineaSeparada[6];
+                        avanceMalla = lineaSeparada[7];
                         List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
 
-                        foreach (string nrc in LI[7].Split(','))
+                        foreach (string nrc in lineaSeparada[7].Split(','))
                         {
                             CursoCurricular curso = cursos.Find(x => x.nrc == nrc);
                             listaAvanceMalla.Add(curso);
                         }
-                        Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICC, Concentracion.Hidraulica, nombre, contraseña, false);
+                        Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICA, Concentracion.Algoritmos, nombre, contraseña, false);
                         usuarios.Add(estudiante);
                     }
                 }
-
                 file.Close();
             }
             catch (FileNotFoundException e1)
             {
-                System.Console.WriteLine(e1.Message);
+                System.Windows.Forms.MessageBox.Show("Error de lectura cargar Usuarios","ERROR");
             }
-
-
         }
 
         public static void MostrarUsuarios()
         {
             Console.Clear();
-            Program.ImprimirNegativo("--Imprimir Usuarios--\n");
+            Program.ImprimirBanner("Imprimir Usuarios\n");
             foreach(Usuario usuario in usuarios)
             {
                 Console.WriteLine($"Nombre: {usuario.nombre}, Admin: {usuario.esAdmin}");
@@ -333,25 +330,14 @@ namespace SimuladorHorario
             Console.ReadKey();
         }
 
-        public static void print()
+        public static void GuardarData(string fileName = "saveData.csv")
         {
-            foreach(Usuario usuario in usuarios)
-            {
-                Console.WriteLine(usuario.nombre+" "+usuario.contraseña);
-            }
-        }
-
-        public static void GuardarData()
-        {
-
-            //string path = Directory.GetCurrentDirectory();
 
             string path = Path.GetFullPath(@"..\..");
-
-            //Console.WriteLine("Dir: "+path);
+            path = Path.Combine(path, "archivos");
+            Directory.CreateDirectory(path);
             Program.ImprimirPositivo("Dir: " + path);
-            path = Path.Combine(path, @"saveData.csv");
-
+            path = Path.Combine(path,fileName);
 
             StreamWriter saveFile = new StreamWriter(path);
             foreach(Usuario usuario in usuarios)
@@ -367,12 +353,11 @@ namespace SimuladorHorario
                 {
                     saveFile.Write("true\n");
                 }
-
-
             }
             saveFile.Close();
             Program.ImprimirPositivo("Guardado Exitoso.\n");
-            
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey();
             return;
         }
 
