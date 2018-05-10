@@ -396,10 +396,33 @@ namespace SimuladorHorario
         {
             try
             {
-                using (Stream stream = File.Open("usuariosData", FileMode.Open));
+                using (Stream stream = File.Open("usuariosData", FileMode.Open))
+                {
+                    BinaryFormatter usuariosData = new BinaryFormatter();
 
-                
+                    var usuariosSerializated = (List<Usuario>)usuariosData.Deserialize(stream);
+                    foreach(Usuario user in usuariosSerializated)
+                    {
+                        usuarios.Add(user);
+                    }
+                }
             }
+            catch (IOException) { }
+
+            try
+            {
+                using (Stream stream = File.Open("cursosData", FileMode.Open))
+                {
+                    BinaryFormatter cursosData = new BinaryFormatter();
+
+                    var cursosSerializated = (List<CursoCurricular>)cursosData.Deserialize(stream);
+                    foreach (CursoCurricular curs in cursosSerializated)
+                    {
+                        cursos.Add(curs);
+                    }
+                }
+            }
+            catch (IOException) { }
         }
 
 
