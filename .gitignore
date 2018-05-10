@@ -8,7 +8,7 @@
 *.sln.docstates
 *.cache
 /SimuladorHorario/.vs/SimuladorHorario/v15/Server/sqlite3/
-
+.suo
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
