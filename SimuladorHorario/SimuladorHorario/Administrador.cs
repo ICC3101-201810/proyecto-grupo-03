@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable()]
     public class Administrador:Usuario
     {
         public Administrador(string nombreUsuario, string contraseña, bool esAdmin) : base(nombreUsuario, contraseña, esAdmin)

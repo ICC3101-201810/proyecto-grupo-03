@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimuladorHorario
 {
+    [Serializable]
     public abstract class Usuario
     {
         public string nombre { get; private set; }

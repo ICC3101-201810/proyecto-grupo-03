@@ -22,5 +22,7 @@ namespace VistasSimuladorHorario
             loginForm.Show();
             registrarseForm.Enabled = false;
         }
+
+        
     }
 }
