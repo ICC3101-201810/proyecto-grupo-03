@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
         {
             this.registrarseForm = registrarseForm;
             this.registrarseForm.OnRegistrarse += VistasRegistrarse_OnRegistrarse;
+            Console.WriteLine("hola");
         }
 
         private void VistasRegistrarse_OnRegistrarse(object sender, EventArgs e)
