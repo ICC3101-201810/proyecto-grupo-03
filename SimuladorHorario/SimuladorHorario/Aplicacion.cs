@@ -209,6 +209,7 @@ namespace SimuladorHorario
 
                 List<Evento> generarEvento(string stringHorario)
                 {
+
                     //Console.WriteLine(stringHorario);Console.ReadKey();
                     //ingresa string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
                     //retorna List<Evento>              
