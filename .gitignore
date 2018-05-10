@@ -9,7 +9,7 @@
 *.cache
 /SimuladorHorario/.vs/SimuladorHorario/v15/Server/sqlite3/
 .suo
-.ide-wa
+*.ide-wa
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
