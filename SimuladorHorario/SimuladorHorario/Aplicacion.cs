@@ -55,20 +55,30 @@ namespace SimuladorHorario
             return usuarioActual;
         }
 
-        public static bool RegistrarUsuario(string nombreUsuario, string contraseña, Concentracion concentracion ,Especialidad especialidad)
+        public static void RegistrarUsuario()
         {
             
+            Console.Write("Ingrese su nombre:> ");
+            string nombreUsuario = Console.ReadLine();
+
             if (NombresUsuarios().Contains(nombreUsuario))
             {
                 do
                 {
-                    return false;
+                    Console.WriteLine("Ese nombre de usuario ya existe, ingrese otro: ");
+                    nombreUsuario = Console.ReadLine();
 
                 } while (NombresUsuarios().Contains(nombreUsuario));
             }
 
-            
-            
+            Console.Write("Ingrese su contraseña:> ");
+            string contraseña = Console.ReadLine();
+            Console.WriteLine("Ingrese su especialidad:> ");
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(i+1 + ". " + Enum.GetName(typeof(Especialidad), i));
+            }
+            Especialidad especialidad = (Especialidad)Program.ChequearOpcion(1, 7);
             List <CursoCurricular>avanceMalla = new List<CursoCurricular>();
             #region
             /*
@@ -97,11 +107,17 @@ namespace SimuladorHorario
                 if (opcion2 == 2) flag = false;
             } while (flag); */
             #endregion
-            
+            Console.WriteLine("Ingrese su concentracion:");
+            for (int i= 0; i < 6; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + Enum.GetName(typeof(Concentracion), i));
+            }
+
+            Concentracion concentracion = (Concentracion)Program.ChequearOpcion(1, 6);
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
             Console.Clear();
             Program.ImprimirPositivo("Usuario Creado");
-            return true;
+            return;
         }
 
         public static List<string> NombresUsuarios()

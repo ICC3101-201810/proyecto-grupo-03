@@ -16,7 +16,6 @@ namespace VistasSimuladorHorario
     {
 
         public event EventHandler<IniciarSesionEventArgs> OnIniciarSesion;
-        public event EventHandler OnRegistro;
 
         public LoginForm()
         {
@@ -52,12 +51,6 @@ namespace VistasSimuladorHorario
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             
-        }
-
-        private void RegistrarseB_Click(object sender, EventArgs e)
-        {
-            OnRegistro(this, null);
-            this.Hide();
         }
     }
 }

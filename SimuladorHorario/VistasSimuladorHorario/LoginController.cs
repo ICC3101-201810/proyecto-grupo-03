@@ -15,7 +15,6 @@ namespace VistasSimuladorHorario
         {
             this.loginForm = loginForm;
             this.loginForm.OnIniciarSesion += VistasLogin_OnIniciarSesion;
-            this.loginForm.OnRegistro += VistasRegistro_OnRegistro;
         }
 
         private void VistasLogin_OnIniciarSesion(object sender, IniciarSesionEventArgs e)
@@ -26,12 +25,6 @@ namespace VistasSimuladorHorario
             loginForm.Enabled = false;
         }
 
-        private void VistasRegistro_OnRegistro(object sender, EventArgs e)
-        {
-            RegistrarseForm registrarseForm = new RegistrarseForm();
-            registrarseForm.Show();
-            loginForm.Enabled = false;
-        }
 
     }
 }
