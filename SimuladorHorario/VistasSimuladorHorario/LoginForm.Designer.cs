@@ -33,6 +33,7 @@
             this.contraseñaLabel = new System.Windows.Forms.Label();
             this.contraseñaText = new System.Windows.Forms.TextBox();
             this.ingresarButton = new System.Windows.Forms.Button();
+            this.RegistrarseB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuarioText
@@ -82,12 +83,23 @@
             this.ingresarButton.UseVisualStyleBackColor = true;
             this.ingresarButton.Click += new System.EventHandler(this.ingresarButton_Click);
             // 
+            // RegistrarseB
+            // 
+            this.RegistrarseB.Location = new System.Drawing.Point(250, 239);
+            this.RegistrarseB.Name = "RegistrarseB";
+            this.RegistrarseB.Size = new System.Drawing.Size(75, 23);
+            this.RegistrarseB.TabIndex = 5;
+            this.RegistrarseB.Text = "Registrarse";
+            this.RegistrarseB.UseVisualStyleBackColor = true;
+            this.RegistrarseB.Click += new System.EventHandler(this.RegistrarseB_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(559, 358);
+            this.Controls.Add(this.RegistrarseB);
             this.Controls.Add(this.ingresarButton);
             this.Controls.Add(this.contraseñaLabel);
             this.Controls.Add(this.contraseñaText);
@@ -109,6 +121,7 @@
         private System.Windows.Forms.Label contraseñaLabel;
         private System.Windows.Forms.TextBox contraseñaText;
         private System.Windows.Forms.Button ingresarButton;
+        private System.Windows.Forms.Button RegistrarseB;
     }
 }
 
