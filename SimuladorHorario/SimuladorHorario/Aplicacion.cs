@@ -212,7 +212,8 @@ namespace SimuladorHorario
 
                     //Console.WriteLine(stringHorario);Console.ReadKey();
                     //INGRESA string del tipo           PRBA:D:8:30:11:20:A  ||  PRBA:D:8:30:11:20:20:03:2018
-                    //retorna List<Evento>              
+                    //retorna List<Evento>   
+                    // uuuuu
                     string nombreEvento = string.Empty;
                     int diaSemana = Convert.ToInt32(stringHorario.Split(':')[1]);
                     int horaInicio = Convert.ToInt32(stringHorario.Split(':')[2]);
