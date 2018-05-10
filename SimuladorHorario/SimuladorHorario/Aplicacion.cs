@@ -223,7 +223,7 @@ namespace SimuladorHorario
                     string tipoEvento = (stringHorario.Split(':')[0]);
                     TipoEvento tipo_Evento = (TipoEvento)System.Enum.Parse(typeof(TipoEvento), tipoEvento);
 
-                    if (stringHorario.Split(':')[6] != "A") //Si posee una fecha entonces...
+                    if (stringHorario.Split(':')[6] != "A") //Si posee una fecha entonces....
                     {
                         string fechaDia = (stringHorario.Split(':')[6]);
                         string fechaMes = (stringHorario.Split(':')[7]);
