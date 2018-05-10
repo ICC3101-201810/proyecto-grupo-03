@@ -9,7 +9,7 @@ namespace SimuladorHorario
 {
     static class Program
     {
-        //hola
+
         public static int ChequearOpcion(int inicio, int fin) //Chequea si la opcion es valida. Solo sirve para opciones de numeros enteros: Inicio: cota inferior ; Fin Cota superior
         {
 
