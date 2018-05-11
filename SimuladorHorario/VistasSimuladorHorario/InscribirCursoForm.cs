@@ -44,13 +44,12 @@ namespace VistasSimuladorHorario
             InscribirCursoEventArgs inscribirCursoArgs = new InscribirCursoEventArgs();
             inscribirCursoArgs.nombreCursoInscribir = CursosComboBox.SelectedItem.ToString();
             OnInscribir(this, inscribirCursoArgs);
-            this.Close();
         }
 
         private void InscribirCursoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
+            //Aplicacion.SerializeAll();
+            //System.Environment.Exit(0);
         }
     }
 

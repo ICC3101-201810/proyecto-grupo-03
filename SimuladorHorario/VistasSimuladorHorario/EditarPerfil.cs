@@ -48,8 +48,8 @@ namespace VistasSimuladorHorario
 
         private void EditarPerfil_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
+            //Aplicacion.SerializeAll();
+            //System.Environment.Exit(0);
         }
     }
 
