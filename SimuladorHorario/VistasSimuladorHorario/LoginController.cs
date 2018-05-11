@@ -28,6 +28,7 @@ namespace VistasSimuladorHorario
             if (usuarioActivo is Estudiante)
             {
                 PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
+                PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm);
                 MessageBox.Show("Bienvenido estudiante: " + usuarioActivo.nombre);
                 plataformaEstudianteForm.Show();
             }

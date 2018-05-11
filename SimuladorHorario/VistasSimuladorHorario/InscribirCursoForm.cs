@@ -13,6 +13,8 @@ namespace VistasSimuladorHorario
 {
     public partial class InscribirCursoForm : Form
     {
+        public event EventHandler OnInscribir;
+
         public InscribirCursoForm()
         {
             InitializeComponent();
@@ -27,8 +29,21 @@ namespace VistasSimuladorHorario
 
         public void InicializarCursoComboBox()
         {
-            CursosComboBox.DataSource = Aplicacion.cursos;
+            List<string> listaCursos = new List<string>();
+            foreach(CursoCurricular curso in Aplicacion.cursos)
+            {
+                listaCursos.Add(curso.nombre + " : " + curso.profesor);
+            }
+            CursosComboBox.DataSource = listaCursos;
+
+
+
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OnInscribir(this,EventArgs.Empty);
+            this.Close();
+        }
     }
 }
