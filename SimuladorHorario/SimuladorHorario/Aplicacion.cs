@@ -200,11 +200,12 @@ namespace SimuladorHorario
                             {
                                 cursosPreRequisito.Add(cur);  
                             }
+                            /*
                             for (int c = 0; c < cursosPreRequisito.Count; c++)
                             {
                                 if (cursosPreRequisito[c] != "")
                                     System.Windows.Forms.MessageBox.Show(cursosPreRequisito[c]);
-                            }
+                            }*/
                             
                             nombre = datosLinea2[4];
                             profesor = datosLinea2[15];
