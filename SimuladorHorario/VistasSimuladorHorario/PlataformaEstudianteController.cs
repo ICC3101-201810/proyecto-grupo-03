@@ -25,7 +25,7 @@ namespace VistasSimuladorHorario
 
         private void VistasInscribirCurso_OnInscribirCurso(object sender, EventArgs e)
         {
-            profesorLabel inscribirCursoForm = new profesorLabel();
+            InscribirCursoForm inscribirCursoForm = new InscribirCursoForm();
             InscribirCursoController inscribirCursoController = new InscribirCursoController(inscribirCursoForm,usuarioActivo);
             inscribirCursoForm.OnInscribir += VistasInscribirCurso_OnInscribir;
             inscribirCursoForm.ShowDialog();

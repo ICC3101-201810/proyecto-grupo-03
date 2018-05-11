@@ -11,12 +11,12 @@ using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-    public partial class profesorLabel : Form
+    public partial class InscribirCursoForm : Form
     {
         public event EventHandler<InscribirCursoEventArgs> OnInscribir;
 
 
-        public profesorLabel()
+        public InscribirCursoForm()
         {
             InitializeComponent();
             InicializarCursoComboBox();
