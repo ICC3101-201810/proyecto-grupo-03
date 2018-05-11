@@ -21,7 +21,7 @@ namespace VistasSimuladorHorario
         {
             InitializeComponent();
             InicializarHorario();
-            MessageBox.Show("Bienvenido Usuario: "+Aplicacion.usuarioActual.nombre);
+            
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)

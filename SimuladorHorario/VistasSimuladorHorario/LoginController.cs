@@ -1,9 +1,13 @@
-﻿using SimuladorHorario;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
@@ -21,9 +25,20 @@ namespace VistasSimuladorHorario
         private void VistasLogin_OnIniciarSesion(object sender, IniciarSesionEventArgs e)
         {
             usuarioActivo = e.usuario;
-            PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
-            PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm);
-            plataformaEstudianteForm.Show();
+            if (usuarioActivo is Estudiante)
+            {
+                PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
+                MessageBox.Show("Bienvenido estudiante: " + usuarioActivo.nombre);
+                plataformaEstudianteForm.Show();
+            }
+
+            else if (e.usuario is Administrador)
+            {
+                GestorForm gestorForm = new GestorForm();
+                GestorController gestorController = new GestorController(gestorForm);
+                MessageBox.Show("Bienvenido administrador: "+ usuarioActivo.nombre);
+                gestorForm.Show();
+            }
             loginForm.Enabled = false;
         }
 
