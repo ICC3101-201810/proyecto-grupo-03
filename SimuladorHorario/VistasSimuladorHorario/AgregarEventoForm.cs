@@ -13,6 +13,8 @@ namespace VistasSimuladorHorario
 {
     public partial class AgregarEventoForm : Form
     {
+
+
         public AgregarEventoForm()
         {
             InitializeComponent();
@@ -31,8 +33,9 @@ namespace VistasSimuladorHorario
             string fecha = FechaEvento.Value.ToString("dd:MM:yyyy");
             TipoEvento tipoEvento = (TipoEvento)TipoEventoComboBox.SelectedItem;
             string sala = SalaUser.Text;
-            string horaInicio = BloqueHComboBox.SelectedText;
-            int duracion = Convert.ToInt32(DuracionComboBox.SelectedText);
+            string horaInicio = (string)(BloqueHComboBox.SelectedItem);
+            int duracion = Convert.ToInt32(DuracionComboBox.SelectedItem);
+            Gestor.CrearEvento(fecha, tipoEvento, sala, horaInicio, duracion);
             
         }
 

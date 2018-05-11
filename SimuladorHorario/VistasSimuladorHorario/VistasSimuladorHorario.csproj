@@ -104,6 +104,13 @@
     <Compile Include="InscribirCursoForm.Designer.cs">
       <DependentUpon>InscribirCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeerCursoController.cs" />
+    <Compile Include="LeerCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeerCursoForm.Designer.cs">
+      <DependentUpon>LeerCursoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginController.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InscribirCursoForm.resx">
       <DependentUpon>InscribirCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeerCursoForm.resx">
+      <DependentUpon>LeerCursoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
