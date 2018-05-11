@@ -63,5 +63,11 @@ namespace VistasSimuladorHorario
         {
             OnAgregarEvento(this, EventArgs.Empty);
         }
+
+        private void CrearCursoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
     }
 }

@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="IniciarSesionEventArgs.cs" />
     <Compile Include="InscribirCursoController.cs" />
+    <Compile Include="InscribirCursoEventArgs.cs" />
     <Compile Include="InscribirCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>

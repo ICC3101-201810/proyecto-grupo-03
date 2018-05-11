@@ -66,6 +66,7 @@
             this.Name = "LeerCursoForm";
             this.Text = "LeerCursoForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LeerCursoForm_FormClosing);
+            this.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.LeerCursoForm_GiveFeedback);
             this.ResumeLayout(false);
 
         }

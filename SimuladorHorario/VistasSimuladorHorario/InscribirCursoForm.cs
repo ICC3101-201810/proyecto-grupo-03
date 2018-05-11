@@ -46,10 +46,13 @@ namespace VistasSimuladorHorario
             OnInscribir(this, inscribirCursoArgs);
             this.Close();
         }
+
+        private void InscribirCursoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
     }
 
-    public class InscribirCursoEventArgs : EventArgs
-    {
-        public string nombreCursoInscribir { get; set; }
-    }
+    
 }

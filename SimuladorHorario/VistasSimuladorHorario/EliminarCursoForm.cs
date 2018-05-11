@@ -51,5 +51,11 @@ namespace VistasSimuladorHorario
             }
             this.Close();
         }
+
+        private void EliminarCursoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
     }
 }
