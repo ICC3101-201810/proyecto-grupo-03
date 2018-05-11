@@ -87,9 +87,29 @@ namespace SimuladorHorario
             Console.ReadKey();
         }
 
-        public static void LeerCurso()
+        public static void LeerCurso(string nrcCurso)
         {
-            LeerCurso:
+            int indCurso = -1;
+
+            foreach (CursoCurricular cursoCur in Aplicacion.cursos)
+            {
+                if (cursoCur.nrc == nrcCurso)
+                {
+                    indCurso = Aplicacion.cursos.IndexOf(cursoCur);
+                }
+            }
+            if (indCurso != -1)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    $"Curso: {Aplicacion.cursos[indCurso ].nombre}\n" +
+                    $"NRC: {Aplicacion.cursos[indCurso ].nrc}\n" +
+                    $"Profesor: {Aplicacion.cursos[indCurso ].profesor}\n" +
+                    $"Creditos: {(Aplicacion.cursos[indCurso ].creditos).ToString()}\n" +
+                    $"Especialidad: {(Aplicacion.cursos[indCurso]).especialidad.ToString()}");
+            }
+            return;
+            /*
+                LeerCurso:
             Console.Clear();
             Program.ImprimirBanner("Leer Curso");
             ImprimirCursos();
@@ -123,7 +143,7 @@ namespace SimuladorHorario
             if (opcion == 1) goto LeerCurso;
             if (opcion == 2) { Console.Clear();return; }
             else return;
-
+            */
 
         }
         public static void ActualizarCurso()
@@ -235,9 +255,6 @@ namespace SimuladorHorario
                 break;
 
             }
-
-
-
             Program.ImprimirPositivo("Evento Agregado");
             return listaEvento;
 
