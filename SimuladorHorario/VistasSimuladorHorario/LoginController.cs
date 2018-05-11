@@ -22,6 +22,7 @@ namespace VistasSimuladorHorario
         {
             usuarioActivo = e.usuario;
             PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
+            PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm);
             plataformaEstudianteForm.Show();
             loginForm.Enabled = false;
         }

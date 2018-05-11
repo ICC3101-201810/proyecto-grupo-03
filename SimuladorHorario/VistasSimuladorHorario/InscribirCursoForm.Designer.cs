@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.CursosComboBox = new System.Windows.Forms.ComboBox();
+            this.InscribirButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CursosComboBox
@@ -40,11 +41,22 @@
             this.CursosComboBox.TabIndex = 0;
             this.CursosComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // InscribirButton
+            // 
+            this.InscribirButton.Location = new System.Drawing.Point(713, 415);
+            this.InscribirButton.Name = "InscribirButton";
+            this.InscribirButton.Size = new System.Drawing.Size(75, 23);
+            this.InscribirButton.TabIndex = 1;
+            this.InscribirButton.Text = "Inscribir";
+            this.InscribirButton.UseVisualStyleBackColor = true;
+            this.InscribirButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // InscribirCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.InscribirButton);
             this.Controls.Add(this.CursosComboBox);
             this.Name = "InscribirCursoForm";
             this.Text = "InscribirCursoForm";
@@ -55,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox CursosComboBox;
+        private System.Windows.Forms.Button InscribirButton;
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SimuladorHorario
 {
     [Serializable()]
-    static class PlataformaEstudiante
+    public static class PlataformaEstudiante
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
@@ -60,7 +60,7 @@ namespace SimuladorHorario
 
             return true;
         }
-        static void InscribirCurso(Estudiante estudiante)
+        public static void InscribirCurso(Estudiante estudiante)
         {
             int quiereAgregar = 1;
             while (quiereAgregar == 1)

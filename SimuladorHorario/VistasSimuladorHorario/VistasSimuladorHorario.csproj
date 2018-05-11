@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IniciarSesionEventArgs.cs" />
+    <Compile Include="InscribirCursoController.cs" />
     <Compile Include="InscribirCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlataformaEstudianteController.cs" />
     <Compile Include="PlataformaEstudianteForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -138,13 +138,14 @@
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
+            this.inscribirCursoToolStripMenuItem.Click += new System.EventHandler(this.inscribirCursoToolStripMenuItem_Click);
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
             // 
             // ayudaToolStripMenuItem
