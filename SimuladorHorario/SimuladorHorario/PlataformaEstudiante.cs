@@ -40,7 +40,7 @@ namespace SimuladorHorario
         {
             return false;
         }
-        public static bool ChequearCompatibilidad(Estudiante estudiante, CursoCurricular cursoInscribir)
+        public static bool ChequearCompatibilidadHorario(Estudiante estudiante, CursoCurricular cursoInscribir)
         {
             List<string> listaBloquesUsados = new List<string>();
             foreach(Curso curso in estudiante.listaInscripcion)
@@ -54,12 +54,20 @@ namespace SimuladorHorario
 
             foreach(Evento evento in cursoInscribir.eventosCurso)
             {
-                if (listaBloquesUsados.Contains(evento.hora)){ return false; }
+                if (listaBloquesUsados.Contains(evento.hora)) { return false; }
             }
-
-
             return true;
         }
+
+        public static bool ChequearCompatibilidadPreRequisito(Estudiante estudiante, CursoCurricular cursoCurricular)
+        {
+            foreach (string cur in cursoCurricular.cursosPreRequisito)
+            {
+                if (!estudiante.avanceMalla.Contains(cur)) { return false; }
+            }
+            return true;
+        }
+
         static void InscribirCurso(Estudiante estudiante)
         {
             int quiereAgregar = 1;
@@ -93,12 +101,35 @@ namespace SimuladorHorario
 
                 CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
 
-                bool compatibilidad = ChequearCompatibilidad(estudiante, curso);
+                bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
+                bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
                 if (estudiante.listaInscripcion.Contains(curso))
                 {
                     Program.ImprimirNegativo($"El curso {curso.nombre} ya esta agregado\n");
                 }
-                else if (compatibilidad == false)
+                else
+                {
+                    if (compatibilidadHorario == false)
+                    {
+                        Program.ImprimirNegativo($"El curso {curso.nombre} posee un tope de horario\n");
+                    }
+                    if (compatibilidadPreRequisito == false)
+                    {
+                        Program.ImprimirNegativo($"Todavia no has aprobado el curso {curso.nombre}\n");
+                    }
+                    if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
+                    {
+                        Program.ImprimirNegativo($"No puedes inscribir el curso {curso.nombre}\n");
+                    }
+                    else
+                    {
+                        estudiante.listaInscripcion.Add(curso);
+                        Program.ImprimirPositivo("Curso agregado");
+                        Program.Log(quiereAgregar.ToString(), "Agregar curso");
+                    }
+                }
+                /*
+                else if (compatibilidadHorario == false)
                 {
                     Program.ImprimirNegativo($"El curso {curso.nombre} posee un tope de horario\n");
                 }
@@ -108,6 +139,7 @@ namespace SimuladorHorario
                     Program.ImprimirPositivo("Curso agregado");
                     Program.Log(quiereAgregar.ToString(), "Agregar curso");
                 }
+                */
                 
                 Console.WriteLine("\n¿Quiere agregar otro curso?\n" +
                     "1. Si\n" +
