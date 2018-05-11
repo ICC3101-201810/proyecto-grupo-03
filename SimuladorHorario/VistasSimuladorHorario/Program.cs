@@ -17,10 +17,13 @@ namespace VistasSimuladorHorario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            RegistrarseForm registrarseForm = new RegistrarseForm();
+            RegistrarseController registrarseController = new RegistrarseController(registrarseForm);
             LoginForm loginForm = new LoginForm();
             LoginController controller = new LoginController(loginForm);
-
+           
             Application.Run(loginForm);
+            
         }
     }
 }

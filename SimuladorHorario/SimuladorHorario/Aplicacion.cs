@@ -99,8 +99,6 @@ namespace SimuladorHorario
             #endregion
             
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
-            Console.Clear();
-            Program.ImprimirPositivo("Usuario Creado");
             return true;
         }
 

@@ -119,7 +119,7 @@
             // RegistrarseButton
             // 
             this.RegistrarseButton.Location = new System.Drawing.Point(415, 284);
-            this.RegistrarseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RegistrarseButton.Margin = new System.Windows.Forms.Padding(4);
             this.RegistrarseButton.Name = "RegistrarseButton";
             this.RegistrarseButton.Size = new System.Drawing.Size(100, 28);
             this.RegistrarseButton.TabIndex = 8;
@@ -155,6 +155,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RegistrarseForm";
             this.Text = "Registrarse";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarseForm_FormClosing);
+            this.Load += new System.EventHandler(this.RegistrarseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
