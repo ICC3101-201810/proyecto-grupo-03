@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace SimuladorHorario
 {
@@ -174,7 +175,7 @@ namespace SimuladorHorario
                         {
                             if(datosLinea[i] != "") //Si en la casilla existe un horario entonces...
                             {
-                                string fecha = datosLinea[12].Replace('-',':');
+                                string fecha = datosLinea[12].Replace('-',':').Replace('/',':');
                                 if(datosLinea[12] == "") { fecha = "A"; }
                                 listaHorarioLinea.Add((datosLinea[14] + ":" + (i - 6) + ":" + datosLinea[i] + ":" + fecha).Replace(" -", ":"));
                             }
