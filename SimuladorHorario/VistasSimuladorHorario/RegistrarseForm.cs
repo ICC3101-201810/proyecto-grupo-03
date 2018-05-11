@@ -44,7 +44,7 @@ namespace VistasSimuladorHorario
             string passUsuario = PassUser.Text;
             Especialidad especialidad= (Especialidad) EspecialidadCB.SelectedItem;
             Concentracion concentracion = (Concentracion)ConcentracionComboBox.SelectedItem;
-            if (nombreUsuario == null || passUsuario == null)
+            if (nombreUsuario == "" || passUsuario == "")
             {
                 MessageBox.Show("Debe ingresar todos los datos");
                 return;

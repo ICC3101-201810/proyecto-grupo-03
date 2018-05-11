@@ -55,6 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearCursoForm.Designer.cs">
+      <DependentUpon>CrearCursoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestorController.cs" />
+    <Compile Include="GestorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestorForm.Designer.cs">
+      <DependentUpon>GestorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciarSesionEventArgs.cs" />
     <Compile Include="InscribirCursoForm.cs">
       <SubType>Form</SubType>
@@ -90,6 +103,9 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GestorForm.resx">
+      <DependentUpon>GestorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InscribirCursoForm.resx">
       <DependentUpon>InscribirCursoForm.cs</DependentUpon>
     </EmbeddedResource>
