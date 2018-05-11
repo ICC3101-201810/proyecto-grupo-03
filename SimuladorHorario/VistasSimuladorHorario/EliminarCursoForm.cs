@@ -44,12 +44,13 @@ namespace VistasSimuladorHorario
             nrcCursoAEliminar = opcion[0];
 
             Gestor.EliminarCurso(nrcCursoAEliminar);
-
+            return;
+            /*
             if (OnEliminarCurso != null)
             {
                 OnEliminarCurso(this, EventArgs.Empty);
             }
-            this.Close();
+            this.Close();*/
         }
 
         private void EliminarCursoForm_FormClosing(object sender, FormClosingEventArgs e)

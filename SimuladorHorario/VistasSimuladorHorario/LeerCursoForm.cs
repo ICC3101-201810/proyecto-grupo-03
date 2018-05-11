@@ -45,12 +45,13 @@ namespace VistasSimuladorHorario
             nrcCursoALeer = opcion[0];
 
             Gestor.LeerCurso(nrcCursoALeer);
-
+            return;
+            /*
             if (OnLeerCurso != null)
             {
                 OnLeerCurso(this, EventArgs.Empty);
             }
-            this.Close();
+            this.Close();*/
         }
 
         private void LeerCursoForm_FormClosing(object sender, FormClosingEventArgs e)

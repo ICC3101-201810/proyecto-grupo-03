@@ -58,6 +58,7 @@ namespace SimuladorHorario
                         $"Profesor: {cursoCur.profesor}\n" +
                         $"Creditos: {(cursoCur.creditos).ToString()}\n" +
                         $"Especialidad: {cursoCur.especialidad}\n");
+                    
                     break;
                 }
             }
