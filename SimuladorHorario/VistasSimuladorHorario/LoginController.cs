@@ -29,6 +29,7 @@ namespace VistasSimuladorHorario
         private void VistasRegistro_OnRegistro(object sender, EventArgs e)
         {
             RegistrarseForm registrarseForm = new RegistrarseForm();
+            RegistrarseController registrarseController = new RegistrarseController(registrarseForm);
             registrarseForm.Show();
             loginForm.Enabled = false;
         }
