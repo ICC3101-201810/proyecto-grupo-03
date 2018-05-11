@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimuladorHorario
 {
     [Serializable()]
-    static class PlataformaEstudiante
+    public static class PlataformaEstudiante
     {
         public static void MenuPlataformaEstudiante(Estudiante estudiante)
         {
@@ -68,92 +69,44 @@ namespace SimuladorHorario
             return true;
         }
 
-        static void InscribirCurso(Estudiante estudiante)
+        public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
         {
-            int quiereAgregar = 1;
-            while (quiereAgregar == 1)
+            MessageBox.Show(cursoInscripcion);
+            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nombre == cursoInscripcion);
+
+            //bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
+            //bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
+
+            bool compatibilidadHorario = true;
+            bool compatibilidadPreRequisito = true;
+
+            if (estudiante.listaInscripcion.Contains(curso))
             {
-
-                if (Aplicacion.GetCursoCurricular().Count == 0)
+                MessageBox.Show("El Curso ya está inscrito.", "Error de Inscripcion");
+            }
+            else
+            {
+                if (compatibilidadHorario == false)
                 {
-                    Console.WriteLine("No hay cursos disponibles para inscribir");
-                    goto SinCursosDisponiblesParaInscribir;
+                    MessageBox.Show($"El curso {curso.nombre} posee un tope de horario\n", "Error de Inscripcion");
                 }
-
-                Console.WriteLine("Seleccione un curso para inscribir: ");
-                foreach (CursoCurricular curs in Aplicacion.GetCursoCurricular())
+                else if (compatibilidadPreRequisito == false)
                 {
-                    Console.WriteLine("NRC:{0}\nNombre: {1}\nProfesor: {2}\n", curs.nrc, curs.nombre, curs.profesor);
+                    MessageBox.Show($"Todavia no has aprobado el curso {curso.nombre}", "Error de Inscripcion");
                 }
-
-                List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
-
-                string option = "";
-
-
-                do
+                else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
-                    Console.Write("NRC:> ");
-                    option = Console.ReadLine();
-                    if (!listadoNRC.Contains(option)) { Program.ImprimirNegativo("NRC No Valido"); }
-
-                } while (!listadoNRC.Contains(option));
-
-                CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
-
-                bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
-                bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
-                if (estudiante.listaInscripcion.Contains(curso))
-                {
-                    Program.ImprimirNegativo($"El curso {curso.nombre} ya esta agregado\n");
+                    MessageBox.Show($"No puedes inscribir el curso {curso.nombre}", "Error de Inscripcion");
                 }
                 else
                 {
-                    if (compatibilidadHorario == false)
-                    {
-                        Program.ImprimirNegativo($"El curso {curso.nombre} posee un tope de horario\n");
-                    }
-                    if (compatibilidadPreRequisito == false)
-                    {
-                        Program.ImprimirNegativo($"Todavia no has aprobado el curso {curso.nombre}\n");
-                    }
-                    if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
-                    {
-                        Program.ImprimirNegativo($"No puedes inscribir el curso {curso.nombre}\n");
-                    }
-                    else
-                    {
-                        estudiante.listaInscripcion.Add(curso);
-                        Program.ImprimirPositivo("Curso agregado");
-                        Program.Log(quiereAgregar.ToString(), "Agregar curso");
-                    }
-                }
-                /*
-                else if (compatibilidadHorario == false)
-                {
-                    Program.ImprimirNegativo($"El curso {curso.nombre} posee un tope de horario\n");
-                }
-                else
-                {
+                    //MessageBox.Show("Agregado Exitosamente");
                     estudiante.listaInscripcion.Add(curso);
-                    Program.ImprimirPositivo("Curso agregado");
-                    Program.Log(quiereAgregar.ToString(), "Agregar curso");
-                }
-                */
-                
-                Console.WriteLine("\n¿Quiere agregar otro curso?\n" +
-                    "1. Si\n" +
-                    "2. No");
-                int opcion = Program.ChequearOpcion(1, 2);
-                if (opcion == 2)
-                {
-                    quiereAgregar = 2;
+                    return estudiante;
                 }
             }
 
-            SinCursosDisponiblesParaInscribir:
-
-            return;
+            return estudiante;
         }
         static void EliminarCursoInscrito(Estudiante estudiante)
         {

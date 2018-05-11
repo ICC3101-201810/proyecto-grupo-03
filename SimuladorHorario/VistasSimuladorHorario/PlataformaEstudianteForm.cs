@@ -109,5 +109,30 @@ namespace VistasSimuladorHorario
         {
             OnInscribirCurso(this, EventArgs.Empty);
         }
+
+        public void ActualizarHorario(List<Curso> listaCursos)
+        {
+            
+            foreach(CursoCurricular curso in listaCursos)
+            {
+                /*
+                foreach(Evento evento in curso.eventosCurso)
+                {
+                    
+                    if (evento.tipo == TipoEvento.CLAS || evento.tipo == TipoEvento.AYUD || evento.tipo == TipoEvento.LABT)
+                    {
+
+                    }
+                }*/
+
+
+
+                Evento evento = curso.eventosCurso[0];
+                dataGridView1.Rows[2].Cells[2].Value = "wiwi";
+                dataGridView1.Enabled = false;
+                dataGridView1.Enabled = true;
+            }
+        }
+
     }
 }

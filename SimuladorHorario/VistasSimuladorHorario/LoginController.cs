@@ -14,7 +14,7 @@ namespace VistasSimuladorHorario
     public class LoginController
     {
         LoginForm loginForm;
-        Usuario usuarioActivo = null;
+        public Usuario usuarioActivo = null;
         public LoginController(LoginForm loginForm)
         {
             this.loginForm = loginForm;
@@ -28,7 +28,7 @@ namespace VistasSimuladorHorario
             if (usuarioActivo is Estudiante)
             {
                 PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
-                PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm);
+                PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm,usuarioActivo);
                 MessageBox.Show("Bienvenido estudiante: " + usuarioActivo.nombre);
                 plataformaEstudianteForm.Show();
             }
