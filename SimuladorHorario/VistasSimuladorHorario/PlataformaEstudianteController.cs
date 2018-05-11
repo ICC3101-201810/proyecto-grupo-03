@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VistasSimuladorHorario
 {
-    class PlataformaEstudianteController
+    public class PlataformaEstudianteController
     {
         PlataformaEstudianteForm plataformaEstudianteForm;
 
