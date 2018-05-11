@@ -35,9 +35,6 @@ namespace VistasSimuladorHorario
                 listaCursos.Add(curso.nombre + " : " + curso.profesor);
             }
             CursosComboBox.DataSource = listaCursos;
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

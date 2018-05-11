@@ -130,17 +130,31 @@ namespace SimuladorHorario
         {
             return;
         }
-        public static void EliminarCurso()
+        public static void EliminarCurso(string nrcCurso)
         {
+            int indCurso = -1;
 
+            foreach (CursoCurricular cursoCur in Aplicacion.cursos)
+            {
+                if (cursoCur.nrc == nrcCurso)
+                {
+                    indCurso = Aplicacion.cursos.IndexOf(cursoCur);
+                }
+            }
+            if (indCurso != -1)
+            {
+                Aplicacion.cursos.Remove(Aplicacion.cursos[indCurso-1]);
+                System.Windows.Forms.MessageBox.Show($"{Aplicacion.cursos[indCurso-1].nombre} eliminadoo!!!!");
+            }
+            else { System.Windows.Forms.MessageBox.Show("No se pudo eliminar el curso"); }
+
+            #region
+            /*
             Program.ImprimirNegativo("Eliminar Curso");
             Console.WriteLine("Seleccione el NRC del curso a eliminar:");
             
             ImprimirCursos();
-
-
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
-
             string option = "";
             while (!listadoNRC.Contains(option))
             {
@@ -154,7 +168,8 @@ namespace SimuladorHorario
             Program.ImprimirPositivo($"Curso {curso.nombre} removido exitosamente!");
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
-
+            */
+            #endregion
             return;
         }
         public static void ImprimirCursos()

@@ -44,7 +44,7 @@
             // TextUser
             // 
             this.TextUser.Location = new System.Drawing.Point(255, 50);
-            this.TextUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextUser.Margin = new System.Windows.Forms.Padding(2);
             this.TextUser.Name = "TextUser";
             this.TextUser.Size = new System.Drawing.Size(131, 20);
             this.TextUser.TabIndex = 0;
@@ -74,7 +74,7 @@
             // PassUser
             // 
             this.PassUser.Location = new System.Drawing.Point(255, 85);
-            this.PassUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PassUser.Margin = new System.Windows.Forms.Padding(2);
             this.PassUser.Name = "PassUser";
             this.PassUser.Size = new System.Drawing.Size(131, 20);
             this.PassUser.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.EspecialidadCB.FormattingEnabled = true;
             this.EspecialidadCB.Location = new System.Drawing.Point(255, 124);
-            this.EspecialidadCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EspecialidadCB.Margin = new System.Windows.Forms.Padding(2);
             this.EspecialidadCB.Name = "EspecialidadCB";
             this.EspecialidadCB.Size = new System.Drawing.Size(131, 21);
             this.EspecialidadCB.TabIndex = 5;
@@ -117,7 +117,7 @@
             // 
             this.ConcentracionComboBox.FormattingEnabled = true;
             this.ConcentracionComboBox.Location = new System.Drawing.Point(255, 164);
-            this.ConcentracionComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConcentracionComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConcentracionComboBox.Name = "ConcentracionComboBox";
             this.ConcentracionComboBox.Size = new System.Drawing.Size(131, 21);
             this.ConcentracionComboBox.TabIndex = 7;
@@ -135,9 +135,9 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(505, 328);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.Size = new System.Drawing.Size(65, 19);
             this.button1.TabIndex = 9;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TextUser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrarseForm";
             this.Text = "Registrarse";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarseForm_FormClosing);

@@ -14,13 +14,18 @@ namespace VistasSimuladorHorario
         {
             this.gestorForm = gestorForm;
             this.gestorForm.OnCrearCurso += VistasGestor_OnCrearCurso;
+            this.gestorForm.OnEliminarCurso += VistasGestor_OnEliminarCurso;
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
         {
-
             CrearCursoForm crearCursoForm = new CrearCursoForm();
             crearCursoForm.Show();
+        }
+        private void VistasGestor_OnEliminarCurso(object sender, EventArgs e)
+        {
+            EliminarCursoForm eliminarCursoForm = new EliminarCursoForm();
+            eliminarCursoForm.Show();
         }
     }
 }

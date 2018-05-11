@@ -37,7 +37,7 @@ namespace VistasSimuladorHorario
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(86, 50);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 42);
             this.button1.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace VistasSimuladorHorario
             this.button2.TabIndex = 1;
             this.button2.Text = "Eliminar Curso";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.EliminarCursoButton_Click);
             // 
             // GestorForm
             // 
@@ -62,7 +62,7 @@ namespace VistasSimuladorHorario
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestorForm";
             this.Text = "GestorForm";
             this.Load += new System.EventHandler(this.GestorForm_Load);
