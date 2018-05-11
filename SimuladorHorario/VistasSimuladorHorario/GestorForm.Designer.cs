@@ -65,6 +65,7 @@ namespace VistasSimuladorHorario
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestorForm";
             this.Text = "GestorForm";
+            this.Load += new System.EventHandler(this.GestorForm_Load);
             this.ResumeLayout(false);
 
         }

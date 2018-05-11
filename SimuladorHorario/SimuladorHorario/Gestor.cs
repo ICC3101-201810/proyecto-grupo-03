@@ -34,7 +34,6 @@ namespace SimuladorHorario
         }
         public static void CrearCursoCurricular()
         {
-            Console.Clear();
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
             Console.Write("NRC:> ");
