@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SimuladorHorario
 {
     [Serializable()]
-    public class Horario:IHorarioMostrable
+    public class Horario
     {
         List<Evento> eventosHorario;
 
@@ -16,14 +16,6 @@ namespace SimuladorHorario
             this.eventosHorario = listaEventosHorario;
         }
 
-        public void GuardarImagen()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Mostrar(List<Evento> listaInformacion)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

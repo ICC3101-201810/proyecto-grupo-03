@@ -51,14 +51,12 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Agenda.cs" />
     <Compile Include="Aplicacion.cs" />
-    <Compile Include="AplicacionMati.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="CursoCurricular.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Gestor.cs" />
     <Compile Include="Horario.cs" />
-    <Compile Include="IHorarioMostrable.cs" />
     <Compile Include="PlataformaEstudiante.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

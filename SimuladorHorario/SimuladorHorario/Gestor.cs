@@ -125,8 +125,6 @@ namespace SimuladorHorario
             }
             return;
         }
-        
-
         public static List<Evento> CrearEvento(string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
         {
             List<Evento> listaEvento = new List<Evento>();
