@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
     class GestorController
     {
         GestorForm gestorForm;
+        Usuario usuarioActivo;
 
         public GestorController(GestorForm gestorForm)
         {
@@ -16,6 +18,7 @@ namespace VistasSimuladorHorario
             this.gestorForm.OnCrearCurso += VistasGestor_OnCrearCurso;
             this.gestorForm.OnEliminarCurso += VistasGestor_OnEliminarCurso;
             this.gestorForm.OnLeerCurso += VistasGestor_OnLeerCurso;
+            this.gestorForm.OnCerrarSesion += OnCerrarSesion;
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
@@ -35,6 +38,15 @@ namespace VistasSimuladorHorario
             LeerCursoForm leerCursoForm = new LeerCursoForm();
             LeerCursoController leerCursoController = new LeerCursoController(leerCursoForm);
             leerCursoForm.Show();
+        }
+        private void OnCerrarSesion(object sender, EventArgs e)
+        {
+            Aplicacion.usuarios.Add(usuarioActivo);
+            LoginForm loginForm = new LoginForm();
+            LoginController loginController = new LoginController(loginForm);
+            loginForm.Show();
+            usuarioActivo = null;
+            gestorForm.Hide();
         }
     }
 }
