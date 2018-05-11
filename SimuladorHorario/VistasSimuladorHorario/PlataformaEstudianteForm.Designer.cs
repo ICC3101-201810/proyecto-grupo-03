@@ -45,6 +45,8 @@
             this.acercaDeSHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AgendaDataGrid = new System.Windows.Forms.DataGridView();
+            this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,8 +59,7 @@
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -140,14 +141,14 @@
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
             this.inscribirCursoToolStripMenuItem.Click += new System.EventHandler(this.inscribirCursoToolStripMenuItem_Click);
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
             this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
             // 
@@ -208,6 +209,18 @@
             this.AgendaDataGrid.Size = new System.Drawing.Size(326, 516);
             this.AgendaDataGrid.TabIndex = 0;
             this.AgendaDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Agenda
+            // 
+            this.Agenda.HeaderText = "Próximos Eventos";
+            this.Agenda.Name = "Agenda";
+            this.Agenda.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -291,23 +304,23 @@
             // 
             this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
             // 
-            // Agenda
+            // cerrarSesionButton
             // 
-            this.Agenda.HeaderText = "Próximos Eventos";
-            this.Agenda.Name = "Agenda";
-            this.Agenda.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.cerrarSesionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrarSesionButton.Location = new System.Drawing.Point(879, 0);
+            this.cerrarSesionButton.Name = "cerrarSesionButton";
+            this.cerrarSesionButton.Size = new System.Drawing.Size(92, 23);
+            this.cerrarSesionButton.TabIndex = 2;
+            this.cerrarSesionButton.Text = "Cerrar Sesion";
+            this.cerrarSesionButton.UseVisualStyleBackColor = true;
+            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
             // 
             // PlataformaEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 540);
+            this.Controls.Add(this.cerrarSesionButton);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -361,5 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificarPerfilToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button cerrarSesionButton;
     }
 }

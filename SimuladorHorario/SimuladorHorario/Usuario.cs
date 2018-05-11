@@ -20,5 +20,15 @@ namespace SimuladorHorario
             this.esAdmin = esAdmin;
         }
 
+        public void SetNombre(string nuevoNombre)
+        {
+            nombre = nuevoNombre;
+        }
+
+        public void SetContraseña(string nuevaContraseña)
+        {
+            contraseña = nuevaContraseña;
+        }
+
     }
 }

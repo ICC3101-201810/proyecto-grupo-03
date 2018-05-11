@@ -17,7 +17,7 @@ namespace VistasSimuladorHorario
     {
         public event EventHandler OnInscribirCurso;
         public event EventHandler OnEditarPerfil;
-
+        public event EventHandler OnCerrarSesion;
 
         public PlataformaEstudianteForm()
         {
@@ -173,6 +173,11 @@ namespace VistasSimuladorHorario
         private void modificarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OnEditarPerfil(this, EventArgs.Empty);
+        }
+
+        private void cerrarSesionButton_Click(object sender, EventArgs e)
+        {
+            OnCerrarSesion(this, EventArgs.Empty);
         }
     }
 }

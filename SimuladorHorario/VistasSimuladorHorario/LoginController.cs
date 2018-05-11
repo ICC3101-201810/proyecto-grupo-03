@@ -24,6 +24,7 @@ namespace VistasSimuladorHorario
 
         private void VistasLogin_OnIniciarSesion(object sender, IniciarSesionEventArgs e)
         {
+            usuarioActivo = null;
             usuarioActivo = e.usuario;
             if (usuarioActivo is Estudiante)
             {
@@ -48,7 +49,7 @@ namespace VistasSimuladorHorario
             RegistrarseForm registrarseForm = new RegistrarseForm();
             RegistrarseController registrarseController = new RegistrarseController(registrarseForm);
             registrarseForm.Show();
-            loginForm.Enabled = false;
+            loginForm.Hide();
         }
 
     }

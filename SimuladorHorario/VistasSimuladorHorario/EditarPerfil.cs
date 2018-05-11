@@ -34,6 +34,16 @@ namespace VistasSimuladorHorario
             }
 
             cursosInscritosComboBox.DataSource = listaNombreCursoInscrito;
+
+            textBox1.Text = estudianteActivo.nombre;
+            textBox2.Text = estudianteActivo.contraseña;
+
+        }
+
+        public void Guardar(Estudiante estudianteActivo)
+        {
+            estudianteActivo.SetNombre(textBox1.Text);
+            estudianteActivo.SetContraseña(textBox2.Text);
         }
     }
 

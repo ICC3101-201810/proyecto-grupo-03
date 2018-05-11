@@ -15,6 +15,7 @@ namespace VistasSimuladorHorario
         {
             this.editarPerfil = editarPerfil;
             this.estudianteActivo = (Estudiante)usuarioActivo;
+            editarPerfil.cargarInfo(estudianteActivo);
         }
 
       
