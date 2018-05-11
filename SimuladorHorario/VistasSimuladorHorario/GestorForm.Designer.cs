@@ -1,4 +1,6 @@
-﻿namespace VistasSimuladorHorario
+﻿using System;
+
+namespace VistasSimuladorHorario
 {
     partial class GestorForm
     {
@@ -66,6 +68,8 @@
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 
