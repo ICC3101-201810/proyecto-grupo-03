@@ -62,7 +62,12 @@ namespace SimuladorHorario
             }
             if (indCurso != -1)
             {
-                System.Windows.Forms.MessageBox.Show($"{Aplicacion.cursos[indCurso].nombre} es Q");
+                System.Windows.Forms.MessageBox.Show(
+                    $"Nombre: {Aplicacion.cursos[indCurso].nombre}\n" +
+                    $"NRC: {Aplicacion.cursos[indCurso].nrc}\n" +
+                    $"Profesor: {Aplicacion.cursos[indCurso].profesor}\n" +
+                    $"Creditos: {(Aplicacion.cursos[indCurso].creditos).ToString()}\n" +
+                    $"Especialidad: {Aplicacion.cursos[indCurso].especialidad}\n" );
             }
         }
         public static void ActualizarCurso()
