@@ -17,6 +17,7 @@ namespace VistasSimuladorHorario
         {
             InitializeComponent();
             InicializarHorario();
+            MessageBox.Show("Bienvenido Usuario: "+Aplicacion.usuarioActual.nombre);
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -77,7 +78,26 @@ namespace VistasSimuladorHorario
                 contadorHora++;
             }
 
+            List<Evento> listaEventos = new List<Evento>();
+            Estudiante estudianteActual = (Estudiante)Aplicacion.usuarioActual;
+            foreach(Curso curso in estudianteActual.listaInscripcion)
+            {
+                CursoCurricular cursoCurricular = (CursoCurricular)curso;
+                listaEventos.AddRange(cursoCurricular.eventosCurso);
+            }
+
+            foreach(Evento evento in listaEventos)
+            {
+                AgendaDataGrid.Rows.Add(evento.hora);
+            }
+
+
+
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

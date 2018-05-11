@@ -21,7 +21,7 @@ namespace SimuladorHorario
     [Serializable()]
     public static class Aplicacion
     {
-        static List<Usuario> usuarios = new List<Usuario>();
+        public static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
         public static Usuario usuarioActual;
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
