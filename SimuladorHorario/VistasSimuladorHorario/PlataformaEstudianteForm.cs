@@ -34,6 +34,7 @@ namespace VistasSimuladorHorario
 
         private void PlataformaEstudianteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Aplicacion.SerializeAll();
             System.Environment.Exit(0);
         }
 
