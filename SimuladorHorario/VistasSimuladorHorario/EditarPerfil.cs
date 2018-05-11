@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
     public partial class EditarPerfil : Form
     {
 
+        public event EventHandler OnGuardar;
 
         public EditarPerfil()
         {
@@ -50,6 +51,11 @@ namespace VistasSimuladorHorario
         {
             //Aplicacion.SerializeAll();
             //System.Environment.Exit(0);
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            OnGuardar(this, EventArgs.Empty);
         }
     }
 

@@ -25,9 +25,16 @@ namespace VistasSimuladorHorario
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Aplicacion.CargarCursos();
-            Aplicacion.CargarUsuarios();
+            if (Aplicacion.cursos.Count == 0)
+            {
+                Aplicacion.CargarCursos();
 
+                if (Aplicacion.usuarios.Count == 0)
+                {
+                    Aplicacion.CargarUsuarios();
+
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -39,6 +46,8 @@ namespace VistasSimuladorHorario
         {
             string nombreUsuario = usuarioText.Text;
             string passUsuario = contraseñaText.Text;
+
+
             Usuario usuario = Aplicacion.IniciarSesion(nombreUsuario, passUsuario);
             if (usuario == null) { MessageBox.Show("Usuario o Contraseña incorrecto", "Login Error"); return; }
             IniciarSesionEventArgs iniciarSesionArgs = new IniciarSesionEventArgs();

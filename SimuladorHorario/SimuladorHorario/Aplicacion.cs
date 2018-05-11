@@ -31,7 +31,7 @@ namespace SimuladorHorario
 
         public static Usuario IniciarSesion(string nombreUsuario, string contraseña)
         {
-            
+           
             foreach (Usuario usuario in usuarios)
             {
                 
@@ -41,7 +41,7 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        
+                        return usuarioActual;
                     }
                 }
                 else if (usuario is Administrador)
@@ -50,12 +50,12 @@ namespace SimuladorHorario
                     if (usuario.nombre == nombreUsuario && usuario.contraseña == contraseña)
                     {
                         usuarioActual = usuario;
-                        
+                        return usuarioActual;
                     }
                 }
             }
 
-            return usuarioActual;
+            return null;
         }
 
         public static bool RegistrarUsuario(string nombreUsuario, string contraseña, Concentracion concentracion ,Especialidad especialidad)
