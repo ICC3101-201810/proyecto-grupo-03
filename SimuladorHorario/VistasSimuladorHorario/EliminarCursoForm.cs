@@ -58,5 +58,10 @@ namespace VistasSimuladorHorario
             Aplicacion.SerializeAll();
             System.Environment.Exit(0);
         }
+
+        private void RegresarButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

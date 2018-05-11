@@ -36,7 +36,7 @@ namespace VistasSimuladorHorario
         private void EliminarCursoButton_Click(object sender, EventArgs e)
         {
             OnEliminarCurso(this, EventArgs.Empty);
-            this.Hide();
+            //this.Hide();
         }
 
         private void LeerCursoButton_Click(object sender, EventArgs e)
