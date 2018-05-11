@@ -1,4 +1,6 @@
-﻿namespace VistasSimuladorHorario
+﻿using System;
+
+namespace VistasSimuladorHorario
 {
     partial class InscribirCursoForm
     {
@@ -43,6 +45,7 @@
             // 
             // InscribirButton
             // 
+            this.InscribirButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.InscribirButton.Location = new System.Drawing.Point(713, 415);
             this.InscribirButton.Name = "InscribirButton";
             this.InscribirButton.Size = new System.Drawing.Size(75, 23);

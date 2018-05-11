@@ -16,6 +16,7 @@ namespace VistasSimuladorHorario
     
     {
         public event EventHandler OnInscribirCurso;
+        public event EventHandler OnEditarPerfil;
 
         public PlataformaEstudianteForm()
         {
@@ -112,8 +113,8 @@ namespace VistasSimuladorHorario
 
         public void ActualizarHorario(List<Curso> listaCursos)
         {
-            
-            foreach(CursoCurricular curso in listaCursos)
+
+            foreach (CursoCurricular curso in listaCursos)
             {
                 /*
                 foreach(Evento evento in curso.eventosCurso)
@@ -128,15 +129,49 @@ namespace VistasSimuladorHorario
 
                 foreach (Evento evento in curso.eventosCurso)
                 {
+                    if (evento.tipo != TipoEvento.CLAS && evento.tipo != TipoEvento.AYUD && evento.tipo != TipoEvento.LABT) { continue; }
+
                     int diaSemana = Convert.ToInt32(evento.hora.Split('-')[0]);
                     int horaInicio = Convert.ToInt32((evento.hora.Split('-')[1]).Split(':')[0]);
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = (curso.nombre + " " + evento.sala);
                 }
                 dataGridView1.Enabled = false;
                 dataGridView1.Enabled = true;
-                    
+
             }
         }
 
+
+        public void ActualizarAgenda(List<Curso> listaCursos)
+        {
+
+            foreach (CursoCurricular curso in listaCursos)
+            {
+
+                foreach (Evento evento in curso.eventosCurso)
+                {
+
+                    if (evento.tipo != TipoEvento.CLAS && evento.tipo != TipoEvento.AYUD && evento.tipo != TipoEvento.LABT)
+                    {
+                        AgendaDataGrid.Rows.Add(evento.tipo.ToString() + ": " + curso.nombre,evento.fecha);
+                    }
+
+                    
+                }
+                dataGridView1.Enabled = false;
+                dataGridView1.Enabled = true;
+
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void modificarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
