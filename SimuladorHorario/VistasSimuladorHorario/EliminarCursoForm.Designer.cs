@@ -84,7 +84,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarCursoForm";
-            this.Text = "EliminarCursoForm";
+            this.Text = "Eliminar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EliminarCursoForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

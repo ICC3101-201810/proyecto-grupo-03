@@ -38,20 +38,18 @@ namespace VistasSimuladorHorario
             // CursosComboBox
             // 
             this.CursosComboBox.FormattingEnabled = true;
-            this.CursosComboBox.Location = new System.Drawing.Point(61, 82);
-            this.CursosComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CursosComboBox.Location = new System.Drawing.Point(46, 67);
             this.CursosComboBox.Name = "CursosComboBox";
-            this.CursosComboBox.Size = new System.Drawing.Size(625, 24);
+            this.CursosComboBox.Size = new System.Drawing.Size(470, 21);
             this.CursosComboBox.TabIndex = 0;
             this.CursosComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // InscribirButton
             // 
             this.InscribirButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.InscribirButton.Location = new System.Drawing.Point(951, 511);
-            this.InscribirButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.InscribirButton.Location = new System.Drawing.Point(713, 415);
             this.InscribirButton.Name = "InscribirButton";
-            this.InscribirButton.Size = new System.Drawing.Size(100, 28);
+            this.InscribirButton.Size = new System.Drawing.Size(75, 23);
             this.InscribirButton.TabIndex = 1;
             this.InscribirButton.Text = "Inscribir";
             this.InscribirButton.UseVisualStyleBackColor = true;
@@ -59,15 +57,14 @@ namespace VistasSimuladorHorario
             // 
             // InscribirCursoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.InscribirButton);
             this.Controls.Add(this.CursosComboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InscribirCursoForm";
-            this.Text = "InscribirCursoForm";
+            this.Text = "Inscribir Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InscribirCursoForm_FormClosing);
             this.ResumeLayout(false);
 
