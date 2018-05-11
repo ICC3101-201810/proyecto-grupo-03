@@ -109,5 +109,34 @@ namespace VistasSimuladorHorario
         {
             OnInscribirCurso(this, EventArgs.Empty);
         }
+
+        public void ActualizarHorario(List<Curso> listaCursos)
+        {
+            
+            foreach(CursoCurricular curso in listaCursos)
+            {
+                /*
+                foreach(Evento evento in curso.eventosCurso)
+                {
+                    
+                    if (evento.tipo == TipoEvento.CLAS || evento.tipo == TipoEvento.AYUD || evento.tipo == TipoEvento.LABT)
+                    {
+
+                    }
+                }*/
+
+
+                foreach (Evento evento in curso.eventosCurso)
+                {
+                    int diaSemana = Convert.ToInt32(evento.hora.Split('-')[0]);
+                    int horaInicio = Convert.ToInt32((evento.hora.Split('-')[1]).Split(':')[0]);
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = (curso.nombre + " " + evento.sala);
+                }
+                dataGridView1.Enabled = false;
+                dataGridView1.Enabled = true;
+                    
+            }
+        }
+
     }
 }
