@@ -12,9 +12,16 @@ namespace VistasSimuladorHorario
 {
     public partial class GestorForm : Form
     {
+        public event EventHandler OnCrearCurso;
         public GestorForm()
         {
             InitializeComponent();
+        }
+
+        private void CrearCursoButton_Click(object sender, EventArgs e)
+        {
+            OnCrearCurso(this, EventArgs.Empty);
+            this.Hide();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SimuladorHorario
 {
     [Serializable()]
-    static class Gestor
+    public static class Gestor
     {
         public static void MenuGestor(Administrador administrador)
         {
