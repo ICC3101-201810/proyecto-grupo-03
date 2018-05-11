@@ -9,13 +9,13 @@ namespace SimuladorHorario
     [Serializable()]
     public class Estudiante:Usuario
     {
-        public List<CursoCurricular> avanceMalla { get; private set; }
+        public List<string> avanceMalla { get; private set; }
         public Concentracion concentracion { get; private set; }
         public Especialidad especialidad { get; private set; }
         public List<Curso> listaInscripcion { get; protected set; }
         List<Curso> cursosInscritos;
 
-        public Estudiante(List<CursoCurricular> avanceMalla,
+        public Estudiante(List<string> avanceMalla,
             Especialidad especialidad,
             Concentracion concentracion,string nombreUsuario, 
             string contraseña, bool esAdmin)
@@ -51,11 +51,11 @@ namespace SimuladorHorario
             Program.ImprimirBanner($"Avance Curricular {nombre}\n");
             
 
-            foreach (CursoCurricular curso in avanceMalla)
+            foreach (string nombreCcurso in avanceMalla)
             {
-                if (curso != null)
+                if (nombreCcurso != null)
                 {
-                    Console.WriteLine($"NRC: {curso.nrc} Nombre: {curso.nombre}");
+                    Console.WriteLine($"Nombre: {nombreCcurso}");
                 }
             }
             
