@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimuladorHorario
 {
@@ -41,34 +42,26 @@ namespace SimuladorHorario
                 return false;
             }
 
-
-            
-            
-
             Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso, profesor, TipoCurso.Curricular));
             return true;
         }
 
         public static void LeerCurso(string nrcCurso)
         {
-            int indCurso = -1;
-
             foreach (CursoCurricular cursoCur in Aplicacion.cursos)
             {
                 if (cursoCur.nrc == nrcCurso)
                 {
-                    indCurso = Aplicacion.cursos.IndexOf(cursoCur);
+                    MessageBox.Show(
+                        $"Nombre: {cursoCur.nombre}\n" +
+                        $"NRC: {cursoCur.nrc}\n" +
+                        $"Profesor: {cursoCur.profesor}\n" +
+                        $"Creditos: {(cursoCur.creditos).ToString()}\n" +
+                        $"Especialidad: {cursoCur.especialidad}\n");
+                    break;
                 }
             }
-            if (indCurso != -1)
-            {
-                System.Windows.Forms.MessageBox.Show(
-                    $"Nombre: {Aplicacion.cursos[indCurso].nombre}\n" +
-                    $"NRC: {Aplicacion.cursos[indCurso].nrc}\n" +
-                    $"Profesor: {Aplicacion.cursos[indCurso].profesor}\n" +
-                    $"Creditos: {(Aplicacion.cursos[indCurso].creditos).ToString()}\n" +
-                    $"Especialidad: {Aplicacion.cursos[indCurso].especialidad}\n" );
-            }
+
         }
         public static void ActualizarCurso()
         {
@@ -76,21 +69,15 @@ namespace SimuladorHorario
         }
         public static void EliminarCurso(string nrcCurso)
         {
-            int indCurso = -1;
-
             foreach (CursoCurricular cursoCur in Aplicacion.cursos)
             {
                 if (cursoCur.nrc == nrcCurso)
                 {
-                    indCurso = Aplicacion.cursos.IndexOf(cursoCur);
+                    Aplicacion.cursos.Remove(cursoCur);
+                    MessageBox.Show($"El curso {cursoCur.nombre} ha sido eliminado");
+                    break;
                 }
             }
-            if (indCurso != -1)
-            {
-                Aplicacion.cursos.Remove(Aplicacion.cursos[indCurso-1]);
-                System.Windows.Forms.MessageBox.Show($"{Aplicacion.cursos[indCurso-1].nombre} eliminadoo!!!!");
-            }
-            else { System.Windows.Forms.MessageBox.Show("No se pudo eliminar el curso"); }
 
             #region
             /*
@@ -116,6 +103,7 @@ namespace SimuladorHorario
             #endregion
             return;
         }
+        /*
         public static void ImprimirCursos()
         {
             foreach(CursoCurricular curso in Aplicacion.GetCursoCurricular())
@@ -125,6 +113,7 @@ namespace SimuladorHorario
             }
             return;
         }
+        */
         public static List<Evento> CrearEvento(string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
         {
             List<Evento> listaEvento = new List<Evento>();
