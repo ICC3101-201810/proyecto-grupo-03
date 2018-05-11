@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlataformaEstudianteForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +52,12 @@
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AgendaDataGrid = new System.Windows.Forms.DataGridView();
             this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wIWIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscribirCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -97,13 +98,13 @@
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importarToolStripMenuItem.Text = "Importar...";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // guardarToolStripMenuItem
             // 
@@ -114,7 +115,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -257,18 +258,6 @@
             this.Agenda.Name = "Agenda";
             this.Agenda.ReadOnly = true;
             // 
-            // aplicacionBindingSource
-            // 
-            this.aplicacionBindingSource.DataSource = typeof(SimuladorHorario.Aplicacion);
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(SimuladorHorario.Usuario);
-            // 
-            // horarioBindingSource
-            // 
-            this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
-            // 
             // wIWIToolStripMenuItem
             // 
             this.wIWIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -281,14 +270,26 @@
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
+            // 
+            // aplicacionBindingSource
+            // 
+            this.aplicacionBindingSource.DataSource = typeof(SimuladorHorario.Aplicacion);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(SimuladorHorario.Usuario);
+            // 
+            // horarioBindingSource
+            // 
+            this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
             // 
             // PlataformaEstudianteForm
             // 
@@ -297,6 +298,7 @@
             this.ClientSize = new System.Drawing.Size(1007, 560);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlataformaEstudianteForm";
             this.Text = "Plataforma Estudiante";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlataformaEstudianteForm_FormClosing);
