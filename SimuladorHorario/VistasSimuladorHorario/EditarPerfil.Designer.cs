@@ -133,7 +133,7 @@
             this.Controls.Add(this.usuarioLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditarPerfil";
-            this.Text = "EditarPerfil";
+            this.Text = "Editar Perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarPerfil_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

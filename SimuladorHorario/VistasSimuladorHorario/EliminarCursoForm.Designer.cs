@@ -49,13 +49,13 @@
             this.EliminarCursosComboBox.FormattingEnabled = true;
             this.EliminarCursosComboBox.Location = new System.Drawing.Point(292, 159);
             this.EliminarCursosComboBox.Name = "EliminarCursosComboBox";
-            this.EliminarCursosComboBox.Size = new System.Drawing.Size(320, 21);
+            this.EliminarCursosComboBox.Size = new System.Drawing.Size(259, 21);
             this.EliminarCursosComboBox.TabIndex = 1;
             this.EliminarCursosComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(292, 232);
+            this.button1.Location = new System.Drawing.Point(292, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 23);
             this.button1.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(550, 232);
+            this.button2.Location = new System.Drawing.Point(476, 199);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -84,7 +84,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarCursoForm";
-            this.Text = "EliminarCursoForm";
+            this.Text = "Eliminar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EliminarCursoForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

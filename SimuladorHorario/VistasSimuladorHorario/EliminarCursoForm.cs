@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
     public partial class EliminarCursoForm : Form
     {
         public event EventHandler OnEliminarCurso;
+        public event EventHandler OnRegresar;
 
         public EliminarCursoForm()
         {
@@ -61,6 +62,7 @@ namespace VistasSimuladorHorario
 
         private void RegresarButton_Click(object sender, EventArgs e)
         {
+            OnRegresar(this, EventArgs.Empty);
             this.Hide();
         }
     }

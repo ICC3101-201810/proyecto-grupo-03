@@ -68,10 +68,8 @@ namespace VistasSimuladorHorario
         private void RegresarButton_Click(object sender, EventArgs e)
         {
             
-            //OnRegresar(this, EventArgs.Empty);
+            OnRegresar(this, EventArgs.Empty);
             this.Hide();
-            
-            
         }
     }
 }
