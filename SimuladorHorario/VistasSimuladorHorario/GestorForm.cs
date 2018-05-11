@@ -43,7 +43,7 @@ namespace VistasSimuladorHorario
         {
 
             OnLeerCurso(this, EventArgs.Empty);
-            this.Hide();
+            //this.Hide();
         }
 
         private void GestorForm_FormClosing(object sender, FormClosingEventArgs e)
