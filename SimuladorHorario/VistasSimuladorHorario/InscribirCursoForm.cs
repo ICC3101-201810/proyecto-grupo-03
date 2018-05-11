@@ -11,22 +11,16 @@ using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-
-    public class InscribirCursoEventArgs : EventArgs
-    {
-        public string nombreCursoInscribir { get; set; }
-    }
-
     public partial class InscribirCursoForm : Form
     {
         public event EventHandler<InscribirCursoEventArgs> OnInscribir;
-       
+
 
         public InscribirCursoForm()
         {
             InitializeComponent();
             InicializarCursoComboBox();
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,7 +31,7 @@ namespace VistasSimuladorHorario
         public void InicializarCursoComboBox()
         {
             List<string> listaCursos = new List<string>();
-            foreach(CursoCurricular curso in Aplicacion.cursos)
+            foreach (CursoCurricular curso in Aplicacion.cursos)
             {
                 listaCursos.Add(curso.nombre);
             }
@@ -49,8 +43,13 @@ namespace VistasSimuladorHorario
         {
             InscribirCursoEventArgs inscribirCursoArgs = new InscribirCursoEventArgs();
             inscribirCursoArgs.nombreCursoInscribir = CursosComboBox.SelectedItem.ToString();
-            OnInscribir(this,inscribirCursoArgs);
+            OnInscribir(this, inscribirCursoArgs);
             this.Close();
         }
+    }
+
+    public class InscribirCursoEventArgs : EventArgs
+    {
+        public string nombreCursoInscribir { get; set; }
     }
 }
