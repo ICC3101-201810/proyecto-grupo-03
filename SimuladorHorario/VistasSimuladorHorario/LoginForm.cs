@@ -25,6 +25,8 @@ namespace VistasSimuladorHorario
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //ESTO PERMITE IMPORTAR MEDIANTE ARCHIVOS CSV
+            /*
             if (Aplicacion.cursos.Count == 0)
             {
                 Aplicacion.CargarCursos();
@@ -34,7 +36,16 @@ namespace VistasSimuladorHorario
                     Aplicacion.CargarUsuarios();
 
                 }
+            }*/
+            
+            
+            //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
+            if(Aplicacion.cursos.Count == 0)
+            {
+                Aplicacion.DeSerializeAll();
             }
+            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

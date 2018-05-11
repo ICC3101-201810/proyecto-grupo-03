@@ -10,11 +10,11 @@ namespace VistasSimuladorHorario
 {
     class InscribirCursoController
     {
-        InscribirCursoForm InscribirCursoForm;
+        profesorLabel InscribirCursoForm;
         Usuario usuarioActivo;
 
 
-        public InscribirCursoController(InscribirCursoForm inscribirCursoForm, Usuario usuarioActivo)
+        public InscribirCursoController(profesorLabel inscribirCursoForm, Usuario usuarioActivo)
         {
             this.usuarioActivo = usuarioActivo;
             InscribirCursoForm = inscribirCursoForm;

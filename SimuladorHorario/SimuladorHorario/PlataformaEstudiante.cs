@@ -71,11 +71,8 @@ namespace SimuladorHorario
             MessageBox.Show(cursoInscripcion);
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nombre == cursoInscripcion);
 
-            //bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
-            //bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
-
-            bool compatibilidadHorario = true;
-            bool compatibilidadPreRequisito = true;
+            bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
+            bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
 
             if (estudiante.listaInscripcion.Contains(curso))
             {

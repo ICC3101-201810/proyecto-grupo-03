@@ -395,23 +395,23 @@ namespace SimuladorHorario
         {
             try
             {
-                using (Stream stream = File.Open("usuariosData.bin", FileMode.Open))
+                using (Stream stream = File.Open("../../archivos/usuariosData.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter usuariosData = new BinaryFormatter();
                     usuariosData.Serialize(stream, usuarios);
                 }
             }
-            catch (IOException) { }
+            catch (IOException) { MessageBox.Show("No se pudo serializar", "Error"); }
                        
             try
             {
-                using (Stream stream = File.Open("cursosData.bin", FileMode.Open))
+                using (Stream stream = File.Open("../../archivos/cursosData.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter cursosData = new BinaryFormatter();
                     cursosData.Serialize(stream, cursos);
                 }
             }
-            catch (IOException) { }
+            catch (IOException) { MessageBox.Show("No se pudo serializar", "Error"); }
 
         }
 
@@ -419,7 +419,7 @@ namespace SimuladorHorario
         {
             try
             {
-                using (Stream stream = File.Open("usuariosData", FileMode.Open))
+                using (Stream stream = File.Open("../../archivos/usuariosData.bin", FileMode.Open))
                 {
                     BinaryFormatter usuariosData = new BinaryFormatter();
 
@@ -434,7 +434,7 @@ namespace SimuladorHorario
 
             try
             {
-                using (Stream stream = File.Open("cursosData", FileMode.Open))
+                using (Stream stream = File.Open("../../archivos/cursosData.bin", FileMode.Open))
                 {
                     BinaryFormatter cursosData = new BinaryFormatter();
 

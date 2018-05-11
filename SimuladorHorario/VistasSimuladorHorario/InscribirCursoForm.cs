@@ -11,12 +11,12 @@ using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-    public partial class InscribirCursoForm : Form
+    public partial class profesorLabel : Form
     {
         public event EventHandler<InscribirCursoEventArgs> OnInscribir;
 
 
-        public InscribirCursoForm()
+        public profesorLabel()
         {
             InitializeComponent();
             InicializarCursoComboBox();
@@ -33,8 +33,26 @@ namespace VistasSimuladorHorario
             List<string> listaCursos = new List<string>();
             foreach (CursoCurricular curso in Aplicacion.cursos)
             {
-                listaCursos.Add(curso.nombre);
+                if (!listaCursos.Contains(curso.nombre))
+                {
+                    listaCursos.Add(curso.nombre);
+                }
             }
+
+            List<string> listaProfesores = new List<string>();
+
+
+            List<List<CursoCurricular>> listaCursoAgrupados = new List<List<CursoCurricular>>();
+
+
+
+
+
+
+
+
+
+
             CursosComboBox.DataSource = listaCursos;
 
         }

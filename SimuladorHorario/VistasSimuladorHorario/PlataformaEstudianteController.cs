@@ -20,11 +20,12 @@ namespace VistasSimuladorHorario
             this.plataformaEstudianteForm.OnInscribirCurso += VistasInscribirCurso_OnInscribirCurso;
             this.plataformaEstudianteForm.OnEditarPerfil += VistasEditarPerfil_OnEditarPerfil;
             this.plataformaEstudianteForm.OnCerrarSesion += OnCerrarSesion;
+            this.plataformaEstudianteForm.OnCerrandoApp += OnCerrandoApp;
         }
 
         private void VistasInscribirCurso_OnInscribirCurso(object sender, EventArgs e)
         {
-            InscribirCursoForm inscribirCursoForm = new InscribirCursoForm();
+            profesorLabel inscribirCursoForm = new profesorLabel();
             InscribirCursoController inscribirCursoController = new InscribirCursoController(inscribirCursoForm,usuarioActivo);
             inscribirCursoForm.OnInscribir += VistasInscribirCurso_OnInscribir;
             inscribirCursoForm.ShowDialog();
@@ -53,6 +54,15 @@ namespace VistasSimuladorHorario
             loginForm.Show();
             usuarioActivo = null;
             plataformaEstudianteForm.Hide();
+        }
+
+
+        private void OnCerrandoApp(object sender, EventArgs e)
+        {
+            Aplicacion.usuarios.Add(usuarioActivo);
+            Aplicacion.SerializeAll();
+            //MessageBox.Show("Guardado!");
+            System.Environment.Exit(0);
         }
 
 

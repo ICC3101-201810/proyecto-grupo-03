@@ -18,6 +18,7 @@ namespace VistasSimuladorHorario
         public event EventHandler OnInscribirCurso;
         public event EventHandler OnEditarPerfil;
         public event EventHandler OnCerrarSesion;
+        public event EventHandler OnCerrandoApp;
 
         public PlataformaEstudianteForm()
         {
@@ -40,8 +41,7 @@ namespace VistasSimuladorHorario
 
         private void PlataformaEstudianteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
+            OnCerrandoApp(this, EventArgs.Empty);
         }
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
@@ -98,6 +98,11 @@ namespace VistasSimuladorHorario
                 AgendaDataGrid.Rows.Add(evento.hora);
             }
 
+            ActualizarHorario(estudianteActual.listaInscripcion);
+
+            //dataGridView1.Rows[rowIndex].Cells[ColumnIndex].Value = data;
+
+
 
 
         }
@@ -117,15 +122,6 @@ namespace VistasSimuladorHorario
 
             foreach (CursoCurricular curso in listaCursos)
             {
-                /*
-                foreach(Evento evento in curso.eventosCurso)
-                {
-                    
-                    if (evento.tipo == TipoEvento.CLAS || evento.tipo == TipoEvento.AYUD || evento.tipo == TipoEvento.LABT)
-                    {
-
-                    }
-                }*/
 
 
                 foreach (Evento evento in curso.eventosCurso)
