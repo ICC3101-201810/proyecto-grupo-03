@@ -11,12 +11,12 @@ namespace SimuladorHorario
     {
         public string nrc { get; private set; }
         public int creditos { get; private set; }
-        List<CursoCurricular> cursosPreRequisito;
+        List<string> cursosPreRequisito;
         Especialidad especialidad;
         public List<Evento> eventosCurso { get; private set; }        
 
         public CursoCurricular(string nrc, int creditos,
-            List<CursoCurricular> cursosPreRequisito, Especialidad especialidad,
+            List<string> cursosPreRequisito, Especialidad especialidad,
             List<Evento> eventosCurso, string nombre, string profesor,
             TipoCurso tipo):base(nombre,profesor, tipo)
         {

@@ -83,7 +83,7 @@ namespace SimuladorHorario
 
 
 
-            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<CursoCurricular>(), especialidad,listaEventos, nombre, profesor, TipoCurso.Curricular));
+            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, listaEventos, nombre, profesor, TipoCurso.Curricular));
             Console.Write("Presione una tecla para continuar");
             Console.ReadKey();
         }

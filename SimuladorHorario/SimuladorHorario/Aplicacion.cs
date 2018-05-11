@@ -23,6 +23,7 @@ namespace SimuladorHorario
     {
         static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
+        //public static List<string> cursosPreRequisito = new List<string>();
         public static Usuario usuarioActual;
         public static List<CursoCurricular> GetCursoCurricular() { return cursos; }
         public static List<Usuario> GetUsuarios() { return usuarios; }
@@ -139,6 +140,7 @@ namespace SimuladorHorario
                 string previoNRC = string.Empty;
                 string nombre, profesor, nrc, carrera;
                 int creditos;
+                List<string> cursosPreRequisito = new List<string>();
 
 
                 //El csv posee varias lineas de un mismo curso. Esto genera conjuntos de la lineas
@@ -191,14 +193,26 @@ namespace SimuladorHorario
                         
                         if (contadorLineaCurso == curso.Count)
                         {
+                            cursosPreRequisito.Clear();
                             string[] datosLinea2 = linea.Split(';');
+                            string[] datosCursosPreReq = (datosLinea2[16]).Split(',');
+                            foreach (string cur in datosCursosPreReq)
+                            {
+                                cursosPreRequisito.Add(cur);  
+                            }
+                            for (int c = 0; c < cursosPreRequisito.Count; c++)
+                            {
+                                if (cursosPreRequisito[c] != "")
+                                    System.Windows.Forms.MessageBox.Show(cursosPreRequisito[c]);
+                            }
+                            
                             nombre = datosLinea2[4];
                             profesor = datosLinea2[15];
                             nrc = datosLinea2[0];
                             carrera = datosLinea2[1];
                             creditos = Convert.ToInt32(datosLinea2[5]);
-                            CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<CursoCurricular>(),
-                                Especialidad.ICA,listaEvento, nombre, profesor, TipoCurso.Curricular);
+                            CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<string>(),
+                                Especialidad.ICA, listaEvento, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
                         contadorLineaCurso++;
