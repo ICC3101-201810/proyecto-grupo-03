@@ -152,12 +152,14 @@
             this.documentacionToolStripMenuItem.Name = "documentacionToolStripMenuItem";
             this.documentacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.documentacionToolStripMenuItem.Text = "Documentacion";
+            this.documentacionToolStripMenuItem.Click += new System.EventHandler(this.documentacionToolStripMenuItem_Click);
             // 
             // acercaDeSHToolStripMenuItem
             // 
             this.acercaDeSHToolStripMenuItem.Name = "acercaDeSHToolStripMenuItem";
             this.acercaDeSHToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeSHToolStripMenuItem.Text = "Acerca de SH";
+            this.acercaDeSHToolStripMenuItem.Click += new System.EventHandler(this.acercaDeSHToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 

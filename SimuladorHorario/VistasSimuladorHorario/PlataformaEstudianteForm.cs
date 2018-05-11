@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -185,6 +186,24 @@ namespace VistasSimuladorHorario
         {
             Aplicacion.SerializeAll();
             MessageBox.Show("Guardado Exitoso");
+        }
+
+        private void documentacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("..\\..\\..\\Documentacion\\Manual de Usuario.pdf");
+            }
+            catch
+            {
+                MessageBox.Show("No se encontró el archivo", "Error");
+            }
+        }
+
+        private void acercaDeSHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe acercaDe = new AcercaDe();
+            acercaDe.Show();
         }
     }
 }
