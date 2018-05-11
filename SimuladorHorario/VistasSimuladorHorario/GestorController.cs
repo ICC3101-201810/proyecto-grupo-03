@@ -20,11 +20,13 @@ namespace VistasSimuladorHorario
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
         {
             CrearCursoForm crearCursoForm = new CrearCursoForm();
+            CrearCursoController crearCursoController = new CrearCursoController(crearCursoForm);
             crearCursoForm.Show();
         }
         private void VistasGestor_OnEliminarCurso(object sender, EventArgs e)
         {
             EliminarCursoForm eliminarCursoForm = new EliminarCursoForm();
+            EliminarCursoController eliminarCursoController = new EliminarCursoController(eliminarCursoForm);
             eliminarCursoForm.Show();
         }
     }

@@ -32,7 +32,7 @@ namespace SimuladorHorario
             goto MenuGestor;*/
             #endregion
         }
-        public static bool CrearCursoCurricular(string nrc, string nombreCurso, string profesor, int creditos, Especialidad especialidad)
+        public static bool CrearCursoCurricular(string nrc, string nombreCurso, string profesor, int creditos, Especialidad especialidad, List<Evento> eventosCurso)
         {
 
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
@@ -42,10 +42,10 @@ namespace SimuladorHorario
             }
 
 
-            List<Evento> listaEventos = new List<Evento>();
-            int quiereAgregarEv = 1;
+            
+            
 
-            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, listaEventos, nombreCurso, profesor, TipoCurso.Curricular));
+            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso, profesor, TipoCurso.Curricular));
             return true;
         }
 
@@ -149,13 +149,13 @@ namespace SimuladorHorario
         {
             List<Evento> listaEvento = new List<Evento>();
             string HoraFin;
-            int a = Convert.ToInt32(HoraInicio.Split(':')[0]);
+            int horas = Convert.ToInt32(HoraInicio.Split(':')[0]);
 
-            HoraFin = (a + duracion).ToString() + ":" + "20";
+            HoraFin = (horas + duracion).ToString() + ":" + "20";
 
             for(int i = 0; i < duracion; i++)
             {
-                string hora = (a + i).ToString() + ":" + "30";
+                string hora = (horas + i).ToString() + ":" + "30";
                 string nombreEvento = string.Empty;
                 Evento evento = new Evento(nombreEvento, hora, sala, tipoEvento);
                 listaEvento.Add(evento);
@@ -163,7 +163,7 @@ namespace SimuladorHorario
 
 
   
-            Program.ImprimirPositivo("Evento Agregado");
+            
             return listaEvento;
 
         }
