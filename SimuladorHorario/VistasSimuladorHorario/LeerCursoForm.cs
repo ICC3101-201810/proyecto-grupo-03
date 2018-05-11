@@ -55,7 +55,7 @@ namespace VistasSimuladorHorario
         private void LeerCursoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
+            
         }
 
         private void LeerCursoForm_GiveFeedback(object sender, GiveFeedbackEventArgs e)

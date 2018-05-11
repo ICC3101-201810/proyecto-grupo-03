@@ -14,18 +14,21 @@ namespace VistasSimuladorHorario
     public partial class CrearCursoForm : Form
     {
         public event EventHandler OnAgregarEvento;
+        public event EventHandler OnRegresar;
         List<Evento> listaEventos = new List<Evento>();
 
         public CrearCursoForm()
         {
             InitializeComponent();
             this.EspecialidadCB.DataSource = Enum.GetValues(typeof(Especialidad));
-            
+            this.EventosComboBox.DataSource = listaEventos;
         }
 
         public void AñadirEventos(List<Evento> eventos)
         {
             listaEventos.AddRange(eventos);
+            EventosComboBox.DataSource = listaEventos;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -47,6 +50,8 @@ namespace VistasSimuladorHorario
             int creditos = Convert.ToInt32(CreditosUser.Text);
             Especialidad especialidad = (Especialidad)EspecialidadCB.SelectedItem;
             Gestor.CrearCursoCurricular(nrc, nombreCurso.ToUpper(), (apellidoProfesor.ToUpper() + "/" + nombreProfesor.ToUpper()), creditos, especialidad, listaEventos);
+            OnRegresar(this, EventArgs.Empty);
+            this.Hide();
         }
 
         private void CrearCursoForm_Load(object sender, EventArgs e)
@@ -68,6 +73,17 @@ namespace VistasSimuladorHorario
         {
             Aplicacion.SerializeAll();
             System.Environment.Exit(0);
+        }
+
+        private void RegresarButton_Click(object sender, EventArgs e)
+        {
+            OnRegresar(this, EventArgs.Empty);
+            this.Hide();
+        }
+
+        private void EventosComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

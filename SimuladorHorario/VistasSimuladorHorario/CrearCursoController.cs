@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
         {
             this.crearCursoForm = crearCursoForm;
             this.crearCursoForm.OnAgregarEvento += VistasCrearCurso_OnAgregarEvento;
+            this.crearCursoForm.OnRegresar += VistasCrearCurso_OnRegresar;
 
         }
         private void VistasCrearCurso_OnAgregarEvento(object sender, EventArgs e)
@@ -21,6 +22,13 @@ namespace VistasSimuladorHorario
             AgregarEventoForm agregarEventoForm = new AgregarEventoForm();
             AgregarEventoController agregarEventoController = new AgregarEventoController(agregarEventoForm);
             agregarEventoForm.ShowDialog();
+        }
+        private void VistasCrearCurso_OnRegresar(object sender, EventArgs e)
+        {
+            GestorForm gestorForm = new GestorForm();
+            GestorController gestorController = new GestorController(gestorForm);
+            gestorForm.Show();
+            crearCursoForm.Enabled = false;
         }
     }
 }

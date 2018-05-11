@@ -44,7 +44,8 @@
             this.CrearCursoButton = new System.Windows.Forms.Button();
             this.EventAddButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.EventosComboBox = new System.Windows.Forms.ComboBox();
+            this.RegresarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NRCUser
@@ -148,7 +149,7 @@
             // 
             // CrearCursoButton
             // 
-            this.CrearCursoButton.Location = new System.Drawing.Point(761, 108);
+            this.CrearCursoButton.Location = new System.Drawing.Point(761, 55);
             this.CrearCursoButton.Name = "CrearCursoButton";
             this.CrearCursoButton.Size = new System.Drawing.Size(154, 363);
             this.CrearCursoButton.TabIndex = 13;
@@ -177,20 +178,32 @@
             this.label7.Text = "Agregar Evento";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // comboBox1
+            // EventosComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 388);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 24);
-            this.comboBox1.TabIndex = 16;
+            this.EventosComboBox.FormattingEnabled = true;
+            this.EventosComboBox.Location = new System.Drawing.Point(83, 388);
+            this.EventosComboBox.Name = "EventosComboBox";
+            this.EventosComboBox.Size = new System.Drawing.Size(157, 24);
+            this.EventosComboBox.TabIndex = 16;
+            this.EventosComboBox.SelectedIndexChanged += new System.EventHandler(this.EventosComboBox_SelectedIndexChanged);
+            // 
+            // RegresarButton
+            // 
+            this.RegresarButton.Location = new System.Drawing.Point(761, 466);
+            this.RegresarButton.Name = "RegresarButton";
+            this.RegresarButton.Size = new System.Drawing.Size(154, 47);
+            this.RegresarButton.TabIndex = 17;
+            this.RegresarButton.Text = "Regresar";
+            this.RegresarButton.UseVisualStyleBackColor = true;
+            this.RegresarButton.Click += new System.EventHandler(this.RegresarButton_Click);
             // 
             // CrearCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 598);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.RegresarButton);
+            this.Controls.Add(this.EventosComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.EventAddButton);
             this.Controls.Add(this.CrearCursoButton);
@@ -233,6 +246,7 @@
         private System.Windows.Forms.Button CrearCursoButton;
         private System.Windows.Forms.Button EventAddButton;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox EventosComboBox;
+        private System.Windows.Forms.Button RegresarButton;
     }
 }
