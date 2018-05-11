@@ -227,10 +227,16 @@ namespace SimuladorHorario
                     {
                         string fechaDia = (stringHorario.Split(':')[6]);
                         string fechaMes = (stringHorario.Split(':')[7]);
-                        string fechaAño = (stringHorario.Split(':')[8]);
-                        
-
-                        string fecha = fechaDia + "-";
+                        string fechaAño;
+                        try
+                        {
+                            fechaAño = (stringHorario.Split(':')[8]);
+                        }
+                        catch
+                        {
+                            fechaAño = "2018";
+                        }
+                        string fecha = fechaDia + "-" + fechaMes + "-" + fechaAño;
 
                         for (int i = 0; i < cantBloques; i++)
                         {
