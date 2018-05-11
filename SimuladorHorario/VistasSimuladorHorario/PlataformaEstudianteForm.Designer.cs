@@ -45,7 +45,6 @@
             this.acercaDeSHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AgendaDataGrid = new System.Windows.Forms.DataGridView();
-            this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +57,8 @@
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,6 +84,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(983, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
@@ -147,6 +149,7 @@
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
             this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
+            this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -194,22 +197,17 @@
             this.AgendaDataGrid.AllowUserToDeleteRows = false;
             this.AgendaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AgendaDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Agenda});
-            this.AgendaDataGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Agenda,
+            this.dataGridViewTextBoxColumn1});
+            this.AgendaDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AgendaDataGrid.Location = new System.Drawing.Point(0, 0);
             this.AgendaDataGrid.Name = "AgendaDataGrid";
             this.AgendaDataGrid.ReadOnly = true;
             this.AgendaDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.AgendaDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AgendaDataGrid.Size = new System.Drawing.Size(326, 88);
+            this.AgendaDataGrid.Size = new System.Drawing.Size(326, 516);
             this.AgendaDataGrid.TabIndex = 0;
             this.AgendaDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // Agenda
-            // 
-            this.Agenda.HeaderText = "Próximos Eventos";
-            this.Agenda.Name = "Agenda";
-            this.Agenda.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -293,6 +291,18 @@
             // 
             this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
             // 
+            // Agenda
+            // 
+            this.Agenda.HeaderText = "Próximos Eventos";
+            this.Agenda.Name = "Agenda";
+            this.Agenda.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // PlataformaEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,9 +356,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sábado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
         private System.Windows.Forms.DataGridView AgendaDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
         private System.Windows.Forms.ToolStripMenuItem wIWIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscribirCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarPerfilToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
