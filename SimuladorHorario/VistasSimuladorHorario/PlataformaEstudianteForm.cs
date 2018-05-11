@@ -180,5 +180,11 @@ namespace VistasSimuladorHorario
         {
 
         }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            MessageBox.Show("Guardado Exitoso");
+        }
     }
 }
