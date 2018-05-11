@@ -20,6 +20,7 @@ namespace VistasSimuladorHorario
             InitializeComponent();
             this.EspecialidadCB.DataSource = Enum.GetValues(typeof(Especialidad));
             this.ConcentracionComboBox.DataSource = Enum.GetValues(typeof(Concentracion));
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -79,6 +80,7 @@ namespace VistasSimuladorHorario
 
         private void RegresarButton_Click(object sender, EventArgs e)
         {
+
             OnRegistrarse(this, EventArgs.Empty);
             this.Hide();
         }

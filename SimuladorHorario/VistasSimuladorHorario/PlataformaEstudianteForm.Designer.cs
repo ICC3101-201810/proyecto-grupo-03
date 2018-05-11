@@ -49,18 +49,21 @@
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sábado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.AgendaDataGrid = new System.Windows.Forms.DataGridView();
             this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wIWIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscribirCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgendaDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).BeginInit();
@@ -71,6 +74,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.verToolStripMenuItem,
+            this.wIWIToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -104,7 +108,7 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarToolStripMenuItem.Text = "Guardar...";
             // 
             // salirToolStripMenuItem
@@ -150,7 +154,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel1.Controls.Add(this.AgendaDataGrid);
             // 
             // splitContainer1.Panel2
             // 
@@ -230,21 +234,22 @@
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
             // 
-            // dataGridView2
+            // AgendaDataGrid
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AgendaDataGrid.AllowUserToAddRows = false;
+            this.AgendaDataGrid.AllowUserToDeleteRows = false;
+            this.AgendaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AgendaDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Agenda});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(335, 88);
-            this.dataGridView2.TabIndex = 0;
+            this.AgendaDataGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AgendaDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.AgendaDataGrid.Name = "AgendaDataGrid";
+            this.AgendaDataGrid.ReadOnly = true;
+            this.AgendaDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.AgendaDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AgendaDataGrid.Size = new System.Drawing.Size(335, 88);
+            this.AgendaDataGrid.TabIndex = 0;
+            this.AgendaDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Agenda
             // 
@@ -264,6 +269,27 @@
             // 
             this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
             // 
+            // wIWIToolStripMenuItem
+            // 
+            this.wIWIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscribirCursoToolStripMenuItem,
+            this.modificarPerfilToolStripMenuItem});
+            this.wIWIToolStripMenuItem.Name = "wIWIToolStripMenuItem";
+            this.wIWIToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.wIWIToolStripMenuItem.Text = "WIWI";
+            // 
+            // inscribirCursoToolStripMenuItem
+            // 
+            this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
+            // 
+            // modificarPerfilToolStripMenuItem
+            // 
+            this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
+            // 
             // PlataformaEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,7 +308,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgendaDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).EndInit();
@@ -315,7 +341,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sábado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView AgendaDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
+        private System.Windows.Forms.ToolStripMenuItem wIWIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscribirCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarPerfilToolStripMenuItem;
     }
 }
