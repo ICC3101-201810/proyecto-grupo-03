@@ -49,6 +49,7 @@
             this.Controls.Add(this.button1);
             this.Name = "GestorForm";
             this.Text = "GestorForm";
+            this.Load += new System.EventHandler(this.GestorForm_Load);
             this.ResumeLayout(false);
 
         }

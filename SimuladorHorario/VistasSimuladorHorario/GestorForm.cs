@@ -23,5 +23,10 @@ namespace VistasSimuladorHorario
             OnCrearCurso(this, EventArgs.Empty);
             this.Hide();
         }
+
+        private void GestorForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
