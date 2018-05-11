@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
@@ -43,6 +44,12 @@ namespace VistasSimuladorHorario
 
             OnLeerCurso(this, EventArgs.Empty);
             this.Hide();
+        }
+
+        private void GestorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
         }
     }
 }

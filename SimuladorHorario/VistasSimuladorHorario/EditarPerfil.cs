@@ -45,6 +45,12 @@ namespace VistasSimuladorHorario
             estudianteActivo.SetNombre(textBox1.Text);
             estudianteActivo.SetContraseña(textBox2.Text);
         }
+
+        private void EditarPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
     }
 
 

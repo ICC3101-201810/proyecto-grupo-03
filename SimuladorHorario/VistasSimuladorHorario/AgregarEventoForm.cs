@@ -36,12 +36,18 @@ namespace VistasSimuladorHorario
             string horaInicio = (string)(BloqueHComboBox.SelectedItem);
             int duracion = Convert.ToInt32(DuracionComboBox.SelectedItem);
             Gestor.CrearEvento(fecha, tipoEvento, sala, horaInicio, duracion);
+            this.Close();
             
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AgregarEventoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

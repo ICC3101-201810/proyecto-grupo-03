@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
     public partial class LeerCursoForm : Form
     {
         public event EventHandler OnLeerCurso;
+        public event EventHandler OnRegresar;
 
         public LeerCursoForm()
         {
@@ -44,12 +45,30 @@ namespace VistasSimuladorHorario
             nrcCursoALeer = opcion[0];
 
             Gestor.LeerCurso(nrcCursoALeer);
-
+            return;
+            /*
             if (OnLeerCurso != null)
             {
                 OnLeerCurso(this, EventArgs.Empty);
             }
-            this.Close();
+            this.Close();*/
+        }
+
+        private void LeerCursoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
+
+        private void LeerCursoForm_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+
+        }
+        
+        private void RegresarButton_Click(object sender, EventArgs e)
+        {
+            //OnRegresar(this, EventArgs.Empty);
+            //this.Hide();
         }
     }
 }

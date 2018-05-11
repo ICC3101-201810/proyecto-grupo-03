@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarCursoForm));
             this.label1 = new System.Windows.Forms.Label();
             this.EliminarCursosComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,26 +37,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(289, 143);
+            this.label1.Location = new System.Drawing.Point(385, 176);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 13);
+            this.label1.Size = new System.Drawing.Size(260, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione el curso que quiere eliminar:";
             // 
             // EliminarCursosComboBox
             // 
             this.EliminarCursosComboBox.FormattingEnabled = true;
-            this.EliminarCursosComboBox.Location = new System.Drawing.Point(292, 159);
+            this.EliminarCursosComboBox.Location = new System.Drawing.Point(389, 196);
+            this.EliminarCursosComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EliminarCursosComboBox.Name = "EliminarCursosComboBox";
-            this.EliminarCursosComboBox.Size = new System.Drawing.Size(320, 21);
+            this.EliminarCursosComboBox.Size = new System.Drawing.Size(425, 24);
             this.EliminarCursosComboBox.TabIndex = 1;
             this.EliminarCursosComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(292, 232);
+            this.button1.Location = new System.Drawing.Point(389, 286);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.Size = new System.Drawing.Size(185, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "Eliminar Curso";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,14 +67,17 @@
             // 
             // EliminarCursoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.EliminarCursosComboBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EliminarCursoForm";
             this.Text = "EliminarCursoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EliminarCursoForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

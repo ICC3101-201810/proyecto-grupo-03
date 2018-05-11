@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarPerfil));
             this.usuarioLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,67 +43,75 @@
             // usuarioLabel
             // 
             this.usuarioLabel.AutoSize = true;
-            this.usuarioLabel.Location = new System.Drawing.Point(75, 37);
+            this.usuarioLabel.Location = new System.Drawing.Point(100, 46);
+            this.usuarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usuarioLabel.Name = "usuarioLabel";
-            this.usuarioLabel.Size = new System.Drawing.Size(46, 13);
+            this.usuarioLabel.Size = new System.Drawing.Size(61, 17);
             this.usuarioLabel.TabIndex = 0;
             this.usuarioLabel.Text = "Usuario:";
             this.usuarioLabel.Click += new System.EventHandler(this.usuarioLabel_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 53);
+            this.textBox1.Location = new System.Drawing.Point(104, 65);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
+            this.textBox1.Size = new System.Drawing.Size(332, 22);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 109);
+            this.textBox2.Location = new System.Drawing.Point(104, 134);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 20);
+            this.textBox2.Size = new System.Drawing.Size(332, 22);
             this.textBox2.TabIndex = 3;
             // 
             // contraseñaLabel
             // 
             this.contraseñaLabel.AutoSize = true;
-            this.contraseñaLabel.Location = new System.Drawing.Point(75, 93);
+            this.contraseñaLabel.Location = new System.Drawing.Point(100, 114);
+            this.contraseñaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.contraseñaLabel.Name = "contraseñaLabel";
-            this.contraseñaLabel.Size = new System.Drawing.Size(64, 13);
+            this.contraseñaLabel.Size = new System.Drawing.Size(85, 17);
             this.contraseñaLabel.TabIndex = 2;
             this.contraseñaLabel.Text = "Contraseña:";
             // 
             // cursosInscritosComboBox
             // 
             this.cursosInscritosComboBox.FormattingEnabled = true;
-            this.cursosInscritosComboBox.Location = new System.Drawing.Point(78, 176);
+            this.cursosInscritosComboBox.Location = new System.Drawing.Point(104, 217);
+            this.cursosInscritosComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cursosInscritosComboBox.Name = "cursosInscritosComboBox";
-            this.cursosInscritosComboBox.Size = new System.Drawing.Size(250, 21);
+            this.cursosInscritosComboBox.Size = new System.Drawing.Size(332, 24);
             this.cursosInscritosComboBox.TabIndex = 5;
             // 
             // cursosInscritosLabel
             // 
             this.cursosInscritosLabel.AutoSize = true;
-            this.cursosInscritosLabel.Location = new System.Drawing.Point(75, 160);
+            this.cursosInscritosLabel.Location = new System.Drawing.Point(100, 197);
+            this.cursosInscritosLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cursosInscritosLabel.Name = "cursosInscritosLabel";
-            this.cursosInscritosLabel.Size = new System.Drawing.Size(81, 13);
+            this.cursosInscritosLabel.Size = new System.Drawing.Size(108, 17);
             this.cursosInscritosLabel.TabIndex = 6;
             this.cursosInscritosLabel.Text = "Cursos Inscritos";
             // 
             // avanceMallaLabel
             // 
             this.avanceMallaLabel.AutoSize = true;
-            this.avanceMallaLabel.Location = new System.Drawing.Point(395, 36);
+            this.avanceMallaLabel.Location = new System.Drawing.Point(527, 44);
+            this.avanceMallaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.avanceMallaLabel.Name = "avanceMallaLabel";
-            this.avanceMallaLabel.Size = new System.Drawing.Size(72, 13);
+            this.avanceMallaLabel.Size = new System.Drawing.Size(92, 17);
             this.avanceMallaLabel.TabIndex = 7;
             this.avanceMallaLabel.Text = "Avance Malla";
             // 
             // GuardarButton
             // 
-            this.GuardarButton.Location = new System.Drawing.Point(591, 378);
+            this.GuardarButton.Location = new System.Drawing.Point(788, 465);
+            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(75, 23);
+            this.GuardarButton.Size = new System.Drawing.Size(100, 28);
             this.GuardarButton.TabIndex = 8;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -110,16 +119,17 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(398, 53);
+            this.comboBox1.Location = new System.Drawing.Point(531, 65);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 21);
+            this.comboBox1.Size = new System.Drawing.Size(332, 24);
             this.comboBox1.TabIndex = 9;
             // 
             // EditarPerfil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 413);
+            this.ClientSize = new System.Drawing.Size(904, 508);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.avanceMallaLabel);
@@ -129,8 +139,11 @@
             this.Controls.Add(this.contraseñaLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usuarioLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditarPerfil";
             this.Text = "EditarPerfil";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarPerfil_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

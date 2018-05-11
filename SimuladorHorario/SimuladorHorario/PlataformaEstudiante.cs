@@ -37,10 +37,7 @@ namespace SimuladorHorario
             #endregion
 
         }
-        public static bool Guardar()
-        {
-            return false;
-        }
+        
         public static bool ChequearCompatibilidadHorario(Estudiante estudiante, CursoCurricular cursoInscribir)
         {
             List<string> listaBloquesUsados = new List<string>();

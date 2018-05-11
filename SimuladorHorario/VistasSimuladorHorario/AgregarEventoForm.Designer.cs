@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarEventoForm));
             this.FechaEvento = new System.Windows.Forms.DateTimePicker();
             this.TipoEventoComboBox = new System.Windows.Forms.ComboBox();
             this.FechaLabel = new System.Windows.Forms.Label();
@@ -145,7 +146,7 @@
             this.AgregarEventoButton.UseVisualStyleBackColor = true;
             this.AgregarEventoButton.Click += new System.EventHandler(this.AgregarEventoButton_Click);
             // 
-            // AgregarEvento
+            // AgregarEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,8 +163,10 @@
             this.Controls.Add(this.FechaLabel);
             this.Controls.Add(this.TipoEventoComboBox);
             this.Controls.Add(this.FechaEvento);
-            this.Name = "AgregarEvento";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "AgregarEventoForm";
             this.Text = "AgregarEvento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AgregarEventoForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

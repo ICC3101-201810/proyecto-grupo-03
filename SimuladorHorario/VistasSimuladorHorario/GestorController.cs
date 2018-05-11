@@ -33,6 +33,7 @@ namespace VistasSimuladorHorario
         private void VistasGestor_OnLeerCurso(object sender, EventArgs e)
         {
             LeerCursoForm leerCursoForm = new LeerCursoForm();
+            LeerCursoController leerCursoController = new LeerCursoController(leerCursoForm);
             leerCursoForm.Show();
         }
     }
