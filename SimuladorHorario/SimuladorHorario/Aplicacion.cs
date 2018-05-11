@@ -71,7 +71,7 @@ namespace SimuladorHorario
 
             
             
-            List <CursoCurricular>avanceMalla = new List<CursoCurricular>();
+            List <string>avanceMalla = new List<string>();
             #region
             /*
             Console.WriteLine("Ingrese los cursos de su avance de malla");
@@ -195,24 +195,27 @@ namespace SimuladorHorario
                         {
                             cursosPreRequisito.Clear();
                             string[] datosLinea2 = linea.Split(';');
-                            string[] datosCursosPreReq = (datosLinea2[16]).Split(',');
+                            cursosPreRequisito = (datosLinea2[16]).Split(',').ToList();
+                            /*
                             foreach (string cur in datosCursosPreReq)
                             {
                                 cursosPreRequisito.Add(cur);  
-                            }
+                            }*/
                             /*
                             for (int c = 0; c < cursosPreRequisito.Count; c++)
                             {
                                 if (cursosPreRequisito[c] != "")
                                     System.Windows.Forms.MessageBox.Show(cursosPreRequisito[c]);
-                            }*/
-                            
+                            }
+                            System.Windows.Forms.MessageBox.Show("FINNNNNN");
+                            */
                             nombre = datosLinea2[4];
                             profesor = datosLinea2[15];
                             nrc = datosLinea2[0];
                             carrera = datosLinea2[1];
                             creditos = Convert.ToInt32(datosLinea2[5]);
-                            CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, new List<string>(),
+                            //System.Windows.Forms.MessageBox.Show((cursosPreRequisito.Count).ToString());
+                            CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, cursosPreRequisito,
                                 Especialidad.ICA, listaEvento, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
@@ -309,17 +312,24 @@ namespace SimuladorHorario
                     else
                     {
                         string especialidad, añoIngreso, concentracion, avanceMalla;
+                        List<string> listaAvanceMalla;
                         especialidad = lineaSeparada[4];
                         añoIngreso = lineaSeparada[5];
                         concentracion = lineaSeparada[6];
                         avanceMalla = lineaSeparada[7];
-                        List<CursoCurricular> listaAvanceMalla = new List<CursoCurricular>();
-
+                        listaAvanceMalla = avanceMalla.Split(',').ToList();
+                        /*
+                        for (int q = 0; q < listaAvanceMalla.Count; q++)
+                            System.Windows.Forms.MessageBox.Show(listaAvanceMalla[q]);
+                        */
+                        /*
+                        List<CursoCurricular> listaAvanceMalla = new List<string>();
                         foreach (string nrc in lineaSeparada[7].Split(','))
                         {
                             CursoCurricular curso = cursos.Find(x => x.nrc == nrc);
                             listaAvanceMalla.Add(curso);
                         }
+                        */
                         Estudiante estudiante = new Estudiante(listaAvanceMalla, Especialidad.ICA, Concentracion.Algoritmos, nombre, contraseña, false);
                         usuarios.Add(estudiante);
                     }
