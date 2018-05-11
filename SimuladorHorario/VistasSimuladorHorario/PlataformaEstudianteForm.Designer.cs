@@ -52,14 +52,17 @@
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sábado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.aplicacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // aplicacionBindingSource
@@ -156,6 +159,10 @@
             this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
+            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
@@ -234,6 +241,14 @@
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(-23, -70);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // PlataformaEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,10 +265,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sábado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
