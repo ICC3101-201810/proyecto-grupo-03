@@ -135,20 +135,21 @@
             this.inscribirCursoToolStripMenuItem,
             this.modificarPerfilToolStripMenuItem});
             this.wIWIToolStripMenuItem.Name = "wIWIToolStripMenuItem";
-            this.wIWIToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.wIWIToolStripMenuItem.Text = "WIWI";
+            this.wIWIToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.wIWIToolStripMenuItem.Text = "Acciones";
+            this.wIWIToolStripMenuItem.Click += new System.EventHandler(this.wIWIToolStripMenuItem_Click);
             // 
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
             this.inscribirCursoToolStripMenuItem.Click += new System.EventHandler(this.inscribirCursoToolStripMenuItem_Click);
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
             this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
             // 

@@ -175,5 +175,10 @@ namespace VistasSimuladorHorario
         {
             OnCerrarSesion(this, EventArgs.Empty);
         }
+
+        private void wIWIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
