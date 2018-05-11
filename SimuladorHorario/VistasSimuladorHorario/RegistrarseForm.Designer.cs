@@ -78,6 +78,7 @@
             this.PassUser.Name = "PassUser";
             this.PassUser.Size = new System.Drawing.Size(131, 20);
             this.PassUser.TabIndex = 3;
+            this.PassUser.UseSystemPasswordChar = true;
             this.PassUser.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3

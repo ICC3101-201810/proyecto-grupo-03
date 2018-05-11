@@ -92,6 +92,7 @@ namespace VistasSimuladorHorario
 
         private void RegistrarseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Aplicacion.SerializeAll();
             System.Environment.Exit(0);
         }
     }
