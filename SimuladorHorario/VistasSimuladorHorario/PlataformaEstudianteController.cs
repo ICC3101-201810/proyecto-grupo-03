@@ -32,7 +32,8 @@ namespace VistasSimuladorHorario
         private void VistasInscribirCurso_OnInscribir(object sender, InscribirCursoEventArgs e)
         {
             Estudiante estudiante = (Estudiante)usuarioActivo;
-            plataformaEstudianteForm.ActualizarHorario(estudiante.listaInscripcion); ;
+            plataformaEstudianteForm.ActualizarHorario(estudiante.listaInscripcion);
+            plataformaEstudianteForm.ActualizarAgenda(estudiante.listaInscripcion);
         }
 
     }
