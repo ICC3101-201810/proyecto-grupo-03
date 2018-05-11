@@ -13,7 +13,6 @@ namespace VistasSimuladorHorario
 {
     public partial class RegistrarseForm : Form
     {
-
         public event EventHandler OnRegistrarse;
 
         public RegistrarseForm()
@@ -22,8 +21,6 @@ namespace VistasSimuladorHorario
             this.EspecialidadCB.DataSource = Enum.GetValues(typeof(Especialidad));
             this.ConcentracionComboBox.DataSource = Enum.GetValues(typeof(Concentracion));
         }
-
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -44,8 +41,8 @@ namespace VistasSimuladorHorario
         {
             string nombreUsuario = TextUser.Text;
             string passUsuario = PassUser.Text;
-            Especialidad especialidad= (Especialidad)Enum.Parse(typeof(Especialidad), EspecialidadCB.SelectedText);
-            Concentracion concentracion = (Concentracion)Enum.Parse(typeof(Concentracion),ConcentracionComboBox.SelectedText);
+            Especialidad especialidad= (Especialidad) EspecialidadCB.SelectedItem;
+            Concentracion concentracion = (Concentracion)ConcentracionComboBox.SelectedItem;
             if (nombreUsuario == null || passUsuario == null)
             {
                 MessageBox.Show("Debe ingresar todos los datos");
@@ -60,7 +57,7 @@ namespace VistasSimuladorHorario
                 return;
             }
             MessageBox.Show("Usuario creado");
-            OnRegistrarse(this, null);
+            OnRegistrarse(this, EventArgs.Empty);
             this.Hide();
             
         }
@@ -82,8 +79,18 @@ namespace VistasSimuladorHorario
 
         private void RegresarButton_Click(object sender, EventArgs e)
         {
-            OnRegistrarse(this, null);
+            OnRegistrarse(this, EventArgs.Empty);
             this.Hide();
+        }
+
+        private void RegistrarseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistrarseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }
