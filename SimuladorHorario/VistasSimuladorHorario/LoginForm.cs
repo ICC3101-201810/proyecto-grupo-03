@@ -59,5 +59,11 @@ namespace VistasSimuladorHorario
             OnRegistro(this, null);
             this.Hide();
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
     }
 }
