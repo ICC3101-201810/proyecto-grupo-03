@@ -41,7 +41,6 @@ namespace VistasSimuladorHorario
             string passUsuario = contraseñaText.Text;
             Usuario usuario = Aplicacion.IniciarSesion(nombreUsuario, passUsuario);
             if (usuario == null) { MessageBox.Show("Usuario o Contraseña incorrecto", "Login Error"); return; }
-
             IniciarSesionEventArgs iniciarSesionArgs = new IniciarSesionEventArgs();
             iniciarSesionArgs.usuario = usuario;
             OnIniciarSesion(this, iniciarSesionArgs);

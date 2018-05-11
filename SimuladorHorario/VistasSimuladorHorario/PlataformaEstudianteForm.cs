@@ -12,7 +12,11 @@ using SimuladorHorario;
 namespace VistasSimuladorHorario
 {
     public partial class PlataformaEstudianteForm : Form
+
+    
     {
+        public event EventHandler OnInscribirCurso;
+
         public PlataformaEstudianteForm()
         {
             InitializeComponent();
@@ -99,6 +103,11 @@ namespace VistasSimuladorHorario
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void inscribirCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnInscribirCurso(this, EventArgs.Empty);
         }
     }
 }
