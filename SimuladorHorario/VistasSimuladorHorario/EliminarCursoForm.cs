@@ -56,7 +56,12 @@ namespace VistasSimuladorHorario
         private void EliminarCursoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Aplicacion.SerializeAll();
-            //System.Environment.Exit(0);
+            System.Environment.Exit(0);
+        }
+
+        private void RegresarButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
