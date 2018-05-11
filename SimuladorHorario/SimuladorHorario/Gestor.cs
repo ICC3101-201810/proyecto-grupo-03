@@ -49,44 +49,26 @@ namespace SimuladorHorario
             return true;
         }
 
-        public static void LeerCurso()
+        public static void LeerCurso(string nrcCurso)
         {
-            LeerCurso:
-            Console.Clear();
-            Program.ImprimirBanner("Leer Curso");
-            ImprimirCursos();
-            Console.WriteLine("\nSeleccione El NRC del curso que desea leer: ");
-            List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
-            string option = "";
+            int indCurso = -1;
 
-
-            do
+            foreach (CursoCurricular cursoCur in Aplicacion.cursos)
             {
-                Console.Write("NRC:> ");
-                option = Console.ReadLine();
-                if (!listadoNRC.Contains(option)) { Program.ImprimirNegativo("NRC No Valido"); }
-            } while (!listadoNRC.Contains(option));
-
-          
-            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == option);
-            Console.Clear();
-            Console.WriteLine($"NRC: {curso.nrc}\nNombre: {curso.nombre}\n" +
-                $"Creditos: {curso.creditos}\nProfesor: {curso.profesor}\nEventos:\n");
-
-            foreach (Evento evento in curso.eventosCurso)
-            {
-                Console.WriteLine($"\t{evento.nombre} [{evento.tipo.ToString()}] hora:{evento.hora} fecha:{evento.fecha}");
+                if (cursoCur.nrc == nrcCurso)
+                {
+                    indCurso = Aplicacion.cursos.IndexOf(cursoCur);
+                }
             }
-
-            Console.Write("\n¿Leer Otro Curso?\n" +
-                "1. Si\n" +
-                "2. No\n:> ");
-            int opcion = Program.ChequearOpcion(1, 2);
-            if (opcion == 1) goto LeerCurso;
-            if (opcion == 2) { Console.Clear();return; }
-            else return;
-
-
+            if (indCurso != -1)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    $"Nombre: {Aplicacion.cursos[indCurso].nombre}\n" +
+                    $"NRC: {Aplicacion.cursos[indCurso].nrc}\n" +
+                    $"Profesor: {Aplicacion.cursos[indCurso].profesor}\n" +
+                    $"Creditos: {(Aplicacion.cursos[indCurso].creditos).ToString()}\n" +
+                    $"Especialidad: {Aplicacion.cursos[indCurso].especialidad}\n" );
+            }
         }
         public static void ActualizarCurso()
         {

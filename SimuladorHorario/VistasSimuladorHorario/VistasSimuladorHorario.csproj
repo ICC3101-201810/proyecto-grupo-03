@@ -76,6 +76,12 @@
     <Compile Include="EliminarCursoForm.Designer.cs">
       <DependentUpon>EliminarCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorController.cs" />
     <Compile Include="GestorForm.cs">
       <SubType>Form</SubType>
@@ -85,9 +91,18 @@
     </Compile>
     <Compile Include="IniciarSesionEventArgs.cs" />
     <Compile Include="InscribirCursoController.cs" />
-    <Compile Include="InscribirCursoForm.cs" />
+    <Compile Include="InscribirCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InscribirCursoForm.Designer.cs">
       <DependentUpon>InscribirCursoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeerCursoController.cs" />
+    <Compile Include="LeerCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeerCursoForm.Designer.cs">
+      <DependentUpon>LeerCursoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginController.cs" />
     <Compile Include="LoginForm.cs">
@@ -132,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InscribirCursoForm.resx">
       <DependentUpon>InscribirCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeerCursoForm.resx">
+      <DependentUpon>LeerCursoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -21,11 +21,6 @@ namespace VistasSimuladorHorario
             InicializarEliminarCursoComboBox();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void InicializarEliminarCursoComboBox()
         {
             List<string> listaCursos = new List<string>();
@@ -35,6 +30,10 @@ namespace VistasSimuladorHorario
                 listaCursos.Add(curso.nrc + ": " + curso.nombre);
             }
             EliminarCursosComboBox.DataSource = listaCursos;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 

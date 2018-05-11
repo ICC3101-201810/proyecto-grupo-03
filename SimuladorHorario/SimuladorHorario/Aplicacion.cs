@@ -216,7 +216,7 @@ namespace SimuladorHorario
                             creditos = Convert.ToInt32(datosLinea2[5]);
                             //System.Windows.Forms.MessageBox.Show((cursosPreRequisito.Count).ToString());
                             CursoCurricular cursoCurricular = new CursoCurricular(nrc, creditos, cursosPreRequisito,
-                                Especialidad.ICA, listaEvento, nombre, profesor, TipoCurso.Curricular);
+                                (Especialidad)Enum.Parse(typeof(Especialidad), carrera), listaEvento, nombre, profesor, TipoCurso.Curricular);
                             cursos.Add(cursoCurricular);
                         }
                         contadorLineaCurso++;
