@@ -8,12 +8,13 @@ namespace VistasSimuladorHorario
 {
     class LeerCursoController
     {
-        LeerCursoForm LeerCursoForm;
+        LeerCursoForm leerCursoForm;
 
         public LeerCursoController(LeerCursoForm leerCursoForm)
         {
-            LeerCursoForm = leerCursoForm;
-            LeerCursoForm.OnLeerCurso += VistasLeerCurso_OnLeerCurso;
+            this.leerCursoForm = leerCursoForm;
+            this.leerCursoForm.OnLeerCurso += VistasLeerCurso_OnLeerCurso;
+            this.leerCursoForm.OnRegresar += VistasLeerCurso_OnRegresar;
         }
         public void VistasLeerCurso_OnLeerCurso(object sender, EventArgs e)
         {
@@ -22,5 +23,12 @@ namespace VistasSimuladorHorario
             leerCursoForm.Show();
             leerCursoForm.Enabled = false;
         }
-    }
+        private void VistasLeerCurso_OnRegresar(object sender, EventArgs e)
+        {
+            GestorForm gestorForm = new GestorForm();
+            GestorController gestorController = new GestorController(gestorForm);
+            gestorForm.Show();
+            leerCursoForm.Enabled = false;
+        }
+}
 }
