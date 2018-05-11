@@ -126,11 +126,15 @@ namespace VistasSimuladorHorario
                 }*/
 
 
-
-                Evento evento = curso.eventosCurso[0];
-                dataGridView1.Rows[2].Cells[2].Value = "wiwi";
+                foreach (Evento evento in curso.eventosCurso)
+                {
+                    int diaSemana = Convert.ToInt32(evento.hora.Split('-')[0]);
+                    int horaInicio = Convert.ToInt32((evento.hora.Split('-')[1]).Split(':')[0]);
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = (curso.nombre + " " + evento.sala);
+                }
                 dataGridView1.Enabled = false;
                 dataGridView1.Enabled = true;
+                    
             }
         }
 
