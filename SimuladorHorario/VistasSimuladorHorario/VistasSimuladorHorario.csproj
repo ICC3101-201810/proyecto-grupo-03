@@ -69,6 +69,13 @@
     <Compile Include="CrearCursoForm.Designer.cs">
       <DependentUpon>CrearCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarPerfil.Designer.cs">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPerfilController.cs" />
     <Compile Include="EliminarCursoController.cs" />
     <Compile Include="EliminarCursoForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearCursoForm.resx">
       <DependentUpon>CrearCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarPerfil.resx">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarCursoForm.resx">
       <DependentUpon>EliminarCursoForm.cs</DependentUpon>

@@ -18,6 +18,7 @@ namespace VistasSimuladorHorario
         public event EventHandler OnInscribirCurso;
         public event EventHandler OnEditarPerfil;
 
+
         public PlataformaEstudianteForm()
         {
             InitializeComponent();
@@ -171,7 +172,7 @@ namespace VistasSimuladorHorario
 
         private void modificarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OnEditarPerfil(this, EventArgs.Empty);
         }
     }
 }

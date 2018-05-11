@@ -18,7 +18,7 @@ namespace VistasSimuladorHorario
             this.usuarioActivo = usuarioActivo;
             this.plataformaEstudianteForm = plataformaEstudianteForm;
             this.plataformaEstudianteForm.OnInscribirCurso += VistasInscribirCurso_OnInscribirCurso;
-            
+            this.plataformaEstudianteForm.OnEditarPerfil += VistasEditarPerfil_OnEditarPerfil;
         }
 
         private void VistasInscribirCurso_OnInscribirCurso(object sender, EventArgs e)
@@ -35,6 +35,17 @@ namespace VistasSimuladorHorario
             plataformaEstudianteForm.ActualizarHorario(estudiante.listaInscripcion);
             plataformaEstudianteForm.ActualizarAgenda(estudiante.listaInscripcion);
         }
+
+
+        private void VistasEditarPerfil_OnEditarPerfil(object sender, EventArgs e)
+        {
+            EditarPerfil editarPerfil = new EditarPerfil();
+            EditarPerfilController editarPerfilController = new EditarPerfilController(editarPerfil,usuarioActivo);
+            editarPerfil.ShowDialog();
+            Estudiante estudiante = (Estudiante)usuarioActivo;
+            editarPerfil.cargarInfo(estudiante);
+        }
+
 
     }
 }

@@ -7,19 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-    public partial class avanceMallaComboBox : Form
+    public partial class EditarPerfil : Form
     {
-        public avanceMallaComboBox()
+
+
+        public EditarPerfil()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void usuarioLabel_Click(object sender, EventArgs e)
@@ -27,14 +25,17 @@ namespace VistasSimuladorHorario
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void cargarInfo(Estudiante estudianteActivo)
         {
+            List<string> listaNombreCursoInscrito = new List<string>();
+            foreach(Curso curso in estudianteActivo.listaInscripcion)
+            {
+                listaNombreCursoInscrito.Add(curso.nombre);
+            }
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            cursosInscritosComboBox.DataSource = listaNombreCursoInscrito;
         }
     }
+
+
 }
