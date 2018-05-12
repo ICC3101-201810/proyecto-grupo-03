@@ -44,14 +44,13 @@
             this.CrearCursoButton = new System.Windows.Forms.Button();
             this.EventAddButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.EventosComboBox = new System.Windows.Forms.ComboBox();
             this.RegresarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NRCUser
             // 
             this.NRCUser.Location = new System.Drawing.Point(160, 45);
-            this.NRCUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NRCUser.Margin = new System.Windows.Forms.Padding(2);
             this.NRCUser.Name = "NRCUser";
             this.NRCUser.Size = new System.Drawing.Size(48, 20);
             this.NRCUser.TabIndex = 0;
@@ -69,7 +68,7 @@
             // NCursoUser
             // 
             this.NCursoUser.Location = new System.Drawing.Point(160, 92);
-            this.NCursoUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NCursoUser.Margin = new System.Windows.Forms.Padding(2);
             this.NCursoUser.Name = "NCursoUser";
             this.NCursoUser.Size = new System.Drawing.Size(113, 20);
             this.NCursoUser.TabIndex = 2;
@@ -88,7 +87,7 @@
             // NProfeUser
             // 
             this.NProfeUser.Location = new System.Drawing.Point(160, 139);
-            this.NProfeUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NProfeUser.Margin = new System.Windows.Forms.Padding(2);
             this.NProfeUser.Name = "NProfeUser";
             this.NProfeUser.Size = new System.Drawing.Size(113, 20);
             this.NProfeUser.TabIndex = 5;
@@ -117,7 +116,7 @@
             // AProfeUser
             // 
             this.AProfeUser.Location = new System.Drawing.Point(413, 139);
-            this.AProfeUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AProfeUser.Margin = new System.Windows.Forms.Padding(2);
             this.AProfeUser.Name = "AProfeUser";
             this.AProfeUser.Size = new System.Drawing.Size(76, 20);
             this.AProfeUser.TabIndex = 8;
@@ -135,7 +134,7 @@
             // CreditosUser
             // 
             this.CreditosUser.Location = new System.Drawing.Point(160, 183);
-            this.CreditosUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreditosUser.Margin = new System.Windows.Forms.Padding(2);
             this.CreditosUser.Name = "CreditosUser";
             this.CreditosUser.Size = new System.Drawing.Size(48, 20);
             this.CreditosUser.TabIndex = 10;
@@ -154,7 +153,7 @@
             // 
             this.EspecialidadCB.FormattingEnabled = true;
             this.EspecialidadCB.Location = new System.Drawing.Point(160, 228);
-            this.EspecialidadCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EspecialidadCB.Margin = new System.Windows.Forms.Padding(2);
             this.EspecialidadCB.Name = "EspecialidadCB";
             this.EspecialidadCB.Size = new System.Drawing.Size(113, 21);
             this.EspecialidadCB.TabIndex = 12;
@@ -162,7 +161,7 @@
             // CrearCursoButton
             // 
             this.CrearCursoButton.Location = new System.Drawing.Point(571, 45);
-            this.CrearCursoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrearCursoButton.Margin = new System.Windows.Forms.Padding(2);
             this.CrearCursoButton.Name = "CrearCursoButton";
             this.CrearCursoButton.Size = new System.Drawing.Size(116, 295);
             this.CrearCursoButton.TabIndex = 13;
@@ -174,7 +173,7 @@
             // 
             this.EventAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EventAddButton.Location = new System.Drawing.Point(62, 280);
-            this.EventAddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EventAddButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventAddButton.Name = "EventAddButton";
             this.EventAddButton.Size = new System.Drawing.Size(26, 30);
             this.EventAddButton.TabIndex = 14;
@@ -193,20 +192,10 @@
             this.label7.Text = "Agregar Evento";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // EventosComboBox
-            // 
-            this.EventosComboBox.FormattingEnabled = true;
-            this.EventosComboBox.Location = new System.Drawing.Point(62, 315);
-            this.EventosComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EventosComboBox.Name = "EventosComboBox";
-            this.EventosComboBox.Size = new System.Drawing.Size(119, 21);
-            this.EventosComboBox.TabIndex = 16;
-            this.EventosComboBox.SelectedIndexChanged += new System.EventHandler(this.EventosComboBox_SelectedIndexChanged);
-            // 
             // RegresarButton
             // 
             this.RegresarButton.Location = new System.Drawing.Point(571, 379);
-            this.RegresarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RegresarButton.Margin = new System.Windows.Forms.Padding(2);
             this.RegresarButton.Name = "RegresarButton";
             this.RegresarButton.Size = new System.Drawing.Size(116, 38);
             this.RegresarButton.TabIndex = 17;
@@ -220,7 +209,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 486);
             this.Controls.Add(this.RegresarButton);
-            this.Controls.Add(this.EventosComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.EventAddButton);
             this.Controls.Add(this.CrearCursoButton);
@@ -237,7 +225,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NRCUser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CrearCursoForm";
             this.Text = "Crear Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearCursoForm_FormClosing);
@@ -264,7 +252,6 @@
         private System.Windows.Forms.Button CrearCursoButton;
         private System.Windows.Forms.Button EventAddButton;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox EventosComboBox;
         private System.Windows.Forms.Button RegresarButton;
     }
 }

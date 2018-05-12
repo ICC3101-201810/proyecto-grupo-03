@@ -21,13 +21,13 @@ namespace VistasSimuladorHorario
         {
             InitializeComponent();
             this.EspecialidadCB.DataSource = Enum.GetValues(typeof(Especialidad));
-            this.EventosComboBox.DataSource = listaEventos;
+            
         }
 
         public void AñadirEventos(List<Evento> eventos)
         {
             listaEventos.AddRange(eventos);
-            EventosComboBox.DataSource = listaEventos;
+           
 
         }
 
