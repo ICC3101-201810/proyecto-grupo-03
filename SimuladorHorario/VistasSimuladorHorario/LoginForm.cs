@@ -21,6 +21,10 @@ namespace VistasSimuladorHorario
         public LoginForm()
         {
             InitializeComponent();
+            if (Aplicacion.cursos.Count == 0)
+            {
+                Aplicacion.DeSerializeAll();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,10 +44,7 @@ namespace VistasSimuladorHorario
             
             
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
-            if(Aplicacion.cursos.Count == 0)
-            {
-                Aplicacion.DeSerializeAll();
-            }
+            
             
 
         }

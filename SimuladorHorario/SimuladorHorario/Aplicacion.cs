@@ -60,14 +60,10 @@ namespace SimuladorHorario
 
         public static bool RegistrarUsuario(string nombreUsuario, string contraseña, Concentracion concentracion ,Especialidad especialidad)
         {
-            
+
             if (NombresUsuarios().Contains(nombreUsuario))
             {
-                do
-                {
-                    return false;
-
-                } while (NombresUsuarios().Contains(nombreUsuario));
+                return false;
             }
 
             
@@ -426,7 +422,17 @@ namespace SimuladorHorario
                     var usuariosSerializated = (List<Usuario>)usuariosData.Deserialize(stream);
                     foreach(Usuario user in usuariosSerializated)
                     {
+                        if(user is Estudiante)
+                        {
+                            Estudiante estudiante = (Estudiante)user;
+                            
+                        }
+                        else if(user is Administrador)
+                        {
+                            Administrador admin = (Administrador)user;
+                        }
                         usuarios.Add(user);
+                        
                     }
                 }
             }
@@ -445,7 +451,7 @@ namespace SimuladorHorario
                     }
                 }
             }
-            catch (IOException) { }
+            catch (IOException) { MessageBox.Show("No se pudo deserializar", "Error"); }
         }
 
 
