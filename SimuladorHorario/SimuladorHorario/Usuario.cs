@@ -30,5 +30,6 @@ namespace SimuladorHorario
             contraseña = nuevaContraseña;
         }
 
+
     }
 }
