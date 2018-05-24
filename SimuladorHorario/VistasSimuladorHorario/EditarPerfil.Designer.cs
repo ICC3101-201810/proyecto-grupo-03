@@ -1,6 +1,6 @@
 ﻿namespace VistasSimuladorHorario
 {
-    partial class EditarPerfil
+    partial class eliminarCursoButton
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarPerfil));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eliminarCursoButton));
             this.usuarioLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -38,6 +38,7 @@
             this.avanceMallaLabel = new System.Windows.Forms.Label();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuarioLabel
@@ -117,11 +118,22 @@
             this.comboBox1.Size = new System.Drawing.Size(250, 21);
             this.comboBox1.TabIndex = 9;
             // 
-            // EditarPerfil
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(253, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // eliminarCursoButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 413);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.avanceMallaLabel);
@@ -132,7 +144,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usuarioLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EditarPerfil";
+            this.Name = "eliminarCursoButton";
             this.Text = "Editar Perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarPerfil_FormClosing);
             this.ResumeLayout(false);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Label avanceMallaLabel;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

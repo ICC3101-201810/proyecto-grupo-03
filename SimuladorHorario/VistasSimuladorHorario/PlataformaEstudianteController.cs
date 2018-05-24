@@ -41,9 +41,12 @@ namespace VistasSimuladorHorario
 
         private void VistasEditarPerfil_OnEditarPerfil(object sender, EventArgs e)
         {
-            EditarPerfil editarPerfil = new EditarPerfil();
+            eliminarCursoButton editarPerfil = new eliminarCursoButton();
             EditarPerfilController editarPerfilController = new EditarPerfilController(editarPerfil,usuarioActivo);
             editarPerfil.ShowDialog();
+            //MessageBox.Show("WIWI");
+            Estudiante estudiante = (Estudiante)usuarioActivo;
+            plataformaEstudianteForm.InicializarHorario();
         }
 
         private void OnCerrarSesion(object sender, EventArgs e)

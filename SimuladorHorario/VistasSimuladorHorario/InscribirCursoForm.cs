@@ -69,6 +69,16 @@ namespace VistasSimuladorHorario
             //Aplicacion.SerializeAll();
             //System.Environment.Exit(0);
         }
+
+        private void InscribirCursoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     
