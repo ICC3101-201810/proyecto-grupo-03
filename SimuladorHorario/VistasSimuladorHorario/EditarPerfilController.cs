@@ -10,9 +10,9 @@ namespace VistasSimuladorHorario
 {
     class EditarPerfilController
     {
-        EditarPerfil editarPerfil = new EditarPerfil();
+        eliminarCursoButton editarPerfil = new eliminarCursoButton();
         Estudiante estudianteActivo;
-        public EditarPerfilController(EditarPerfil editarPerfil, Usuario usuarioActivo)
+        public EditarPerfilController(eliminarCursoButton editarPerfil, Usuario usuarioActivo)
         {
             this.editarPerfil = editarPerfil;
             this.estudianteActivo = (Estudiante)usuarioActivo;

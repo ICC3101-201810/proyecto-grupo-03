@@ -11,12 +11,12 @@ using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-    public partial class EditarPerfil : Form
+    public partial class eliminarCursoButton : Form
     {
 
         public event EventHandler OnGuardar;
-
-        public EditarPerfil()
+        Estudiante estudiante;
+        public eliminarCursoButton()
         {
             InitializeComponent();
         }
@@ -38,6 +38,7 @@ namespace VistasSimuladorHorario
 
             textBox1.Text = estudianteActivo.nombre;
             textBox2.Text = estudianteActivo.contraseña;
+            estudiante = estudianteActivo;
 
         }
 
@@ -56,6 +57,20 @@ namespace VistasSimuladorHorario
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             OnGuardar(this, EventArgs.Empty);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string cursoEliminar = cursosInscritosComboBox.Text;
+            foreach(CursoCurricular curso in estudiante.listaInscripcion)
+            {
+                if(curso.nombre == cursoEliminar)
+                {
+                    estudiante.listaInscripcion.Remove(curso);
+                    cargarInfo(estudiante);
+                    break;
+                }
+            }
         }
     }
 

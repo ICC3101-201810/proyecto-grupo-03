@@ -78,6 +78,24 @@ namespace VistasSimuladorHorario
 
         public void InicializarHorario()
         {
+
+            List<DataGridViewRow> lstRows = new List<DataGridViewRow>();
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                lstRows.Add(row);
+            }
+
+            foreach(DataGridViewRow row in lstRows)
+            {
+                dataGridView1.Rows.Remove(row);
+            }
+
+
+            {
+
+            }
+
+            //MessageBox.Show("Iniciando Horario");
             List<string> listaHorariosString =  Enum.GetNames(typeof(BloquesHorarios)).ToList();
             int contadorHora = 8;
             foreach (string horario in listaHorariosString)
@@ -120,7 +138,7 @@ namespace VistasSimuladorHorario
 
         public void ActualizarHorario(List<Curso> listaCursos)
         {
-
+            //MessageBox.Show("Actualizando Horario");
             foreach (CursoCurricular curso in listaCursos)
             {
 
