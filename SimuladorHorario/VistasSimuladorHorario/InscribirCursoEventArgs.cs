@@ -9,5 +9,6 @@ namespace VistasSimuladorHorario
     public class InscribirCursoEventArgs : EventArgs
     {
         public string nombreCursoInscribir { get; set; }
+        public string nrc { get; set; }
     }
 }

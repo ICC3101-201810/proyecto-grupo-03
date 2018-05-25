@@ -39,6 +39,7 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.limpiarCursosButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuarioLabel
@@ -128,11 +129,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // limpiarCursosButton
+            // 
+            this.limpiarCursosButton.Location = new System.Drawing.Point(78, 203);
+            this.limpiarCursosButton.Name = "limpiarCursosButton";
+            this.limpiarCursosButton.Size = new System.Drawing.Size(169, 23);
+            this.limpiarCursosButton.TabIndex = 11;
+            this.limpiarCursosButton.Text = "Limpiar Cursos";
+            this.limpiarCursosButton.UseVisualStyleBackColor = true;
+            this.limpiarCursosButton.Click += new System.EventHandler(this.limpiarCursosButton_Click);
+            // 
             // eliminarCursoButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 413);
+            this.Controls.Add(this.limpiarCursosButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.GuardarButton);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button limpiarCursosButton;
     }
 }

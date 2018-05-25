@@ -72,6 +72,22 @@ namespace VistasSimuladorHorario
                 }
             }
         }
+
+        private void limpiarCursosButton_Click(object sender, EventArgs e)
+        {
+            List<CursoCurricular> listaCursosBorrar = new List<CursoCurricular>();
+            foreach (CursoCurricular curso in estudiante.listaInscripcion)
+            {
+                listaCursosBorrar.Add(curso);
+            }
+
+            foreach(CursoCurricular curso in listaCursosBorrar)
+            {
+                estudiante.listaInscripcion.Remove(curso);
+            }
+
+            cargarInfo(estudiante);
+        }
     }
 
 

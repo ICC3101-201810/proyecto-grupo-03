@@ -162,7 +162,7 @@ namespace VistasSimuladorHorario
                     }
                     */
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.WrapMode = DataGridViewTriState.True;
-                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = curso.nombre + "  " + evento.sala;
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = curso.nombre + "\n" +evento.tipo.ToString()+": "+ evento.sala;
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.BackColor = colores[listaCursos.IndexOf(curso)];
                 }
                 dataGridView1.Enabled = false;
