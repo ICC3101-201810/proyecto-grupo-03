@@ -51,7 +51,8 @@ namespace VistasSimuladorHorario
 
         private void OnCerrarSesion(object sender, EventArgs e)
         {
-            Aplicacion.usuarios.Add(usuarioActivo);
+
+            //Aplicacion.usuarios.Add(usuarioActivo);
             LoginForm loginForm = new LoginForm();
             LoginController loginController = new LoginController(loginForm);
             loginForm.Show();
