@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SimuladorHorario;
 
 
+
 namespace VistasSimuladorHorario
 {
     public partial class LoginForm : Form
