@@ -26,7 +26,6 @@ namespace SimuladorHorario
             this.especialidad = especialidad;
             this.eventosCurso = eventosCurso;
             tipo = TipoCurso.Curricular;
-        }
-
+        }   
     }
 }

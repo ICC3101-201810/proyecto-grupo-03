@@ -18,7 +18,8 @@ namespace VistasSimuladorHorario
             this.gestorForm.OnCrearCurso += VistasGestor_OnCrearCurso;
             this.gestorForm.OnEliminarCurso += VistasGestor_OnEliminarCurso;
             this.gestorForm.OnLeerCurso += VistasGestor_OnLeerCurso;
-            this.gestorForm.OnCerrarSesion += OnCerrarSesion;
+            this.gestorForm.OnCerrarSesion += VistasGestor_OnCerrarSesion;
+            this.gestorForm.OnActualizarCurso += VistasGestor_OnActualizarCurso;
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace VistasSimuladorHorario
             LeerCursoController leerCursoController = new LeerCursoController(leerCursoForm);
             leerCursoForm.Show();
         }
-        private void OnCerrarSesion(object sender, EventArgs e)
+        private void VistasGestor_OnCerrarSesion(object sender, EventArgs e)
         {
             Aplicacion.usuarios.Add(usuarioActivo);
             LoginForm loginForm = new LoginForm();
@@ -47,6 +48,12 @@ namespace VistasSimuladorHorario
             loginForm.Show();
             usuarioActivo = null;
             gestorForm.Hide();
+        }
+        private void VistasGestor_OnActualizarCurso(object sender, EventArgs e)
+        {
+            ActualizarCursoForm actualizarCursoForm = new ActualizarCursoForm();
+            ActualizarCursoController actualizarCursoController = new ActualizarCursoController(actualizarCursoForm);
+            actualizarCursoForm.Show();
         }
     }
 }

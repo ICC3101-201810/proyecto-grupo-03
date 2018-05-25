@@ -61,6 +61,13 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActualizarCursoController.cs" />
+    <Compile Include="ActualizarCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarCursoForm.Designer.cs">
+      <DependentUpon>ActualizarCursoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarEventoForm.cs">
       <SubType>Form</SubType>
     </Compile>
