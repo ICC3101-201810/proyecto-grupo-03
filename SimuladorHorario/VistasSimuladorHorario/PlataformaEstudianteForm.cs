@@ -79,6 +79,8 @@ namespace VistasSimuladorHorario
         public void InicializarHorario()
         {
 
+            userNameLabel.Text = "Usuario: "+Aplicacion.usuarioActual.nombre;
+
             List<DataGridViewRow> lstRows = new List<DataGridViewRow>();
             foreach(DataGridViewRow row in dataGridView1.Rows)
             {
@@ -236,6 +238,11 @@ namespace VistasSimuladorHorario
         {
             AcercaDe acercaDe = new AcercaDe();
             acercaDe.Show();
+        }
+
+        private void userNameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

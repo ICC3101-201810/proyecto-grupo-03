@@ -60,6 +60,7 @@
             this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sábado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -186,6 +187,7 @@
             // 
             this.AgendaDataGrid.AllowUserToAddRows = false;
             this.AgendaDataGrid.AllowUserToDeleteRows = false;
+            this.AgendaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AgendaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AgendaDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Agenda,
@@ -321,11 +323,24 @@
             this.Sábado.Name = "Sábado";
             this.Sábado.ReadOnly = true;
             // 
+            // userNameLabel
+            // 
+            this.userNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Location = new System.Drawing.Point(340, 5);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(49, 13);
+            this.userNameLabel.TabIndex = 3;
+            this.userNameLabel.Text = "Usuario: ";
+            this.userNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.userNameLabel.Click += new System.EventHandler(this.userNameLabel_Click);
+            // 
             // PlataformaEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 540);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.cerrarSesionButton);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
@@ -378,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sábado;
+        private System.Windows.Forms.Label userNameLabel;
     }
 }
