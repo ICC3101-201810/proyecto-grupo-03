@@ -100,6 +100,7 @@ namespace VistasSimuladorHorario
             int contadorHora = 8;
             foreach (string horario in listaHorariosString)
             {
+                dataGridView1.RowTemplate.Height = 50;
                 dataGridView1.Rows.Add($"{contadorHora}:30 - {contadorHora+1}:20", "", "", "", "", "", "", "");
                 contadorHora++;
             }
@@ -116,13 +117,14 @@ namespace VistasSimuladorHorario
             {
                 AgendaDataGrid.Rows.Add(evento.hora);
             }
-
+            for (int a = 0; a < 13; a++)
+            {
+                dataGridView1.Rows[a].Cells[0].Style.BackColor = Color.LightGray;
+            }
+            
             ActualizarHorario(estudianteActual.listaInscripcion);
 
             //dataGridView1.Rows[rowIndex].Cells[ColumnIndex].Value = data;
-
-
-
 
         }
 
@@ -138,6 +140,9 @@ namespace VistasSimuladorHorario
 
         public void ActualizarHorario(List<Curso> listaCursos)
         {
+            List<Color> colores = new List<Color>();
+            colores.Add(Color.Aqua); colores.Add(Color.GreenYellow); colores.Add(Color.Tomato); colores.Add(Color.Gold);
+            colores.Add(Color.LightSteelBlue);colores.Add(Color.DarkKhaki);colores.Add(Color.LightPink);colores.Add(Color.LightSeaGreen);
             //MessageBox.Show("Actualizando Horario");
             foreach (CursoCurricular curso in listaCursos)
             {
@@ -149,7 +154,16 @@ namespace VistasSimuladorHorario
 
                     int diaSemana = Convert.ToInt32(evento.hora.Split('-')[0]);
                     int horaInicio = Convert.ToInt32((evento.hora.Split('-')[1]).Split(':')[0]);
-                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = (curso.nombre + " " + evento.sala);
+                    /*
+                    for (int r = 0; r < 7; r++)
+                    {
+                        dataGridView1.Columns[r].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //dataGridView1.Columns[r].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;  
+                    }
+                    */
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.WrapMode = DataGridViewTriState.True;
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = curso.nombre + "  " + evento.sala;
+                    dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.BackColor = colores[listaCursos.IndexOf(curso)];
                 }
                 dataGridView1.Enabled = false;
                 dataGridView1.Enabled = true;

@@ -46,6 +46,10 @@
             this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +58,6 @@
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sábado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -98,19 +98,19 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.guardarToolStripMenuItem.Text = "Guardar...";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.salirToolStripMenuItem.Text = "Cancelar";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -232,54 +232,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            // 
-            // Lunes
-            // 
-            this.Lunes.HeaderText = "Lunes";
-            this.Lunes.Name = "Lunes";
-            this.Lunes.ReadOnly = true;
-            // 
-            // Martes
-            // 
-            this.Martes.HeaderText = "Martes";
-            this.Martes.Name = "Martes";
-            this.Martes.ReadOnly = true;
-            // 
-            // Miéricoles
-            // 
-            this.Miéricoles.HeaderText = "Miércoles";
-            this.Miéricoles.Name = "Miéricoles";
-            this.Miéricoles.ReadOnly = true;
-            // 
-            // Jueves
-            // 
-            this.Jueves.HeaderText = "Jueves";
-            this.Jueves.Name = "Jueves";
-            this.Jueves.ReadOnly = true;
-            // 
-            // Viernes
-            // 
-            this.Viernes.HeaderText = "Viernes";
-            this.Viernes.Name = "Viernes";
-            this.Viernes.ReadOnly = true;
-            // 
-            // Sábado
-            // 
-            this.Sábado.HeaderText = "Sábado";
-            this.Sábado.Name = "Sábado";
-            this.Sábado.ReadOnly = true;
-            // 
-            // Domingo
-            // 
-            this.Domingo.HeaderText = "Domingo";
-            this.Domingo.Name = "Domingo";
-            this.Domingo.ReadOnly = true;
-            // 
             // aplicacionBindingSource
             // 
             this.aplicacionBindingSource.DataSource = typeof(SimuladorHorario.Aplicacion);
@@ -302,6 +254,62 @@
             this.cerrarSesionButton.Text = "Cerrar Sesion";
             this.cerrarSesionButton.UseVisualStyleBackColor = true;
             this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            this.Hora.Width = 80;
+            // 
+            // Lunes
+            // 
+            this.Lunes.HeaderText = "Lunes";
+            this.Lunes.Name = "Lunes";
+            this.Lunes.ReadOnly = true;
+            this.Lunes.Width = 110;
+            // 
+            // Martes
+            // 
+            this.Martes.HeaderText = "Martes";
+            this.Martes.Name = "Martes";
+            this.Martes.ReadOnly = true;
+            this.Martes.Width = 110;
+            // 
+            // Miéricoles
+            // 
+            this.Miéricoles.HeaderText = "Miércoles";
+            this.Miéricoles.Name = "Miéricoles";
+            this.Miéricoles.ReadOnly = true;
+            this.Miéricoles.Width = 110;
+            // 
+            // Jueves
+            // 
+            this.Jueves.HeaderText = "Jueves";
+            this.Jueves.Name = "Jueves";
+            this.Jueves.ReadOnly = true;
+            this.Jueves.Width = 110;
+            // 
+            // Viernes
+            // 
+            this.Viernes.HeaderText = "Viernes";
+            this.Viernes.Name = "Viernes";
+            this.Viernes.ReadOnly = true;
+            this.Viernes.Width = 110;
+            // 
+            // Sábado
+            // 
+            this.Sábado.HeaderText = "Sábado";
+            this.Sábado.Name = "Sábado";
+            this.Sábado.ReadOnly = true;
+            this.Sábado.Width = 110;
+            // 
+            // Domingo
+            // 
+            this.Domingo.HeaderText = "Domingo";
+            this.Domingo.Name = "Domingo";
+            this.Domingo.ReadOnly = true;
+            this.Domingo.Width = 110;
             // 
             // PlataformaEstudianteForm
             // 
@@ -346,6 +354,13 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeSHToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView AgendaDataGrid;
+        private System.Windows.Forms.ToolStripMenuItem wIWIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscribirCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarPerfilToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button cerrarSesionButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
@@ -354,12 +369,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sábado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
-        private System.Windows.Forms.DataGridView AgendaDataGrid;
-        private System.Windows.Forms.ToolStripMenuItem wIWIToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inscribirCursoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarPerfilToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Agenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button cerrarSesionButton;
     }
 }
