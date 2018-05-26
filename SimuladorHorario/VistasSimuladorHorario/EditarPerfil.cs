@@ -71,6 +71,11 @@ namespace VistasSimuladorHorario
                     break;
                 }
             }
+            if (cursosInscritosComboBox.Items.Count == 0)
+            {
+                cursosInscritosComboBox.Text = string.Empty;
+                MessageBox.Show("Se han removido todos los cursos");
+            }
         }
 
         private void limpiarCursosButton_Click(object sender, EventArgs e)
@@ -85,7 +90,8 @@ namespace VistasSimuladorHorario
             {
                 estudiante.listaInscripcion.Remove(curso);
             }
-
+            cursosInscritosComboBox.Text = string.Empty;
+            MessageBox.Show("Se han removido todos los cursos");
             cargarInfo(estudiante);
         }
     }
