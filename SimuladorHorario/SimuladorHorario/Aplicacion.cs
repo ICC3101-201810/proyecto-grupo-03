@@ -258,6 +258,12 @@ namespace SimuladorHorario
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
                             Evento evento = new Evento(nombreEvento, inicioBloque, fecha, "B-23", tipo_Evento);
+
+                            if(i == 0)
+                            {
+                                evento.primerPeriodo = true;
+                            }
+
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;
@@ -268,6 +274,12 @@ namespace SimuladorHorario
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
                             Evento evento = new Evento(nombreEvento, inicioBloque, "C-102", tipo_Evento);
+
+                            if (i == 0)
+                            {
+                                evento.primerPeriodo = true;
+                            }
+
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;

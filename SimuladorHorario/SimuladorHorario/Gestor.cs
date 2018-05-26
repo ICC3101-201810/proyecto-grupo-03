@@ -58,9 +58,18 @@ namespace SimuladorHorario
                         $"Profesor: {cursoCur.profesor}\n" +
                         $"Creditos: {(cursoCur.creditos).ToString()}\n" +
                         $"Especialidad: {cursoCur.especialidad}\n");
-                    
+
+                    string eventoInfo = "";
+                    foreach(Evento evento in cursoCur.eventosCurso)
+                    {
+                        eventoInfo += evento.primerPeriodo.ToString() +"\n" + evento.tipo.ToString() + "\n"+ evento.fecha + ": " + evento.hora +"\n\n";
+                    }
+                    //MessageBox.Show(eventoInfo);
                     break;
                 }
+
+
+
             }
 
         }

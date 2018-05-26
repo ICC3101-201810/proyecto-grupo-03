@@ -49,10 +49,6 @@
             this.Agenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +56,10 @@
             this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sábado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -114,7 +114,7 @@
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem.Text = "Cancelar";
+            this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // wIWIToolStripMenuItem
@@ -130,14 +130,14 @@
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
             this.inscribirCursoToolStripMenuItem.Click += new System.EventHandler(this.inscribirCursoToolStripMenuItem_Click);
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
             this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
             // 
@@ -153,14 +153,14 @@
             // documentacionToolStripMenuItem
             // 
             this.documentacionToolStripMenuItem.Name = "documentacionToolStripMenuItem";
-            this.documentacionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.documentacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.documentacionToolStripMenuItem.Text = "Documentacion";
             this.documentacionToolStripMenuItem.Click += new System.EventHandler(this.documentacionToolStripMenuItem_Click);
             // 
             // acercaDeSHToolStripMenuItem
             // 
             this.acercaDeSHToolStripMenuItem.Name = "acercaDeSHToolStripMenuItem";
-            this.acercaDeSHToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.acercaDeSHToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeSHToolStripMenuItem.Text = "Acerca de SH";
             this.acercaDeSHToolStripMenuItem.Click += new System.EventHandler(this.acercaDeSHToolStripMenuItem_Click);
             // 
@@ -254,29 +254,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // aplicacionBindingSource
-            // 
-            this.aplicacionBindingSource.DataSource = typeof(SimuladorHorario.Aplicacion);
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(SimuladorHorario.Usuario);
-            // 
-            // horarioBindingSource
-            // 
-            this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
-            // 
-            // cerrarSesionButton
-            // 
-            this.cerrarSesionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrarSesionButton.Location = new System.Drawing.Point(879, 0);
-            this.cerrarSesionButton.Name = "cerrarSesionButton";
-            this.cerrarSesionButton.Size = new System.Drawing.Size(92, 23);
-            this.cerrarSesionButton.TabIndex = 2;
-            this.cerrarSesionButton.Text = "Cerrar Sesion";
-            this.cerrarSesionButton.UseVisualStyleBackColor = true;
-            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
-            // 
             // Hora
             // 
             this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -322,6 +299,29 @@
             this.Sábado.HeaderText = "Sábado";
             this.Sábado.Name = "Sábado";
             this.Sábado.ReadOnly = true;
+            // 
+            // aplicacionBindingSource
+            // 
+            this.aplicacionBindingSource.DataSource = typeof(SimuladorHorario.Aplicacion);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(SimuladorHorario.Usuario);
+            // 
+            // horarioBindingSource
+            // 
+            this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
+            // 
+            // cerrarSesionButton
+            // 
+            this.cerrarSesionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrarSesionButton.Location = new System.Drawing.Point(879, 0);
+            this.cerrarSesionButton.Name = "cerrarSesionButton";
+            this.cerrarSesionButton.Size = new System.Drawing.Size(92, 23);
+            this.cerrarSesionButton.TabIndex = 2;
+            this.cerrarSesionButton.Text = "Cerrar Sesion";
+            this.cerrarSesionButton.UseVisualStyleBackColor = true;
+            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
             // 
             // userNameLabel
             // 
