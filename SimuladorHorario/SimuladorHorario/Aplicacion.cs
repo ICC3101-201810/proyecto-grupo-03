@@ -180,13 +180,14 @@ namespace SimuladorHorario
                                 listaHorarioLinea.Add((datosLinea[14] + ":" + (i - 6) + ":" + datosLinea[i] + ":" + fecha).Replace(" -", ":"));
                             }
                         }
+                        string sala = datosLinea[13];
                         List<string> bloquesHorario = new List<string>();
 
                         for (int i = 0; i < listaHorarioLinea.Count; i++)
                         {
                             string stringHorario = string.Empty;
                             stringHorario = listaHorarioLinea[i];
-                            listaEvento.AddRange(generarEvento(stringHorario));
+                            listaEvento.AddRange(generarEvento(stringHorario,sala));
                         }   
                         
                         if (contadorLineaCurso == curso.Count)
@@ -222,7 +223,7 @@ namespace SimuladorHorario
 
                 }
 
-                List<Evento> generarEvento(string stringHorario)
+                List<Evento> generarEvento(string stringHorario, string sala)
                 {
 
                     //Console.WriteLine(stringHorario);Console.ReadKey();
@@ -257,9 +258,9 @@ namespace SimuladorHorario
                         for (int i = 0; i < cantBloques; i++)
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
-                            Evento evento = new Evento(nombreEvento, inicioBloque, fecha, "B-23", tipo_Evento);
+                            Evento evento = new Evento(nombreEvento, inicioBloque, fecha, sala, tipo_Evento);
 
-                            if(i == 0)
+                            if (i == 0)
                             {
                                 evento.primerPeriodo = true;
                             }
@@ -273,13 +274,11 @@ namespace SimuladorHorario
                         for (int i = 0; i < cantBloques; i++)
                         {
                             string inicioBloque = $"{diaSemana}-{horaInicio + i}:30";
-                            Evento evento = new Evento(nombreEvento, inicioBloque, "C-102", tipo_Evento);
-
+                            Evento evento = new Evento(nombreEvento, inicioBloque, sala, tipo_Evento);
                             if (i == 0)
                             {
                                 evento.primerPeriodo = true;
                             }
-
                             returnListaEventos.Add(evento);
                         }
                         return returnListaEventos;
