@@ -24,7 +24,7 @@ namespace VistasSimuladorHorario
             InitializeComponent();
 
             
-
+            
             if (Aplicacion.cursos.Count == 0)
             {
                 Aplicacion.DeSerializeAll();
@@ -44,8 +44,8 @@ namespace VistasSimuladorHorario
                     Aplicacion.CargarUsuarios();
 
                 }
-            }
-            */
+            }*/
+            
             
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
             
