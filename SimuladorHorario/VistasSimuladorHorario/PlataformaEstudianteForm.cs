@@ -21,9 +21,14 @@ namespace VistasSimuladorHorario
         public event EventHandler OnCerrarSesion;
         public event EventHandler OnCerrandoApp;
 
+        public DateTime selectedDate = new DateTime(2018,5,27);
+        List<Evento> listaEventos = new List<Evento>();
+        List<Curso> listaInscripcion = new List<Curso>();
+
         public PlataformaEstudianteForm()
         {
             InitializeComponent();
+            AgendaDataGrid.Columns[1].DefaultCellStyle.Format = "d";
             InicializarHorario();
             
         }
@@ -103,9 +108,10 @@ namespace VistasSimuladorHorario
                 contadorHora++;
             }
 
-            List<Evento> listaEventos = new List<Evento>();
+            listaEventos = new List<Evento>();
             Estudiante estudianteActual = (Estudiante)Aplicacion.usuarioActual;
-            foreach(Curso curso in estudianteActual.listaInscripcion)
+            listaInscripcion = estudianteActual.listaInscripcion;
+            foreach (Curso curso in estudianteActual.listaInscripcion)
             {
                 CursoCurricular cursoCurricular = (CursoCurricular)curso;
                 listaEventos.AddRange(cursoCurricular.eventosCurso);
@@ -121,7 +127,7 @@ namespace VistasSimuladorHorario
             }
             
             ActualizarHorario(estudianteActual.listaInscripcion);
-            ActualizarAgenda(estudianteActual.listaInscripcion);
+            ActualizarAgenda();
 
             //dataGridView1.Rows[rowIndex].Cells[ColumnIndex].Value = data;
 
@@ -160,6 +166,10 @@ namespace VistasSimuladorHorario
                         //dataGridView1.Columns[r].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;  
                     }
                     */
+                    
+
+
+
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.WrapMode = DataGridViewTriState.True;
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Value = curso.nombre + "\n" +evento.tipo.ToString()+": "+ evento.sala;
                     dataGridView1.Rows[horaInicio - 8].Cells[diaSemana + 1].Style.BackColor = colores[listaCursos.IndexOf(curso)];
@@ -171,14 +181,13 @@ namespace VistasSimuladorHorario
         }
 
 
-        public void ActualizarAgenda(List<Curso> listaCursos)
+        public void ActualizarAgenda()
         {
-
             limpiarTabla(AgendaDataGrid);
-
-            foreach (CursoCurricular curso in listaCursos)
+            label1.Text = selectedDate.ToString("MMMM");
+            foreach (Curso cursoC in listaInscripcion)
             {
-
+                CursoCurricular curso = (CursoCurricular)cursoC;
                 foreach (Evento evento in curso.eventosCurso)
                 {
 
@@ -186,14 +195,32 @@ namespace VistasSimuladorHorario
                     {
                         if (evento.primerPeriodo)
                         {
-                            AgendaDataGrid.Rows.Add(evento.tipo.ToString() + ": " + curso.nombre, evento.fecha);
+
+                            DateTime date;
+                            try
+                            {
+                                date = evento.GetDateTime();
+                            }
+                            catch
+                            {
+                                continue;
+                            }
+                            if (selectedDate.Month != date.Month)
+                            {
+                                continue;
+                            }
+
+                            AgendaDataGrid.Rows.Add(evento.tipo.ToString() + ": " + curso.nombre, evento.GetDateTime().ToString("d"));
                         }
                     }
 
                     
                 }
+                AgendaDataGrid.Sort(AgendaDataGrid.Columns[1], ListSortDirection.Ascending);
                 dataGridView1.Enabled = false;
                 dataGridView1.Enabled = true;
+
+
 
             }
         }
@@ -263,6 +290,22 @@ namespace VistasSimuladorHorario
             }
             return;
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            selectedDate = selectedDate.AddMonths(-1);
+            ActualizarAgenda();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            selectedDate = selectedDate.AddMonths(1);
+            ActualizarAgenda();
         }
     }
 }

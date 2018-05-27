@@ -35,7 +35,7 @@ namespace VistasSimuladorHorario
         {
             Estudiante estudiante = (Estudiante)usuarioActivo;
             plataformaEstudianteForm.ActualizarHorario(estudiante.listaInscripcion);
-            plataformaEstudianteForm.ActualizarAgenda(estudiante.listaInscripcion);
+            plataformaEstudianteForm.ActualizarAgenda();
         }
 
 

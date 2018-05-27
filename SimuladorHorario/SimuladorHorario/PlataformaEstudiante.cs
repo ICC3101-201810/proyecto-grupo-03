@@ -71,7 +71,6 @@ namespace SimuladorHorario
 
         public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
         {
-            MessageBox.Show(cursoInscripcion);
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == cursoInscripcion);
 
             bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
