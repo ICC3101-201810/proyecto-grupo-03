@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimuladorHorario
 {
@@ -34,6 +35,16 @@ namespace SimuladorHorario
             this.sala = sala;
             this.tipo = tipo;
             this.primerPeriodo = primerPeriodo;
+        }
+
+        public DateTime GetDateTime()
+        {
+            int dia = Convert.ToInt32(fecha.Split('-')[0]);
+            int mes = Convert.ToInt32(fecha.Split('-')[1]);
+            int año = Convert.ToInt32(fecha.Split('-')[2]);
+
+            DateTime date = new DateTime(año,mes,dia);
+            return date;
         }
 
        
