@@ -67,7 +67,8 @@ namespace VistasSimuladorHorario
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
+            Aplicacion.SerializeAll();
+            Environment.Exit(0);
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -90,11 +91,6 @@ namespace VistasSimuladorHorario
             foreach(DataGridViewRow row in lstRows)
             {
                 dataGridView1.Rows.Remove(row);
-            }
-
-
-            {
-
             }
 
             //MessageBox.Show("Iniciando Horario");
@@ -125,6 +121,7 @@ namespace VistasSimuladorHorario
             }
             
             ActualizarHorario(estudianteActual.listaInscripcion);
+            ActualizarAgenda(estudianteActual.listaInscripcion);
 
             //dataGridView1.Rows[rowIndex].Cells[ColumnIndex].Value = data;
 
@@ -177,6 +174,8 @@ namespace VistasSimuladorHorario
         public void ActualizarAgenda(List<Curso> listaCursos)
         {
 
+            limpiarTabla(AgendaDataGrid);
+
             foreach (CursoCurricular curso in listaCursos)
             {
 
@@ -185,7 +184,10 @@ namespace VistasSimuladorHorario
 
                     if (evento.tipo != TipoEvento.CLAS && evento.tipo != TipoEvento.AYUD && evento.tipo != TipoEvento.LABT)
                     {
-                        AgendaDataGrid.Rows.Add(evento.tipo.ToString() + ": " + curso.nombre,evento.fecha);
+                        if (evento.primerPeriodo)
+                        {
+                            AgendaDataGrid.Rows.Add(evento.tipo.ToString() + ": " + curso.nombre, evento.fecha);
+                        }
                     }
 
                     
@@ -242,6 +244,24 @@ namespace VistasSimuladorHorario
 
         private void userNameLabel_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+
+        private void limpiarTabla (DataGridView Tabla)
+        {
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            foreach(DataGridViewRow row in Tabla.Rows)
+            {
+                rows.Add(row);
+            }
+
+            foreach(DataGridViewRow row in rows)
+            {
+               Tabla.Rows.Remove(row);
+            }
+            return;
 
         }
     }

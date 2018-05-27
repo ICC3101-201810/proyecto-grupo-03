@@ -60,7 +60,6 @@ namespace VistasSimuladorHorario
             plataformaEstudianteForm.Hide();
         }
 
-
         private void OnCerrandoApp(object sender, EventArgs e)
         {
             Aplicacion.usuarios.Add(usuarioActivo);
