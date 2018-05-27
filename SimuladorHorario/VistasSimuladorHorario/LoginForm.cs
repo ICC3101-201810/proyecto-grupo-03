@@ -18,14 +18,14 @@ namespace VistasSimuladorHorario
 
         public event EventHandler<IniciarSesionEventArgs> OnIniciarSesion;
         public event EventHandler OnRegistro;
-
+        bool loadCSV = false;
         public LoginForm()
         {
             InitializeComponent();
 
             
             
-            if (Aplicacion.cursos.Count == 0)
+            if (Aplicacion.cursos.Count == 0 && !loadCSV)
             {
                 Aplicacion.DeSerializeAll();
             }
@@ -34,8 +34,8 @@ namespace VistasSimuladorHorario
         private void Form1_Load(object sender, EventArgs e)
         {
             //ESTO PERMITE IMPORTAR MEDIANTE ARCHIVOS CSV
-            /*
-            if (Aplicacion.cursos.Count == 0)
+            
+            if (Aplicacion.cursos.Count == 0 && loadCSV)
             {
                 Aplicacion.CargarCursos();
 
@@ -44,7 +44,7 @@ namespace VistasSimuladorHorario
                     Aplicacion.CargarUsuarios();
 
                 }
-            }*/
+            }
             
             
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
