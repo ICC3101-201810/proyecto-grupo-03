@@ -1,6 +1,6 @@
 ﻿namespace VistasSimuladorHorario
 {
-    partial class AgregarEventoForm1
+    partial class AgregarEventoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarEventoForm1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarEventoForm));
             this.FechaEvento = new System.Windows.Forms.DateTimePicker();
-            this.TipoEventoComboBox = new System.Windows.Forms.ComboBox();
             this.FechaLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.DuracionComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.AgregarEventoButton = new System.Windows.Forms.Button();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // FechaEvento
@@ -50,15 +50,6 @@
             this.FechaEvento.Name = "FechaEvento";
             this.FechaEvento.Size = new System.Drawing.Size(151, 20);
             this.FechaEvento.TabIndex = 0;
-            // 
-            // TipoEventoComboBox
-            // 
-            this.TipoEventoComboBox.FormattingEnabled = true;
-            this.TipoEventoComboBox.Location = new System.Drawing.Point(123, 98);
-            this.TipoEventoComboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.TipoEventoComboBox.Name = "TipoEventoComboBox";
-            this.TipoEventoComboBox.Size = new System.Drawing.Size(92, 21);
-            this.TipoEventoComboBox.TabIndex = 1;
             // 
             // FechaLabel
             // 
@@ -76,9 +67,9 @@
             this.label1.Location = new System.Drawing.Point(20, 98);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Tipo de evento";
+            this.label1.Text = "Nombre";
             // 
             // label2
             // 
@@ -96,7 +87,7 @@
             this.SalaUser.Margin = new System.Windows.Forms.Padding(2);
             this.SalaUser.Name = "SalaUser";
             this.SalaUser.Size = new System.Drawing.Size(92, 20);
-            this.SalaUser.TabIndex = 2;
+            this.SalaUser.TabIndex = 3;
             // 
             // label3
             // 
@@ -116,7 +107,7 @@
             this.BloqueHComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.BloqueHComboBox.Name = "BloqueHComboBox";
             this.BloqueHComboBox.Size = new System.Drawing.Size(92, 21);
-            this.BloqueHComboBox.TabIndex = 8;
+            this.BloqueHComboBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -135,7 +126,7 @@
             this.DuracionComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.DuracionComboBox.Name = "DuracionComboBox";
             this.DuracionComboBox.Size = new System.Drawing.Size(44, 21);
-            this.DuracionComboBox.TabIndex = 10;
+            this.DuracionComboBox.TabIndex = 5;
             // 
             // label5
             // 
@@ -153,16 +144,24 @@
             this.AgregarEventoButton.Margin = new System.Windows.Forms.Padding(2);
             this.AgregarEventoButton.Name = "AgregarEventoButton";
             this.AgregarEventoButton.Size = new System.Drawing.Size(136, 191);
-            this.AgregarEventoButton.TabIndex = 12;
+            this.AgregarEventoButton.TabIndex = 6;
             this.AgregarEventoButton.Text = "Agregar Evento";
             this.AgregarEventoButton.UseVisualStyleBackColor = true;
             this.AgregarEventoButton.Click += new System.EventHandler(this.AgregarEventoButton_Click);
             // 
-            // AgregarEventoForm1
+            // nombreTextBox
+            // 
+            this.nombreTextBox.Location = new System.Drawing.Point(123, 98);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(151, 20);
+            this.nombreTextBox.TabIndex = 2;
+            // 
+            // AgregarEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.AgregarEventoButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DuracionComboBox);
@@ -173,14 +172,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FechaLabel);
-            this.Controls.Add(this.TipoEventoComboBox);
             this.Controls.Add(this.FechaEvento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AgregarEventoForm1";
+            this.Name = "AgregarEventoForm";
             this.Text = "Agregar Evento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AgregarEventoForm_FormClosing);
-            this.Load += new System.EventHandler(this.AgregarEventoForm1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +186,6 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker FechaEvento;
-        private System.Windows.Forms.ComboBox TipoEventoComboBox;
         private System.Windows.Forms.Label FechaLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -200,5 +196,6 @@
         private System.Windows.Forms.ComboBox DuracionComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button AgregarEventoButton;
+        private System.Windows.Forms.TextBox nombreTextBox;
     }
 }

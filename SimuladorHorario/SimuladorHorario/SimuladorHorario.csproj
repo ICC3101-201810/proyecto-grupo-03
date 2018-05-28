@@ -55,6 +55,7 @@
     <Compile Include="CursoCurricular.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="EventoPersonal.cs" />
     <Compile Include="Gestor.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="PlataformaEstudiante.cs" />

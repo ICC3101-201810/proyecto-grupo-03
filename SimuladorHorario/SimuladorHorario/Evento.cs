@@ -39,6 +39,8 @@ namespace SimuladorHorario
 
         public DateTime GetDateTime()
         {
+
+            fecha = fecha.Replace(':', '-');
             int dia = Convert.ToInt32(fecha.Split('-')[0]);
             int mes = Convert.ToInt32(fecha.Split('-')[1]);
             int año = Convert.ToInt32(fecha.Split('-')[2]);

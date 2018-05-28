@@ -19,7 +19,7 @@ namespace VistasSimuladorHorario
         }
         private void VistasCrearCurso_OnAgregarEvento(object sender, EventArgs e)
         {
-            AgregarEventoForm agregarEventoForm = new AgregarEventoForm();
+            AgregarEventoForm1 agregarEventoForm = new AgregarEventoForm1();
             AgregarEventoController agregarEventoController = new AgregarEventoController(agregarEventoForm);
             agregarEventoForm.ShowDialog();
         }

@@ -20,10 +20,12 @@ namespace VistasSimuladorHorario
         public event EventHandler OnEditarPerfil;
         public event EventHandler OnCerrarSesion;
         public event EventHandler OnCerrandoApp;
+        public event EventHandler OnAgregarEvento;
 
         public DateTime selectedDate = new DateTime(2018,5,27);
         List<Evento> listaEventos = new List<Evento>();
         List<Curso> listaInscripcion = new List<Curso>();
+
 
         public PlataformaEstudianteForm()
         {
@@ -86,7 +88,7 @@ namespace VistasSimuladorHorario
         {
 
             userNameLabel.Text = "Usuario: "+Aplicacion.usuarioActual.nombre;
-
+            
             List<DataGridViewRow> lstRows = new List<DataGridViewRow>();
             foreach(DataGridViewRow row in dataGridView1.Rows)
             {
@@ -216,13 +218,18 @@ namespace VistasSimuladorHorario
 
                     
                 }
-                AgendaDataGrid.Sort(AgendaDataGrid.Columns[1], ListSortDirection.Ascending);
-                dataGridView1.Enabled = false;
-                dataGridView1.Enabled = true;
-
-
-
             }
+
+
+            Estudiante estudianteActual = (Estudiante)Aplicacion.usuarioActual;
+            foreach (EventoPersonal evento in estudianteActual.listaEventosPersonal)
+            {
+                AgendaDataGrid.Rows.Add(TipoEvento.PERS.ToString()+ ": " + evento.nombre, evento.GetDateTime().ToString("d"));
+            }
+
+            AgendaDataGrid.Sort(AgendaDataGrid.Columns[1], ListSortDirection.Ascending);
+            dataGridView1.Enabled = false;
+            dataGridView1.Enabled = true;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -306,6 +313,11 @@ namespace VistasSimuladorHorario
         {
             selectedDate = selectedDate.AddMonths(1);
             ActualizarAgenda();
+        }
+
+        private void eventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnAgregarEvento(this, EventArgs.Empty);
         }
     }
 }

@@ -61,6 +61,13 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarEventoPersonalController.cs" />
+    <Compile Include="AgregarEventoPersonalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEventoPersonalForm.Designer.cs">
+      <DependentUpon>AgregarEventoPersonalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarEventoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarEventoPersonalForm.resx">
+      <DependentUpon>AgregarEventoPersonalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarEventoForm.resx">
       <DependentUpon>AgregarEventoForm.cs</DependentUpon>

@@ -21,6 +21,7 @@ namespace VistasSimuladorHorario
             this.plataformaEstudianteForm.OnEditarPerfil += VistasEditarPerfil_OnEditarPerfil;
             this.plataformaEstudianteForm.OnCerrarSesion += OnCerrarSesion;
             this.plataformaEstudianteForm.OnCerrandoApp += OnCerrandoApp;
+            this.plataformaEstudianteForm.OnAgregarEvento += VistasAgregarEvento_OnClickAgregarEvento;
         }
 
         private void VistasInscribirCurso_OnInscribirCurso(object sender, EventArgs e)
@@ -48,6 +49,15 @@ namespace VistasSimuladorHorario
             Estudiante estudiante = (Estudiante)usuarioActivo;
             plataformaEstudianteForm.InicializarHorario();
         }
+
+        private void VistasAgregarEvento_OnClickAgregarEvento(object sender, EventArgs e)
+        {
+            Estudiante estudianteActivo = (Estudiante)usuarioActivo;
+            AgregarEventoForm agregarEventoForm = new AgregarEventoForm(estudianteActivo);
+            agregarEventoForm.ShowDialog();
+            this.plataformaEstudianteForm.ActualizarAgenda();
+        }
+
 
         private void OnCerrarSesion(object sender, EventArgs e)
         {
