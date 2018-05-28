@@ -319,5 +319,12 @@ namespace VistasSimuladorHorario
         {
             OnAgregarEvento(this, EventArgs.Empty);
         }
+
+        private void eventoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EliminarEventoForm eliminarEventoForm = new EliminarEventoForm();
+            eliminarEventoForm.ShowDialog();
+            ActualizarAgenda();
+        }
     }
 }

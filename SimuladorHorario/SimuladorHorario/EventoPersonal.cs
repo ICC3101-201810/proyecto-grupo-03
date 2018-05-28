@@ -24,5 +24,11 @@ namespace SimuladorHorario
             this.sala = sala;
         }
 
+        public override string ToString()
+        {
+            string text = hora + ":  " + nombre;
+            return text;
+        }
+
     }
 }

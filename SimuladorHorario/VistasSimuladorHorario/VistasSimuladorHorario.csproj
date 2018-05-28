@@ -96,6 +96,12 @@
     <Compile Include="EliminarCursoForm.Designer.cs">
       <DependentUpon>EliminarCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarEventoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarEventoForm.Designer.cs">
+      <DependentUpon>EliminarEventoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarCursoForm.resx">
       <DependentUpon>EliminarCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEventoForm.resx">
+      <DependentUpon>EliminarEventoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -41,6 +41,8 @@
             this.wIWIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscribirCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeSHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +68,8 @@
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -131,7 +133,8 @@
             this.wIWIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inscribirCursoToolStripMenuItem,
             this.modificarPerfilToolStripMenuItem,
-            this.agregarToolStripMenuItem});
+            this.agregarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
             this.wIWIToolStripMenuItem.Name = "wIWIToolStripMenuItem";
             this.wIWIToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.wIWIToolStripMenuItem.Text = "Acciones";
@@ -150,6 +153,21 @@
             this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
             this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
+            // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventoToolStripMenuItem});
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Text = "Agregar...";
+            // 
+            // eventoToolStripMenuItem
+            // 
+            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eventoToolStripMenuItem.Text = "Evento";
+            this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -400,20 +418,20 @@
             // 
             this.horarioBindingSource.DataSource = typeof(SimuladorHorario.Horario);
             // 
-            // agregarToolStripMenuItem
+            // eliminarToolStripMenuItem
             // 
-            this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventoToolStripMenuItem});
-            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarToolStripMenuItem.Text = "Agregar...";
+            this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventoToolStripMenuItem1});
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar...";
             // 
-            // eventoToolStripMenuItem
+            // eventoToolStripMenuItem1
             // 
-            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eventoToolStripMenuItem.Text = "Evento";
-            this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
+            this.eventoToolStripMenuItem1.Name = "eventoToolStripMenuItem1";
+            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eventoToolStripMenuItem1.Text = "Evento";
+            this.eventoToolStripMenuItem1.Click += new System.EventHandler(this.eventoToolStripMenuItem1_Click);
             // 
             // PlataformaEstudianteForm
             // 
@@ -484,5 +502,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem1;
     }
 }
