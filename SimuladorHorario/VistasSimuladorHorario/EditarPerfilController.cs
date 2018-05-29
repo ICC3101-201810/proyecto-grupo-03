@@ -17,7 +17,7 @@ namespace VistasSimuladorHorario
             this.editarPerfil = editarPerfil;
             this.estudianteActivo = (Estudiante)usuarioActivo;
             this.editarPerfil.OnGuardar += VistasEditarPerfil_OnGuardar;
-            editarPerfil.cargarInfo(estudianteActivo);
+            editarPerfil.CargarInfo(estudianteActivo);
         }
 
         private void VistasEditarPerfil_OnGuardar(object sender, EventArgs e)

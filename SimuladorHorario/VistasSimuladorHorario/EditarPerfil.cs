@@ -26,7 +26,7 @@ namespace VistasSimuladorHorario
 
         }
 
-        public void cargarInfo(Estudiante estudianteActivo)
+        public void CargarInfo(Estudiante estudianteActivo)
         {
             List<string> listaNombreCursoInscrito = new List<string>();
             foreach(Curso curso in estudianteActivo.listaInscripcion)
@@ -70,7 +70,7 @@ namespace VistasSimuladorHorario
                 {
                     estudiante.listaInscripcion.Remove(curso);
                     MessageBox.Show(curso.nombre + " eliminado con exito");
-                    cargarInfo(estudiante);
+                    CargarInfo(estudiante);
                     break;
                 }
             }
@@ -95,7 +95,7 @@ namespace VistasSimuladorHorario
             }
             cursosInscritosComboBox.Text = string.Empty;
             MessageBox.Show("Se han removido todos los cursos");
-            cargarInfo(estudiante);
+            CargarInfo(estudiante);
         }
 
         private void cursosInscritosLabel_Click(object sender, EventArgs e)

@@ -345,5 +345,10 @@ namespace VistasSimuladorHorario
         {
             OnEditarPerfil(this, EventArgs.Empty);
         }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
