@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimuladorHorario;
+using Microsoft.VisualBasic;
 
 namespace VistasSimuladorHorario
 {
@@ -29,7 +30,7 @@ namespace VistasSimuladorHorario
         public void CargarInfo(Estudiante estudianteActivo)
         {
             List<string> listaNombreCursoInscrito = new List<string>();
-            foreach(Curso curso in estudianteActivo.listaInscripcion)
+            foreach (Curso curso in estudianteActivo.listaInscripcion)
             {
                 listaNombreCursoInscrito.Add(curso.nombre);
             }
@@ -40,8 +41,21 @@ namespace VistasSimuladorHorario
             textBox2.Text = estudianteActivo.contraseña;
             estudiante = estudianteActivo;
 
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+
             listBox1.DataSource = estudiante.avanceMalla;
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", estudiante.nombre);   
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", estudiante.contraseña);
         }
 
         public void Guardar(Estudiante estudianteActivo)
@@ -64,9 +78,9 @@ namespace VistasSimuladorHorario
         private void button1_Click(object sender, EventArgs e)
         {
             string cursoEliminar = cursosInscritosComboBox.Text;
-            foreach(CursoCurricular curso in estudiante.listaInscripcion)
+            foreach (CursoCurricular curso in estudiante.listaInscripcion)
             {
-                if(curso.nombre == cursoEliminar)
+                if (curso.nombre == cursoEliminar)
                 {
                     estudiante.listaInscripcion.Remove(curso);
                     MessageBox.Show(curso.nombre + " eliminado con exito");
@@ -89,7 +103,7 @@ namespace VistasSimuladorHorario
                 listaCursosBorrar.Add(curso);
             }
 
-            foreach(CursoCurricular curso in listaCursosBorrar)
+            foreach (CursoCurricular curso in listaCursosBorrar)
             {
                 estudiante.listaInscripcion.Remove(curso);
             }
@@ -117,7 +131,10 @@ namespace VistasSimuladorHorario
         {
 
         }
+
+        
     }
-
-
 }
+
+
+
