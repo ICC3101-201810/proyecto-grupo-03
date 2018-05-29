@@ -51,7 +51,7 @@ namespace VistasSimuladorHorario
         private void GestorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
+            //System.Environment.Exit(0);
         }
 
         private void CerrarSesionButton_Click(object sender, EventArgs e)
