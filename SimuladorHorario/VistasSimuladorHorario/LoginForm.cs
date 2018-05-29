@@ -23,8 +23,6 @@ namespace VistasSimuladorHorario
         {
             InitializeComponent();
 
-            
-            
             if (Aplicacion.cursos.Count == 0 && !loadCSV)
             {
                 Aplicacion.DeSerializeAll();
