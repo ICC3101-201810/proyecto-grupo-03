@@ -83,6 +83,7 @@
             this.cursosInscritosComboBox.Name = "cursosInscritosComboBox";
             this.cursosInscritosComboBox.Size = new System.Drawing.Size(250, 21);
             this.cursosInscritosComboBox.TabIndex = 5;
+            this.cursosInscritosComboBox.SelectedIndexChanged += new System.EventHandler(this.cursosInscritosComboBox_SelectedIndexChanged);
             // 
             // cursosInscritosLabel
             // 

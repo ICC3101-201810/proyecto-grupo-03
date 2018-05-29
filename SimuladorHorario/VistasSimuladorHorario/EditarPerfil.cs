@@ -40,6 +40,8 @@ namespace VistasSimuladorHorario
             textBox2.Text = estudianteActivo.contraseña;
             estudiante = estudianteActivo;
 
+            comboBox1.DataSource = estudiante.avanceMalla;
+
         }
 
         public void Guardar(Estudiante estudianteActivo)
@@ -97,6 +99,11 @@ namespace VistasSimuladorHorario
         }
 
         private void cursosInscritosLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cursosInscritosComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

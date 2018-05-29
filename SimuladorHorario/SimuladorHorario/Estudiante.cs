@@ -24,6 +24,7 @@ namespace SimuladorHorario
             :base(nombreUsuario, contraseña, esAdmin)
         {
             this.avanceMalla = avanceMalla;
+            //avanceMalla = new List<string>();
             this.especialidad = especialidad;
             this.concentracion = concentracion;
             listaInscripcion = new List<Curso>();

@@ -22,7 +22,7 @@ namespace SimuladorHorario
     {
         public static List<Usuario> usuarios = new List<Usuario>();
         public static List<CursoCurricular> cursos = new List<CursoCurricular>();
-        //public static List<string> cursosPreRequisito = new List<string>();
+        public static List<string> cursosPreRequisito = new List<string>();
         public static Usuario usuarioActual;
 
 
@@ -183,9 +183,10 @@ namespace SimuladorHorario
                         
                         if (contadorLineaCurso == curso.Count)
                         {
-                            cursosPreRequisito.Clear();
+                            //cursosPreRequisito.Clear();
                             string[] datosLinea2 = linea.Split(';');
                             cursosPreRequisito = (datosLinea2[16]).Split(',').ToList();
+                            cursosPreRequisito.Remove("");
                             /*
                             foreach (string cur in datosCursosPreReq)
                             {

@@ -62,10 +62,14 @@ namespace SimuladorHorario
 
         public static bool ChequearCompatibilidadPreRequisito(Estudiante estudiante, CursoCurricular cursoCurricular)
         {
+            MessageBox.Show("Hay " + estudiante.avanceMalla.Count.ToString() + " cursos en el avance de malla");
+            MessageBox.Show("El curso tiene " + cursoCurricular.cursosPreRequisito.Count.ToString() + " cursos prerequisitos");
+            if (cursoCurricular.cursosPreRequisito.Count == 0) { return true; }
+
             foreach (string cur in cursoCurricular.cursosPreRequisito)
             {
                 if (!estudiante.avanceMalla.Contains(cur)) { return false; }
-            }
+}
             return true;
         }
 
