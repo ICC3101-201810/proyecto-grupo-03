@@ -27,8 +27,11 @@ namespace VistasSimuladorHorario
         public void AñadirEventos(List<Evento> eventos)
         {
             listaEventos.AddRange(eventos);
-           
 
+            foreach(Evento e in eventos)
+            {
+                
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

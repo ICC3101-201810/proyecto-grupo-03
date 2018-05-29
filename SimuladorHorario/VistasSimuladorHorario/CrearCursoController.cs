@@ -9,7 +9,6 @@ namespace VistasSimuladorHorario
     class CrearCursoController
     {
         CrearCursoForm crearCursoForm;
-
         public CrearCursoController(CrearCursoForm crearCursoForm)
         {
             this.crearCursoForm = crearCursoForm;
@@ -19,7 +18,7 @@ namespace VistasSimuladorHorario
         }
         private void VistasCrearCurso_OnAgregarEvento(object sender, EventArgs e)
         {
-            AgregarEventoForm1 agregarEventoForm = new AgregarEventoForm1();
+            AgregarEventoForm1 agregarEventoForm = new AgregarEventoForm1(crearCursoForm);
             AgregarEventoController agregarEventoController = new AgregarEventoController(agregarEventoForm);
             agregarEventoForm.ShowDialog();
         }

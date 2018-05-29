@@ -14,10 +14,11 @@ namespace VistasSimuladorHorario
     public partial class AgregarEventoForm1 : Form
     {
 
-
-        public AgregarEventoForm1()
+        CrearCursoForm parent;
+        public AgregarEventoForm1(CrearCursoForm parent)
         {
             InitializeComponent();
+            this.parent = parent;
             TipoEventoComboBox.DataSource = Enum.GetValues(typeof(TipoEvento));
             List<string> bloques = new List<string>();
             foreach(string str in Enum.GetNames(typeof(BloquesHorarios)))
@@ -30,12 +31,14 @@ namespace VistasSimuladorHorario
 
         private void AgregarEventoButton_Click(object sender, EventArgs e)
         {
+            string nombre = NombreEventoTextBox.Text;
             string fecha = FechaEvento.Value.ToString("dd:MM:yyyy");
             TipoEvento tipoEvento = (TipoEvento)TipoEventoComboBox.SelectedItem;
             string sala = SalaUser.Text;
             string horaInicio = (string)(BloqueHComboBox.SelectedItem);
             int duracion = Convert.ToInt32(DuracionComboBox.SelectedItem);
-            Gestor.CrearEvento(fecha, tipoEvento, sala, horaInicio, duracion);
+            List<Evento> listaEventos = Gestor.CrearEvento(nombre,fecha, tipoEvento, sala, horaInicio, duracion);
+            parent.AñadirEventos(listaEventos);
             this.Close();
             
         }

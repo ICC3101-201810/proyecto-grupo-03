@@ -41,6 +41,8 @@
             this.DuracionComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.AgregarEventoButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NombreEventoTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // FechaEvento
@@ -54,7 +56,7 @@
             // TipoEventoComboBox
             // 
             this.TipoEventoComboBox.FormattingEnabled = true;
-            this.TipoEventoComboBox.Location = new System.Drawing.Point(123, 98);
+            this.TipoEventoComboBox.Location = new System.Drawing.Point(123, 134);
             this.TipoEventoComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TipoEventoComboBox.Name = "TipoEventoComboBox";
             this.TipoEventoComboBox.Size = new System.Drawing.Size(92, 21);
@@ -73,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 98);
+            this.label1.Location = new System.Drawing.Point(20, 134);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
@@ -83,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 140);
+            this.label2.Location = new System.Drawing.Point(20, 176);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
@@ -92,7 +94,7 @@
             // 
             // SalaUser
             // 
-            this.SalaUser.Location = new System.Drawing.Point(123, 140);
+            this.SalaUser.Location = new System.Drawing.Point(123, 176);
             this.SalaUser.Margin = new System.Windows.Forms.Padding(2);
             this.SalaUser.Name = "SalaUser";
             this.SalaUser.Size = new System.Drawing.Size(92, 20);
@@ -101,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 185);
+            this.label3.Location = new System.Drawing.Point(22, 221);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
@@ -112,7 +114,7 @@
             // BloqueHComboBox
             // 
             this.BloqueHComboBox.FormattingEnabled = true;
-            this.BloqueHComboBox.Location = new System.Drawing.Point(123, 185);
+            this.BloqueHComboBox.Location = new System.Drawing.Point(123, 221);
             this.BloqueHComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.BloqueHComboBox.Name = "BloqueHComboBox";
             this.BloqueHComboBox.Size = new System.Drawing.Size(92, 21);
@@ -121,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 232);
+            this.label4.Location = new System.Drawing.Point(24, 268);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
@@ -131,7 +133,7 @@
             // DuracionComboBox
             // 
             this.DuracionComboBox.FormattingEnabled = true;
-            this.DuracionComboBox.Location = new System.Drawing.Point(123, 226);
+            this.DuracionComboBox.Location = new System.Drawing.Point(123, 262);
             this.DuracionComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.DuracionComboBox.Name = "DuracionComboBox";
             this.DuracionComboBox.Size = new System.Drawing.Size(44, 21);
@@ -140,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(171, 231);
+            this.label5.Location = new System.Drawing.Point(171, 267);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
@@ -158,11 +160,29 @@
             this.AgregarEventoButton.UseVisualStyleBackColor = true;
             this.AgregarEventoButton.Click += new System.EventHandler(this.AgregarEventoButton_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Nombre";
+            // 
+            // NombreEventoTextBox
+            // 
+            this.NombreEventoTextBox.Location = new System.Drawing.Point(123, 94);
+            this.NombreEventoTextBox.Name = "NombreEventoTextBox";
+            this.NombreEventoTextBox.Size = new System.Drawing.Size(151, 20);
+            this.NombreEventoTextBox.TabIndex = 14;
+            // 
             // AgregarEventoForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.NombreEventoTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.AgregarEventoButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DuracionComboBox);
@@ -200,5 +220,7 @@
         private System.Windows.Forms.ComboBox DuracionComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button AgregarEventoButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox NombreEventoTextBox;
     }
 }

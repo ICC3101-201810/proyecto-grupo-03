@@ -17,7 +17,7 @@ namespace SimuladorHorario
         public TipoEvento tipo { get; private set; }
         public bool primerPeriodo = false;
 
-        public Evento(string nombre, string hora, string sala, TipoEvento tipo,bool primerPeriodo = false)
+        public Evento(string nombre, string hora, string sala, TipoEvento tipo, bool primerPeriodo = false)
         {
             this.nombre = nombre;
             this.hora = hora;
