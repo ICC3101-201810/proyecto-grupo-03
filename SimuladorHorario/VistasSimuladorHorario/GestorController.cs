@@ -20,6 +20,7 @@ namespace VistasSimuladorHorario
             this.gestorForm.OnLeerCurso += VistasGestor_OnLeerCurso;
             this.gestorForm.OnCerrarSesion += VistasGestor_OnCerrarSesion;
             this.gestorForm.OnActualizarCurso += VistasGestor_OnActualizarCurso;
+
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
