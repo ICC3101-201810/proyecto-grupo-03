@@ -88,7 +88,7 @@ namespace SimuladorHorario
                 }
                 else if (compatibilidadPreRequisito == false)
                 {
-                    MessageBox.Show($"Todavia no has aprobado el curso {curso.nombre}", "Error de Inscripcion");
+                    MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
                 }
                 else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
