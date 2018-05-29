@@ -19,7 +19,11 @@ namespace VistasSimuladorHorario
 
         public void VistasActualizarCurso_OnActualizar(object sender, ActualizarCursoEventArgs e)
         {
-            Gestor.ActualizarCurso(e.nrc, e.parametro, e.cambio);
+            if(Gestor.ActualizarCurso(e.nrc, e.parametro, e.cambio))
+            {
+                System.Windows.Forms.MessageBox.Show("Cambio Realizado");
+            }
+
         }
 
         public static implicit operator ActualizarCursoController(ActualizarCursoEventArgs v)

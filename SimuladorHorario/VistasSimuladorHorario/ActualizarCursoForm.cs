@@ -58,6 +58,7 @@ namespace VistasSimuladorHorario
                 return;
             }
             OnActualizar(this, actualizarNrcCursoArgs);
+            InicializarCursoComboBox();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace VistasSimuladorHorario
                 return;
             }
             OnActualizar(this, actualizarCreditosCursoArgs);
+            InicializarCursoComboBox();
         }
 
         private void CambiarEspecialidadB_Click(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace VistasSimuladorHorario
             actualizarEspecialidadCursoArgs.nrc = CursosCB.SelectedItem.ToString().Split(':')[0];
             actualizarEspecialidadCursoArgs.cambio = especialidadCB.SelectedText;
             OnActualizar(this, actualizarEspecialidadCursoArgs);
+            InicializarCursoComboBox();
 
         }
     }

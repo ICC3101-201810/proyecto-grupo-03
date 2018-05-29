@@ -51,17 +51,26 @@ namespace SimuladorHorario
             }
 
         }
-        public static void ActualizarCurso(string nrc, string parametro, string cambio)
+        public static bool ActualizarCurso(string nrc, string parametro, string cambio)
         {
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == nrc);
             if (parametro == "nrc")
             {
+                foreach(CursoCurricular c in Aplicacion.GetCursoCurricular())
+                {
+                    if (c.nrc == nrc)
+                    {
+                        MessageBox.Show("Ese NRC ya existe");
+                        return false;
+                    }
+                }
                 curso.nrc =cambio.ToString();
             }
 
             else if (parametro == "nombre")
             {
                 curso.nombre = cambio.ToString();
+                
             }
 
             else if (parametro == "creditos")
@@ -78,7 +87,7 @@ namespace SimuladorHorario
             {
                 curso.profesor = cambio.ToString();
             }
-            
+            return true;
         }
         public static void EliminarCurso(string nrcCurso)
         {

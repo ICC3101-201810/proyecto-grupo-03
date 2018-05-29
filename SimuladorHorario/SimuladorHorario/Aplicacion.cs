@@ -112,15 +112,6 @@ namespace SimuladorHorario
             return retorno;
         }
 
-        public static List<CursoCurricular> GetCursosCurriculares()
-        {
-            List<CursoCurricular> retorno = new List<CursoCurricular>();
-            foreach(CursoCurricular curso in cursos)
-            {
-                retorno.Add(curso);
-            }
-            return retorno;
-        }
 
         public static void CargarCursos(string fileName = "dataCursosDisponibles.csv")
         {
