@@ -40,7 +40,7 @@ namespace VistasSimuladorHorario
             textBox2.Text = estudianteActivo.contraseña;
             estudiante = estudianteActivo;
 
-            comboBox1.DataSource = estudiante.avanceMalla;
+            listBox1.DataSource = estudiante.avanceMalla;
 
         }
 
@@ -109,6 +109,11 @@ namespace VistasSimuladorHorario
         }
 
         private void eliminarCursoButton_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

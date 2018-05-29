@@ -37,7 +37,6 @@
             this.cursosInscritosLabel = new System.Windows.Forms.Label();
             this.avanceMallaLabel = new System.Windows.Forms.Label();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.limpiarCursosButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -101,9 +100,9 @@
             this.avanceMallaLabel.AutoSize = true;
             this.avanceMallaLabel.Location = new System.Drawing.Point(395, 36);
             this.avanceMallaLabel.Name = "avanceMallaLabel";
-            this.avanceMallaLabel.Size = new System.Drawing.Size(72, 13);
+            this.avanceMallaLabel.Size = new System.Drawing.Size(75, 13);
             this.avanceMallaLabel.TabIndex = 7;
-            this.avanceMallaLabel.Text = "Avance Malla";
+            this.avanceMallaLabel.Text = "Avance Malla:";
             // 
             // GuardarButton
             // 
@@ -115,14 +114,6 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(398, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 21);
-            this.comboBox1.TabIndex = 9;
             // 
             // button1
             // 
@@ -147,10 +138,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(398, 93);
+            this.listBox1.Location = new System.Drawing.Point(398, 53);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(250, 95);
+            this.listBox1.Size = new System.Drawing.Size(233, 134);
             this.listBox1.TabIndex = 12;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // eliminarCursoButton
             // 
@@ -160,7 +152,6 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.limpiarCursosButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.avanceMallaLabel);
             this.Controls.Add(this.cursosInscritosLabel);
@@ -189,7 +180,6 @@
         private System.Windows.Forms.Label cursosInscritosLabel;
         private System.Windows.Forms.Label avanceMallaLabel;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button limpiarCursosButton;
         private System.Windows.Forms.ListBox listBox1;
