@@ -23,7 +23,7 @@ namespace VistasSimuladorHorario
 
         public void VistasInscribirCurso_OnInscribir(object sender, InscribirCursoEventArgs e)
         {
-            Estudiante estudiante = PlataformaEstudiante.InscribirCurso((Estudiante)usuarioActivo, e.nombreCursoInscribir);
+            Estudiante estudiante = PlataformaEstudiante.InscribirCurso((Estudiante)usuarioActivo, e.nrc);
             usuarioActivo = estudiante;
             Estudiante estudianteActivo = (Estudiante)usuarioActivo;
             /*foreach(CursoCurricular curso in estudiante.listaInscripcion)

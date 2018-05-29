@@ -11,15 +11,15 @@ using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
-    public partial class AgregarEventoForm1 : Form
+    public partial class AgregarEventoForm : Form
     {
 
-        CrearCursoForm parent;
-        public AgregarEventoForm1(CrearCursoForm parent)
+        Estudiante usuarioActivo;
+
+        public AgregarEventoForm(Estudiante estudianteActivo)
         {
             InitializeComponent();
-            this.parent = parent;
-            TipoEventoComboBox.DataSource = Enum.GetValues(typeof(TipoEvento));
+            usuarioActivo = estudianteActivo;
             List<string> bloques = new List<string>();
             foreach(string str in Enum.GetNames(typeof(BloquesHorarios)))
             {
@@ -31,14 +31,15 @@ namespace VistasSimuladorHorario
 
         private void AgregarEventoButton_Click(object sender, EventArgs e)
         {
-            string nombre = NombreEventoTextBox.Text;
             string fecha = FechaEvento.Value.ToString("dd:MM:yyyy");
-            TipoEvento tipoEvento = (TipoEvento)TipoEventoComboBox.SelectedItem;
+            string nombre = nombreTextBox.Text;
+            TipoEvento tipoEvento = TipoEvento.PERS;
             string sala = SalaUser.Text;
             string horaInicio = (string)(BloqueHComboBox.SelectedItem);
             int duracion = Convert.ToInt32(DuracionComboBox.SelectedItem);
-            List<Evento> listaEventos = Gestor.CrearEvento(nombre,fecha, tipoEvento, sala, horaInicio, duracion);
-            parent.AñadirEventos(listaEventos);
+            EventoPersonal evento = new EventoPersonal(nombre, horaInicio,fecha, sala);
+            Estudiante estudiante = (Estudiante)Aplicacion.usuarioActual;
+            estudiante.AgregarEventoPersonal(evento);
             this.Close();
             
         }
@@ -51,17 +52,6 @@ namespace VistasSimuladorHorario
         private void AgregarEventoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-        }
-
-        public void DisableType()
-        {
-            this.TipoEventoComboBox.SelectedItem = TipoEvento.PERS;
-            this.TipoEventoComboBox.Enabled = false;
-        }
-
-        private void AgregarEventoForm1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

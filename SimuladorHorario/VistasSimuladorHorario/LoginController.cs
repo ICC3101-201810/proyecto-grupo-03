@@ -28,7 +28,7 @@ namespace VistasSimuladorHorario
             usuarioActivo = e.usuario;
             if (usuarioActivo is Estudiante)
             {
-                Aplicacion.usuarios.Remove(usuarioActivo);
+                //Aplicacion.usuarios.Remove(usuarioActivo);
                 PlataformaEstudianteForm plataformaEstudianteForm = new PlataformaEstudianteForm();
                 PlataformaEstudianteController plataformaEstudianteController = new PlataformaEstudianteController(plataformaEstudianteForm,usuarioActivo);
                 MessageBox.Show("Bienvenido estudiante: " + usuarioActivo.nombre);

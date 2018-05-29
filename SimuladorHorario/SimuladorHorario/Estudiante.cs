@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimuladorHorario
 {
@@ -14,6 +15,7 @@ namespace SimuladorHorario
         public Especialidad especialidad { get; private set; }
         public List<Curso> listaInscripcion { get; protected set; }
         List<Curso> cursosInscritos;
+        public List<EventoPersonal> listaEventosPersonal { get; private set; }
 
         public Estudiante(List<string> avanceMalla,
             Especialidad especialidad,
@@ -26,6 +28,7 @@ namespace SimuladorHorario
             this.concentracion = concentracion;
             listaInscripcion = new List<Curso>();
             cursosInscritos = new List<Curso>();
+            listaEventosPersonal = new List<EventoPersonal>();
         }
 
 
@@ -63,7 +66,11 @@ namespace SimuladorHorario
             Console.ReadKey();
         }
 
-        
+        public void AgregarEventoPersonal(EventoPersonal eventoPersonal)
+        {
+            this.listaEventosPersonal.Add(eventoPersonal);
+           
+        }
 
 
         

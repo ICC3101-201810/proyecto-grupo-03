@@ -27,8 +27,8 @@ namespace VistasSimuladorHorario
         public void AñadirEventos(List<Evento> eventos)
         {
             listaEventos.AddRange(eventos);
-           
 
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -49,6 +49,10 @@ namespace VistasSimuladorHorario
             string apellidoProfesor = AProfeUser.Text;
             int creditos = Convert.ToInt32(CreditosUser.Text);
             Especialidad especialidad = (Especialidad)EspecialidadCB.SelectedItem;
+            foreach(Evento i in listaEventos)
+            {
+                MessageBox.Show(i.nombre);
+            }
             Gestor.CrearCursoCurricular(nrc, nombreCurso.ToUpper(), (apellidoProfesor.ToUpper() + "/" + nombreProfesor.ToUpper()), creditos, especialidad, listaEventos);
             OnRegresar(this, EventArgs.Empty);
             this.Hide();

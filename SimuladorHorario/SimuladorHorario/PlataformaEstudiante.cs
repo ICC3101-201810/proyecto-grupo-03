@@ -46,14 +46,17 @@ namespace SimuladorHorario
                 CursoCurricular cursoCurricular = (CursoCurricular)curso;
                 foreach(Evento bloqueHorario in cursoCurricular.eventosCurso)
                 {
+                    if(bloqueHorario.tipo == TipoEvento.PRBA || bloqueHorario.tipo == TipoEvento.EXTRAP){ continue; }
                     listaBloquesUsados.Add(bloqueHorario.hora);
                 }
             }
-
-            foreach(Evento evento in cursoInscribir.eventosCurso)
+            if (cursoInscribir is null) {return false; }
+           foreach (Evento evento in cursoInscribir.eventosCurso)
             {
+                if (evento.tipo == TipoEvento.PRBA) { continue; }
                 if (listaBloquesUsados.Contains(evento.hora)) { return false; }
             }
+            
             return true;
         }
 
@@ -68,8 +71,7 @@ namespace SimuladorHorario
 
         public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
         {
-            MessageBox.Show(cursoInscripcion);
-            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nombre == cursoInscripcion);
+            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == cursoInscripcion);
 
             bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
             bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);

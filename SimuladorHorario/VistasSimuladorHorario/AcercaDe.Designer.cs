@@ -42,7 +42,7 @@
             this.descripcion.Size = new System.Drawing.Size(156, 142);
             this.descripcion.TabIndex = 0;
             this.descripcion.Text = "Simulador de Horario\r\n\r\n\r\n--Ditto Team--\r\n\r\n->Ignacio Figueroa\r\n->Vicente Correa\r" +
-    "\n->Matías Cánepa\r\n\r\nV: 0.1";
+    "\n->Matías Cánepa\r\n\r\nV: 0.2";
             this.descripcion.TextChanged += new System.EventHandler(this.descripcion_TextChanged);
             // 
             // AcercaDe

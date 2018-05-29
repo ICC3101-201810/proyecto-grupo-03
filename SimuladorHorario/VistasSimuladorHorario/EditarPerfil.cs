@@ -71,6 +71,28 @@ namespace VistasSimuladorHorario
                     break;
                 }
             }
+            if (cursosInscritosComboBox.Items.Count == 0)
+            {
+                cursosInscritosComboBox.Text = string.Empty;
+                MessageBox.Show("Se han removido todos los cursos");
+            }
+        }
+
+        private void limpiarCursosButton_Click(object sender, EventArgs e)
+        {
+            List<CursoCurricular> listaCursosBorrar = new List<CursoCurricular>();
+            foreach (CursoCurricular curso in estudiante.listaInscripcion)
+            {
+                listaCursosBorrar.Add(curso);
+            }
+
+            foreach(CursoCurricular curso in listaCursosBorrar)
+            {
+                estudiante.listaInscripcion.Remove(curso);
+            }
+            cursosInscritosComboBox.Text = string.Empty;
+            MessageBox.Show("Se han removido todos los cursos");
+            cargarInfo(estudiante);
         }
     }
 

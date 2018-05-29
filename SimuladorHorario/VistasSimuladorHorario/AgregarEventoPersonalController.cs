@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace VistasSimuladorHorario
 {
-    class AgregarEventoController
+    class AgregarEventoPersonalController
     {
-        AgregarEventoForm1 agregarEventoForm;
+         AgregarEventoForm agregarEventoForm;
 
-        public AgregarEventoController(AgregarEventoForm1 agregarEventoForm)
+        public AgregarEventoPersonalController(AgregarEventoForm agregarEventoForm)
         {
             this.agregarEventoForm = agregarEventoForm;
         }

@@ -58,9 +58,18 @@ namespace SimuladorHorario
                         $"Profesor: {cursoCur.profesor}\n" +
                         $"Creditos: {(cursoCur.creditos).ToString()}\n" +
                         $"Especialidad: {cursoCur.especialidad}\n");
-                    
+
+                    string eventoInfo = "";
+                    foreach(Evento evento in cursoCur.eventosCurso)
+                    {
+                        eventoInfo += evento.primerPeriodo.ToString() +"\n" + evento.tipo.ToString() + "\n"+ evento.fecha + ": " + evento.hora +"\n\n";
+                    }
+                    //MessageBox.Show(eventoInfo);
                     break;
                 }
+
+
+
             }
 
         }
@@ -115,7 +124,7 @@ namespace SimuladorHorario
             return;
         }
         */
-        public static List<Evento> CrearEvento(string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
+        public static List<Evento> CrearEvento(string nombre, string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
         {
             List<Evento> listaEvento = new List<Evento>();
             string HoraFin;
@@ -126,7 +135,7 @@ namespace SimuladorHorario
             for(int i = 0; i < duracion; i++)
             {
                 string hora = (horas + i).ToString() + ":" + "30";
-                string nombreEvento = string.Empty;
+                string nombreEvento = nombre;
                 Evento evento = new Evento(nombreEvento, hora, sala, tipoEvento);
                 listaEvento.Add(evento);
             }
