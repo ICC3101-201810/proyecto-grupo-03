@@ -89,9 +89,10 @@
             this.cursosInscritosLabel.AutoSize = true;
             this.cursosInscritosLabel.Location = new System.Drawing.Point(75, 160);
             this.cursosInscritosLabel.Name = "cursosInscritosLabel";
-            this.cursosInscritosLabel.Size = new System.Drawing.Size(81, 13);
+            this.cursosInscritosLabel.Size = new System.Drawing.Size(84, 13);
             this.cursosInscritosLabel.TabIndex = 6;
-            this.cursosInscritosLabel.Text = "Cursos Inscritos";
+            this.cursosInscritosLabel.Text = "Cursos Inscritos:";
+            this.cursosInscritosLabel.Click += new System.EventHandler(this.cursosInscritosLabel_Click);
             // 
             // avanceMallaLabel
             // 

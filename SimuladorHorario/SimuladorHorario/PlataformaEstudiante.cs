@@ -98,6 +98,7 @@ namespace SimuladorHorario
                 {
                     //MessageBox.Show("Agregado Exitosamente");
                     estudiante.listaInscripcion.Add(curso);
+                    MessageBox.Show(curso.nombre + " inscrito con exito");
                     return estudiante;
                 }
             }

@@ -340,5 +340,10 @@ namespace VistasSimuladorHorario
             eliminarEventoForm.ShowDialog();
             ActualizarAgenda();
         }
+
+        private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnEditarPerfil(this, EventArgs.Empty);
+        }
     }
 }

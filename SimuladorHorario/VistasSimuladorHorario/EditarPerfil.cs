@@ -67,6 +67,7 @@ namespace VistasSimuladorHorario
                 if(curso.nombre == cursoEliminar)
                 {
                     estudiante.listaInscripcion.Remove(curso);
+                    MessageBox.Show(curso.nombre + " eliminado con exito");
                     cargarInfo(estudiante);
                     break;
                 }
@@ -93,6 +94,11 @@ namespace VistasSimuladorHorario
             cursosInscritosComboBox.Text = string.Empty;
             MessageBox.Show("Se han removido todos los cursos");
             cargarInfo(estudiante);
+        }
+
+        private void cursosInscritosLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
