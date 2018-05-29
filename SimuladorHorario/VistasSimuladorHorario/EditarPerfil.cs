@@ -107,6 +107,11 @@ namespace VistasSimuladorHorario
         {
 
         }
+
+        private void eliminarCursoButton_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
