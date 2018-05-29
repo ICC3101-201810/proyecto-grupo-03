@@ -40,6 +40,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.limpiarCursosButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuarioLabel
@@ -56,14 +58,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(78, 53);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
+            this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(78, 109);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 20);
+            this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 3;
             this.textBox2.UseSystemPasswordChar = true;
             // 
@@ -144,11 +146,33 @@
             this.listBox1.TabIndex = 12;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(225, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 20);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Editar Nombre";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(225, 109);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 20);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Editar Contraseña";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // eliminarCursoButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 259);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.limpiarCursosButton);
             this.Controls.Add(this.button1);
@@ -162,7 +186,7 @@
             this.Controls.Add(this.usuarioLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "eliminarCursoButton";
-            this.Text = "Editar Perfil";
+            this.Text = "Mi Perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarPerfil_FormClosing);
             this.Load += new System.EventHandler(this.eliminarCursoButton_Load);
             this.ResumeLayout(false);
@@ -183,5 +207,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button limpiarCursosButton;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

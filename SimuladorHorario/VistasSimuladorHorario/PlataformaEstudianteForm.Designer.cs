@@ -144,15 +144,15 @@
             // inscribirCursoToolStripMenuItem
             // 
             this.inscribirCursoToolStripMenuItem.Name = "inscribirCursoToolStripMenuItem";
-            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.inscribirCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscribirCursoToolStripMenuItem.Text = "Inscribir Curso...";
             this.inscribirCursoToolStripMenuItem.Click += new System.EventHandler(this.inscribirCursoToolStripMenuItem_Click);
             // 
             // modificarPerfilToolStripMenuItem
             // 
             this.modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.modificarPerfilToolStripMenuItem.Text = "Modificar Perfil...";
+            this.modificarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPerfilToolStripMenuItem.Text = "Mi Perfil...";
             this.modificarPerfilToolStripMenuItem.Click += new System.EventHandler(this.modificarPerfilToolStripMenuItem_Click);
             // 
             // agregarToolStripMenuItem
@@ -160,13 +160,13 @@
             this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eventoToolStripMenuItem});
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem.Text = "Agregar...";
             // 
             // eventoToolStripMenuItem
             // 
             this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eventoToolStripMenuItem.Text = "Evento";
             this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
             // 
@@ -176,7 +176,7 @@
             this.eventoToolStripMenuItem1,
             this.cursoToolStripMenuItem});
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar...";
             // 
             // eventoToolStripMenuItem1
