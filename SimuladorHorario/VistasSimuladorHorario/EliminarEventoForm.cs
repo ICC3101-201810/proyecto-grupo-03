@@ -37,6 +37,7 @@ namespace VistasSimuladorHorario
         {
             ((Estudiante)Aplicacion.usuarioActual).listaEventosPersonal.Remove((EventoPersonal)comboBox1.SelectedItem);
             comboBox1.Items.Remove(comboBox1.SelectedItem);
+            MessageBox.Show("Evento eliminado");
             if (OnEliminarClick != null)
             {
                 OnEliminarClick(this, EventArgs.Empty);
@@ -45,7 +46,6 @@ namespace VistasSimuladorHorario
 
         private void eliminarButton_Click(object sender, EventArgs e)
         {
-            
             EliminarCurso();
             if (comboBox1.Items.Count == 0)
             {
