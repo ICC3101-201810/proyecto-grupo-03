@@ -35,16 +35,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RegresarB = new System.Windows.Forms.Button();
             this.CambiarNrcB = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dddd5 = new System.Windows.Forms.Button();
             this.CursosCB = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NombreProfesorTB = new System.Windows.Forms.TextBox();
+            this.ApellidoProfesorTB = new System.Windows.Forms.TextBox();
+            this.CambiarProfesorB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NrcTB
@@ -97,14 +97,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Especialidad";
             // 
-            // button1
+            // RegresarB
             // 
-            this.button1.Location = new System.Drawing.Point(572, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Regresar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.RegresarB.Location = new System.Drawing.Point(572, 358);
+            this.RegresarB.Name = "RegresarB";
+            this.RegresarB.Size = new System.Drawing.Size(108, 36);
+            this.RegresarB.TabIndex = 6;
+            this.RegresarB.Text = "Regresar";
+            this.RegresarB.UseVisualStyleBackColor = true;
+            this.RegresarB.Click += new System.EventHandler(this.RegresarB_Click);
             // 
             // CambiarNrcB
             // 
@@ -163,48 +164,49 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Profesor";
             // 
-            // textBox1
+            // NombreProfesorTB
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox1.Location = new System.Drawing.Point(527, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Nombre";
+            this.NombreProfesorTB.ForeColor = System.Drawing.Color.DarkGray;
+            this.NombreProfesorTB.Location = new System.Drawing.Point(527, 163);
+            this.NombreProfesorTB.Name = "NombreProfesorTB";
+            this.NombreProfesorTB.Size = new System.Drawing.Size(125, 20);
+            this.NombreProfesorTB.TabIndex = 13;
+            this.NombreProfesorTB.Text = "Nombre";
             // 
-            // textBox2
+            // ApellidoProfesorTB
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox2.Location = new System.Drawing.Point(527, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 20);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "Apellido";
+            this.ApellidoProfesorTB.ForeColor = System.Drawing.Color.DarkGray;
+            this.ApellidoProfesorTB.Location = new System.Drawing.Point(527, 190);
+            this.ApellidoProfesorTB.Name = "ApellidoProfesorTB";
+            this.ApellidoProfesorTB.Size = new System.Drawing.Size(125, 20);
+            this.ApellidoProfesorTB.TabIndex = 14;
+            this.ApellidoProfesorTB.Text = "Apellido";
             // 
-            // button2
+            // CambiarProfesorB
             // 
-            this.button2.Location = new System.Drawing.Point(527, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cambiar Profesor";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CambiarProfesorB.Location = new System.Drawing.Point(527, 228);
+            this.CambiarProfesorB.Name = "CambiarProfesorB";
+            this.CambiarProfesorB.Size = new System.Drawing.Size(100, 23);
+            this.CambiarProfesorB.TabIndex = 15;
+            this.CambiarProfesorB.Text = "Cambiar Profesor";
+            this.CambiarProfesorB.UseVisualStyleBackColor = true;
+            this.CambiarProfesorB.Click += new System.EventHandler(this.CambiarProfesorB_Click);
             // 
             // ActualizarCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CambiarProfesorB);
+            this.Controls.Add(this.ApellidoProfesorTB);
+            this.Controls.Add(this.NombreProfesorTB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CursosCB);
             this.Controls.Add(this.dddd5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.CambiarNrcB);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegresarB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -229,15 +231,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RegresarB;
         private System.Windows.Forms.Button CambiarNrcB;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button dddd5;
         private System.Windows.Forms.ComboBox CursosCB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox NombreProfesorTB;
+        private System.Windows.Forms.TextBox ApellidoProfesorTB;
+        private System.Windows.Forms.Button CambiarProfesorB;
     }
 }

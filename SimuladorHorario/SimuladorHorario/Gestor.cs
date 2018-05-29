@@ -51,7 +51,7 @@ namespace SimuladorHorario
             }
 
         }
-        public static bool ActualizarCurso(string nrc, string parametro, string cambio)
+        public static bool ActualizarCurso(string nrc, string parametro, object cambio)
         {
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == nrc);
             if (parametro == "nrc")
@@ -75,12 +75,12 @@ namespace SimuladorHorario
 
             else if (parametro == "creditos")
             {
-                curso.creditos = Convert.ToInt32(cambio);
+                curso.creditos = (int)cambio;
             }
 
             else if(parametro == "especialidad")
             {
-                curso.especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cambio);
+                curso.especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cambio.ToString());
             }
 
             else if(parametro == "profesor")

@@ -62,6 +62,7 @@ namespace VistasSimuladorHorario
         private void ActualizarCursoButton_Click(object sender, EventArgs e)
         {
             OnActualizarCurso(this, EventArgs.Empty);
+            Hide();
         }
     }
 }

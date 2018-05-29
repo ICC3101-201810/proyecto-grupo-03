@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SimuladorHorario;
+using System.Windows.Forms;
 
 namespace VistasSimuladorHorario
 {
@@ -15,20 +16,25 @@ namespace VistasSimuladorHorario
         {
             this.actualizarCursoForm = actualizarCursoForm;
             actualizarCursoForm.OnActualizar += VistasActualizarCurso_OnActualizar;
+            actualizarCursoForm.OnRegresar += VistasActualizarCurso_OnRegresar;
         }
 
-        public void VistasActualizarCurso_OnActualizar(object sender, ActualizarCursoEventArgs e)
+        private void VistasActualizarCurso_OnActualizar(object sender, ActualizarCursoEventArgs e)
         {
             if(Gestor.ActualizarCurso(e.nrc, e.parametro, e.cambio))
             {
-                System.Windows.Forms.MessageBox.Show("Cambio Realizado");
+                MessageBox.Show("Cambio Realizado");
             }
 
         }
 
-        public static implicit operator ActualizarCursoController(ActualizarCursoEventArgs v)
+        private void VistasActualizarCurso_OnRegresar(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            GestorForm gestorForm = new GestorForm();
+            GestorController gestorController = new GestorController(gestorForm);
+            gestorForm.Show();
+            actualizarCursoForm.Enabled = false;
         }
+      
     }
 }

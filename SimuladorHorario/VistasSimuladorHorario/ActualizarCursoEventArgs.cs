@@ -11,6 +11,6 @@ namespace VistasSimuladorHorario
         public string nombreCurso;
         public string nrc;
         public string parametro;
-        public string cambio;
+        public object cambio;
     }
 }

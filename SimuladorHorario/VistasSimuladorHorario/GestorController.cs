@@ -48,13 +48,14 @@ namespace VistasSimuladorHorario
             LoginController loginController = new LoginController(loginForm);
             loginForm.Show();
             usuarioActivo = null;
-            gestorForm.Hide();
+            gestorForm.Close();
         }
         private void VistasGestor_OnActualizarCurso(object sender, EventArgs e)
         {
             ActualizarCursoForm actualizarCursoForm = new ActualizarCursoForm();
             ActualizarCursoController actualizarCursoController = new ActualizarCursoController(actualizarCursoForm);
             actualizarCursoForm.Show();
+            
         }
     }
 }

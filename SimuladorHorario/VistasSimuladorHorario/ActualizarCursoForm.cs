@@ -14,6 +14,7 @@ namespace VistasSimuladorHorario
     public partial class ActualizarCursoForm : Form
     {
         public event EventHandler<ActualizarCursoEventArgs> OnActualizar;
+        public event EventHandler OnRegresar;
         public ActualizarCursoForm()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace VistasSimuladorHorario
             actualizarNrcCursoArgs.parametro = "nrc";
             actualizarNrcCursoArgs.nrc = CursosCB.SelectedItem.ToString().Split(':')[0];
             actualizarNrcCursoArgs.cambio = NrcTB.Text;
-            if(actualizarNrcCursoArgs.cambio == "")
+            if((string)actualizarNrcCursoArgs.cambio == "")
             {
                 MessageBox.Show("Debe ingresar un cambio");
                 return;
@@ -86,10 +87,28 @@ namespace VistasSimuladorHorario
             ActualizarCursoEventArgs actualizarEspecialidadCursoArgs = new ActualizarCursoEventArgs();
             actualizarEspecialidadCursoArgs.parametro = "especialidad";
             actualizarEspecialidadCursoArgs.nrc = CursosCB.SelectedItem.ToString().Split(':')[0];
-            actualizarEspecialidadCursoArgs.cambio = especialidadCB.SelectedText;
+            actualizarEspecialidadCursoArgs.cambio = especialidadCB.SelectedItem;
             OnActualizar(this, actualizarEspecialidadCursoArgs);
             InicializarCursoComboBox();
 
+        }
+
+        private void CambiarProfesorB_Click(object sender, EventArgs e)
+        {
+            ActualizarCursoEventArgs actualizarProfesorCursoArgs = new ActualizarCursoEventArgs();
+            actualizarProfesorCursoArgs.parametro = "profesor";
+            actualizarProfesorCursoArgs.nrc = CursosCB.SelectedItem.ToString().Split(':')[0];
+            string nombre = NombreProfesorTB.Text;
+            string apellido = ApellidoProfesorTB.Text;
+            actualizarProfesorCursoArgs.cambio = apellido.ToUpper() + "/" + nombre.ToUpper();
+            OnActualizar(this, actualizarProfesorCursoArgs);
+            InicializarCursoComboBox();
+        }
+
+        private void RegresarB_Click(object sender, EventArgs e)
+        {
+            OnRegresar(this, EventArgs.Empty);
+            this.Hide();
         }
     }
 }
