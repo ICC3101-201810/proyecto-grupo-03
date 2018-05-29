@@ -47,7 +47,19 @@ namespace VistasSimuladorHorario
             string nombreCurso = NCursoUser.Text;
             string nombreProfesor = NProfeUser.Text;
             string apellidoProfesor = AProfeUser.Text;
-            int creditos = Convert.ToInt32(CreditosUser.Text);
+            int creditos = 0;
+            try
+            {
+                creditos = Convert.ToInt32(CreditosUser.Text);
+            }
+            catch { MessageBox.Show("Creditos No Valido!"); return; }
+
+            if (nrc == "" || nombreCurso == "" || nombreProfesor == "" || apellidoProfesor == "")
+            {
+                MessageBox.Show("Casillas Sin Rellenar");
+                return;
+            }
+
             Especialidad especialidad = (Especialidad)EspecialidadCB.SelectedItem;
             Gestor.CrearCursoCurricular(nrc, nombreCurso.ToUpper(), (apellidoProfesor.ToUpper() + "/" + nombreProfesor.ToUpper()), creditos, especialidad, listaEventos);
             OnRegresar(this, EventArgs.Empty);
@@ -72,7 +84,6 @@ namespace VistasSimuladorHorario
         private void CrearCursoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Aplicacion.SerializeAll();
-            System.Environment.Exit(0);
         }
 
         private void RegresarButton_Click(object sender, EventArgs e)
