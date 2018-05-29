@@ -27,7 +27,6 @@ namespace VistasSimuladorHorario
         {
             foreach(EventoPersonal evento in ((Estudiante)Aplicacion.usuarioActual).listaEventosPersonal)
             {
-                string comboBoxText = evento.fecha + "\t" + evento.nombre;
                 comboBox1.Items.Add(evento);
             }
 

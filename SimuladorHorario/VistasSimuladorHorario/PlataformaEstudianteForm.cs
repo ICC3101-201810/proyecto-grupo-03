@@ -224,6 +224,20 @@ namespace VistasSimuladorHorario
             Estudiante estudianteActual = (Estudiante)Aplicacion.usuarioActual;
             foreach (EventoPersonal evento in estudianteActual.listaEventosPersonal)
             {
+                DateTime date;
+                try
+                {
+                    date = evento.GetDateTime();
+                }
+                catch
+                {
+                    continue;
+                }
+                if (selectedDate.Month != date.Month)
+                {
+                    continue;
+                }
+
                 AgendaDataGrid.Rows.Add(TipoEvento.PERS.ToString()+ ": " + evento.nombre, evento.GetDateTime().ToString("d"));
             }
 
