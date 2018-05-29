@@ -26,7 +26,7 @@ namespace SimuladorHorario
 
         public override string ToString()
         {
-            string text = hora + ":  " + nombre;
+            string text = fecha.Replace(':','-') + "  " +hora +"      " + nombre;
             return text;
         }
 
