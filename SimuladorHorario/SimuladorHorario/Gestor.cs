@@ -10,32 +10,10 @@ namespace SimuladorHorario
     [Serializable()]
     public static class Gestor
     {
-        public static void MenuGestor(Administrador administrador)
-        {
-            #region
-            /*MenuGestor:
-            Console.Clear();
-            Program.ImprimirBanner("Bienvenido " + administrador.nombre + " al gestor");
-            Console.WriteLine("Que desea hacer: ");
-            Console.WriteLine("1. Crear Curso\n" +
-                          "2. Leer Curso\n" +
-                          "3. Actualizar Curso\n" +
-                          "4. Eliminar Curso\n" +
-                          "5. Cerrar Sesion");
-
-            int opcion = Program.ChequearOpcion(1, 5);
-            if (opcion == 1) CrearCursoCurricular(); Program.Log(opcion.ToString(), "Crear Curso");
-            if (opcion == 2) LeerCurso(); Program.Log(opcion.ToString(), "Leer Curso");
-            if (opcion == 3) ActualizarCurso();
-            if (opcion == 4) EliminarCurso(); Program.Log(opcion.ToString(), "Eliminar Curso");
-            if (opcion == 5) return;
-
-            goto MenuGestor;*/
-            #endregion
-        }
+         
         public static bool CrearCursoCurricular(string nrc, string nombreCurso, string profesor, int creditos, Especialidad especialidad, List<Evento> eventosCurso)
         {
-
+            
             List<string> listadoNRC = Aplicacion.GetCursoCurricular().Select(x => x.nrc).ToList();
             if (listadoNRC.Contains(nrc))
             {
@@ -64,7 +42,7 @@ namespace SimuladorHorario
                     {
                         eventoInfo += evento.primerPeriodo.ToString() +"\n" + evento.tipo.ToString() + "\n"+ evento.fecha + ": " + evento.hora +"\n\n";
                     }
-                    //MessageBox.Show(eventoInfo);
+                    
                     break;
                 }
 
@@ -73,9 +51,34 @@ namespace SimuladorHorario
             }
 
         }
-        public static void ActualizarCurso()
+        public static void ActualizarCurso(string nrc, string parametro, string cambio)
         {
-            return;
+            CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == nrc);
+            if (parametro == "nrc")
+            {
+                curso.nrc =cambio.ToString();
+            }
+
+            else if (parametro == "nombre")
+            {
+                curso.nombre = cambio.ToString();
+            }
+
+            else if (parametro == "creditos")
+            {
+                curso.creditos = Convert.ToInt32(cambio);
+            }
+
+            else if(parametro == "especialidad")
+            {
+                curso.especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cambio);
+            }
+
+            else if(parametro == "profesor")
+            {
+                curso.profesor = cambio.ToString();
+            }
+            
         }
         public static void EliminarCurso(string nrcCurso)
         {

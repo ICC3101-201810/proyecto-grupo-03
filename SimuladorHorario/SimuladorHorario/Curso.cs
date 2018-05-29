@@ -9,9 +9,9 @@ namespace SimuladorHorario
     [Serializable()]
     public abstract class Curso
     {
-        public string nombre { get; private set; }
-        public string profesor { get; private set; }
-        public TipoCurso tipo { get; private set; }
+        public string nombre;
+        public string profesor;
+        public TipoCurso tipo;
 
         public Curso(string nombre, string profesor, TipoCurso tipo)
 

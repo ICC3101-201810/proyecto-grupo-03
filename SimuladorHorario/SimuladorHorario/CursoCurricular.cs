@@ -9,8 +9,8 @@ namespace SimuladorHorario
     [Serializable()]
     public class CursoCurricular:Curso
     {
-        public string nrc { get; private set; }
-        public int creditos { get; private set; }
+        public string nrc;
+        public int creditos;
         public List<string> cursosPreRequisito;
         public Especialidad especialidad;
         public List<Evento> eventosCurso { get; private set; }        
@@ -26,6 +26,8 @@ namespace SimuladorHorario
             this.especialidad = especialidad;
             this.eventosCurso = eventosCurso;
             tipo = TipoCurso.Curricular;
-        }   
+        }
+        
+        
     }
 }

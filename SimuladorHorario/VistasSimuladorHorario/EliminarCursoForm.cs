@@ -65,5 +65,10 @@ namespace VistasSimuladorHorario
             OnRegresar(this, EventArgs.Empty);
             this.Hide();
         }
+
+        private void EliminarCursoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

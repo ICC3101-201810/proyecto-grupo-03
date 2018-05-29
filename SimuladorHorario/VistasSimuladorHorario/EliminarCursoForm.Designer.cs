@@ -86,6 +86,7 @@
             this.Name = "EliminarCursoForm";
             this.Text = "Eliminar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EliminarCursoForm_FormClosing);
+            this.Load += new System.EventHandler(this.EliminarCursoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

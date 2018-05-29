@@ -33,19 +33,12 @@ namespace VistasSimuladorHorario
             List<string> listaCursos = new List<string>();
             foreach (CursoCurricular curso in Aplicacion.cursos)
             {
-                if (!listaCursos.Contains(curso.nrc+":"+curso.nombre+":"+curso.profesor))
+                if (!listaCursos.Contains(curso.nrc+":"+curso.nombre+"\t"+curso.profesor))
                 {
                     listaCursos.Add(curso.nrc+":"+curso.nombre+":"+curso.profesor);
                 }
             }
-
-            List<string> listaProfesores = new List<string>();
-
-
-            List<List<CursoCurricular>> listaCursoAgrupados = new List<List<CursoCurricular>>();
-
             CursosComboBox.DataSource = listaCursos;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
