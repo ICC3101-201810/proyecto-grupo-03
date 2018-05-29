@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarEventoForm));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.eliminarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,8 +58,9 @@
             this.ClientSize = new System.Drawing.Size(522, 107);
             this.Controls.Add(this.eliminarButton);
             this.Controls.Add(this.comboBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarEventoForm";
-            this.Text = "EliminarEventoForm";
+            this.Text = "Eliminar Evento";
             this.ResumeLayout(false);
 
         }

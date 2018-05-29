@@ -152,9 +152,6 @@ namespace SimuladorHorario
                 listaEvento.Add(evento);
             }
 
-
-  
-            
             return listaEvento;
 
         }
