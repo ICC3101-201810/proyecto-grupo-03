@@ -18,12 +18,10 @@ namespace VistasSimuladorHorario
 
         public event EventHandler<IniciarSesionEventArgs> OnIniciarSesion;
         public event EventHandler OnRegistro;
-        bool loadCSV = true;
+        bool loadCSV = false;
         public LoginForm()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();  
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,16 +38,13 @@ namespace VistasSimuladorHorario
 
                 }
             }
-            
-            
+   
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
-            
-            
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-      {
+        {
 
         }
 
