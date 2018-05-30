@@ -36,26 +36,24 @@ namespace VistasSimuladorHorario
             }
 
             cursosInscritosComboBox.DataSource = listaNombreCursoInscrito;
-
             textBox1.Text = estudianteActivo.nombre;
             textBox2.Text = estudianteActivo.contraseña;
             estudiante = estudianteActivo;
-
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
-
             listBox1.DataSource = estudiante.avanceMalla;
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", estudiante.nombre);   
+            string respuestaNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", textBox1.Text);
+            if (respuestaNombre != "") { textBox1.Text = respuestaNombre; }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox2.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", estudiante.contraseña);
+            string respuestaContra = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", textBox2.Text);
+            if (respuestaContra != "") { textBox2.Text = respuestaContra; }
         }
 
         public void Guardar(Estudiante estudianteActivo)
