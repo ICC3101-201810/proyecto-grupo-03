@@ -60,17 +60,23 @@ namespace SimuladorHorario
             return true;
         }
 
+        static List<string> cursosNoAprobados = new List<string>();
         public static bool ChequearCompatibilidadPreRequisito(Estudiante estudiante, CursoCurricular cursoCurricular)
         {
             //MessageBox.Show("Hay " + estudiante.avanceMalla.Count.ToString() + " cursos en el avance de malla");
             //MessageBox.Show("El curso tiene " + cursoCurricular.cursosPreRequisito.Count.ToString() + " cursos prerequisitos");
             if (cursoCurricular.cursosPreRequisito.Count == 0) { return true; }
-
+            cursosNoAprobados.Clear();
+            bool hayCursosNoAprobados = false;
             foreach (string cur in cursoCurricular.cursosPreRequisito)
             {
-                if (!estudiante.avanceMalla.Contains(cur)) { return false; }
-}
-            return true;
+                if (!estudiante.avanceMalla.Contains(cur)) {
+                    cursosNoAprobados.Add(cur);
+                    hayCursosNoAprobados = true;
+                }
+            }
+            if (hayCursosNoAprobados) { return false; }
+            else { return true; }
         }
 
         public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
@@ -93,6 +99,7 @@ namespace SimuladorHorario
                 else if (compatibilidadPreRequisito == false)
                 {
                     MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
+                    MessageBox.Show($"No has aprobado {cursosNoAprobados[0]}"); //FALTA AQUI
                 }
                 else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
