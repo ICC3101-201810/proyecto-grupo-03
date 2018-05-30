@@ -38,16 +38,13 @@ namespace VistasSimuladorHorario
 
                 }
             }
-            
-            
+   
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
-            
-            
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-      {
+        {
 
         }
 

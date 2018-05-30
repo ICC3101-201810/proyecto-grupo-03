@@ -78,7 +78,7 @@ namespace SimuladorHorario
             if (hayCursosNoAprobados) { return false; }
             else { return true; }
         }
-
+        /*
         public static bool ChequearCompatibilidadEspecialidad(Estudiante estudiante, CursoCurricular cursoCurricular)
         {
             if (cursoCurricular.especialidad == Especialidad.ING) { return true; }
@@ -86,16 +86,73 @@ namespace SimuladorHorario
             {
                 if (estudiante.especialidad != cursoCurricular.especialidad) { return false; }
                 else { return true; }
-            }
-            
+            } 
         }
+        */
+
+        public static bool ChequearCompatibilidadEspecialidadyConcentracion(Estudiante estudiante, CursoCurricular cursoCurricular)
+        {
+            if (cursoCurricular.especialidad == Especialidad.ING) { return true; }
+            else
+            {
+                if (estudiante.especialidad != cursoCurricular.especialidad)
+                {
+                    if (estudiante.concentracion == Concentracion.Algoritmos)
+                    {
+                        if ((cursoCurricular.nombre == "PROGRAMACION BAJO NIVEL") || (cursoCurricular.nombre == "ALGORITHMS AND COMPETITIVE PRO")) //falta uno de los 3 cursos de la concentración
+                        {
+                            return true;
+                        }
+                    }
+                    if (estudiante.concentracion == Concentracion.AplicacionesWeb)
+                    {
+                        if ((cursoCurricular.nombre == "PROGRAMACION ORIENTADA A OBJET") || (cursoCurricular.nombre == "BASES DE DATOS") || (cursoCurricular.nombre == "WEB TECHNOLOGIES"))
+                        {
+                            return true;
+                        }
+                    }
+                    if (estudiante.concentracion == Concentracion.Bioprocesos)
+                    {
+                        if ((cursoCurricular.nombre == "FUNDAMENTOS DE ING DE PROCESOS") || (cursoCurricular.nombre == "MICROBIOLOGIA INDUSTRIAL Y AMBIENTAL") || (cursoCurricular.nombre == "INGIENERIA DE BIOPROCESOS AMBI"))
+                        {
+                            return true;
+                        }
+                    }
+                    if (estudiante.concentracion == Concentracion.Hidraulica)
+                    {
+                        if ((cursoCurricular.nombre == "FLUID MECHANICS") || (cursoCurricular.nombre == "HIDRAULICA") || (cursoCurricular.nombre == "HIDROLOGIA"))
+                        {
+                            return true;
+                        }
+                    }
+                    if (estudiante.concentracion == Concentracion.Modelacion)
+                    {
+                        if ((cursoCurricular.nombre == "METODOS ESTADISTICOS PARA LA G") || (cursoCurricular.nombre == "PROGRAMACION MATEMATICA") || (cursoCurricular.nombre == "MODELOS ESTOCASTICOS"))
+                        {
+                            return true;
+                        }
+                    }
+                    if (estudiante.concentracion == Concentracion.Señales)
+                    {
+                        if ((cursoCurricular.nombre == "SEÑALES Y SISTEMAS") || (cursoCurricular.nombre == "PROCESAMIENTO DE SEÑALES") || (cursoCurricular.nombre == "INTRODUCCION A LAS COMUNICACIO"))
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                return true;
+            }
+        }
+
         public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
         {
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == cursoInscripcion);
 
             bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
             bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
-            bool compatibilidadEspecialidad = ChequearCompatibilidadEspecialidad(estudiante, curso);
+            // bool compatibilidadEspecialidad = ChequearCompatibilidadEspecialidad(estudiante, curso);
+            bool compatibilidadEspecialidadyConcentracion = ChequearCompatibilidadEspecialidadyConcentracion(estudiante, curso);
 
             if (estudiante.listaInscripcion.Contains(curso))
             {
@@ -103,7 +160,7 @@ namespace SimuladorHorario
             }
             else
             {
-                if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false) || (compatibilidadEspecialidad == false))
+                if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false) || (compatibilidadEspecialidadyConcentracion == false))
                 {
                     if (compatibilidadHorario == false)
                     {
@@ -119,10 +176,13 @@ namespace SimuladorHorario
                         cursosNoAprobados.RemoveAt(0);
                         MessageBox.Show(mensaje);
                     }
-                    if (compatibilidadEspecialidad == false)
+                    if (compatibilidadEspecialidadyConcentracion == false)
                     {
-                        MessageBox.Show($"El curso {curso.nombre} es de la especialidad {curso.especialidad}, pero tú eres de {estudiante.especialidad}", "Error de Inscripción");
+                        MessageBox.Show($"El curso {curso.nombre} es de la especialidad {curso.especialidad}, pero tú eres de {estudiante.especialidad}, y tu concenctración tecnológica es {estudiante.concentracion}", "Error de Inscripción");
                     }
+
+                    //MessageBox.Show($"El curso {curso.nombre} es de la especialidad {curso.especialidad}, pero tú eres de {estudiante.especialidad}", "Error de Inscripción");
+
                 }
                 /*
                 else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
