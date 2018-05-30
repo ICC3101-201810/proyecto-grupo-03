@@ -87,6 +87,7 @@ namespace VistasSimuladorHorario
         private void ActualizarAvanceDeMallaForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
         }
 
         private void AgregarCursoB_Click(object sender, EventArgs e)

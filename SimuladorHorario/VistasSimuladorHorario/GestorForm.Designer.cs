@@ -53,7 +53,7 @@ namespace VistasSimuladorHorario
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(291, 169);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 55);
             this.button2.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace VistasSimuladorHorario
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(291, 255);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(197, 54);
             this.button3.TabIndex = 2;
@@ -75,7 +75,7 @@ namespace VistasSimuladorHorario
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(653, 395);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(131, 41);
             this.button4.TabIndex = 3;
@@ -97,7 +97,7 @@ namespace VistasSimuladorHorario
             // ActualizarAvanceB
             // 
             this.ActualizarAvanceB.Location = new System.Drawing.Point(49, 169);
-            this.ActualizarAvanceB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ActualizarAvanceB.Margin = new System.Windows.Forms.Padding(4);
             this.ActualizarAvanceB.Name = "ActualizarAvanceB";
             this.ActualizarAvanceB.Size = new System.Drawing.Size(197, 55);
             this.ActualizarAvanceB.TabIndex = 5;
