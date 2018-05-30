@@ -145,9 +145,20 @@ namespace SimuladorHorario
             }
         }
         
-        public static bool ChequearCompatibilidadCantidadCreditos(CursoCurricular cursoCurricular)
+        public static int ContarCreditos(Estudiante estudiante)
         {
-            if (cantidadCreditos + cursoCurricular.creditos > 33) { return false; }
+            int cantidadCreditosYaInscritos = 0;
+            foreach (CursoCurricular cursoInscrito in estudiante.listaInscripcion)
+            {
+                cantidadCreditosYaInscritos += cursoInscrito.creditos;
+            }
+            return cantidadCreditosYaInscritos;
+        }
+
+        public static bool ChequearCompatibilidadCantidadCreditos(Estudiante estudiante, CursoCurricular cursoCurricular)
+        {
+            
+            if (ContarCreditos(estudiante) + cursoCurricular.creditos > 11) { return false; }
             else { return true; }
         }
         
@@ -160,7 +171,7 @@ namespace SimuladorHorario
             bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
             // bool compatibilidadEspecialidad = ChequearCompatibilidadEspecialidad(estudiante, curso);
             bool compatibilidadEspecialidadyConcentracion = ChequearCompatibilidadEspecialidadyConcentracion(estudiante, curso);
-            bool compatibilidadCantidadCreditos = ChequearCompatibilidadCantidadCreditos(curso);
+            bool compatibilidadCantidadCreditos = ChequearCompatibilidadCantidadCreditos(estudiante, curso);
 
             if (estudiante.listaInscripcion.Contains(curso))
             {
@@ -168,7 +179,7 @@ namespace SimuladorHorario
             }
             else
             {
-                //MessageBox.Show(cantidadCreditos.ToString());
+                
                 if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false) || (compatibilidadEspecialidadyConcentracion == false) || (compatibilidadCantidadCreditos == false))
                 {
                     if (compatibilidadHorario == false)
@@ -191,7 +202,7 @@ namespace SimuladorHorario
                     }
                     if (compatibilidadCantidadCreditos == false)
                     {
-                        MessageBox.Show($"Al inscribir {curso.nombre} tendrías {cantidadCreditos + curso.creditos} créditos, y no puedes exceder los 33", "Error de Inscripción");
+                        MessageBox.Show($"Al inscribir {curso.nombre} tendrías {ContarCreditos(estudiante) + curso.creditos} créditos, y no puedes exceder los 11", "Error de Inscripción");
                     }
 
                     //MessageBox.Show($"El curso {curso.nombre} es de la especialidad {curso.especialidad}, pero tú eres de {estudiante.especialidad}", "Error de Inscripción");
@@ -208,8 +219,9 @@ namespace SimuladorHorario
                 {
                     //MessageBox.Show("Agregado Exitosamente");
                     estudiante.listaInscripcion.Add(curso);
-                    cantidadCreditos += curso.creditos;
+                    //cantidadCreditos += curso.creditos;
                     MessageBox.Show(curso.nombre + " inscrito con éxito");
+                    MessageBox.Show($"Llevas {ContarCreditos(estudiante)} créditos");
                     return estudiante;
                 }
             }
