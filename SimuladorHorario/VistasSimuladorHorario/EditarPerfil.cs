@@ -43,7 +43,7 @@ namespace VistasSimuladorHorario
             textBox2.ReadOnly = true;
             listBox1.DataSource = estudiante.avanceMalla;
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             string respuestaNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", textBox1.Text);
@@ -55,7 +55,7 @@ namespace VistasSimuladorHorario
             string respuestaContra = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", textBox2.Text);
             if (respuestaContra != "") { textBox2.Text = respuestaContra; }
         }
-
+        
         public void Guardar(Estudiante estudianteActivo)
         {
             estudianteActivo.SetNombre(textBox1.Text);
