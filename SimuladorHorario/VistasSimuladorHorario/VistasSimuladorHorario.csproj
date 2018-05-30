@@ -69,6 +69,7 @@
     <Compile Include="ActualizarAvanceDeMallaForm.Designer.cs">
       <DependentUpon>ActualizarAvanceDeMallaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActualizarAvanceEventArgs.cs" />
     <Compile Include="ActualizarCursoEventArgs.cs" />
     <Compile Include="AgregarEventoPersonalController.cs" />
     <Compile Include="AgregarEventoPersonalForm.cs">

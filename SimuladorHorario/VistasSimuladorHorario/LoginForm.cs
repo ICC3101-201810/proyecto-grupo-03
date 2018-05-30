@@ -41,6 +41,11 @@ namespace VistasSimuladorHorario
    
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
 
+            if (Aplicacion.cursos.Count == 0 && !loadCSV)
+            {
+                Aplicacion.DeSerializeAll();
+            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

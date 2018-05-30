@@ -23,7 +23,6 @@ namespace SimuladorHorario
             Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso, profesor, TipoCurso.Curricular));
             return true;
         }
-
         public static void LeerCurso(string nrcCurso)
         {
             foreach (CursoCurricular cursoCur in Aplicacion.cursos)
@@ -125,17 +124,6 @@ namespace SimuladorHorario
             #endregion
             return;
         }
-        /*
-        public static void ImprimirCursos()
-        {
-            foreach(CursoCurricular curso in Aplicacion.GetCursoCurricular())
-            {
-                Console.WriteLine($"NRC: {curso.nrc}, Nombre: {curso.nombre}");
-                
-            }
-            return;
-        }
-        */
         public static List<Evento> CrearEvento(string nombre, string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
         {
             List<Evento> listaEvento = new List<Evento>();
@@ -155,6 +143,30 @@ namespace SimuladorHorario
             return listaEvento;
 
         }
+        public static void AñadirAlAvanceMalla(string nombreEstudiante, string curso)
+        {
+            
+            foreach(Usuario user in Aplicacion.usuarios)
+            {
+                if (nombreEstudiante == user.nombre)
+                {
+                    Estudiante estudiante = (Estudiante)user;
+                    estudiante.avanceMalla.Add(curso);
+                }
+            }
+        }
+        public static void EliminarDelAvanceMalla(string nombreEstudiante, string curso)
+        {
+            foreach(Usuario user in Aplicacion.usuarios)
+            {
+                if(nombreEstudiante == user.nombre)
+                {
+                    Estudiante estudiante = (Estudiante)user;                   
+                    estudiante.avanceMalla.Remove(curso);
+                }
+            }
+        }
+            
 
     }
 }

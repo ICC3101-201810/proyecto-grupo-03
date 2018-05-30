@@ -14,11 +14,15 @@ namespace VistasSimuladorHorario
     public partial class ActualizarAvanceDeMallaForm : Form
     {
         Estudiante estudianteActivo;
+        public event EventHandler<ActualizarAvanceEventArgs> OnAgregarCurso;
+        public event EventHandler<ActualizarAvanceEventArgs> OnEliminarCurso;
+        public event EventHandler OnRegresar;
         public ActualizarAvanceDeMallaForm()
         {
             InitializeComponent();
             InicializarAlumnosCB();
             InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();
         }
 
         public void InicializarAlumnosCB()
@@ -37,12 +41,23 @@ namespace VistasSimuladorHorario
             
         }
 
+        public void ActualizarEstudianteActivo()
+        {
+            foreach (Usuario user in Aplicacion.usuarios)
+            {
+                if ((string)AlumnosCB.SelectedItem == user.nombre)
+                {
+                    estudianteActivo = (Estudiante)user;
+                }
+            }
+        }
+
         public void InicializarCursosDisponiblesLB()
         {
             List<string> nombresCursos = new List<string>();
             foreach (CursoCurricular c in Aplicacion.cursos)
             {
-                if (!nombresCursos.Contains(c.nombre))
+                if (!nombresCursos.Contains(c.nombre) && !estudianteActivo.avanceMalla.Contains(c.nombre))
                 {
                     nombresCursos.Add(c.nombre);
                 }
@@ -52,8 +67,9 @@ namespace VistasSimuladorHorario
 
         public void InicializarAvanceMallaLB()
         {
+            
             AvanceMallaLB.DataSource = estudianteActivo.avanceMalla;
-
+            AvanceMallaLB.Refresh();
         }
 
         private void ActualizarAvanceDeMallaForm_Load(object sender, EventArgs e)
@@ -63,14 +79,39 @@ namespace VistasSimuladorHorario
 
         private void AlumnosCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach(Usuario user in Aplicacion.usuarios)
-            {
-                if (AlumnosCB.SelectedItem == user.nombre)
-                {
-                    estudianteActivo = (Estudiante)user;
-                }
-            }
+            ActualizarEstudianteActivo();
             InicializarAvanceMallaLB();
+            InicializarCursosDisponiblesLB();
+        }
+
+        private void ActualizarAvanceDeMallaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+        }
+
+        private void AgregarCursoB_Click(object sender, EventArgs e)
+        {
+            ActualizarAvanceEventArgs actualizarAvanceEventArgs = new ActualizarAvanceEventArgs();
+            actualizarAvanceEventArgs.nombreEstudiante = estudianteActivo.nombre;
+            actualizarAvanceEventArgs.curso = (string)CursosDisponiblesLB.SelectedItem;
+            OnAgregarCurso(this, actualizarAvanceEventArgs);
+            InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();    
+        }
+
+        private void EliminarCursoB_Click(object sender, EventArgs e)
+        {
+            ActualizarAvanceEventArgs actualizarAvanceEventArgs = new ActualizarAvanceEventArgs();
+            actualizarAvanceEventArgs.nombreEstudiante = estudianteActivo.nombre;
+            actualizarAvanceEventArgs.curso = (string)AvanceMallaLB.SelectedItem;
+            OnEliminarCurso(this, actualizarAvanceEventArgs);
+            InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();
+        }
+
+        private void RegresarB_Click(object sender, EventArgs e)
+        {
+            OnRegresar(this, EventArgs.Empty);
         }
     }
 }

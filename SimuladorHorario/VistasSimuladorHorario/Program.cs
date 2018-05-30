@@ -19,7 +19,6 @@ namespace VistasSimuladorHorario
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm loginForm = new LoginForm();
             LoginController loginController = new LoginController(loginForm);
-            Aplicacion.DeSerializeAll();
             Application.Run(loginForm);
             
         }

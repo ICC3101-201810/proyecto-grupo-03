@@ -35,6 +35,9 @@
             this.AgregarCursoB = new System.Windows.Forms.Button();
             this.AlumnosCB = new System.Windows.Forms.ComboBox();
             this.Alumno = new System.Windows.Forms.Label();
+            this.RegresarB = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AvanceMallaLB
@@ -56,6 +59,7 @@
             this.EliminarCursoB.TabIndex = 1;
             this.EliminarCursoB.Text = "<< Eliminar Curso";
             this.EliminarCursoB.UseVisualStyleBackColor = true;
+            this.EliminarCursoB.Click += new System.EventHandler(this.EliminarCursoB_Click);
             // 
             // CursosDisponiblesLB
             // 
@@ -76,6 +80,7 @@
             this.AgregarCursoB.TabIndex = 3;
             this.AgregarCursoB.Text = "Agregar Curso >>";
             this.AgregarCursoB.UseVisualStyleBackColor = true;
+            this.AgregarCursoB.Click += new System.EventHandler(this.AgregarCursoB_Click);
             // 
             // AlumnosCB
             // 
@@ -97,11 +102,42 @@
             this.Alumno.TabIndex = 5;
             this.Alumno.Text = "Alumno";
             // 
+            // RegresarB
+            // 
+            this.RegresarB.Location = new System.Drawing.Point(919, 495);
+            this.RegresarB.Name = "RegresarB";
+            this.RegresarB.Size = new System.Drawing.Size(136, 47);
+            this.RegresarB.TabIndex = 6;
+            this.RegresarB.Text = "Regresar";
+            this.RegresarB.UseVisualStyleBackColor = true;
+            this.RegresarB.Click += new System.EventHandler(this.RegresarB_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(628, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Avance de malla";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(113, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Cursos";
+            // 
             // ActualizarAvanceDeMallaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RegresarB);
             this.Controls.Add(this.Alumno);
             this.Controls.Add(this.AlumnosCB);
             this.Controls.Add(this.AgregarCursoB);
@@ -111,7 +147,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActualizarAvanceDeMallaForm";
-            this.Text = "ActualizarAvanceDeMalla";
+            this.Text = "Actualizar Avance de Malla";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActualizarAvanceDeMallaForm_FormClosing);
             this.Load += new System.EventHandler(this.ActualizarAvanceDeMallaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,5 +163,8 @@
         private System.Windows.Forms.Button AgregarCursoB;
         private System.Windows.Forms.ComboBox AlumnosCB;
         private System.Windows.Forms.Label Alumno;
+        private System.Windows.Forms.Button RegresarB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
