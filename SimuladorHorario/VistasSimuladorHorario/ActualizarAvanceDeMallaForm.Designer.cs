@@ -29,62 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActualizarAvanceDeMallaForm));
-            this.AvanceMalla = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CursosDisponibles = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.AvanceMallaLB = new System.Windows.Forms.ListBox();
+            this.EliminarCursoB = new System.Windows.Forms.Button();
+            this.CursosDisponiblesLB = new System.Windows.Forms.ListBox();
+            this.AgregarCursoB = new System.Windows.Forms.Button();
+            this.AlumnosCB = new System.Windows.Forms.ComboBox();
             this.Alumno = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // AvanceMalla
+            // AvanceMallaLB
             // 
-            this.AvanceMalla.FormattingEnabled = true;
-            this.AvanceMalla.ItemHeight = 16;
-            this.AvanceMalla.Location = new System.Drawing.Point(631, 219);
-            this.AvanceMalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AvanceMalla.Name = "AvanceMalla";
-            this.AvanceMalla.Size = new System.Drawing.Size(240, 164);
-            this.AvanceMalla.TabIndex = 0;
+            this.AvanceMallaLB.FormattingEnabled = true;
+            this.AvanceMallaLB.ItemHeight = 16;
+            this.AvanceMallaLB.Location = new System.Drawing.Point(631, 219);
+            this.AvanceMallaLB.Margin = new System.Windows.Forms.Padding(4);
+            this.AvanceMallaLB.Name = "AvanceMallaLB";
+            this.AvanceMallaLB.Size = new System.Drawing.Size(240, 164);
+            this.AvanceMallaLB.TabIndex = 0;
             // 
-            // button1
+            // EliminarCursoB
             // 
-            this.button1.Location = new System.Drawing.Point(400, 329);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "<< Eliminar Curso";
-            this.button1.UseVisualStyleBackColor = true;
+            this.EliminarCursoB.Location = new System.Drawing.Point(400, 329);
+            this.EliminarCursoB.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarCursoB.Name = "EliminarCursoB";
+            this.EliminarCursoB.Size = new System.Drawing.Size(168, 28);
+            this.EliminarCursoB.TabIndex = 1;
+            this.EliminarCursoB.Text = "<< Eliminar Curso";
+            this.EliminarCursoB.UseVisualStyleBackColor = true;
             // 
-            // CursosDisponibles
+            // CursosDisponiblesLB
             // 
-            this.CursosDisponibles.FormattingEnabled = true;
-            this.CursosDisponibles.ItemHeight = 16;
-            this.CursosDisponibles.Location = new System.Drawing.Point(113, 219);
-            this.CursosDisponibles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.CursosDisponibles.Name = "CursosDisponibles";
-            this.CursosDisponibles.Size = new System.Drawing.Size(240, 164);
-            this.CursosDisponibles.TabIndex = 2;
+            this.CursosDisponiblesLB.FormattingEnabled = true;
+            this.CursosDisponiblesLB.ItemHeight = 16;
+            this.CursosDisponiblesLB.Location = new System.Drawing.Point(113, 219);
+            this.CursosDisponiblesLB.Margin = new System.Windows.Forms.Padding(4);
+            this.CursosDisponiblesLB.Name = "CursosDisponiblesLB";
+            this.CursosDisponiblesLB.Size = new System.Drawing.Size(240, 164);
+            this.CursosDisponiblesLB.TabIndex = 2;
             // 
-            // button2
+            // AgregarCursoB
             // 
-            this.button2.Location = new System.Drawing.Point(400, 247);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Agregar Curso >>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AgregarCursoB.Location = new System.Drawing.Point(400, 247);
+            this.AgregarCursoB.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarCursoB.Name = "AgregarCursoB";
+            this.AgregarCursoB.Size = new System.Drawing.Size(168, 28);
+            this.AgregarCursoB.TabIndex = 3;
+            this.AgregarCursoB.Text = "Agregar Curso >>";
+            this.AgregarCursoB.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // AlumnosCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(228, 92);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(444, 24);
-            this.comboBox1.TabIndex = 4;
+            this.AlumnosCB.FormattingEnabled = true;
+            this.AlumnosCB.Location = new System.Drawing.Point(228, 92);
+            this.AlumnosCB.Margin = new System.Windows.Forms.Padding(4);
+            this.AlumnosCB.Name = "AlumnosCB";
+            this.AlumnosCB.Size = new System.Drawing.Size(444, 24);
+            this.AlumnosCB.TabIndex = 4;
+            this.AlumnosCB.SelectedIndexChanged += new System.EventHandler(this.AlumnosCB_SelectedIndexChanged);
             // 
             // Alumno
             // 
@@ -102,13 +103,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.Alumno);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.CursosDisponibles);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.AvanceMalla);
+            this.Controls.Add(this.AlumnosCB);
+            this.Controls.Add(this.AgregarCursoB);
+            this.Controls.Add(this.CursosDisponiblesLB);
+            this.Controls.Add(this.EliminarCursoB);
+            this.Controls.Add(this.AvanceMallaLB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActualizarAvanceDeMallaForm";
             this.Text = "ActualizarAvanceDeMalla";
             this.Load += new System.EventHandler(this.ActualizarAvanceDeMallaForm_Load);
@@ -119,11 +120,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox AvanceMalla;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox CursosDisponibles;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox AvanceMallaLB;
+        private System.Windows.Forms.Button EliminarCursoB;
+        private System.Windows.Forms.ListBox CursosDisponiblesLB;
+        private System.Windows.Forms.Button AgregarCursoB;
+        private System.Windows.Forms.ComboBox AlumnosCB;
         private System.Windows.Forms.Label Alumno;
     }
 }
