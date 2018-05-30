@@ -79,12 +79,23 @@ namespace SimuladorHorario
             else { return true; }
         }
 
+        public static bool ChequearCompatibilidadEspecialidad(Estudiante estudiante, CursoCurricular cursoCurricular)
+        {
+            if (cursoCurricular.especialidad == Especialidad.ING) { return true; }
+            else
+            {
+                if (estudiante.especialidad != cursoCurricular.especialidad) { return false; }
+                else { return true; }
+            }
+            
+        }
         public static Estudiante InscribirCurso(Estudiante estudiante, string cursoInscripcion)
         {
             CursoCurricular curso = Aplicacion.GetCursoCurricular().Find(x => x.nrc == cursoInscripcion);
 
             bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
             bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
+            bool compatibilidadEspecialidad = ChequearCompatibilidadEspecialidad(estudiante, curso);
 
             if (estudiante.listaInscripcion.Contains(curso))
             {
@@ -92,7 +103,7 @@ namespace SimuladorHorario
             }
             else
             {
-                if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
+                if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false) || (compatibilidadEspecialidad == false))
                 {
                     if (compatibilidadHorario == false)
                     {
@@ -107,6 +118,10 @@ namespace SimuladorHorario
                         var mensaje = string.Join(Environment.NewLine, cursosNoAprobados);
                         cursosNoAprobados.RemoveAt(0);
                         MessageBox.Show(mensaje);
+                    }
+                    if (compatibilidadEspecialidad == false)
+                    {
+                        MessageBox.Show($"El curso {curso.nombre} es de la especialidad {curso.especialidad}, pero tú eres de {estudiante.especialidad}", "Error de Inscripción");
                     }
                 }
                 /*
