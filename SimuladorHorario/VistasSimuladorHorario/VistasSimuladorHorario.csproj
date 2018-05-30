@@ -62,6 +62,12 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActualizarAvanceDeMalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarAvanceDeMalla.Designer.cs">
+      <DependentUpon>ActualizarAvanceDeMalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActualizarCursoEventArgs.cs" />
     <Compile Include="AgregarEventoPersonalController.cs" />
     <Compile Include="AgregarEventoPersonalForm.cs">
@@ -171,6 +177,9 @@
     </Compile>
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarAvanceDeMalla.resx">
+      <DependentUpon>ActualizarAvanceDeMalla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActualizarCursoForm.resx">
       <DependentUpon>ActualizarCursoForm.cs</DependentUpon>

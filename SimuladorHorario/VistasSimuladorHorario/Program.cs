@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimuladorHorario;
 
 namespace VistasSimuladorHorario
 {
@@ -17,7 +18,8 @@ namespace VistasSimuladorHorario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm loginForm = new LoginForm();
-            LoginController loginController = new LoginController(loginForm);  
+            LoginController loginController = new LoginController(loginForm);
+            Aplicacion.DeSerializeAll();
             Application.Run(loginForm);
             
         }
