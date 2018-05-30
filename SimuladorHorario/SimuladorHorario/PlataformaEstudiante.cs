@@ -98,8 +98,15 @@ namespace SimuladorHorario
                 }
                 else if (compatibilidadPreRequisito == false)
                 {
-                    MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
-                    MessageBox.Show($"No has aprobado {cursosNoAprobados[0]}"); //FALTA AQUI
+                    //MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
+                    //MessageBox.Show($"No has aprobado {cursosNoAprobados[0]}"); //FALTA AQUI
+
+                    cursosNoAprobados.Insert(0, $"Todavía no has aprobado los siguientes cursos, que son prerrequisitos de {curso.nombre}:");
+                    var mensaje = string.Join(Environment.NewLine, cursosNoAprobados);
+                    cursosNoAprobados.RemoveAt(0);
+                    
+                    
+                    MessageBox.Show(mensaje);
                 }
                 else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
