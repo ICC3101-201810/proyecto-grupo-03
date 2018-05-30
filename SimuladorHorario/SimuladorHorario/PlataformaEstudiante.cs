@@ -88,33 +88,38 @@ namespace SimuladorHorario
 
             if (estudiante.listaInscripcion.Contains(curso))
             {
-                MessageBox.Show("El Curso ya está inscrito.", "Error de Inscripcion");
+                MessageBox.Show("El Curso ya está inscrito.", "Error de Inscripción");
             }
             else
             {
-                if (compatibilidadHorario == false)
+                if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
-                    MessageBox.Show($"El curso {curso.nombre} posee un tope de horario\n", "Error de Inscripcion");
-                }
-                else if (compatibilidadPreRequisito == false)
-                {
-                    //MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
-                    //MessageBox.Show($"No has aprobado {cursosNoAprobados[0]}");
+                    if (compatibilidadHorario == false)
+                    {
+                        MessageBox.Show($"El curso {curso.nombre} posee un tope de horario\n", "Error de Inscripción");
+                    }
+                    if (compatibilidadPreRequisito == false)
+                    {
+                        //MessageBox.Show($"Todavia no has aprobado cursos prerequisitos del curso {curso.nombre}", "Error de Inscripcion");
+                        //MessageBox.Show($"No has aprobado {cursosNoAprobados[0]}");
 
-                    cursosNoAprobados.Insert(0, $"Todavía no has aprobado los siguientes cursos, que son prerrequisitos de {curso.nombre}:");
-                    var mensaje = string.Join(Environment.NewLine, cursosNoAprobados);
-                    cursosNoAprobados.RemoveAt(0);                
-                    MessageBox.Show(mensaje);
+                        cursosNoAprobados.Insert(0, $"Todavía no has aprobado los siguientes cursos, que son prerrequisitos de {curso.nombre}:");
+                        var mensaje = string.Join(Environment.NewLine, cursosNoAprobados);
+                        cursosNoAprobados.RemoveAt(0);
+                        MessageBox.Show(mensaje);
+                    }
                 }
+                /*
                 else if ((compatibilidadHorario == false) || (compatibilidadPreRequisito == false))
                 {
                     MessageBox.Show($"No puedes inscribir el curso {curso.nombre}", "Error de Inscripcion");
                 }
+                */
                 else
                 {
                     //MessageBox.Show("Agregado Exitosamente");
                     estudiante.listaInscripcion.Add(curso);
-                    MessageBox.Show(curso.nombre + " inscrito con exito");
+                    MessageBox.Show(curso.nombre + " inscrito con éxito");
                     return estudiante;
                 }
             }
