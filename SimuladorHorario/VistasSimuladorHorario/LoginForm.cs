@@ -18,7 +18,7 @@ namespace VistasSimuladorHorario
 
         public event EventHandler<IniciarSesionEventArgs> OnIniciarSesion;
         public event EventHandler OnRegistro;
-        bool loadCSV = false;
+        bool loadCSV = true;
         public LoginForm()
         {
             InitializeComponent();  

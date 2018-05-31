@@ -34,7 +34,7 @@ namespace VistasSimuladorHorario
             GestorForm gestorForm = new GestorForm();
             GestorController gestorController = new GestorController(gestorForm);
             gestorForm.Show();
-            actualizarAvanceDeMallaForm.Close();
+            
         }
     }
 }

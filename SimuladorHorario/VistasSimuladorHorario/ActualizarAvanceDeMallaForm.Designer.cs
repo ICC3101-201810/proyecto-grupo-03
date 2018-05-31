@@ -43,19 +43,17 @@
             // AvanceMallaLB
             // 
             this.AvanceMallaLB.FormattingEnabled = true;
-            this.AvanceMallaLB.ItemHeight = 16;
-            this.AvanceMallaLB.Location = new System.Drawing.Point(631, 219);
-            this.AvanceMallaLB.Margin = new System.Windows.Forms.Padding(4);
+            this.AvanceMallaLB.Location = new System.Drawing.Point(473, 178);
             this.AvanceMallaLB.Name = "AvanceMallaLB";
-            this.AvanceMallaLB.Size = new System.Drawing.Size(240, 164);
+            this.AvanceMallaLB.Size = new System.Drawing.Size(181, 134);
             this.AvanceMallaLB.TabIndex = 0;
+            this.AvanceMallaLB.SelectedIndexChanged += new System.EventHandler(this.AvanceMallaLB_SelectedIndexChanged);
             // 
             // EliminarCursoB
             // 
-            this.EliminarCursoB.Location = new System.Drawing.Point(400, 329);
-            this.EliminarCursoB.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarCursoB.Location = new System.Drawing.Point(300, 267);
             this.EliminarCursoB.Name = "EliminarCursoB";
-            this.EliminarCursoB.Size = new System.Drawing.Size(168, 28);
+            this.EliminarCursoB.Size = new System.Drawing.Size(126, 23);
             this.EliminarCursoB.TabIndex = 1;
             this.EliminarCursoB.Text = "<< Eliminar Curso";
             this.EliminarCursoB.UseVisualStyleBackColor = true;
@@ -64,19 +62,16 @@
             // CursosDisponiblesLB
             // 
             this.CursosDisponiblesLB.FormattingEnabled = true;
-            this.CursosDisponiblesLB.ItemHeight = 16;
-            this.CursosDisponiblesLB.Location = new System.Drawing.Point(113, 219);
-            this.CursosDisponiblesLB.Margin = new System.Windows.Forms.Padding(4);
+            this.CursosDisponiblesLB.Location = new System.Drawing.Point(85, 178);
             this.CursosDisponiblesLB.Name = "CursosDisponiblesLB";
-            this.CursosDisponiblesLB.Size = new System.Drawing.Size(240, 164);
+            this.CursosDisponiblesLB.Size = new System.Drawing.Size(181, 134);
             this.CursosDisponiblesLB.TabIndex = 2;
             // 
             // AgregarCursoB
             // 
-            this.AgregarCursoB.Location = new System.Drawing.Point(400, 247);
-            this.AgregarCursoB.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarCursoB.Location = new System.Drawing.Point(300, 201);
             this.AgregarCursoB.Name = "AgregarCursoB";
-            this.AgregarCursoB.Size = new System.Drawing.Size(168, 28);
+            this.AgregarCursoB.Size = new System.Drawing.Size(126, 23);
             this.AgregarCursoB.TabIndex = 3;
             this.AgregarCursoB.Text = "Agregar Curso >>";
             this.AgregarCursoB.UseVisualStyleBackColor = true;
@@ -85,28 +80,27 @@
             // AlumnosCB
             // 
             this.AlumnosCB.FormattingEnabled = true;
-            this.AlumnosCB.Location = new System.Drawing.Point(228, 92);
-            this.AlumnosCB.Margin = new System.Windows.Forms.Padding(4);
+            this.AlumnosCB.Location = new System.Drawing.Point(171, 75);
             this.AlumnosCB.Name = "AlumnosCB";
-            this.AlumnosCB.Size = new System.Drawing.Size(444, 24);
+            this.AlumnosCB.Size = new System.Drawing.Size(334, 21);
             this.AlumnosCB.TabIndex = 4;
             this.AlumnosCB.SelectedIndexChanged += new System.EventHandler(this.AlumnosCB_SelectedIndexChanged);
             // 
             // Alumno
             // 
             this.Alumno.AutoSize = true;
-            this.Alumno.Location = new System.Drawing.Point(109, 92);
-            this.Alumno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Alumno.Location = new System.Drawing.Point(82, 75);
             this.Alumno.Name = "Alumno";
-            this.Alumno.Size = new System.Drawing.Size(55, 17);
+            this.Alumno.Size = new System.Drawing.Size(42, 13);
             this.Alumno.TabIndex = 5;
             this.Alumno.Text = "Alumno";
             // 
             // RegresarB
             // 
-            this.RegresarB.Location = new System.Drawing.Point(919, 495);
+            this.RegresarB.Location = new System.Drawing.Point(689, 402);
+            this.RegresarB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RegresarB.Name = "RegresarB";
-            this.RegresarB.Size = new System.Drawing.Size(136, 47);
+            this.RegresarB.Size = new System.Drawing.Size(102, 38);
             this.RegresarB.TabIndex = 6;
             this.RegresarB.Text = "Regresar";
             this.RegresarB.UseVisualStyleBackColor = true;
@@ -115,26 +109,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(628, 198);
+            this.label1.Location = new System.Drawing.Point(471, 161);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Avance de malla";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 195);
+            this.label2.Location = new System.Drawing.Point(85, 158);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Cursos";
             // 
             // ActualizarAvanceDeMallaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RegresarB);
@@ -145,7 +141,6 @@
             this.Controls.Add(this.EliminarCursoB);
             this.Controls.Add(this.AvanceMallaLB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActualizarAvanceDeMallaForm";
             this.Text = "Actualizar Avance de Malla";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActualizarAvanceDeMallaForm_FormClosing);

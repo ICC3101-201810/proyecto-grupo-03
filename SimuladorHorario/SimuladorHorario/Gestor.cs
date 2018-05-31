@@ -57,7 +57,7 @@ namespace SimuladorHorario
             {
                 foreach(CursoCurricular c in Aplicacion.GetCursoCurricular())
                 {
-                    if (c.nrc == nrc)
+                    if (c.nrc == (string)cambio)
                     {
                         MessageBox.Show("Ese NRC ya existe");
                         return false;

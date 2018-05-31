@@ -67,9 +67,14 @@ namespace VistasSimuladorHorario
 
         public void InicializarAvanceMallaLB()
         {
-            
-            AvanceMallaLB.DataSource = estudianteActivo.avanceMalla;
-            AvanceMallaLB.Refresh();
+
+            List<string> nombresCursos = new List<string>();
+            foreach(string s in estudianteActivo.avanceMalla)
+            {
+                nombresCursos.Add(s);
+            }
+
+            AvanceMallaLB.DataSource = nombresCursos;
         }
 
         private void ActualizarAvanceDeMallaForm_Load(object sender, EventArgs e)
@@ -113,6 +118,12 @@ namespace VistasSimuladorHorario
         private void RegresarB_Click(object sender, EventArgs e)
         {
             OnRegresar(this, EventArgs.Empty);
+            Hide();
+        }
+
+        private void AvanceMallaLB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

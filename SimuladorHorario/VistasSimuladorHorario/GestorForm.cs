@@ -23,7 +23,7 @@ namespace VistasSimuladorHorario
         public GestorForm()
         {
             InitializeComponent();
-            timeBeginPeriod(timerAccuracy);
+            
         }
 
         private void CrearCursoButton_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace VistasSimuladorHorario
 
         private void GestorForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void EliminarCursoButton_Click(object sender, EventArgs e)

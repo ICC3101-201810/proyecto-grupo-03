@@ -455,7 +455,7 @@ namespace SimuladorHorario
                     }
                 }
             }
-            catch (IOException) { MessageBox.Show("No se pudo deserializar", "Error"); }
+            catch (IOException) { MessageBox.Show("No se pudo deserializar los cursos", "Error"); }
         }
 
 
