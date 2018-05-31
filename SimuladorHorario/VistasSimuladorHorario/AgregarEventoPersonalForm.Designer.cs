@@ -140,7 +140,7 @@
             // 
             // AgregarEventoButton
             // 
-            this.AgregarEventoButton.Location = new System.Drawing.Point(390, 54);
+            this.AgregarEventoButton.Location = new System.Drawing.Point(406, 51);
             this.AgregarEventoButton.Margin = new System.Windows.Forms.Padding(2);
             this.AgregarEventoButton.Name = "AgregarEventoButton";
             this.AgregarEventoButton.Size = new System.Drawing.Size(136, 191);

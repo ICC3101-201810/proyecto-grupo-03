@@ -99,7 +99,7 @@
             // 
             // RegresarB
             // 
-            this.RegresarB.Location = new System.Drawing.Point(572, 358);
+            this.RegresarB.Location = new System.Drawing.Point(680, 402);
             this.RegresarB.Name = "RegresarB";
             this.RegresarB.Size = new System.Drawing.Size(108, 36);
             this.RegresarB.TabIndex = 6;
@@ -140,9 +140,9 @@
             // CursosCB
             // 
             this.CursosCB.FormattingEnabled = true;
-            this.CursosCB.Location = new System.Drawing.Point(142, 53);
+            this.CursosCB.Location = new System.Drawing.Point(130, 53);
             this.CursosCB.Name = "CursosCB";
-            this.CursosCB.Size = new System.Drawing.Size(449, 21);
+            this.CursosCB.Size = new System.Drawing.Size(461, 21);
             this.CursosCB.TabIndex = 10;
             this.CursosCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -186,7 +186,7 @@
             // 
             this.CambiarProfesorB.Location = new System.Drawing.Point(527, 228);
             this.CambiarProfesorB.Name = "CambiarProfesorB";
-            this.CambiarProfesorB.Size = new System.Drawing.Size(100, 23);
+            this.CambiarProfesorB.Size = new System.Drawing.Size(125, 23);
             this.CambiarProfesorB.TabIndex = 15;
             this.CambiarProfesorB.Text = "Cambiar Profesor";
             this.CambiarProfesorB.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.Controls.Add(this.NrcTB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ActualizarCursoForm";
-            this.Text = "ActualizarCursoForm";
+            this.Text = "Actualizar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActualizarCursoForm_FormClosing);
             this.Load += new System.EventHandler(this.ActualizarCursoForm_Load);
             this.ResumeLayout(false);

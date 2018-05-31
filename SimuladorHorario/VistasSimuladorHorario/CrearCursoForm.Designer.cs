@@ -160,7 +160,7 @@
             // 
             // CrearCursoButton
             // 
-            this.CrearCursoButton.Location = new System.Drawing.Point(571, 45);
+            this.CrearCursoButton.Location = new System.Drawing.Point(551, 45);
             this.CrearCursoButton.Margin = new System.Windows.Forms.Padding(2);
             this.CrearCursoButton.Name = "CrearCursoButton";
             this.CrearCursoButton.Size = new System.Drawing.Size(116, 295);
@@ -194,7 +194,7 @@
             // 
             // RegresarButton
             // 
-            this.RegresarButton.Location = new System.Drawing.Point(571, 379);
+            this.RegresarButton.Location = new System.Drawing.Point(551, 375);
             this.RegresarButton.Margin = new System.Windows.Forms.Padding(2);
             this.RegresarButton.Name = "RegresarButton";
             this.RegresarButton.Size = new System.Drawing.Size(116, 38);
