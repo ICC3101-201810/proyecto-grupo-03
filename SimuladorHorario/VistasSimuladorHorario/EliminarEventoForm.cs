@@ -56,5 +56,10 @@ namespace VistasSimuladorHorario
             
 
     }
-}
+
+        private void EliminarEventoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

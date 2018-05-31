@@ -61,6 +61,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarEventoForm";
             this.Text = "Eliminar Evento";
+            this.Load += new System.EventHandler(this.EliminarEventoForm_Load);
             this.ResumeLayout(false);
 
         }

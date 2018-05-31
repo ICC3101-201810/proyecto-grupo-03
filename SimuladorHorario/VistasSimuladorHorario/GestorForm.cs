@@ -18,6 +18,7 @@ namespace VistasSimuladorHorario
         public event EventHandler OnLeerCurso;
         public event EventHandler OnCerrarSesion;
         public event EventHandler OnActualizarCurso;
+        public event EventHandler OnActualizarAvance;
 
         public GestorForm()
         {
@@ -62,6 +63,12 @@ namespace VistasSimuladorHorario
         private void ActualizarCursoButton_Click(object sender, EventArgs e)
         {
             OnActualizarCurso(this, EventArgs.Empty);
+            Hide();
+        }
+
+        private void ActualizarAvanceB_Click(object sender, EventArgs e)
+        {
+            OnActualizarAvance(this, EventArgs.Empty);
             Hide();
         }
     }
