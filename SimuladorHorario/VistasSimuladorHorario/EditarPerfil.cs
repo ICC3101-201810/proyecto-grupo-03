@@ -36,32 +36,30 @@ namespace VistasSimuladorHorario
             }
 
             cursosInscritosComboBox.DataSource = listaNombreCursoInscrito;
-
-            textBox1.Text = estudianteActivo.nombre;
-            textBox2.Text = estudianteActivo.contraseña;
+            NEstudianteActivoTB.Text = estudianteActivo.nombre;
+            CEstudianteActivoTB.Text = estudianteActivo.contraseña;
             estudiante = estudianteActivo;
-
-            textBox1.ReadOnly = true;
-            textBox2.ReadOnly = true;
-
-            listBox1.DataSource = estudiante.avanceMalla;
-
+            NEstudianteActivoTB.ReadOnly = true;
+            CEstudianteActivoTB.ReadOnly = true;
+            AvanceMallaLB.DataSource = estudiante.avanceMalla;
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", estudiante.nombre);   
+            string respuestaNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre de usuario: ", "Editar nombre", NEstudianteActivoTB.Text);
+            if (respuestaNombre != "") { NEstudianteActivoTB.Text = respuestaNombre; }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox2.Text = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", estudiante.contraseña);
+            string respuestaContra = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la nueva contraseña: ", "Editar Contraseña", CEstudianteActivoTB.Text);
+            if (respuestaContra != "") { CEstudianteActivoTB.Text = respuestaContra; }
         }
-
+        
         public void Guardar(Estudiante estudianteActivo)
         {
-            estudianteActivo.SetNombre(textBox1.Text);
-            estudianteActivo.SetContraseña(textBox2.Text);
+            estudianteActivo.SetNombre(NEstudianteActivoTB.Text);
+            estudianteActivo.SetContraseña(CEstudianteActivoTB.Text);
         }
 
         private void EditarPerfil_FormClosing(object sender, FormClosingEventArgs e)

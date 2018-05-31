@@ -50,7 +50,7 @@ namespace VistasSimuladorHorario
 
         private void AgregarEventoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            Aplicacion.SerializeAll();
         }
 
         public void DisableType()

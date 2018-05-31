@@ -13,25 +13,106 @@ namespace VistasSimuladorHorario
 {
     public partial class ActualizarAvanceDeMallaForm : Form
     {
-        Estudiante estudianteActual;
+        Estudiante estudianteActivo;
+        public event EventHandler<ActualizarAvanceEventArgs> OnAgregarCurso;
+        public event EventHandler<ActualizarAvanceEventArgs> OnEliminarCurso;
+        public event EventHandler OnRegresar;
         public ActualizarAvanceDeMallaForm()
         {
             InitializeComponent();
-            InicializarAlumnoCB();
+            InicializarAlumnosCB();
+            InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();
         }
 
-        public void InicializarAlumnoCB()
+        public void InicializarAlumnosCB()
         {
-            List<string> estudiantes = new List<string>();
-            foreach(Usuario user in Aplicacion.usuarios)
+            List<string> nombresAlumnos = new List<string>();
+            bool flag = true;
+            foreach (Usuario user in Aplicacion.usuarios)
             {
                 if (user is Estudiante)
                 {
-                    estudiantes.Add(user.nombre);
+                    if (flag) { estudianteActivo = (Estudiante)user; flag = false; }
+                    nombresAlumnos.Add(user.nombre);
+                }
+            }
+            AlumnosCB.DataSource = nombresAlumnos;
+            
+        }
+
+        public void ActualizarEstudianteActivo()
+        {
+            foreach (Usuario user in Aplicacion.usuarios)
+            {
+                if ((string)AlumnosCB.SelectedItem == user.nombre)
+                {
+                    estudianteActivo = (Estudiante)user;
                 }
             }
         }
 
-        public void CambiarListaCursos()
+        public void InicializarCursosDisponiblesLB()
+        {
+            List<string> nombresCursos = new List<string>();
+            foreach (CursoCurricular c in Aplicacion.cursos)
+            {
+                if (!nombresCursos.Contains(c.nombre) && !estudianteActivo.avanceMalla.Contains(c.nombre))
+                {
+                    nombresCursos.Add(c.nombre);
+                }
+            }
+            CursosDisponiblesLB.DataSource = nombresCursos;
+        }
+
+        public void InicializarAvanceMallaLB()
+        {
+            
+            AvanceMallaLB.DataSource = estudianteActivo.avanceMalla;
+            AvanceMallaLB.Refresh();
+        }
+
+        private void ActualizarAvanceDeMallaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AlumnosCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizarEstudianteActivo();
+            InicializarAvanceMallaLB();
+            InicializarCursosDisponiblesLB();
+        }
+
+        private void ActualizarAvanceDeMallaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Aplicacion.SerializeAll();
+            System.Environment.Exit(0);
+        }
+
+        private void AgregarCursoB_Click(object sender, EventArgs e)
+        {
+            ActualizarAvanceEventArgs actualizarAvanceEventArgs = new ActualizarAvanceEventArgs();
+            actualizarAvanceEventArgs.nombreEstudiante = estudianteActivo.nombre;
+            actualizarAvanceEventArgs.curso = (string)CursosDisponiblesLB.SelectedItem;
+            OnAgregarCurso(this, actualizarAvanceEventArgs);
+            InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();    
+        }
+
+        private void EliminarCursoB_Click(object sender, EventArgs e)
+        {
+            ActualizarAvanceEventArgs actualizarAvanceEventArgs = new ActualizarAvanceEventArgs();
+            actualizarAvanceEventArgs.nombreEstudiante = estudianteActivo.nombre;
+            actualizarAvanceEventArgs.curso = (string)AvanceMallaLB.SelectedItem;
+            OnEliminarCurso(this, actualizarAvanceEventArgs);
+            InicializarCursosDisponiblesLB();
+            InicializarAvanceMallaLB();
+        }
+
+        private void RegresarB_Click(object sender, EventArgs e)
+        {
+            OnRegresar(this, EventArgs.Empty);
+        }
     }
 }

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eliminarCursoButton));
             this.usuarioLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NEstudianteActivoTB = new System.Windows.Forms.TextBox();
+            this.CEstudianteActivoTB = new System.Windows.Forms.TextBox();
             this.contraseñaLabel = new System.Windows.Forms.Label();
             this.cursosInscritosComboBox = new System.Windows.Forms.ComboBox();
             this.cursosInscritosLabel = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.limpiarCursosButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.AvanceMallaLB = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,18 +56,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 1;
+            this.NEstudianteActivoTB.Location = new System.Drawing.Point(78, 53);
+            this.NEstudianteActivoTB.Name = "textBox1";
+            this.NEstudianteActivoTB.Size = new System.Drawing.Size(141, 20);
+            this.NEstudianteActivoTB.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.CEstudianteActivoTB.Location = new System.Drawing.Point(78, 109);
+            this.CEstudianteActivoTB.Name = "textBox2";
+            this.CEstudianteActivoTB.Size = new System.Drawing.Size(141, 20);
+            this.CEstudianteActivoTB.TabIndex = 3;
+            this.CEstudianteActivoTB.UseSystemPasswordChar = true;
             // 
             // contraseñaLabel
             // 
@@ -139,12 +139,12 @@
             // 
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(398, 53);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(233, 134);
-            this.listBox1.TabIndex = 12;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.AvanceMallaLB.FormattingEnabled = true;
+            this.AvanceMallaLB.Location = new System.Drawing.Point(398, 53);
+            this.AvanceMallaLB.Name = "listBox1";
+            this.AvanceMallaLB.Size = new System.Drawing.Size(233, 134);
+            this.AvanceMallaLB.TabIndex = 12;
+            this.AvanceMallaLB.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -173,16 +173,16 @@
             this.ClientSize = new System.Drawing.Size(678, 259);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.AvanceMallaLB);
             this.Controls.Add(this.limpiarCursosButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.avanceMallaLabel);
             this.Controls.Add(this.cursosInscritosLabel);
             this.Controls.Add(this.cursosInscritosComboBox);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.CEstudianteActivoTB);
             this.Controls.Add(this.contraseñaLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NEstudianteActivoTB);
             this.Controls.Add(this.usuarioLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "eliminarCursoButton";
@@ -197,8 +197,8 @@
         #endregion
 
         private System.Windows.Forms.Label usuarioLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NEstudianteActivoTB;
+        private System.Windows.Forms.TextBox CEstudianteActivoTB;
         private System.Windows.Forms.Label contraseñaLabel;
         private System.Windows.Forms.ComboBox cursosInscritosComboBox;
         private System.Windows.Forms.Label cursosInscritosLabel;
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button limpiarCursosButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox AvanceMallaLB;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

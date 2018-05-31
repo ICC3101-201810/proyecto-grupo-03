@@ -21,12 +21,7 @@ namespace VistasSimuladorHorario
         bool loadCSV = false;
         public LoginForm()
         {
-            InitializeComponent();
-
-            if (Aplicacion.cursos.Count == 0 && !loadCSV)
-            {
-                Aplicacion.DeSerializeAll();
-            }
+            InitializeComponent();  
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,16 +38,18 @@ namespace VistasSimuladorHorario
 
                 }
             }
-            
-            
+   
             //ESTO PERMITE IMPORTAR MEDIANTE SERIALIZACION
-            
-            
 
+            if (Aplicacion.cursos.Count == 0 && !loadCSV)
+            {
+                Aplicacion.DeSerializeAll();
+            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-      {
+        {
 
         }
 

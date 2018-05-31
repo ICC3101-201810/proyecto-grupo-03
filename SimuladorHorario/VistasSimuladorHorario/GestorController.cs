@@ -21,7 +21,6 @@ namespace VistasSimuladorHorario
             this.gestorForm.OnCerrarSesion += VistasGestor_OnCerrarSesion;
             this.gestorForm.OnActualizarCurso += VistasGestor_OnActualizarCurso;
             this.gestorForm.OnActualizarAvance += VistasGestor_OnActualizarAvance;
-
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)
@@ -56,7 +55,9 @@ namespace VistasSimuladorHorario
             ActualizarCursoForm actualizarCursoForm = new ActualizarCursoForm();
             ActualizarCursoController actualizarCursoController = new ActualizarCursoController(actualizarCursoForm);
             actualizarCursoForm.Show();
+            
         }
+
         private void VistasGestor_OnActualizarAvance(object sender, EventArgs e)
         {
             ActualizarAvanceDeMallaForm actualizarAvanceDeMallaForm = new ActualizarAvanceDeMallaForm();
