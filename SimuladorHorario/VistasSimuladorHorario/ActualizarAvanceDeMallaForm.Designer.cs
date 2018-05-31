@@ -165,6 +165,7 @@
         private System.Windows.Forms.Label Alumno;
         private System.Windows.Forms.Button RegresarB;
         private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Label label2;
     }
 }
