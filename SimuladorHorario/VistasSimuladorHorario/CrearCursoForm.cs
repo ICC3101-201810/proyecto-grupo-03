@@ -13,6 +13,7 @@ namespace VistasSimuladorHorario
 {
     public partial class CrearCursoForm : Form
     {
+        public int contadorDeEventos = 0;
         public event EventHandler OnAgregarEvento;
         public event EventHandler OnRegresar;
         List<Evento> listaEventos = new List<Evento>();

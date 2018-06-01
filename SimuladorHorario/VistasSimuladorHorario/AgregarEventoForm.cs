@@ -13,7 +13,7 @@ namespace VistasSimuladorHorario
 {
     public partial class AgregarEventoForm1 : Form
     {
-
+        
         CrearCursoForm parent;
         public AgregarEventoForm1(CrearCursoForm parent)
         {
@@ -31,13 +31,14 @@ namespace VistasSimuladorHorario
 
         private void AgregarEventoButton_Click(object sender, EventArgs e)
         {
+            
             string nombre = NombreEventoTextBox.Text;
-            string fecha = FechaEvento.Value.ToString("dd:MM:yyyy");
+            string fecha = FechaEvento.Value.ToString("dd-MM-yyyy");
             TipoEvento tipoEvento = (TipoEvento)TipoEventoComboBox.SelectedItem;
             string sala = SalaUser.Text;
             string horaInicio = (string)(BloqueHComboBox.SelectedItem);
             int duracion = Convert.ToInt32(DuracionComboBox.SelectedItem);
-            List<Evento> listaEventos = Gestor.CrearEvento(nombre,fecha, tipoEvento, sala, horaInicio, duracion);
+            List<Evento> listaEventos = Gestor.CrearEvento(nombre,fecha, tipoEvento, sala, horaInicio, duracion, (Convert.ToString(((int)FechaEvento.Value.DayOfWeek)-1) + "-"));
             parent.AñadirEventos(listaEventos);
             this.Close();
             

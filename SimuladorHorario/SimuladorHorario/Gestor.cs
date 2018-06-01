@@ -19,6 +19,7 @@ namespace SimuladorHorario
             {
                 return false;
             }
+            CursoCurricular c = Aplicacion.cursos[3];
 
             Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso, profesor, TipoCurso.Curricular));
             return true;
@@ -124,7 +125,7 @@ namespace SimuladorHorario
             #endregion
             return;
         }
-        public static List<Evento> CrearEvento(string nombre, string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion)
+        public static List<Evento> CrearEvento(string nombre, string fecha, TipoEvento tipoEvento, string sala,string HoraInicio, int duracion, string numeroDeDia = "")
         {
             List<Evento> listaEvento = new List<Evento>();
             string HoraFin;
@@ -134,7 +135,7 @@ namespace SimuladorHorario
 
             for(int i = 0; i < duracion; i++)
             {
-                string hora = (horas + i).ToString() + ":" + "30";
+                string hora =numeroDeDia + (horas + i).ToString() + ":" + "30";
                 string nombreEvento = nombre;
                 Evento evento = new Evento(nombreEvento, hora, sala, tipoEvento);
                 listaEvento.Add(evento);
