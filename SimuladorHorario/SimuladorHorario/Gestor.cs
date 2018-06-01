@@ -10,7 +10,16 @@ namespace SimuladorHorario
     [Serializable()]
     public static class Gestor
     {
-         
+        public static bool RegistrarAdmin(string nombreAdmin, string contraseñaAdmin)
+        {
+            if (Aplicacion.NombresUsuarios().Contains(nombreAdmin))
+            {
+                return false;
+            }
+            Aplicacion.usuarios.Add(new Administrador(nombreAdmin, contraseñaAdmin, true));
+            return true;
+        }
+
         public static bool CrearCursoCurricular(string nrc, string nombreCurso, string profesor, int creditos, Especialidad especialidad, List<Evento> eventosCurso)
         {
             

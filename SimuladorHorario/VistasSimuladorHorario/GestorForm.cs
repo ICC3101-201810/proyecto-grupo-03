@@ -19,6 +19,7 @@ namespace VistasSimuladorHorario
         public event EventHandler OnCerrarSesion;
         public event EventHandler OnActualizarCurso;
         public event EventHandler OnActualizarAvance;
+        public event EventHandler OnCrearNuevoAdministrador;
 
         public GestorForm()
         {
@@ -72,6 +73,12 @@ namespace VistasSimuladorHorario
         {
             OnActualizarAvance(this, EventArgs.Empty);
             Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OnCrearNuevoAdministrador(this, EventArgs.Empty);
+            this.Hide();
         }
     }
 }
