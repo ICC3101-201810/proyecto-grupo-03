@@ -71,6 +71,14 @@
     </Compile>
     <Compile Include="ActualizarAvanceEventArgs.cs" />
     <Compile Include="ActualizarCursoEventArgs.cs" />
+    <Compile Include="ActualizarPreRequisitosController.cs" />
+    <Compile Include="ActualizarPreRequisitosEventArgs.cs" />
+    <Compile Include="ActualizarPreRequisitosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarPreRequisitosForm.Designer.cs">
+      <DependentUpon>ActualizarPreRequisitosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarEventoPersonalController.cs" />
     <Compile Include="AgregarEventoPersonalForm.cs">
       <SubType>Form</SubType>
@@ -192,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActualizarCursoForm.resx">
       <DependentUpon>ActualizarCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarPreRequisitosForm.resx">
+      <DependentUpon>ActualizarPreRequisitosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarEventoPersonalForm.resx">
       <DependentUpon>AgregarEventoPersonalForm.cs</DependentUpon>
