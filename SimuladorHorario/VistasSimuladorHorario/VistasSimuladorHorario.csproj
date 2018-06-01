@@ -107,6 +107,13 @@
     <Compile Include="CrearCursoForm.Designer.cs">
       <DependentUpon>CrearCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearNuevoAdministradorController.cs" />
+    <Compile Include="CrearNuevoAdministradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearNuevoAdministradorForm.Designer.cs">
+      <DependentUpon>CrearNuevoAdministradorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearCursoForm.resx">
       <DependentUpon>CrearCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearNuevoAdministradorForm.resx">
+      <DependentUpon>CrearNuevoAdministradorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarPerfil.resx">
       <DependentUpon>EditarPerfil.cs</DependentUpon>

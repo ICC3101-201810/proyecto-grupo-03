@@ -21,6 +21,14 @@ namespace VistasSimuladorHorario
             this.gestorForm.OnCerrarSesion += VistasGestor_OnCerrarSesion;
             this.gestorForm.OnActualizarCurso += VistasGestor_OnActualizarCurso;
             this.gestorForm.OnActualizarAvance += VistasGestor_OnActualizarAvance;
+            this.gestorForm.OnCrearNuevoAdministrador += VistasGestor_OnCrearNuevoAdministrador;
+        }
+
+        private void VistasGestor_OnCrearNuevoAdministrador(object sender, EventArgs e)
+        {
+            CrearNuevoAdministradorForm crearNuevoAdministradorForm = new CrearNuevoAdministradorForm();
+            CrearNuevoAdministradorController crearNuevoAdministradorController = new CrearNuevoAdministradorController(crearNuevoAdministradorForm);
+            crearNuevoAdministradorForm.Show();
         }
 
         private void VistasGestor_OnCrearCurso(object sender, EventArgs e)

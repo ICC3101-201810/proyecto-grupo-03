@@ -66,8 +66,6 @@ namespace SimuladorHorario
                 return false;
             }
 
-            
-            
             List <string>avanceMalla = new List<string>();
             #region
             /*
@@ -100,6 +98,7 @@ namespace SimuladorHorario
             usuarios.Add(new Estudiante(avanceMalla, especialidad, concentracion, nombreUsuario, contraseña, false));
             return true;
         }
+        
 
         public static List<string> NombresUsuarios()
         {
