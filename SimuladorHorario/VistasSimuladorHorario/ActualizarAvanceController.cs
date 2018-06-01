@@ -19,12 +19,12 @@ namespace VistasSimuladorHorario
             actualizarAvanceDeMallaForm.OnRegresar += VistasActualizarAvance_OnRegresar;
         }
 
-        public void VistasActualizarAvance_OnAgregarCurso(object sender, ActualizarAvanceEventArgs e)
+        private void VistasActualizarAvance_OnAgregarCurso(object sender, ActualizarAvanceEventArgs e)
         {
             Gestor.AñadirAlAvanceMalla(e.nombreEstudiante, e.curso);
         } 
 
-        public void VistasActualizarAvance_OnEliminarCurso(object sender, ActualizarAvanceEventArgs e)
+        private void VistasActualizarAvance_OnEliminarCurso(object sender, ActualizarAvanceEventArgs e)
         {
             Gestor.EliminarDelAvanceMalla(e.nombreEstudiante, e.curso);
         }

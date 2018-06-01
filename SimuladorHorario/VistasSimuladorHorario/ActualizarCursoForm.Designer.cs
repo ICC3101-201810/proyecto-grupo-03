@@ -45,6 +45,7 @@
             this.NombreProfesorTB = new System.Windows.Forms.TextBox();
             this.ApellidoProfesorTB = new System.Windows.Forms.TextBox();
             this.CambiarProfesorB = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NrcTB
@@ -144,7 +145,7 @@
             this.CursosCB.Name = "CursosCB";
             this.CursosCB.Size = new System.Drawing.Size(461, 21);
             this.CursosCB.TabIndex = 10;
-            this.CursosCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CursosCB.SelectedIndexChanged += new System.EventHandler(this.CursosCB_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -192,11 +193,22 @@
             this.CambiarProfesorB.UseVisualStyleBackColor = true;
             this.CambiarProfesorB.Click += new System.EventHandler(this.CambiarProfesorB_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(312, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 50);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "ActualizarPreRequisitos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ActualizarPreRequisitos_Click);
+            // 
             // ActualizarCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CambiarProfesorB);
             this.Controls.Add(this.ApellidoProfesorTB);
             this.Controls.Add(this.NombreProfesorTB);
@@ -241,5 +253,6 @@
         private System.Windows.Forms.TextBox NombreProfesorTB;
         private System.Windows.Forms.TextBox ApellidoProfesorTB;
         private System.Windows.Forms.Button CambiarProfesorB;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -21,7 +21,7 @@ namespace SimuladorHorario
             }
             CursoCurricular c = Aplicacion.cursos[3];
 
-            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso, profesor, TipoCurso.Curricular));
+            Aplicacion.AñadirCurso(new CursoCurricular(nrc, creditos, new List<string>(), especialidad, eventosCurso, nombreCurso.ToUpper(), profesor, TipoCurso.Curricular));
             return true;
         }
         public static void LeerCurso(string nrcCurso)
@@ -187,7 +187,27 @@ namespace SimuladorHorario
                 }
             }
         }
-            
 
+        public static void AñadirPreRequisito(string nombreCurso, string cambio)
+        {
+            foreach(CursoCurricular c in Aplicacion.cursos)
+            {
+                if(nombreCurso == c.nombre)
+                {
+                    c.cursosPreRequisito.Add(cambio);
+                }
+            }
+        }
+            
+        public static void EliminarPreRequisito(string nombreCurso, string cambio)
+        {
+            foreach(CursoCurricular c in Aplicacion.cursos)
+            {
+                if (c.nombre == nombreCurso)
+                {
+                    c.cursosPreRequisito.Remove(cambio);
+                }
+            }
+        }
     }
 }

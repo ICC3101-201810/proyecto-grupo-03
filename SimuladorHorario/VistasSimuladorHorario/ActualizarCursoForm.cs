@@ -13,13 +13,16 @@ namespace VistasSimuladorHorario
 {
     public partial class ActualizarCursoForm : Form
     {
+        public CursoCurricular cursoActivo;
         public event EventHandler<ActualizarCursoEventArgs> OnActualizar;
         public event EventHandler OnRegresar;
+        public event EventHandler OnActualizarPreRequisitos;
         public ActualizarCursoForm()
         {
             InitializeComponent();
             especialidadCB.DataSource = Enum.GetValues(typeof(Especialidad));
             InicializarCursoComboBox();
+            ActualizarCursoActivo();
 
         }
 
@@ -34,6 +37,15 @@ namespace VistasSimuladorHorario
                 }
             }
             CursosCB.DataSource = listaCursos;
+        }
+
+        public void ActualizarCursoActivo()
+        {
+            foreach (CursoCurricular c in Aplicacion.cursos)
+            {
+                if (c.nombre == ((string)CursosCB.SelectedItem).Split(':')[1]) cursoActivo = c;
+            }
+
         }
 
         private void ActualizarCursoForm_Load(object sender, EventArgs e)
@@ -62,9 +74,9 @@ namespace VistasSimuladorHorario
             InicializarCursoComboBox();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CursosCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ActualizarCursoActivo();
         }
 
         private void CambiarCreditosB_Click(object sender, EventArgs e)
@@ -109,6 +121,12 @@ namespace VistasSimuladorHorario
         {
             OnRegresar(this, EventArgs.Empty);
             this.Hide();
+        }
+
+        private void ActualizarPreRequisitos_Click(object sender, EventArgs e)
+        {
+            OnActualizarPreRequisitos(this, EventArgs.Empty);
+
         }
     }
 }

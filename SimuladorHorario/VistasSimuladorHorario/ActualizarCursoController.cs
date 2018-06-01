@@ -17,6 +17,7 @@ namespace VistasSimuladorHorario
             this.actualizarCursoForm = actualizarCursoForm;
             actualizarCursoForm.OnActualizar += VistasActualizarCurso_OnActualizar;
             actualizarCursoForm.OnRegresar += VistasActualizarCurso_OnRegresar;
+            actualizarCursoForm.OnActualizarPreRequisitos += VistasActualizarCurso_OnActualizarPreRequisitos;
         }
 
         private void VistasActualizarCurso_OnActualizar(object sender, ActualizarCursoEventArgs e)
@@ -25,7 +26,6 @@ namespace VistasSimuladorHorario
             {
                 MessageBox.Show("Cambio Realizado");
             }
-
         }
 
         private void VistasActualizarCurso_OnRegresar(object sender, EventArgs e)
@@ -34,6 +34,13 @@ namespace VistasSimuladorHorario
             GestorController gestorController = new GestorController(gestorForm);
             gestorForm.Show();
             actualizarCursoForm.Enabled = false;
+        }
+
+        private void VistasActualizarCurso_OnActualizarPreRequisitos(object sender, EventArgs e)
+        {
+            ActualizarPreRequisitosForm actualizarPreRequisitosForm = new ActualizarPreRequisitosForm(actualizarCursoForm);
+            ActualizarPreRequisitosController actualizarPreRequisitosController = new ActualizarPreRequisitosController(actualizarPreRequisitosForm);
+            actualizarPreRequisitosForm.ShowDialog();     
         }
       
     }
