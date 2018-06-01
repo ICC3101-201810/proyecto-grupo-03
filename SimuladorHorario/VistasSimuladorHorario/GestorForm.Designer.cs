@@ -37,6 +37,7 @@ namespace VistasSimuladorHorario
             this.button4 = new System.Windows.Forms.Button();
             this.ActualizarCursoButton = new System.Windows.Forms.Button();
             this.ActualizarAvanceB = new System.Windows.Forms.Button();
+            this.ActualizarPreRequisitos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -105,11 +106,21 @@ namespace VistasSimuladorHorario
             this.ActualizarAvanceB.UseVisualStyleBackColor = true;
             this.ActualizarAvanceB.Click += new System.EventHandler(this.ActualizarAvanceB_Click);
             // 
+            // ActualizarPreRequisitos
+            // 
+            this.ActualizarPreRequisitos.Location = new System.Drawing.Point(49, 255);
+            this.ActualizarPreRequisitos.Name = "ActualizarPreRequisitos";
+            this.ActualizarPreRequisitos.Size = new System.Drawing.Size(197, 54);
+            this.ActualizarPreRequisitos.TabIndex = 6;
+            this.ActualizarPreRequisitos.Text = "Actualizar PreRequisitos";
+            this.ActualizarPreRequisitos.UseVisualStyleBackColor = true;
+            // 
             // GestorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ActualizarPreRequisitos);
             this.Controls.Add(this.ActualizarAvanceB);
             this.Controls.Add(this.ActualizarCursoButton);
             this.Controls.Add(this.button4);
@@ -136,5 +147,6 @@ namespace VistasSimuladorHorario
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button ActualizarCursoButton;
         private System.Windows.Forms.Button ActualizarAvanceB;
+        private System.Windows.Forms.Button ActualizarPreRequisitos;
     }
 }
