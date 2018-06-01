@@ -45,9 +45,11 @@ namespace VistasSimuladorHorario
         {
             foreach (Usuario user in Aplicacion.usuarios)
             {
-                if ((string)AlumnosCB.SelectedItem == user.nombre)
-                {
-                    estudianteActivo = (Estudiante)user;
+                if (user != null){
+                    if ((string)AlumnosCB.SelectedItem == user.nombre)
+                    {
+                        estudianteActivo = (Estudiante)user;
+                    }
                 }
             }
         }

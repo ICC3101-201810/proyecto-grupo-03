@@ -105,8 +105,10 @@ namespace SimuladorHorario
             List<string> retorno = new List<string>();
             foreach (Usuario usuario in usuarios)
             {
-                //MessageBox.Show("Test") ;
-                retorno.Add(usuario.nombre);
+                if (usuario != null)
+                {
+                    retorno.Add(usuario.nombre);
+                }
             }
             return retorno;
         }

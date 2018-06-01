@@ -10,34 +10,7 @@ namespace SimuladorHorario
     [Serializable()]
     public static class PlataformaEstudiante
     {
-        public static void MenuPlataformaEstudiante(Estudiante estudiante)
-        {
-            #region
-            /*
-            InicioPlataforma:
-            Program.ImprimirBanner("Bienvenido " + estudiante.nombre + " a la plataforma de estudiante");
-            Console.WriteLine("Que desea hacer:\n" +
-                             "1. Inscribir Curso\n" +
-                             "2. Eliminar curso\n" +
-                             "3. Mostrar Cursos Inscritos\n" +
-                             "4. Mostrar Avance Curricular\n" +
-                             "5. Cerrar Sesion");
-            int opcion = Program.ChequearOpcion(1, 5);
-            if (opcion == 1) { InscribirCurso(estudiante); goto InicioPlataforma; }
-
-            if (opcion == 2) { EliminarCursoInscrito(estudiante); goto InicioPlataforma; }
-
-            if (opcion == 3) { estudiante.MostrarCursos();goto InicioPlataforma; }
-
-            if (opcion == 4) { estudiante.MostrarAvance(); goto InicioPlataforma; }
-
-            if (opcion == 5) { return; }
-
-    */
-            #endregion
-
-        }
-        
+         
         public static bool ChequearCompatibilidadHorario(Estudiante estudiante, CursoCurricular cursoInscribir)
         {
             List<string> listaBloquesUsados = new List<string>();
@@ -78,17 +51,7 @@ namespace SimuladorHorario
             if (hayCursosNoAprobados) { return false; }
             else { return true; }
         }
-        /*
-        public static bool ChequearCompatibilidadEspecialidad(Estudiante estudiante, CursoCurricular cursoCurricular)
-        {
-            if (cursoCurricular.especialidad == Especialidad.ING) { return true; }
-            else
-            {
-                if (estudiante.especialidad != cursoCurricular.especialidad) { return false; }
-                else { return true; }
-            } 
-        }
-        */
+       
 
         public static bool ChequearCompatibilidadEspecialidadyConcentracion(Estudiante estudiante, CursoCurricular cursoCurricular)
         {
@@ -158,7 +121,7 @@ namespace SimuladorHorario
         public static bool ChequearCompatibilidadCantidadCreditos(Estudiante estudiante, CursoCurricular cursoCurricular)
         {
             
-            if (ContarCreditos(estudiante) + cursoCurricular.creditos > 11) { return false; }
+            if (ContarCreditos(estudiante) + cursoCurricular.creditos > 33) { return false; }
             else { return true; }
         }
         
@@ -169,7 +132,7 @@ namespace SimuladorHorario
             
             bool compatibilidadHorario = ChequearCompatibilidadHorario(estudiante, curso);
             bool compatibilidadPreRequisito = ChequearCompatibilidadPreRequisito(estudiante, curso);
-            // bool compatibilidadEspecialidad = ChequearCompatibilidadEspecialidad(estudiante, curso);
+            
             bool compatibilidadEspecialidadyConcentracion = ChequearCompatibilidadEspecialidadyConcentracion(estudiante, curso);
             bool compatibilidadCantidadCreditos = ChequearCompatibilidadCantidadCreditos(estudiante, curso);
 
@@ -260,7 +223,5 @@ namespace SimuladorHorario
 
             return;
         }
-        static int ContarCreditos(List<Curso> listaCursosInscritos) { return 1; }
-        static void AgregarEventoPersonal(Estudiante estudiante) { return; }
     }
 }

@@ -22,9 +22,6 @@ namespace VistasSimuladorHorario
             GestorForm gestorForm = new GestorForm();
             GestorController gestorController = new GestorController(gestorForm);
             gestorForm.Show();
-            //CrearNuevoAdministradorForm crearNuevoAdministradorForm = new CrearNuevoAdministradorForm();
-            //CrearNuevoAdministradorController crearNuevoAdministradorController = new CrearNuevoAdministradorController(crearNuevoAdministradorForm);
-            //crearNuevoAdministradorForm.Show();
             crearNuevoAdministradorForm.Enabled = false;
         }
 
