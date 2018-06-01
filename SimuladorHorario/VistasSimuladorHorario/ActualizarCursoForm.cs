@@ -73,7 +73,7 @@ namespace VistasSimuladorHorario
             actualizarCreditosCursoArgs.parametro = "creditos";
             actualizarCreditosCursoArgs.nrc = CursosCB.SelectedItem.ToString().Split(':')[0];
             actualizarCreditosCursoArgs.cambio = creditosTB.Text;
-            if (actualizarCreditosCursoArgs.cambio == "")
+            if (actualizarCreditosCursoArgs.cambio.ToString() == "")
             {
                 MessageBox.Show("Debe ingresar un cambio");
                 return;

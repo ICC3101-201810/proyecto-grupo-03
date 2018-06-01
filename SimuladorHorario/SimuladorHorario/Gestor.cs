@@ -30,12 +30,16 @@ namespace SimuladorHorario
             {
                 if (cursoCur.nrc == nrcCurso)
                 {
-                    MessageBox.Show(
+                    cursoCur.cursosPreRequisito.Insert(0, 
                         $"Nombre: {cursoCur.nombre}\n" +
                         $"NRC: {cursoCur.nrc}\n" +
                         $"Profesor: {cursoCur.profesor}\n" +
                         $"Creditos: {(cursoCur.creditos).ToString()}\n" +
-                        $"Especialidad: {cursoCur.especialidad}\n");
+                        $"Especialidad: {cursoCur.especialidad}\n" +
+                        $"Cursos Prerrequisito: ");
+                    var mensaje2 = string.Join(Environment.NewLine, cursoCur.cursosPreRequisito);
+                    cursoCur.cursosPreRequisito.RemoveAt(0);
+                    MessageBox.Show(mensaje2);
 
                     string eventoInfo = "";
                     foreach(Evento evento in cursoCur.eventosCurso)
@@ -58,7 +62,7 @@ namespace SimuladorHorario
             {
                 foreach(CursoCurricular c in Aplicacion.GetCursoCurricular())
                 {
-                    if (c.nrc == (string)cambio)
+                    if (c.nrc == cambio.ToString())
                     {
                         MessageBox.Show("Ese NRC ya existe");
                         return false;
@@ -75,7 +79,7 @@ namespace SimuladorHorario
 
             else if (parametro == "creditos")
             {
-                curso.creditos = (int)cambio;
+                curso.creditos = Int32.Parse(cambio.ToString());
             }
 
             else if(parametro == "especialidad")

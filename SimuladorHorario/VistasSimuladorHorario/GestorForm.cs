@@ -59,6 +59,7 @@ namespace VistasSimuladorHorario
         private void CerrarSesionButton_Click(object sender, EventArgs e)
         {
             OnCerrarSesion(this, EventArgs.Empty);
+            this.Hide();
         }
 
         private void ActualizarCursoButton_Click(object sender, EventArgs e)
