@@ -56,7 +56,7 @@
             // 
             // creditosTB
             // 
-            this.creditosTB.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.creditosTB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.creditosTB.Location = new System.Drawing.Point(180, 163);
             this.creditosTB.Name = "creditosTB";
             this.creditosTB.Size = new System.Drawing.Size(100, 20);

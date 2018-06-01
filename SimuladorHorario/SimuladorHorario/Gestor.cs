@@ -61,7 +61,7 @@ namespace SimuladorHorario
             {
                 foreach(CursoCurricular c in Aplicacion.GetCursoCurricular())
                 {
-                    if (c.nrc == (string)cambio)
+                    if (c.nrc == cambio.ToString())
                     {
                         MessageBox.Show("Ese NRC ya existe");
                         return false;
@@ -78,7 +78,7 @@ namespace SimuladorHorario
 
             else if (parametro == "creditos")
             {
-                curso.creditos = (int)cambio;
+                curso.creditos = Int32.Parse(cambio.ToString());
             }
 
             else if(parametro == "especialidad")
