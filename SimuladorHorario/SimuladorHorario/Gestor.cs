@@ -150,12 +150,14 @@ namespace SimuladorHorario
             int horas = Convert.ToInt32(HoraInicio.Split(':')[0]);
 
             HoraFin = (horas + duracion).ToString() + ":" + "20";
-
+            bool primerPeriodo;
             for(int i = 0; i < duracion; i++)
             {
+                if (i == 0) primerPeriodo = true;
+                else primerPeriodo = false;
                 string hora =numeroDeDia + (horas + i).ToString() + ":" + "30";
                 string nombreEvento = nombre;
-                Evento evento = new Evento(nombreEvento, hora, sala, tipoEvento);
+                Evento evento = new Evento(nombreEvento, hora, fecha, sala, tipoEvento, primerPeriodo);
                 listaEvento.Add(evento);
             }
 
